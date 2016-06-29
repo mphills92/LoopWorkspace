@@ -9,33 +9,48 @@
 import UIKit
 
 class UserName {
-    var firstName = "Test"
-    var lastName = "Name"
+    var firstName: String = "Test"
+    var lastName: String = "Name"
 }
 
 class UserPassword {
-    var password = "test"
+    var password: String = "test"
     var newPassword = String()
     var confirmedNewPassword = String()
 }
 
 class UserEmail {
-    var email = "test@email.com"
+    var email: String = "test@email.com"
     var newEmail = String()
     var confirmedNewEmail = String()
 }
 
 class UserPhone {
-    var phoneNumber = "7778889999"
+    var phoneNumber: String = "7778889999"
 }
 
 class UserAccount {
-    var lifetimeRounds = 22
-    var currentCredit = 4
+    var lifetimeRounds: Int = 22
+    var currentCredit: Int = 4
 }
 
 class UserReferralCode {
-    var referralCode = "A1B2C3D4"
+    var referralCode: String = "A1B2C3D4"
 }
 
+class UpcomingReservations {
+    var reservationDataExists: Bool = true
+    var numberOfUpcomingReservationsCells: Int = 5
+}
+
+class CaddieHistory {
+    var caddieHistoryDataExists: Bool = true
+    var numberOfCaddieHistoryCells: Int = 5
+    
+}
+
+class Notifications {
+    var notificationsDataExists: Bool = false
+    var numberOfNotificationsCells: Int = 0
+}
 

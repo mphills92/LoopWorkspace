@@ -10,7 +10,6 @@ import UIKit
 
 class ProfileViewController: UIViewController, UIScrollViewDelegate {
     
-// Reservations, notifications, past caddies
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     var selectedIndex = Int()
     

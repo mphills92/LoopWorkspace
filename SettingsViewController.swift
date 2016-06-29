@@ -15,7 +15,7 @@ class SettingsViewController: UITableViewController {
     @IBAction func closeViewButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         

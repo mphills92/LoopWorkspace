@@ -41,7 +41,20 @@ extension ForgotPasswordViewController{
         
         if (newEmailIsValid == true) {
             // TO DO: Send message to server to send password reset instructions to the input email.
-            self.dismissViewControllerAnimated(true, completion: {})
+            print("TO DO: Send message to server to send password reset instructions to the input email.")
+            emailTextField.resignFirstResponder()
+            let alertController = UIAlertController(title: "Instructions sent!", message:  "\n We've sent instructions about how to reset your password to the email that you just provided.", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                self.dismissViewControllerAnimated(true, completion: {})
+            }
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+            
         } else {
             invalidEmailMessage()
         }
@@ -54,7 +67,20 @@ extension ForgotPasswordViewController{
         
         if (newEmailIsValid == true) {
             // TO DO: Send message to server to send password reset instructions to the input email.
-            self.dismissViewControllerAnimated(true, completion: {})
+            print("TO DO: Send message to server to send password reset instructions to the input email.")
+            emailTextField.resignFirstResponder()
+            let alertController = UIAlertController(title: "Instructions sent!", message:  "\n We've sent instructions about how to reset your password to the email that you just provided.", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                self.dismissViewControllerAnimated(true, completion: {})
+            }
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+            
         } else {
             invalidEmailMessage()
         }
@@ -82,5 +108,4 @@ extension ForgotPasswordViewController{
     override func viewWillDisappear(animated: Bool) {
         emailTextField.resignFirstResponder()
     }
-    
 }

@@ -54,6 +54,20 @@ extension SignUpContactInfoViewController {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         continueButtonDisabledState()
+        
+        switch (textField.tag) {
+        case 1:
+            emailTextField.userInteractionEnabled = true
+            confirmEmailTextField.userInteractionEnabled = false
+            phoneTextField.userInteractionEnabled = false
+        case 2:
+            confirmEmailTextField.userInteractionEnabled = true
+            phoneTextField.userInteractionEnabled = false
+        case 3:
+            phoneTextField.userInteractionEnabled = true
+        default:
+            break
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -61,9 +75,12 @@ extension SignUpContactInfoViewController {
         case 1:
             emailToValidate = emailTextField.text!
             validateEmail(emailToValidate)
+            // TO DO: Verify that email doesn't already exist for an account in DB. Alert user if it does exist.
+            print("TO DO: Verify that email doesn't already exist for an account in DB. Alert user if it does exist.")
             
             if (newEmailIsValid == true) {
                 emailToSave = emailToValidate
+                confirmEmailTextField.userInteractionEnabled = true
                 confirmEmailTextField.becomeFirstResponder()
             } else {
                 let alertController = UIAlertController(title: "Not a valid email.", message:  "\n Please enter a valid email.", preferredStyle: .Alert)
@@ -78,6 +95,7 @@ extension SignUpContactInfoViewController {
         case 2:
             confirmedEmailToValidateMatch = confirmEmailTextField.text!
             if (confirmedEmailToValidateMatch == emailToSave) {
+                phoneTextField.userInteractionEnabled = true
                 phoneTextField.becomeFirstResponder()
             } else {
                 let alertController = UIAlertController(title: "Oops, emails don't match.", message:  "\n Your confirmed email must match the one you entered above.", preferredStyle: .Alert)

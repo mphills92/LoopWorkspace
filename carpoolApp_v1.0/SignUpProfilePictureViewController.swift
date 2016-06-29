@@ -22,6 +22,8 @@ class SignUpProfilePictureViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         userProfileImageView.layer.cornerRadius = 8
+        
+        continueButtonDisabledState()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -30,3 +32,18 @@ class SignUpProfilePictureViewController: UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 }
+
+extension SignUpProfilePictureViewController {
+    
+    func continueButtonEnabledState() {
+        self.continueButton.enabled = true
+        self.continueButton.setTitleColor(UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), forState: .Normal)
+    }
+    
+    func continueButtonDisabledState() {
+        self.continueButton.enabled = false
+        self.continueButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+    }
+}
+
+

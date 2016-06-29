@@ -18,6 +18,7 @@ class LandingPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         
         let navBarLogo = UIImage(named: "LoopLogoNavBar")! as UIImage
         let imageView = UIImageView(image: navBarLogo)
