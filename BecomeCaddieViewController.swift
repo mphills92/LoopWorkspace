@@ -1,5 +1,5 @@
 //
-//  BecomeCaddyViewController.swift
+//  BecomeCaddieViewController.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 6/9/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BecomeCaddyViewController: UIViewController {
+class BecomeCaddieViewController: UIViewController {
     
     
     @IBOutlet weak var getStartedButton: UIButton!
@@ -23,7 +23,7 @@ class BecomeCaddyViewController: UIViewController {
         super.viewDidLoad()
         
         let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, screenSize.width, screenSize.height))
-        imageViewBackground.image = UIImage(named: "CaddyBackgroundImage")
+        imageViewBackground.image = UIImage(named: "LandingPageBackground")
         imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
         self.view.addSubview(imageViewBackground)
         self.view.sendSubviewToBack(imageViewBackground)
@@ -37,5 +37,11 @@ class BecomeCaddyViewController: UIViewController {
         getStartedButton.layer.borderWidth = 1
         getStartedButton.layer.cornerRadius = getStartedButton.bounds.height / 2
         getStartedButton.layer.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.2).CGColor
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 }

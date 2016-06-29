@@ -2898,7 +2898,7 @@ deserves a caddie.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7P4-R5-sO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-133.5" y="1967"/>
+            <point key="canvasLocation" x="-376.5" y="1967"/>
         </scene>
         <!--Help Center-->
         <scene sceneID="zh2-Tc-qnW">
@@ -3433,7 +3433,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z4G-0n-SbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-871.5" y="2791"/>
+            <point key="canvasLocation" x="-1123.5" y="2751"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jel-Fo-wjV">
@@ -3449,7 +3449,7 @@ deserves a caddie.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gc5-Jm-rDy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-871.5" y="1967"/>
+            <point key="canvasLocation" x="-1123.5" y="1967"/>
         </scene>
         <!--Sidebar Menu View Controller-->
         <scene sceneID="CeL-Kj-ST9">
@@ -3916,7 +3916,7 @@ deserves a caddie.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Br-1s-fX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="2741"/>
+            <point key="canvasLocation" x="1863" y="2677"/>
         </scene>
         <!--Container About Us View Controller-->
         <scene sceneID="zLf-M9-rKS">
@@ -4105,7 +4105,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Bp-7o-yFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="3301.5"/>
+            <point key="canvasLocation" x="2676" y="2870.5"/>
         </scene>
         <!--Container Caddies Available View Controller-->
         <scene sceneID="RUC-Ll-gJJ">
@@ -5931,7 +5931,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAX-Mf-s3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379.5" y="3700"/>
+            <point key="canvasLocation" x="-376.5" y="3788"/>
         </scene>
         <!--Notifications Settings View Controller-->
         <scene sceneID="Lcg-li-Uwa">
@@ -6503,7 +6503,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77S-nj-65O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1774.5" y="3700"/>
+            <point key="canvasLocation" x="-2452.5" y="3788"/>
         </scene>
         <!--Privacy Settings View Controller-->
         <scene sceneID="IaN-2p-bCO">
@@ -6694,7 +6694,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VL-yu-alS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1035" y="3700"/>
+            <point key="canvasLocation" x="-1722" y="3788"/>
         </scene>
         <!--Help And Support View Controller-->
         <scene sceneID="II7-c3-1dI">
@@ -6806,7 +6806,7 @@ deserves a caddie.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFA-wZ-ojv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-313.5" y="3700"/>
+            <point key="canvasLocation" x="-1045.5" y="3788"/>
         </scene>
         <!--Settings-->
         <scene sceneID="9po-3z-DT6">
@@ -7265,7 +7265,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdS-c7-Nfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-133.5" y="2801"/>
+            <point key="canvasLocation" x="-376.5" y="2761"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vJR-cM-sja">
@@ -7721,12 +7721,12 @@ deserves a caddie.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsG-xB-sJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1224" y="2741"/>
+            <point key="canvasLocation" x="1224" y="2677"/>
         </scene>
         <!--Caddie with Loop-->
         <scene sceneID="HPS-nz-nGN">
             <objects>
-                <viewController id="gcl-r5-Spc" customClass="BecomeCaddyViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gcl-r5-Spc" customClass="BecomeCaddieViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zdG-8Q-P4a"/>
                         <viewControllerLayoutGuide type="bottom" id="Eec-aZ-aJo"/>
@@ -7735,7 +7735,7 @@ deserves a caddie.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earn money." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJq-Mw-etb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easily secure jobs." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJq-Mw-etb">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="B78-Fk-tJB">
@@ -7745,8 +7745,8 @@ deserves a caddie.</string>
                                         <variation key="widthClass=compact" constant="300"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -7761,7 +7761,7 @@ deserves a caddie.</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teach golfers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wa-g1-CYk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be around the sport you love." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wa-g1-CYk">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="d3O-19-WUZ">
@@ -7771,8 +7771,8 @@ deserves a caddie.</string>
                                         <variation key="widthClass=compact" constant="300"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -7787,7 +7787,7 @@ deserves a caddie.</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be around the sport you love." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTL-LN-TSI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earn money." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTL-LN-TSI">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="358" id="UTI-Rs-J0L">
@@ -7797,8 +7797,8 @@ deserves a caddie.</string>
                                         <variation key="widthClass=compact" constant="25"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -7836,6 +7836,7 @@ deserves a caddie.</string>
                                 </variation>
                                 <connections>
                                     <action selector="findCaddyButtonPressed:" destination="zKG-Ol-Fil" eventType="touchUpInside" id="RD7-JJ-sp8"/>
+                                    <segue destination="plZ-A4-IUi" kind="show" id="mgD-wr-g2x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -7856,7 +7857,7 @@ deserves a caddie.</string>
                             </constraint>
                             <constraint firstItem="1wa-g1-CYk" firstAttribute="centerX" secondItem="FKb-hZ-g9P" secondAttribute="centerX" id="dHE-vb-p6C"/>
                             <constraint firstItem="eJq-Mw-etb" firstAttribute="top" secondItem="zdG-8Q-P4a" secondAttribute="bottom" constant="308" id="lJj-Ts-9T0">
-                                <variation key="widthClass=compact" constant="400"/>
+                                <variation key="widthClass=compact" constant="70"/>
                             </constraint>
                             <constraint firstItem="mTL-LN-TSI" firstAttribute="centerX" secondItem="1wa-g1-CYk" secondAttribute="centerX" id="qFA-Bc-xxU"/>
                         </constraints>
@@ -7915,7 +7916,57 @@ deserves a caddie.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02V-og-fTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="2741"/>
+            <point key="canvasLocation" x="558" y="2677"/>
+        </scene>
+        <!--Caddie Sign Up Web View Controller-->
+        <scene sceneID="qO8-Gv-Mwi">
+            <objects>
+                <viewController id="plZ-A4-IUi" customClass="CaddieSignUpWebViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1qG-y4-mgE"/>
+                        <viewControllerLayoutGuide type="bottom" id="BYf-H9-0sn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dvI-nR-ZOs">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WebView of LoopGolf.com for caddie sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIO-Fv-txE">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IIO-Fv-txE" firstAttribute="width" secondItem="dvI-nR-ZOs" secondAttribute="width" id="EC1-x6-cHq"/>
+                            <constraint firstItem="IIO-Fv-txE" firstAttribute="centerX" secondItem="dvI-nR-ZOs" secondAttribute="centerX" id="Pc1-Dy-dcO"/>
+                            <constraint firstItem="IIO-Fv-txE" firstAttribute="centerY" secondItem="dvI-nR-ZOs" secondAttribute="centerY" id="Vx5-Sn-Eut"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="IIO-Fv-txE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="EC1-x6-cHq"/>
+                                <exclude reference="Pc1-Dy-dcO"/>
+                                <exclude reference="Vx5-Sn-Eut"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="IIO-Fv-txE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="EC1-x6-cHq"/>
+                                <include reference="Pc1-Dy-dcO"/>
+                                <include reference="Vx5-Sn-Eut"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jFD-qi-E3H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="558" y="3424"/>
         </scene>
         <!--Change Email View Controller-->
         <scene sceneID="tDe-73-SMC">
@@ -8177,7 +8228,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXX-vt-Gak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="3555"/>
+            <point key="canvasLocation" x="315" y="4735"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="1Gn-TR-pBc">
@@ -8436,7 +8487,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXS-f1-0ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379.5" y="4558"/>
+            <point key="canvasLocation" x="-1069.5" y="4735"/>
         </scene>
         <!--Change Phone View Controller-->
         <scene sceneID="2ac-lk-bGo">
@@ -8641,7 +8692,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEN-Tj-LQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="4397"/>
+            <point key="canvasLocation" x="-376.5" y="4735"/>
         </scene>
         <!--Forgot Password-->
         <scene sceneID="Fvl-u2-gSR">
@@ -9512,7 +9563,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5P-tY-2fe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2536.5" y="1908"/>
+            <point key="canvasLocation" x="-2617.5" y="1908"/>
         </scene>
         <!--Sign Up Profile Picture View Controller-->
         <scene sceneID="xbL-Ge-evW">
@@ -9710,7 +9761,7 @@ deserves a caddie.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LC8-yo-fq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1774.5" y="1908"/>
+            <point key="canvasLocation" x="-1915.5" y="1908"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HIj-Iq-583">
@@ -9954,7 +10005,7 @@ deserves a caddie.</string>
                         <outlet property="confirmPasswordTextField" destination="y3w-HY-Nz1" id="Kvb-yP-TQ9"/>
                         <outlet property="createAccountButton" destination="rIX-1P-oSu" id="nmM-kG-ytw"/>
                         <outlet property="passwordTextField" destination="Ks2-cd-SgJ" id="oGc-2s-5M2"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toLandingPageSegue" id="LKs-4M-vDw"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="successfulSignUpSegue" id="LKs-4M-vDw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sJ-6N-JZ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -9970,7 +10021,7 @@ deserves a caddie.</string>
         <image name="MenuIcon" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iQl-E5-rpJ"/>
+        <segue reference="LKs-4M-vDw"/>
         <segue reference="b9o-6O-XVN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

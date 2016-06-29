@@ -24,7 +24,7 @@ class SignUpPasswordViewController: UITableViewController, UITextFieldDelegate {
         let alertController = UIAlertController(title: "Welcome to the club!", message:  "\n We're excited that you decided to become a part of the Loop community. Now let's get golfing!", preferredStyle: .Alert)
         alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         let doneAction = UIAlertAction(title: "Continue to Home", style: .Cancel) { (action) in
-            self.performSegueWithIdentifier("toLandingPageSegue", sender: self)
+            self.performSegueWithIdentifier("successfulSignUpSegue", sender: self)
         }
         alertController.addAction(doneAction)
         

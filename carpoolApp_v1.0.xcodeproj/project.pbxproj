@@ -19,6 +19,8 @@
 		C95385D01D10B8EE007BCA15 /* ConfirmReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385CF1D10B8EE007BCA15 /* ConfirmReservationViewController.swift */; };
 		C95385D31D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385D21D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift */; };
 		C95385D51D120CC5007BCA15 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385D41D120CC5007BCA15 /* ProfileSegmentedControl.swift */; };
+		C956FD221D2420BE00E7143B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD211D2420BE00E7143B /* Login.swift */; };
+		C956FD251D24289900E7143B /* CaddieSignUpWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD241D24289900E7143B /* CaddieSignUpWebViewController.swift */; };
 		C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A00B01CB5CB38008237B1 /* AppDelegate.swift */; };
 		C95A00B61CB5CB38008237B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B41CB5CB38008237B1 /* Main.storyboard */; };
 		C95A00B81CB5CB38008237B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B71CB5CB38008237B1 /* Assets.xcassets */; };
@@ -53,7 +55,7 @@
 		C9EE3F2A1D0A196C00F86EF2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F291D0A196C00F86EF2 /* ProfileViewController.swift */; };
 		C9EE3F2D1D0A1C5900F86EF2 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F2C1D0A1C5900F86EF2 /* AboutUsViewController.swift */; };
 		C9EE3F301D0A1EBC00F86EF2 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F2F1D0A1EBC00F86EF2 /* InviteViewController.swift */; };
-		C9EE3F331D0A1FBC00F86EF2 /* BecomeCaddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F321D0A1FBC00F86EF2 /* BecomeCaddyViewController.swift */; };
+		C9EE3F331D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F321D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift */; };
 		C9EE3F381D0A217F00F86EF2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,8 @@
 		C95385D21D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerConfirmReservationViewController.swift; path = ../ContainerConfirmReservationViewController.swift; sourceTree = "<group>"; };
 		C95385D41D120CC5007BCA15 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSegmentedControl.swift; path = ../ProfileSegmentedControl.swift; sourceTree = "<group>"; };
 		C95385DA1D133DE7007BCA15 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		C956FD211D2420BE00E7143B /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		C956FD241D24289900E7143B /* CaddieSignUpWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaddieSignUpWebViewController.swift; path = ../CaddieSignUpWebViewController.swift; sourceTree = "<group>"; };
 		C95A00AD1CB5CB38008237B1 /* carpoolApp_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpoolApp_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95A00B01CB5CB38008237B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95A00B51CB5CB38008237B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,7 +134,7 @@
 		C9EE3F291D0A196C00F86EF2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 		C9EE3F2C1D0A1C5900F86EF2 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		C9EE3F2F1D0A1EBC00F86EF2 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
-		C9EE3F321D0A1FBC00F86EF2 /* BecomeCaddyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BecomeCaddyViewController.swift; path = ../BecomeCaddyViewController.swift; sourceTree = "<group>"; };
+		C9EE3F321D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BecomeCaddieViewController.swift; path = ../BecomeCaddieViewController.swift; sourceTree = "<group>"; };
 		C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,8 +175,9 @@
 		C95385BD1D0F402D007BCA15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C994B4D41D15A853009848F2 /* User Information */,
 				C994B4D11D15A7E6009848F2 /* Available Caddies */,
+				C956FD231D2420C300E7143B /* Authentication */,
+				C994B4D41D15A853009848F2 /* User Information */,
 			);
 			name = Models;
 			path = ..;
@@ -207,6 +212,14 @@
 				C994B4C51D144A90009848F2 /* HelpAndSupportViewController.swift */,
 			);
 			name = "Settings Subviews";
+			sourceTree = "<group>";
+		};
+		C956FD231D2420C300E7143B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C956FD211D2420BE00E7143B /* Login.swift */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		C95A00A41CB5CB38008237B1 = {
@@ -380,7 +393,7 @@
 				C9EE3F2B1D0A1A2000F86EF2 /* My Profile */,
 				C9EE3F2E1D0A1CC600F86EF2 /* Our Story */,
 				C9EE3F311D0A1F1E00F86EF2 /* Invite Others */,
-				C9EE3F361D0A20EC00F86EF2 /* Become Caddy */,
+				C9EE3F361D0A20EC00F86EF2 /* Become Caddie */,
 				C9EE3F391D0A21DC00F86EF2 /* Settings */,
 				C990CF971D1B8F64005E05F2 /* Help Center */,
 				C91D13DC1D0E7DAE00D177B4 /* Other */,
@@ -417,12 +430,13 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		C9EE3F361D0A20EC00F86EF2 /* Become Caddy */ = {
+		C9EE3F361D0A20EC00F86EF2 /* Become Caddie */ = {
 			isa = PBXGroup;
 			children = (
-				C9EE3F321D0A1FBC00F86EF2 /* BecomeCaddyViewController.swift */,
+				C9EE3F321D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift */,
+				C956FD241D24289900E7143B /* CaddieSignUpWebViewController.swift */,
 			);
-			name = "Become Caddy";
+			name = "Become Caddie";
 			sourceTree = "<group>";
 		};
 		C9EE3F391D0A21DC00F86EF2 /* Settings */ = {
@@ -572,8 +586,9 @@
 				C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */,
 				C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */,
 				C9EE3F1A1D07383200F86EF2 /* StartReservationViewController.swift in Sources */,
-				C9EE3F331D0A1FBC00F86EF2 /* BecomeCaddyViewController.swift in Sources */,
+				C9EE3F331D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift in Sources */,
 				C994B4C81D145BDB009848F2 /* UpcomingReservationsViewController.swift in Sources */,
+				C956FD221D2420BE00E7143B /* Login.swift in Sources */,
 				C990CFA11D209AFE005E05F2 /* SignUpContactInfoViewController.swift in Sources */,
 				C990CFA91D21D2F2005E05F2 /* ReservationRecapCell.swift in Sources */,
 				C990CF9C1D207615005E05F2 /* ForgotPasswordViewController.swift in Sources */,
@@ -609,6 +624,7 @@
 				C990CFA71D219D93005E05F2 /* SignUpPasswordViewController.swift in Sources */,
 				C95A00E81CB5F9D6008237B1 /* LandingPageViewController.swift in Sources */,
 				C9EE3F201D090A5900F86EF2 /* CaddiesAvailableViewController.swift in Sources */,
+				C956FD251D24289900E7143B /* CaddieSignUpWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

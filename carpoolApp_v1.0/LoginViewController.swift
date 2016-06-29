@@ -21,13 +21,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var emailToValidate = String()
     var emailFieldHasEditedPrior = Bool()
-    var emailExistsInDatabase = Bool()
     var passwordToValidate = String()
-    var passwordExistsInDatabase = Bool()
-    var passwordMatchesEmailAccount = Bool()
+
     
     let userEmail = UserEmail()
     let userPassword = UserPassword()
+    let emailAuthentication = EmailAuthentication()
+    let passwordAuthentication = PasswordAuthentication()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -158,10 +158,7 @@ extension LoginViewController {
     }
     
     func validatedEmail() -> Bool {
-        // Query DB for email and return true/false from DB to set emailExistsInDatabase.
-        emailExistsInDatabase = true
-        
-        if (emailExistsInDatabase == true) {
+        if (emailAuthentication.emailExistsInDatabase == true) {
             return true
         } else {
             return false
@@ -169,12 +166,7 @@ extension LoginViewController {
     }
     
     func validatedPassword() -> Bool {
-        // Query DB for password and return true/false from DB to set passwordExistsInDatabase.
-        passwordExistsInDatabase = true
-        // Query DB to ensure email and password match for the account and return true/false from DB to set passwordMatchesEmailAccount.
-        passwordMatchesEmailAccount = false
-        
-        if (passwordExistsInDatabase == true && passwordMatchesEmailAccount == true) {
+        if (passwordAuthentication.passwordExistsInDatabase  == true && passwordAuthentication.passwordMatchesEmailAccount == true) {
             return true
         } else {
             return false
