@@ -21,6 +21,11 @@ class StartReservationViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
+    @IBAction func searchAvailableCaddiesButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,9 +42,6 @@ class StartReservationViewController: UIViewController {
         
         containerView.layer.cornerRadius = 8
         containerView.layer.masksToBounds = true
-        
-        bottomWhiteView.layer.cornerRadius = 8
-        bottomWhiteView.layer.masksToBounds = true
         
         findAvailableCaddiesButton.layer.cornerRadius = findAvailableCaddiesButton.bounds.height / 2
         

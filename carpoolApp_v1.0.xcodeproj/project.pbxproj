@@ -26,6 +26,8 @@
 		C956FD2B1D2431A000E7143B /* GolfCourseList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C956FD2A1D2431A000E7143B /* GolfCourseList.plist */; };
 		C956FD2D1D24338500E7143B /* CoursesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD2C1D24338500E7143B /* CoursesCollectionViewCell.swift */; };
 		C956FD2F1D24356600E7143B /* SessionForCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD2E1D24356600E7143B /* SessionForCourses.swift */; };
+		C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */; };
+		C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD331D256D8B00E7143B /* CalendarCell.swift */; };
 		C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A00B01CB5CB38008237B1 /* AppDelegate.swift */; };
 		C95A00B61CB5CB38008237B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B41CB5CB38008237B1 /* Main.storyboard */; };
 		C95A00B81CB5CB38008237B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B71CB5CB38008237B1 /* Assets.xcassets */; };
@@ -102,6 +104,8 @@
 		C956FD2A1D2431A000E7143B /* GolfCourseList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = GolfCourseList.plist; path = ../GolfCourseList.plist; sourceTree = "<group>"; };
 		C956FD2C1D24338500E7143B /* CoursesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C956FD2E1D24356600E7143B /* SessionForCourses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionForCourses.swift; sourceTree = "<group>"; };
+		C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerChooseDateViewController.swift; path = ../ContainerChooseDateViewController.swift; sourceTree = "<group>"; };
+		C956FD331D256D8B00E7143B /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		C95A00AD1CB5CB38008237B1 /* carpoolApp_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpoolApp_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95A00B01CB5CB38008237B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95A00B51CB5CB38008237B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -383,6 +387,8 @@
 			children = (
 				C9EE3F191D07383200F86EF2 /* StartReservationViewController.swift */,
 				C9EE3F1B1D075F0B00F86EF2 /* StartReservationContainerViewController.swift */,
+				C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */,
+				C956FD331D256D8B00E7143B /* CalendarCell.swift */,
 				C9EE3F1D1D08D3DB00F86EF2 /* ChooseServiceLevelSegmentedControl.swift */,
 			);
 			name = "Start Reservation";
@@ -641,6 +647,7 @@
 				C95385C61D0F5B86007BCA15 /* ContainerCaddiesAvailableViewController.swift in Sources */,
 				C990CF9E1D209512005E05F2 /* SignUpNameInfoViewController.swift in Sources */,
 				C994B4C21D143CC9009848F2 /* NotificationsSettingsViewController.swift in Sources */,
+				C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */,
 				C994B4C61D144A90009848F2 /* HelpAndSupportViewController.swift in Sources */,
 				C9EE3F2A1D0A196C00F86EF2 /* ProfileViewController.swift in Sources */,
 				C95385CC1D0F5B98007BCA15 /* Session.swift in Sources */,
@@ -648,6 +655,7 @@
 				C95A00E21CB5CBEB008237B1 /* SWRevealViewController.m in Sources */,
 				C95385CA1D0F5B93007BCA15 /* Caddies.swift in Sources */,
 				C956FD291D2430AB00E7143B /* ContainerReservationChooseCourseViewController.swift in Sources */,
+				C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */,
 				C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */,
 				C994B4CD1D145E23009848F2 /* NotificationsViewController.swift in Sources */,
 				C990CFA71D219D93005E05F2 /* SignUpPasswordViewController.swift in Sources */,

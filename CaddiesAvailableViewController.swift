@@ -12,6 +12,7 @@ class CaddiesAvailableViewController: UIViewController {
     
     @IBOutlet weak var popoverView: UIView!
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var containerView: UIView!
     
     @IBAction func cancelViewButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
@@ -19,6 +20,9 @@ class CaddiesAvailableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), NSFontAttributeName: UIFont.systemFontOfSize(20, weight: UIFontWeightRegular)]
+        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationBar.shadowImage = UIImage()
         
         popoverView.layer.cornerRadius = 8
         popoverView.layer.shadowColor = UIColor.blackColor().CGColor
@@ -27,8 +31,10 @@ class CaddiesAvailableViewController: UIViewController {
         popoverView.layer.shadowRadius = 5
         popoverView.layer.shouldRasterize = true
         
-        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationBar.shadowImage = UIImage()
+        containerView.layer.cornerRadius = 8
+        containerView.layer.masksToBounds = true
+        
+
         
     }
 }

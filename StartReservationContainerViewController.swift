@@ -41,7 +41,6 @@ class StartReservationContainerViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
-        chooseDateScrollView.contentSize.height = 690
         
         morningButtonSelected = true
         afternoonButtonSelected = false
@@ -54,7 +53,7 @@ class StartReservationContainerViewController: UITableViewController {
         self.view.sendSubviewToBack(imageView)
          */
  
-        self.chooseTimePicker.setValue(UIColor.blackColor(), forKey: "textColor")
+        self.chooseTimePicker.setValue(UIColor.whiteColor(), forKey: "textColor")
         chooseTimePicker.addTarget(self, action: "timeChangedValue:", forControlEvents: UIControlEvents.ValueChanged)
     }
     
@@ -70,10 +69,10 @@ class StartReservationContainerViewController: UITableViewController {
         if (indexPath.row == currentRow) {
             if (dateCellTapped == true) {
                 chooseDateDisclosureIndicator.transform = CGAffineTransformMakeScale(1, -1)
-                return (view.frame.height)
+                return (view.frame.height) - 88
             } else if (timeCellTapped == true) {
                 chooseTimeDisclosureIndicator.transform = CGAffineTransformMakeScale(1, -1)
-                return (view.frame.height) - 44
+                return (view.frame.height) - 88
             } else {
                 chooseDateDisclosureIndicator.transform = CGAffineTransformMakeScale(1, 1)
                 chooseTimeDisclosureIndicator.transform = CGAffineTransformMakeScale(1, 1)
