@@ -53,6 +53,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.tag = 1
         passwordTextField.tag = 2
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 }
 
 extension LoginViewController {

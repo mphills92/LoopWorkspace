@@ -30,8 +30,10 @@ class UserPhone {
 }
 
 class UserAccount {
+    var membershipHistory: String = "July 2016"
     var lifetimeRounds: Int = 22
     var currentCredit: Int = 4
+    var userHasCaddieAccount: Bool = false
 }
 
 class UserReferralCode {

@@ -28,6 +28,7 @@ class ConfirmReservationViewController: UIViewController {
         popoverView.layer.shadowRadius = 5
         popoverView.layer.shouldRasterize = true
         
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), NSFontAttributeName: UIFont.systemFontOfSize(20, weight: UIFontWeightRegular)]
         navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationBar.shadowImage = UIImage()
         

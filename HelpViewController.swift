@@ -17,9 +17,22 @@ class HelpViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //tableView.contentInset = UIEdgeInsetsMake(-25, 0, -25, 0)
+
         navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"HelveticaNeue-Light", size: 20)!]
+    }
+}
+
+extension HelpViewController {
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (section == 0) {
+            return 32
+        } else {
+            return 12
+        }
     }
 }

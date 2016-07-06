@@ -54,4 +54,24 @@ extension UpcomingReservationsViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let alertController = UIAlertController(title: "Reminders", message:  "\n Caddies have set their own communication privacy preferences. Some caddies choose to be available via email or text message while others do not. Options displayed below reflect these privacy preferences. Any deleted reservations will be final and subject to Loop's Terms of Service related to canceled reservations.", preferredStyle: .ActionSheet)
+        alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+        
+        let emailAction = UIAlertAction(title: "Email Your Caddie", style: .Default) { (action) in }
+        alertController.addAction(emailAction)
+        
+        let textAction = UIAlertAction(title: "Text Your Caddie", style: .Default) { (action) in }
+        alertController.addAction(textAction)
+        
+        let deleteAction = UIAlertAction(title: "Delete Reservation", style: .Destructive) { (action) in }
+        alertController.addAction(deleteAction)
+        
+        let doneAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in }
+        alertController.addAction(doneAction)
+        
+        self.presentViewController(alertController, animated: true) {
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+        }    }
 }
