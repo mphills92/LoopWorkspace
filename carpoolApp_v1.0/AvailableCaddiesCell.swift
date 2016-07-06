@@ -8,52 +8,31 @@
 
 import UIKit
 
-class AvailableCaddiesCell: UICollectionViewCell {
-  
+class AvailableCaddiesCell: UITableViewCell {
+
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var caddieNameLabel: UILabel!
+    @IBOutlet weak var membershipHistoryLabel: UILabel!
+    @IBOutlet weak var roundsHistoryLabel: UILabel!
+    @IBOutlet weak var handicapLabel: UILabel!
+    @IBOutlet weak var reserveButton: UIButton!
     
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var imageCoverView: UIView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var roundsCaddiedLabel: UILabel!
-    @IBOutlet weak var reserveCaddyButton: UIButton!
-    @IBOutlet weak var caddyHandicapLabel: UILabel!
- 
     
     var caddiesAvailable: Caddies? {
         didSet {
             if let caddiesAvailable = caddiesAvailable {
-                imageView.image = UIImage(named: "DefaultUserBannerProfileImage")
-                nameLabel.text = caddiesAvailable.name
-                roundsCaddiedLabel.text = "\(caddiesAvailable.rounds) Rounds Caddied"
-                reserveCaddyButton.layer.cornerRadius = reserveCaddyButton.bounds.height / 2
-                caddyHandicapLabel.text = "\(caddiesAvailable.handicap) Handicap"
+                caddieNameLabel.text = caddiesAvailable.name
+                membershipHistoryLabel.text = "Member since \(caddiesAvailable.membership)"
+                roundsHistoryLabel.text = "\(caddiesAvailable.rounds) rounds caddied"
+                handicapLabel.text = "Handicap: \(caddiesAvailable.handicap)"
                 
-                //imageView.image = caddiesAvailable.backgroundImage
+                reserveButton.layer.cornerRadius = reserveButton.bounds.height / 2
+                reserveButton.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
+                reserveButton.layer.borderWidth = 1
+                
+                profileImageView.layer.cornerRadius = 8
+                
             }
         }
     }
-    
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes!) {
-        super.applyLayoutAttributes(layoutAttributes)
-        
-        let standardHeight = UltravisualLayoutConstants.Cell.standardHeight
-        let featuredHeight = UltravisualLayoutConstants.Cell.featuredHeight
-        
-        let delta = 1 - ((featuredHeight - CGRectGetHeight(frame)) / (featuredHeight - standardHeight))
-        
-        let minAlpha: CGFloat = 0.25
-        let maxAlpha: CGFloat = 0.8
-        imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
-        
-        let scale = max(delta, 0.65)
-        //titleLabel.transform = CGAffineTransformMakeScale(scale, scale)
-        nameLabel.transform = CGAffineTransformMakeScale(scale, scale)
-        roundsCaddiedLabel.transform = CGAffineTransformMakeScale(scale, scale)
-        
-        caddyHandicapLabel.transform = CGAffineTransformMakeScale(scale, scale)
-        caddyHandicapLabel.alpha = delta
-        
-        reserveCaddyButton.alpha = delta
-    }
-  
 }

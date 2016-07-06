@@ -13,8 +13,8 @@
 		C95385C41D0F5B80007BCA15 /* CaddiesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C95385C31D0F5B80007BCA15 /* CaddiesList.plist */; };
 		C95385C61D0F5B86007BCA15 /* ContainerCaddiesAvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C51D0F5B86007BCA15 /* ContainerCaddiesAvailableViewController.swift */; };
 		C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */; };
-		C95385CA1D0F5B93007BCA15 /* Caddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C91D0F5B93007BCA15 /* Caddies.swift */; };
-		C95385CC1D0F5B98007BCA15 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385CB1D0F5B98007BCA15 /* Session.swift */; };
+		C95385CA1D0F5B93007BCA15 /* CoursesAndCaddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C91D0F5B93007BCA15 /* CoursesAndCaddies.swift */; };
+		C95385CC1D0F5B98007BCA15 /* SessionForCaddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385CB1D0F5B98007BCA15 /* SessionForCaddies.swift */; };
 		C95385CE1D0F5B9F007BCA15 /* AvailableCaddiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385CD1D0F5B9F007BCA15 /* AvailableCaddiesCell.swift */; };
 		C95385D01D10B8EE007BCA15 /* ConfirmReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385CF1D10B8EE007BCA15 /* ConfirmReservationViewController.swift */; };
 		C95385D31D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385D21D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift */; };
@@ -28,6 +28,9 @@
 		C956FD2F1D24356600E7143B /* SessionForCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD2E1D24356600E7143B /* SessionForCourses.swift */; };
 		C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */; };
 		C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD331D256D8B00E7143B /* CalendarCell.swift */; };
+		C956FD351D26BB5600E7143B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385DA1D133DE7007BCA15 /* EditProfileViewController.swift */; };
+		C956FD371D280AE900E7143B /* ChooseCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD361D280AE900E7143B /* ChooseCaddieViewController.swift */; };
+		C956FD391D280B1E00E7143B /* ContainerChooseCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD381D280B1E00E7143B /* ContainerChooseCaddieViewController.swift */; };
 		C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A00B01CB5CB38008237B1 /* AppDelegate.swift */; };
 		C95A00B61CB5CB38008237B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B41CB5CB38008237B1 /* Main.storyboard */; };
 		C95A00B81CB5CB38008237B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B71CB5CB38008237B1 /* Assets.xcassets */; };
@@ -90,8 +93,8 @@
 		C95385C31D0F5B80007BCA15 /* CaddiesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CaddiesList.plist; sourceTree = "<group>"; };
 		C95385C51D0F5B86007BCA15 /* ContainerCaddiesAvailableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerCaddiesAvailableViewController.swift; sourceTree = "<group>"; };
 		C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
-		C95385C91D0F5B93007BCA15 /* Caddies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Caddies.swift; path = carpoolApp_v1.0/Caddies.swift; sourceTree = "<group>"; };
-		C95385CB1D0F5B98007BCA15 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = carpoolApp_v1.0/Session.swift; sourceTree = "<group>"; };
+		C95385C91D0F5B93007BCA15 /* CoursesAndCaddies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoursesAndCaddies.swift; path = carpoolApp_v1.0/CoursesAndCaddies.swift; sourceTree = "<group>"; };
+		C95385CB1D0F5B98007BCA15 /* SessionForCaddies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionForCaddies.swift; path = carpoolApp_v1.0/SessionForCaddies.swift; sourceTree = "<group>"; };
 		C95385CD1D0F5B9F007BCA15 /* AvailableCaddiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvailableCaddiesCell.swift; path = carpoolApp_v1.0/AvailableCaddiesCell.swift; sourceTree = "<group>"; };
 		C95385CF1D10B8EE007BCA15 /* ConfirmReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmReservationViewController.swift; path = ../ConfirmReservationViewController.swift; sourceTree = "<group>"; };
 		C95385D21D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerConfirmReservationViewController.swift; path = ../ContainerConfirmReservationViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 		C956FD2E1D24356600E7143B /* SessionForCourses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionForCourses.swift; sourceTree = "<group>"; };
 		C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerChooseDateViewController.swift; path = ../ContainerChooseDateViewController.swift; sourceTree = "<group>"; };
 		C956FD331D256D8B00E7143B /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		C956FD361D280AE900E7143B /* ChooseCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCaddieViewController.swift; sourceTree = "<group>"; };
+		C956FD381D280B1E00E7143B /* ContainerChooseCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerChooseCaddieViewController.swift; sourceTree = "<group>"; };
 		C95A00AD1CB5CB38008237B1 /* carpoolApp_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpoolApp_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95A00B01CB5CB38008237B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95A00B51CB5CB38008237B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,7 +194,7 @@
 		C95385BD1D0F402D007BCA15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C994B4D11D15A7E6009848F2 /* Available Caddies */,
+				C994B4D11D15A7E6009848F2 /* Available Options */,
 				C956FD231D2420C300E7143B /* Authentication */,
 				C994B4D41D15A853009848F2 /* User Information */,
 			);
@@ -200,8 +205,8 @@
 		C95385C01D0F406B007BCA15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C95385CD1D0F5B9F007BCA15 /* AvailableCaddiesCell.swift */,
 				C956FD2C1D24338500E7143B /* CoursesCollectionViewCell.swift */,
+				C95385CD1D0F5B9F007BCA15 /* AvailableCaddiesCell.swift */,
 				C990CFA81D21D2F2005E05F2 /* ReservationRecapCell.swift */,
 			);
 			name = Views;
@@ -244,6 +249,16 @@
 				C956FD281D2430AB00E7143B /* ContainerReservationChooseCourseViewController.swift */,
 			);
 			name = "Choose Course";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C956FD3A1D280B4D00E7143B /* Choose Caddie */ = {
+			isa = PBXGroup;
+			children = (
+				C956FD361D280AE900E7143B /* ChooseCaddieViewController.swift */,
+				C956FD381D280B1E00E7143B /* ContainerChooseCaddieViewController.swift */,
+			);
+			name = "Choose Caddie";
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -364,14 +379,14 @@
 			name = "Edit Profile Subviews";
 			sourceTree = "<group>";
 		};
-		C994B4D11D15A7E6009848F2 /* Available Caddies */ = {
+		C994B4D11D15A7E6009848F2 /* Available Options */ = {
 			isa = PBXGroup;
 			children = (
-				C95385C91D0F5B93007BCA15 /* Caddies.swift */,
+				C95385C91D0F5B93007BCA15 /* CoursesAndCaddies.swift */,
 				C956FD2E1D24356600E7143B /* SessionForCourses.swift */,
-				C95385CB1D0F5B98007BCA15 /* Session.swift */,
+				C95385CB1D0F5B98007BCA15 /* SessionForCaddies.swift */,
 			);
-			name = "Available Caddies";
+			name = "Available Options";
 			sourceTree = "<group>";
 		};
 		C994B4D41D15A853009848F2 /* User Information */ = {
@@ -418,6 +433,7 @@
 				C9EE3F231D09D0E600F86EF2 /* Home */,
 				C956FD301D2448C900E7143B /* Choose Course */,
 				C9EE3F211D09D0C400F86EF2 /* Start Reservation */,
+				C956FD3A1D280B4D00E7143B /* Choose Caddie */,
 				C9EE3F221D09D0D900F86EF2 /* Available Caddies */,
 				C95385D11D10B8F7007BCA15 /* Confirm Reservation */,
 				C9EE3F2B1D0A1A2000F86EF2 /* My Profile */,
@@ -612,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C956FD351D26BB5600E7143B /* EditProfileViewController.swift in Sources */,
 				C990CF991D1F3FBA005E05F2 /* LoginViewController.swift in Sources */,
 				C956FD2F1D24356600E7143B /* SessionForCourses.swift in Sources */,
 				C95385D01D10B8EE007BCA15 /* ConfirmReservationViewController.swift in Sources */,
@@ -629,6 +646,7 @@
 				C9EE3F301D0A1EBC00F86EF2 /* InviteViewController.swift in Sources */,
 				C95385D31D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift in Sources */,
 				C98784881D15CE6600EED776 /* ChangePasswordViewController.swift in Sources */,
+				C956FD371D280AE900E7143B /* ChooseCaddieViewController.swift in Sources */,
 				C9EE3F1E1D08D3DB00F86EF2 /* ChooseServiceLevelSegmentedControl.swift in Sources */,
 				C956FD271D242E0B00E7143B /* ReservationChooseCourseViewController.swift in Sources */,
 				C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */,
@@ -636,6 +654,7 @@
 				C990CF961D1B8F56005E05F2 /* HelpViewController.swift in Sources */,
 				C994B4C41D144417009848F2 /* PrivacySettingsViewController.swift in Sources */,
 				C95385CE1D0F5B9F007BCA15 /* AvailableCaddiesCell.swift in Sources */,
+				C956FD391D280B1E00E7143B /* ContainerChooseCaddieViewController.swift in Sources */,
 				C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */,
 				C990CFA31D20A175005E05F2 /* SignUpProfilePictureViewController.swift in Sources */,
 				C95385D51D120CC5007BCA15 /* ProfileSegmentedControl.swift in Sources */,
@@ -650,10 +669,10 @@
 				C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */,
 				C994B4C61D144A90009848F2 /* HelpAndSupportViewController.swift in Sources */,
 				C9EE3F2A1D0A196C00F86EF2 /* ProfileViewController.swift in Sources */,
-				C95385CC1D0F5B98007BCA15 /* Session.swift in Sources */,
+				C95385CC1D0F5B98007BCA15 /* SessionForCaddies.swift in Sources */,
 				C9EE3F1C1D075F0B00F86EF2 /* StartReservationContainerViewController.swift in Sources */,
 				C95A00E21CB5CBEB008237B1 /* SWRevealViewController.m in Sources */,
-				C95385CA1D0F5B93007BCA15 /* Caddies.swift in Sources */,
+				C95385CA1D0F5B93007BCA15 /* CoursesAndCaddies.swift in Sources */,
 				C956FD291D2430AB00E7143B /* ContainerReservationChooseCourseViewController.swift in Sources */,
 				C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */,
 				C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */,

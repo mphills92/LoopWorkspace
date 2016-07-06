@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Caddies: Session {
+class Caddies: SessionForCaddies {
     class func caddiesAvailable()  -> [Caddies] {
         var caddiesList = [Caddies]()
         if let URL = NSBundle.mainBundle().URLForResource("CaddiesList", withExtension: "plist") {

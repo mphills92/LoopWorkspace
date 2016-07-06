@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Session {
+class SessionForCaddies {
  
     /*
   var title: String
@@ -20,7 +20,7 @@ class Session {
     
     var name: String
     var rounds: Int
-    var rating: String
+    var membership: String
     var handicap: Float
     //var backgroundImage: UIImage
   
@@ -32,10 +32,10 @@ class Session {
   }
  */
   
-    init(name: String, rounds: Int, rating: String, handicap: Float) {
+    init(name: String, rounds: Int, membership: String, handicap: Float) {
         self.name = name
         self.rounds = rounds
-        self.rating = rating
+        self.membership = membership
         self.handicap = handicap
         //self.backgroundImage = backgroundImage
     }
@@ -62,11 +62,11 @@ class Session {
     convenience init(dictionary: NSDictionary) {
         let name = dictionary["Name"] as? String
         let rounds = dictionary["Rounds"] as? Int
-        let rating = dictionary["Rating"] as? String
+        let membership = dictionary["Membership"] as? String
         let handicap = dictionary["Handicap"] as? Float
         //let backgroundName = dictionary["Background"] as? String
         //let backgroundImage = UIImage(named: backgroundName!)
-        self.init(name: name!, rounds: rounds!, rating: rating!, handicap: handicap!)
+        self.init(name: name!, rounds: rounds!, membership: membership!, handicap: handicap!)
     }
 
 }

@@ -9,8 +9,8 @@
 		<integer>14</integer>
 		<key>Handicap</key>
 		<real>3.5</real>
-		<key>Rating</key>
-		<string>4.9 stars</string>
+		<key>Membership</key>
+		<string>July 2016</string>
 		<key>Background</key>
 		<string>Inspiration-01</string>
 	</dict>
@@ -21,8 +21,8 @@
 		<integer>7</integer>
 		<key>Handicap</key>
 		<integer>2</integer>
-		<key>Rating</key>
-		<string>4.7 stars</string>
+		<key>Membership</key>
+		<string>August 2016</string>
 		<key>Background</key>
 		<string>Inspiration-02</string>
 	</dict>
@@ -33,8 +33,8 @@
 		<integer>3</integer>
 		<key>Handicap</key>
 		<integer>6</integer>
-		<key>Rating</key>
-		<string>4.4 stars</string>
+		<key>Membership</key>
+		<string>July 2016</string>
 		<key>Background</key>
 		<string>Inspiration-03</string>
 	</dict>
@@ -45,8 +45,8 @@
 		<integer>22</integer>
 		<key>Handicap</key>
 		<real>2.4</real>
-		<key>Rating</key>
-		<string>4.1 stars</string>
+		<key>Membership</key>
+		<string>July 2016</string>
 		<key>Background</key>
 		<string>Inspiration-04</string>
 	</dict>
@@ -57,8 +57,8 @@
 		<integer>16</integer>
 		<key>Handicap</key>
 		<real>12.8</real>
-		<key>Rating</key>
-		<string>3.6 stars</string>
+		<key>Membership</key>
+		<string>August 2016</string>
 		<key>Background</key>
 		<string>Inspiration-05</string>
 	</dict>
@@ -69,8 +69,8 @@
 		<integer>1</integer>
 		<key>Handicap</key>
 		<real>7.9</real>
-		<key>Rating</key>
-		<string>3.2 stars</string>
+		<key>Membership</key>
+		<string>July 2016</string>
 		<key>Background</key>
 		<string>Inspriation-06</string>
 	</dict>
