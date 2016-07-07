@@ -35,10 +35,12 @@ class LandingPageViewController: UIViewController {
         self.view.sendSubviewToBack(imageViewBackground)
         
         
-        findCaddyButton.layer.borderColor = UIColor.whiteColor().CGColor
-        findCaddyButton.layer.borderWidth = 1
+        //findCaddyButton.layer.borderColor = UIColor.whiteColor().CGColor
+        //findCaddyButton.layer.borderWidth = 1
         findCaddyButton.layer.cornerRadius = findCaddyButton.bounds.height / 2
-        findCaddyButton.layer.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.2).CGColor
+        //findCaddyButton.layer.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.3).CGColor
+        findCaddyButton.layer.backgroundColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
+        findCaddyButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     
         navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]

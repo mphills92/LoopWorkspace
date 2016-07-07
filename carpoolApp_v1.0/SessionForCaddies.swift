@@ -1,10 +1,11 @@
 //
-//  Session.swift
-//  RWDevCon
+//  SessionForCaddies.swift
+//  carpoolApp_v1.0
 //
-//  Created by Mic Pringle on 02/03/2015.
-//  Copyright (c) 2015 Ray Wenderlich. All rights reserved.
+//  Created by Matt Hills on 7/6/16.
+//  Copyright © 2016 Matthew Hills. All rights reserved.
 //
+
 
 import UIKit
 
@@ -39,25 +40,6 @@ class SessionForCaddies {
         self.handicap = handicap
         //self.backgroundImage = backgroundImage
     }
-    
-    /*
-  init(title: String, speaker: String, room: String, time: String, backgroundImage: UIImage) {
-    self.title = title
-    self.speaker = speaker
-    self.room = room
-    self.time = time
-    self.backgroundImage = backgroundImage
-  }
-  
-  convenience init(dictionary: NSDictionary) {
-    let title = dictionary["Title"] as? String
-    let speaker = dictionary["Speaker"] as? String
-    let room = dictionary["Room"] as? String
-    let time = dictionary["Time"] as? String
-    let backgroundName = dictionary["Background"] as? String
-    //let backgroundImage = UIImage(named: backgroundName!)
-    self.init(title: title!, speaker: speaker!, room: room!, time: time!, backgroundImage: backgroundImage!.decompressedImage)
-  }*/
     
     convenience init(dictionary: NSDictionary) {
         let name = dictionary["Name"] as? String

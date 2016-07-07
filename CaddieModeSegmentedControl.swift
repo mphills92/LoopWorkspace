@@ -54,7 +54,7 @@ import UIKit
             label.text = items[index - 1]
             label.textAlignment = .Center
             label.textColor = UIColor.whiteColor()
-            label.font = label.font.fontWithSize(14)
+            label.font = UIFont(name: "HelveticaNeue-Light", size: 14)
             self.addSubview(label)
             labels.append(label)
         }

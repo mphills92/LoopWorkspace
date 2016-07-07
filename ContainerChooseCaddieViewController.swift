@@ -10,6 +10,7 @@ import UIKit
 
 class ContainerChooseCaddieViewController: UITableViewController {
     
+    // Dummy data.
     var caddiesFound = true
     
     var currentRow = Int()
@@ -24,10 +25,7 @@ class ContainerChooseCaddieViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
-        
-
+        tableView.contentInset = UIEdgeInsetsMake(-28, 0, -28, 0)
     }
 }
 
@@ -35,7 +33,6 @@ extension ContainerChooseCaddieViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numOfSections: Int = 0
-        
         if (caddiesFound == true) {
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
             numOfSections = 1
@@ -57,9 +54,10 @@ extension ContainerChooseCaddieViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! AvailableCaddiesCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ChooseAvailableCaddiesCell
         
         cell.caddiesAvailable = caddiesAvailable[indexPath.item]
+        
         return cell
     }
     

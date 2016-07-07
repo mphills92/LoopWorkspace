@@ -20,7 +20,8 @@ class CaddiesAvailableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), NSFontAttributeName: UIFont.systemFontOfSize(20, weight: UIFontWeightRegular)]
+        //navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), NSFontAttributeName: UIFont.systemFontOfSize(20, weight: UIFontWeightRegular)]
+        navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 22)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
         navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationBar.shadowImage = UIImage()
         
@@ -33,8 +34,6 @@ class CaddiesAvailableViewController: UIViewController {
         
         containerView.layer.cornerRadius = 8
         containerView.layer.masksToBounds = true
-        
-
-        
     }
 }
+

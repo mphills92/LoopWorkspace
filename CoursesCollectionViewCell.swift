@@ -24,8 +24,9 @@ class CoursesCollectionCell: UICollectionViewCell {
                 courseNameLabel.text = coursesAvailable.name
                 membershipHistoryLabel.text = "Member since \(coursesAvailable.membershipHistory)"
                 chooseCourseButton.layer.cornerRadius = chooseCourseButton.bounds.height / 2
-                chooseCourseButton.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
+                chooseCourseButton.layer.borderColor = UIColor.whiteColor().CGColor
                 chooseCourseButton.layer.borderWidth = 1
+                chooseCourseButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.25).CGColor
                 //imageView.image = caddiesAvailable.backgroundImage
             }
         }

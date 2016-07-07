@@ -21,7 +21,6 @@ class Caddies: SessionForCaddies {
         }
         return caddiesList
     }
-  
 }
 
 class Courses: SessionForCourses {

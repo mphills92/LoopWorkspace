@@ -11,6 +11,7 @@ import UIKit
 class ContainerChooseDateViewController: UITableViewController {
     
     let dummyMonthData = ["JULY 2016", "AUGUST 2016", "SEPTEMBER 2016"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

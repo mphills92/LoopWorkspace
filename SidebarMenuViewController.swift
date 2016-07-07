@@ -29,7 +29,7 @@ extension SidebarMenuViewController {
             caddieMenuOptionButton.setTitle("Become a Caddie", forState: .Normal)
         } else {
             caddieMenuOptionButton.setTitle("Go To Caddie Mode", forState: .Normal)
-            caddieMenuOptionButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 16)
+            caddieMenuOptionButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 14)
             caddieMenuOptionButton.backgroundColor = UIColor.clearColor()
             caddieMenuOptionButton.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
             caddieMenuOptionButton.layer.borderWidth = 1

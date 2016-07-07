@@ -16,7 +16,7 @@ class CaddyHistoryViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.contentInset = UIEdgeInsetsMake(-35, 0, -35, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
     }
 }
 

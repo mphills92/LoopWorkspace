@@ -231,7 +231,7 @@
                                     <constraint firstAttribute="width" constant="150" id="BIh-1M-kGc"/>
                                     <constraint firstAttribute="height" constant="30" id="pxd-Jr-LJb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -451,7 +451,7 @@
                                         <variation key="widthClass=compact" constant="30"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title="Start your reservation">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -512,10 +512,10 @@ deserves a caddie.</string>
                         <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ddk-9v-fz2" firstAttribute="top" secondItem="S6d-dO-dyG" secondAttribute="bottom" constant="32" id="0AZ-8D-pKH">
-                                <variation key="widthClass=compact" constant="15"/>
+                                <variation key="widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="S6d-dO-dyG" secondAttribute="trailing" id="24b-tP-ZWO">
-                                <variation key="widthClass=compact" constant="20"/>
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="Jf7-cY-RY9" firstAttribute="top" secondItem="3nB-ee-omD" secondAttribute="bottom" constant="8" id="6jj-Hr-kJh">
                                 <variation key="widthClass=compact" constant="10"/>
@@ -542,7 +542,7 @@ deserves a caddie.</string>
                                 <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="S6d-dO-dyG" firstAttribute="leading" secondItem="IX8-h3-AiC" secondAttribute="leadingMargin" constant="19" id="u2q-6S-p37">
-                                <variation key="widthClass=compact" constant="20"/>
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -643,7 +643,7 @@ deserves a caddie.</string>
                                                 <variation key="widthClass=compact" constant="190"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <state key="normal" title="Search available caddies">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -653,7 +653,8 @@ deserves a caddie.</string>
                                                 <exclude reference="VC6-bB-Qrj"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="90" y="481" width="190" height="30"/>
                                             <mask key="constraints">
                                                 <include reference="K6W-zg-glM"/>
                                                 <include reference="VC6-bB-Qrj"/>
@@ -671,7 +672,7 @@ deserves a caddie.</string>
                                             <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="Choose Date &amp; Time" id="bfP-3P-Rmz">
+                                            <navigationItem title="Choose Your Options" id="bfP-3P-Rmz">
                                                 <barButtonItem key="leftBarButtonItem" systemItem="stop" id="es7-cy-bTk">
                                                     <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
@@ -779,13 +780,13 @@ deserves a caddie.</string>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="QRC-7C-tTc" secondAttribute="leading" id="3nG-eg-eFp">
-                                <variation key="widthClass=compact" constant="5"/>
+                                <variation key="widthClass=compact" constant="4"/>
                             </constraint>
                             <constraint firstItem="QRC-7C-tTc" firstAttribute="top" secondItem="hZ5-vq-X6f" secondAttribute="bottom" constant="64" id="NPn-Ct-0hI">
                                 <variation key="widthClass=compact" constant="59"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="QRC-7C-tTc" secondAttribute="trailing" id="O5W-ZI-sNL">
-                                <variation key="widthClass=compact" constant="-5"/>
+                                <variation key="widthClass=compact" constant="-4"/>
                             </constraint>
                             <constraint firstItem="gdl-9m-PSG" firstAttribute="top" secondItem="QRC-7C-tTc" secondAttribute="bottom" constant="20" id="gbe-UH-G2b"/>
                         </constraints>
@@ -891,7 +892,7 @@ deserves a caddie.</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ril-ax-rFg" firstAttribute="leading" secondItem="6kL-XH-zoe" secondAttribute="leadingMargin" constant="10" id="7sA-YH-AzT">
-                                                    <variation key="widthClass=compact" constant="-10"/>
+                                                    <variation key="widthClass=compact" constant="-8"/>
                                                 </constraint>
                                                 <constraint firstItem="ike-U4-iKz" firstAttribute="top" secondItem="6kL-XH-zoe" secondAttribute="topMargin" constant="3" identifier="id18" id="DgX-Vv-4Yh"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ozH-qk-g1I" secondAttribute="trailing" constant="56" identifier="id24" id="aOG-Zi-0b1">
@@ -901,7 +902,7 @@ deserves a caddie.</string>
                                                     <variation key="widthClass=compact" constant="36"/>
                                                 </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Ril-ax-rFg" secondAttribute="trailing" constant="17" id="et7-tK-8Re">
-                                                    <variation key="widthClass=compact" constant="-10"/>
+                                                    <variation key="widthClass=compact" constant="-8"/>
                                                 </constraint>
                                                 <constraint firstItem="ike-U4-iKz" firstAttribute="leading" secondItem="6kL-XH-zoe" secondAttribute="leadingMargin" constant="14" identifier="id19" id="gpg-T4-vtn">
                                                     <variation key="widthClass=compact" constant="10"/>
@@ -1123,7 +1124,9 @@ deserves a caddie.</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="w0t-oz-gKg"/>
+                                                        <constraint firstAttribute="height" constant="30" id="w0t-oz-gKg">
+                                                            <variation key="widthClass=compact" constant="30"/>
+                                                        </constraint>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -1189,7 +1192,7 @@ deserves a caddie.</string>
         <scene sceneID="e8F-ZK-3fg">
             <objects>
                 <tableViewController id="5Y0-dh-JlS" customClass="ContainerChooseDateViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="200" sectionHeaderHeight="18" sectionFooterHeight="18" id="4U3-ol-kcc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="300" sectionHeaderHeight="18" sectionFooterHeight="18" id="4U3-ol-kcc">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1203,20 +1206,46 @@ deserves a caddie.</string>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONTH LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWQ-cZ-l1Y">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="I8Q-l1-SxZ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="I8Q-l1-SxZ"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="I8Q-l1-SxZ"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gA-xg-yzr">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="257" id="LXb-05-Mmn">
+                                                    <variation key="widthClass=compact" constant="254"/>
+                                                </constraint>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="LXb-05-Mmn"/>
+                                                </mask>
+                                            </variation>
                                             <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="18" y="35" width="204" height="257"/>
+                                                <rect key="frame" x="18" y="35" width="368" height="254"/>
+                                                <mask key="constraints">
+                                                    <include reference="LXb-05-Mmn"/>
+                                                </mask>
                                             </variation>
                                         </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="3gA-xg-yzr" firstAttribute="top" secondItem="hWQ-cZ-l1Y" secondAttribute="bottom" constant="8" id="03g-9b-Lb5">
-                                            <variation key="widthClass=compact" constant="10"/>
+                                            <variation key="widthClass=compact" constant="7"/>
                                         </constraint>
                                         <constraint firstItem="hWQ-cZ-l1Y" firstAttribute="leading" secondItem="w7Q-Fs-dTf" secondAttribute="leadingMargin" constant="15" id="Gs9-0E-7us">
                                             <variation key="widthClass=compact" constant="10"/>
@@ -1253,7 +1282,7 @@ deserves a caddie.</string>
                                             <include reference="03g-9b-Lb5"/>
                                             <include reference="I9c-MX-4Kd"/>
                                             <include reference="gIW-6q-hjm"/>
-                                            <include reference="iwt-P5-9qy"/>
+                                            <exclude reference="iwt-P5-9qy"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -1339,7 +1368,7 @@ deserves a caddie.</string>
                                                         <variation key="widthClass=compact" constant="25"/>
                                                     </constraint>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
@@ -1897,8 +1926,8 @@ deserves a caddie.</string>
                                                     <variation key="widthClass=compact" constant="25"/>
                                                 </constraint>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                                            <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -1908,27 +1937,6 @@ deserves a caddie.</string>
                                             <variation key="widthClass=compact">
                                                 <mask key="constraints">
                                                     <include reference="UDG-lx-QBC"/>
-                                                </mask>
-                                            </variation>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member since July 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xu-df-wxv">
-                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="BXB-PI-wpG">
-                                                    <variation key="widthClass=compact" constant="15"/>
-                                                </constraint>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="BXB-PI-wpG"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="constraints">
-                                                    <include reference="BXB-PI-wpG"/>
                                                 </mask>
                                             </variation>
                                         </label>
@@ -1974,6 +1982,27 @@ deserves a caddie.</string>
                                                 </mask>
                                             </variation>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member since July 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xu-df-wxv">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="BXB-PI-wpG">
+                                                    <variation key="widthClass=compact" constant="15"/>
+                                                </constraint>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="BXB-PI-wpG"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="BXB-PI-wpG"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ECQ-Jd-bVX" firstAttribute="top" secondItem="P6P-xM-7or" secondAttribute="top" id="0QU-AE-tAk"/>
@@ -1993,15 +2022,21 @@ deserves a caddie.</string>
                                         <constraint firstItem="ECQ-Jd-bVX" firstAttribute="leading" secondItem="P6P-xM-7or" secondAttribute="trailing" constant="16" id="NH1-Rf-gkv">
                                             <variation key="widthClass=compact" constant="10"/>
                                         </constraint>
-                                        <constraint firstItem="uZ4-ey-PXl" firstAttribute="top" secondItem="5Xu-df-wxv" secondAttribute="bottom" constant="2" id="TRJ-Zn-X7u"/>
-                                        <constraint firstItem="zh6-ki-i1H" firstAttribute="top" secondItem="uZ4-ey-PXl" secondAttribute="bottom" constant="2" id="YTs-PU-Obn"/>
+                                        <constraint firstItem="uZ4-ey-PXl" firstAttribute="top" secondItem="5Xu-df-wxv" secondAttribute="bottom" constant="2" id="TRJ-Zn-X7u">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                        <constraint firstItem="zh6-ki-i1H" firstAttribute="top" secondItem="uZ4-ey-PXl" secondAttribute="bottom" constant="2" id="YTs-PU-Obn">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstAttribute="trailingMargin" secondItem="vbk-3p-tBy" secondAttribute="trailing" constant="32" id="exo-dI-X02">
                                             <variation key="widthClass=compact" constant="20"/>
                                         </constraint>
                                         <constraint firstItem="vbk-3p-tBy" firstAttribute="leading" secondItem="2US-6R-0Jn" secondAttribute="leadingMargin" constant="12" id="fHE-FN-Pyx">
                                             <variation key="widthClass=compact" constant="10"/>
                                         </constraint>
-                                        <constraint firstItem="5Xu-df-wxv" firstAttribute="top" secondItem="ECQ-Jd-bVX" secondAttribute="bottom" constant="3" id="fJB-4r-v5Z"/>
+                                        <constraint firstItem="5Xu-df-wxv" firstAttribute="top" secondItem="ECQ-Jd-bVX" secondAttribute="bottom" constant="3" id="fJB-4r-v5Z">
+                                            <variation key="widthClass=compact" constant="2"/>
+                                        </constraint>
                                         <constraint firstItem="1Jz-jx-DLx" firstAttribute="centerX" secondItem="CcS-Sg-bBJ" secondAttribute="centerX" id="hWa-TS-wJO"/>
                                         <constraint firstItem="CcS-Sg-bBJ" firstAttribute="centerX" secondItem="vbk-3p-tBy" secondAttribute="centerX" id="kVp-44-LRc"/>
                                         <constraint firstItem="5Xu-df-wxv" firstAttribute="leading" secondItem="ECQ-Jd-bVX" secondAttribute="leading" id="oLM-iR-6sk"/>
@@ -2014,9 +2049,9 @@ deserves a caddie.</string>
                                             <exclude reference="1Jz-jx-DLx"/>
                                             <exclude reference="P6P-xM-7or"/>
                                             <exclude reference="ECQ-Jd-bVX"/>
-                                            <exclude reference="5Xu-df-wxv"/>
                                             <exclude reference="uZ4-ey-PXl"/>
                                             <exclude reference="zh6-ki-i1H"/>
+                                            <exclude reference="5Xu-df-wxv"/>
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="2zG-Gp-8jU"/>
@@ -2046,9 +2081,9 @@ deserves a caddie.</string>
                                             <include reference="1Jz-jx-DLx"/>
                                             <include reference="P6P-xM-7or"/>
                                             <include reference="ECQ-Jd-bVX"/>
-                                            <include reference="5Xu-df-wxv"/>
                                             <include reference="uZ4-ey-PXl"/>
                                             <include reference="zh6-ki-i1H"/>
+                                            <include reference="5Xu-df-wxv"/>
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="2zG-Gp-8jU"/>
@@ -2199,8 +2234,8 @@ deserves a caddie.</string>
                                                     <variation key="widthClass=compact" constant="25"/>
                                                 </constraint>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                                            <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -2283,11 +2318,15 @@ deserves a caddie.</string>
                                             <variation key="widthClass=compact" constant="10"/>
                                         </constraint>
                                         <constraint firstItem="Abl-Ii-mjX" firstAttribute="centerX" secondItem="uGW-Ey-SFn" secondAttribute="centerX" id="APX-eL-QmO"/>
-                                        <constraint firstItem="02Q-ND-wIV" firstAttribute="top" secondItem="8eN-Tx-wmX" secondAttribute="bottom" constant="2" id="Ahr-uf-Ubv"/>
+                                        <constraint firstItem="02Q-ND-wIV" firstAttribute="top" secondItem="8eN-Tx-wmX" secondAttribute="bottom" constant="2" id="Ahr-uf-Ubv">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstItem="UAD-uB-uQf" firstAttribute="leading" secondItem="f1t-yL-F2m" secondAttribute="leadingMargin" constant="12" id="Gfj-qU-Thu">
                                             <variation key="widthClass=compact" constant="10"/>
                                         </constraint>
-                                        <constraint firstItem="uLk-fj-fhS" firstAttribute="top" secondItem="02Q-ND-wIV" secondAttribute="bottom" constant="2" id="Ij8-4J-ywV"/>
+                                        <constraint firstItem="uLk-fj-fhS" firstAttribute="top" secondItem="02Q-ND-wIV" secondAttribute="bottom" constant="2" id="Ij8-4J-ywV">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstItem="bHO-5G-g9j" firstAttribute="top" secondItem="1uy-Mr-St3" secondAttribute="top" id="L2g-nH-lab"/>
                                         <constraint firstItem="1uy-Mr-St3" firstAttribute="centerY" secondItem="f1t-yL-F2m" secondAttribute="centerY" id="LeN-O6-wou"/>
                                         <constraint firstItem="1uy-Mr-St3" firstAttribute="leading" secondItem="f1t-yL-F2m" secondAttribute="leadingMargin" constant="5" id="QP0-2c-YPB"/>
@@ -2295,7 +2334,9 @@ deserves a caddie.</string>
                                         <constraint firstItem="UAD-uB-uQf" firstAttribute="centerY" secondItem="f1t-yL-F2m" secondAttribute="centerY" id="UUb-8k-dro">
                                             <variation key="widthClass=compact" constant="-30"/>
                                         </constraint>
-                                        <constraint firstItem="8eN-Tx-wmX" firstAttribute="top" secondItem="bHO-5G-g9j" secondAttribute="bottom" constant="3" id="Upj-gQ-eNh"/>
+                                        <constraint firstItem="8eN-Tx-wmX" firstAttribute="top" secondItem="bHO-5G-g9j" secondAttribute="bottom" constant="3" id="Upj-gQ-eNh">
+                                            <variation key="widthClass=compact" constant="2"/>
+                                        </constraint>
                                         <constraint firstItem="02Q-ND-wIV" firstAttribute="leading" secondItem="8eN-Tx-wmX" secondAttribute="leading" id="Zgs-zX-PXj"/>
                                         <constraint firstItem="Abl-Ii-mjX" firstAttribute="centerY" secondItem="f1t-yL-F2m" secondAttribute="centerY" id="c75-Gs-met">
                                             <variation key="widthClass=compact" constant="32"/>
@@ -2547,8 +2588,8 @@ deserves a caddie.</string>
                                                             <variation key="widthClass=compact" constant="25"/>
                                                         </constraint>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                                                    <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -2629,9 +2670,13 @@ deserves a caddie.</string>
                                                 <constraint firstItem="SAn-oN-Z2n" firstAttribute="centerY" secondItem="h1q-GT-fqL" secondAttribute="centerY" id="1ij-j0-RZf">
                                                     <variation key="widthClass=compact" constant="32"/>
                                                 </constraint>
-                                                <constraint firstItem="Zoz-Iv-XnU" firstAttribute="top" secondItem="pPe-Sa-6Gi" secondAttribute="bottom" constant="2" id="3uz-5g-AF5"/>
+                                                <constraint firstItem="Zoz-Iv-XnU" firstAttribute="top" secondItem="pPe-Sa-6Gi" secondAttribute="bottom" constant="2" id="3uz-5g-AF5">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
                                                 <constraint firstItem="pPe-Sa-6Gi" firstAttribute="leading" secondItem="9bG-LQ-mQF" secondAttribute="leading" id="7lb-Re-1Xp"/>
-                                                <constraint firstItem="btv-Fb-o8w" firstAttribute="top" secondItem="Zoz-Iv-XnU" secondAttribute="bottom" constant="2" id="8mv-e5-qeR"/>
+                                                <constraint firstItem="btv-Fb-o8w" firstAttribute="top" secondItem="Zoz-Iv-XnU" secondAttribute="bottom" constant="2" id="8mv-e5-qeR">
+                                                    <variation key="widthClass=compact" constant="0.0"/>
+                                                </constraint>
                                                 <constraint firstAttribute="trailingMargin" secondItem="G8w-tc-3oh" secondAttribute="trailing" constant="32" id="GcE-8G-m7M">
                                                     <variation key="widthClass=compact" constant="20"/>
                                                 </constraint>
@@ -2640,7 +2685,9 @@ deserves a caddie.</string>
                                                 <constraint firstItem="9bG-LQ-mQF" firstAttribute="leading" secondItem="H2K-fS-sgt" secondAttribute="trailing" constant="16" id="Rzk-Su-mTU">
                                                     <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
-                                                <constraint firstItem="pPe-Sa-6Gi" firstAttribute="top" secondItem="9bG-LQ-mQF" secondAttribute="bottom" constant="3" id="UCH-5r-hrb"/>
+                                                <constraint firstItem="pPe-Sa-6Gi" firstAttribute="top" secondItem="9bG-LQ-mQF" secondAttribute="bottom" constant="3" id="UCH-5r-hrb">
+                                                    <variation key="widthClass=compact" constant="2"/>
+                                                </constraint>
                                                 <constraint firstItem="H2K-fS-sgt" firstAttribute="leading" secondItem="h1q-GT-fqL" secondAttribute="leadingMargin" constant="5" id="W59-F5-PGd"/>
                                                 <constraint firstItem="SAn-oN-Z2n" firstAttribute="centerX" secondItem="qCE-3V-WNi" secondAttribute="centerX" id="ejX-cW-6pJ"/>
                                                 <constraint firstItem="qCE-3V-WNi" firstAttribute="centerY" secondItem="h1q-GT-fqL" secondAttribute="centerY" id="gn7-so-4mt">
@@ -3076,7 +3123,7 @@ deserves a caddie.</string>
                                     <constraint firstAttribute="height" constant="30" id="deq-3Q-vVK"/>
                                     <constraint firstAttribute="width" constant="260" id="tvo-lJ-WT1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="About Us">
                                     <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -3102,7 +3149,7 @@ deserves a caddie.</string>
                                     <constraint firstAttribute="height" constant="30" id="LWL-xz-sMC"/>
                                     <constraint firstAttribute="width" constant="260" id="XOK-kQ-Vaq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Invite Others">
                                     <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -3128,7 +3175,7 @@ deserves a caddie.</string>
                                     <constraint firstAttribute="width" constant="260" id="7HS-CA-OY8"/>
                                     <constraint firstAttribute="height" constant="30" id="vDW-iT-LJf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Settings">
                                     <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -3156,7 +3203,7 @@ deserves a caddie.</string>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="30" id="xOV-id-Flh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Profile">
                                     <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -3230,7 +3277,7 @@ deserves a caddie.</string>
                                     <constraint firstAttribute="width" constant="260" id="nDb-Oh-J5G"/>
                                     <constraint firstAttribute="height" constant="30" id="oB9-JK-pcb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Help">
                                     <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -3258,7 +3305,7 @@ deserves a caddie.</string>
                                         <variation key="widthClass=compact" constant="200"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Become A Caddie">
                                     <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -3307,7 +3354,7 @@ deserves a caddie.</string>
                                 <variation key="widthClass=compact" constant="53"/>
                             </constraint>
                             <constraint firstItem="HH2-fD-f3H" firstAttribute="top" secondItem="uam-qK-xNR" secondAttribute="bottom" constant="20" id="RMf-vZ-IfC">
-                                <variation key="widthClass=compact" constant="15"/>
+                                <variation key="widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="i9j-pz-MGz" firstAttribute="centerX" secondItem="6NN-a7-gNn" secondAttribute="centerX" id="XOE-Ht-OZx"/>
                             <constraint firstItem="uam-qK-xNR" firstAttribute="centerX" secondItem="lJg-wF-Phf" secondAttribute="centerX" id="Zer-fY-b5J"/>
@@ -3722,7 +3769,7 @@ deserves a caddie.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="ORE-jn-JPX" customClass="AvailableCaddiesCell" customModule="carpoolApp_v1_0" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="ORE-jn-JPX" customClass="ChooseAvailableCaddiesCell" customModule="carpoolApp_v1_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="240" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ORE-jn-JPX" id="Ing-OV-oHi">
@@ -3980,8 +4027,8 @@ deserves a caddie.</string>
                                                     <variation key="widthClass=compact" constant="25"/>
                                                 </constraint>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
-                                            <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -3994,7 +4041,7 @@ deserves a caddie.</string>
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member since July 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgw-mK-wOm">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member since July 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="lgw-mK-wOm">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="hwj-u5-Wi1">
@@ -4036,7 +4083,7 @@ deserves a caddie.</string>
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handicap: 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMO-Js-6Z5">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMO-Js-6Z5">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="D8U-kT-0BC">
@@ -4044,7 +4091,7 @@ deserves a caddie.</string>
                                                 </constraint>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -4085,12 +4132,14 @@ deserves a caddie.</string>
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="75" id="evL-Rr-ep0">
-                                                    <variation key="widthClass=compact" constant="80"/>
+                                                    <variation key="widthClass=compact" constant="60"/>
                                                 </constraint>
-                                                <constraint firstAttribute="height" constant="30" id="rvd-Ed-W09"/>
+                                                <constraint firstAttribute="height" constant="30" id="rvd-Ed-W09">
+                                                    <variation key="widthClass=compact" constant="30"/>
+                                                </constraint>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                            <state key="normal" title="Reserve">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                            <state key="normal" title="Choose">
                                                 <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <variation key="default">
@@ -4109,35 +4158,66 @@ deserves a caddie.</string>
                                                 <action selector="reserveButtonPressed:" destination="NRc-g2-8Cx" eventType="touchUpInside" id="eKP-Qn-lli"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DisclosureIndicatorRevealDown" translatesAutoresizingMaskIntoConstraints="NO" id="jWv-EO-odm">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="OEn-fX-gZr"/>
+                                                <constraint firstAttribute="width" constant="23" id="V2R-cD-61G"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="OEn-fX-gZr"/>
+                                                    <exclude reference="V2R-cD-61G"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="OEn-fX-gZr"/>
+                                                    <include reference="V2R-cD-61G"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="UKX-eJ-ZIb" firstAttribute="top" secondItem="lgw-mK-wOm" secondAttribute="bottom" constant="1" id="5CH-Sd-xkW">
-                                            <variation key="widthClass=compact" constant="2"/>
+                                            <variation key="widthClass=compact" constant="0.0"/>
                                         </constraint>
                                         <constraint firstAttribute="trailingMargin" secondItem="1V0-E5-Cet" secondAttribute="trailing" id="8ei-rY-gf7">
-                                            <variation key="widthClass=compact" constant="5"/>
+                                            <variation key="widthClass=compact" constant="3"/>
                                         </constraint>
                                         <constraint firstItem="DMO-Js-6Z5" firstAttribute="leading" secondItem="UKX-eJ-ZIb" secondAttribute="leading" id="BTY-Mi-tYK"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="VoC-vq-0z7" secondAttribute="leading" id="D89-NU-SXi">
-                                            <variation key="widthClass=compact" constant="-5"/>
+                                            <variation key="widthClass=compact" constant="-3"/>
                                         </constraint>
                                         <constraint firstItem="UKX-eJ-ZIb" firstAttribute="leading" secondItem="lgw-mK-wOm" secondAttribute="leading" id="Eor-qD-Cf5"/>
-                                        <constraint firstItem="ccV-UW-tLe" firstAttribute="top" secondItem="VoC-vq-0z7" secondAttribute="top" id="NNR-Sb-ote"/>
+                                        <constraint firstItem="1V0-E5-Cet" firstAttribute="leading" secondItem="lgw-mK-wOm" secondAttribute="trailing" constant="63" id="IMy-nS-0lq">
+                                            <variation key="widthClass=compact" constant="5"/>
+                                        </constraint>
+                                        <constraint firstItem="DMO-Js-6Z5" firstAttribute="bottom" secondItem="VoC-vq-0z7" secondAttribute="bottom" id="M85-bx-JmJ">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                        <constraint firstItem="ccV-UW-tLe" firstAttribute="top" secondItem="VoC-vq-0z7" secondAttribute="top" id="NNR-Sb-ote">
+                                            <variation key="widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstAttribute="bottomMargin" secondItem="DQy-X9-jeX" secondAttribute="bottom" priority="999" constant="-10" id="R5d-GF-3RC"/>
                                         <constraint firstItem="VoC-vq-0z7" firstAttribute="top" secondItem="Ing-OV-oHi" secondAttribute="topMargin" constant="12" id="Udg-Qz-C84">
                                             <variation key="widthClass=compact" constant="0.0"/>
                                         </constraint>
                                         <constraint firstItem="1V0-E5-Cet" firstAttribute="centerY" secondItem="VoC-vq-0z7" secondAttribute="centerY" id="Uuo-j5-leh"/>
                                         <constraint firstItem="lgw-mK-wOm" firstAttribute="top" secondItem="ccV-UW-tLe" secondAttribute="bottom" constant="10" id="eEf-ua-S47">
-                                            <variation key="widthClass=compact" constant="3"/>
+                                            <variation key="widthClass=compact" constant="2"/>
                                         </constraint>
                                         <constraint firstItem="lgw-mK-wOm" firstAttribute="leading" secondItem="ccV-UW-tLe" secondAttribute="leading" id="ePa-AK-paF">
                                             <variation key="widthClass=compact" constant="0.0"/>
                                         </constraint>
+                                        <constraint firstItem="jWv-EO-odm" firstAttribute="centerY" secondItem="DMO-Js-6Z5" secondAttribute="centerY" id="gXZ-tT-cSM"/>
                                         <constraint firstItem="DMO-Js-6Z5" firstAttribute="top" secondItem="UKX-eJ-ZIb" secondAttribute="bottom" constant="5" id="i0p-wf-gHm">
-                                            <variation key="widthClass=compact" constant="2"/>
+                                            <variation key="widthClass=compact" constant="5"/>
                                         </constraint>
                                         <constraint firstAttribute="trailingMargin" secondItem="DQy-X9-jeX" secondAttribute="trailing" constant="-8" id="iCJ-2T-fTI"/>
+                                        <constraint firstItem="jWv-EO-odm" firstAttribute="leading" secondItem="DMO-Js-6Z5" secondAttribute="trailing" constant="6" id="lgW-QS-MJZ">
+                                            <variation key="widthClass=compact" constant="2"/>
+                                        </constraint>
                                         <constraint firstItem="DQy-X9-jeX" firstAttribute="top" secondItem="Ing-OV-oHi" secondAttribute="topMargin" constant="92" id="n7H-WF-C1M"/>
                                         <constraint firstItem="ccV-UW-tLe" firstAttribute="leading" secondItem="VoC-vq-0z7" secondAttribute="trailing" id="suN-Q5-xfm">
                                             <variation key="widthClass=compact" constant="10"/>
@@ -4153,6 +4233,7 @@ deserves a caddie.</string>
                                             <exclude reference="DMO-Js-6Z5"/>
                                             <exclude reference="VoC-vq-0z7"/>
                                             <exclude reference="1V0-E5-Cet"/>
+                                            <exclude reference="jWv-EO-odm"/>
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="D89-NU-SXi"/>
@@ -4168,8 +4249,12 @@ deserves a caddie.</string>
                                             <exclude reference="5CH-Sd-xkW"/>
                                             <exclude reference="Eor-qD-Cf5"/>
                                             <exclude reference="BTY-Mi-tYK"/>
+                                            <exclude reference="M85-bx-JmJ"/>
                                             <exclude reference="i0p-wf-gHm"/>
+                                            <exclude reference="gXZ-tT-cSM"/>
+                                            <exclude reference="lgW-QS-MJZ"/>
                                             <exclude reference="8ei-rY-gf7"/>
+                                            <exclude reference="IMy-nS-0lq"/>
                                             <exclude reference="Uuo-j5-leh"/>
                                         </mask>
                                     </variation>
@@ -4182,6 +4267,7 @@ deserves a caddie.</string>
                                             <include reference="DMO-Js-6Z5"/>
                                             <include reference="VoC-vq-0z7"/>
                                             <include reference="1V0-E5-Cet"/>
+                                            <include reference="jWv-EO-odm"/>
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="D89-NU-SXi"/>
@@ -4197,19 +4283,23 @@ deserves a caddie.</string>
                                             <include reference="5CH-Sd-xkW"/>
                                             <include reference="Eor-qD-Cf5"/>
                                             <include reference="BTY-Mi-tYK"/>
-                                            <include reference="i0p-wf-gHm"/>
+                                            <include reference="M85-bx-JmJ"/>
+                                            <exclude reference="i0p-wf-gHm"/>
+                                            <include reference="gXZ-tT-cSM"/>
+                                            <include reference="lgW-QS-MJZ"/>
                                             <include reference="8ei-rY-gf7"/>
+                                            <include reference="IMy-nS-0lq"/>
                                             <include reference="Uuo-j5-leh"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="caddieNameLabel" destination="ccV-UW-tLe" id="63C-6H-Ji7"/>
-                                    <outlet property="handicapLabel" destination="DMO-Js-6Z5" id="cDP-a7-P7p"/>
-                                    <outlet property="membershipHistoryLabel" destination="lgw-mK-wOm" id="6pV-Je-aTd"/>
-                                    <outlet property="profileImageView" destination="VoC-vq-0z7" id="m17-Am-jrw"/>
-                                    <outlet property="reserveButton" destination="1V0-E5-Cet" id="wiT-3r-J1z"/>
-                                    <outlet property="roundsHistoryLabel" destination="UKX-eJ-ZIb" id="829-Wb-dPI"/>
+                                    <outlet property="caddieNameLabel" destination="ccV-UW-tLe" id="gjr-Hh-xHa"/>
+                                    <outlet property="detailsDisclosureIndicator" destination="jWv-EO-odm" id="ZDP-VY-r7s"/>
+                                    <outlet property="membershipHistoryLabel" destination="lgw-mK-wOm" id="zZV-cm-aWj"/>
+                                    <outlet property="profileImageView" destination="VoC-vq-0z7" id="WNO-4A-efr"/>
+                                    <outlet property="reserveButton" destination="1V0-E5-Cet" id="czK-AB-JSK"/>
+                                    <outlet property="roundsHistoryLabel" destination="UKX-eJ-ZIb" id="FPh-2H-Dgh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -4258,7 +4348,9 @@ deserves a caddie.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="XtY-QK-5e3"/>
+                                            <constraint firstAttribute="height" constant="60" id="XtY-QK-5e3">
+                                                <variation key="widthClass=compact" constant="40"/>
+                                            </constraint>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -4280,7 +4372,7 @@ deserves a caddie.</string>
                                                 <variation key="widthClass=compact" constant="110"/>
                                             </constraint>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <state key="normal" title="Confirm Reservation">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -4321,27 +4413,6 @@ deserves a caddie.</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Almost done." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2t5-UC-kJu">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="4he-e3-zfI">
-                                                <variation key="widthClass=compact" constant="30"/>
-                                            </constraint>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="4he-e3-zfI"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="4he-e3-zfI"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By confirming this reservation, I agree to Loop's Terms of Service and Privacy Statement." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzG-CU-XH0">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <constraints>
@@ -4375,6 +4446,7 @@ deserves a caddie.</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="V2J-u7-ccC" firstAttribute="centerY" secondItem="wt8-8O-e6m" secondAttribute="centerY" id="0Hv-a1-eq8"/>
                                     <constraint firstItem="V2J-u7-ccC" firstAttribute="leading" secondItem="K63-Sq-rIZ" secondAttribute="leading" constant="31" id="4y1-gf-foS">
                                         <variation key="widthClass=compact" constant="20"/>
                                     </constraint>
@@ -4385,7 +4457,7 @@ deserves a caddie.</string>
                                         <variation key="widthClass=compact" constant="10"/>
                                     </constraint>
                                     <constraint firstItem="Lqq-2f-nuU" firstAttribute="leading" secondItem="K63-Sq-rIZ" secondAttribute="leading" constant="120" id="D3K-71-PYr">
-                                        <variation key="widthClass=compact" constant="20"/>
+                                        <variation key="widthClass=compact" constant="40"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="ULA-3v-rPd" secondAttribute="trailing" constant="8" id="FA0-ya-V6Y">
                                         <variation key="widthClass=compact" constant="0.0"/>
@@ -4402,31 +4474,20 @@ deserves a caddie.</string>
                                     <constraint firstAttribute="trailing" secondItem="V2J-u7-ccC" secondAttribute="trailing" constant="50" id="XML-Pv-ku2">
                                         <variation key="widthClass=compact" constant="20"/>
                                     </constraint>
-                                    <constraint firstItem="2t5-UC-kJu" firstAttribute="leading" secondItem="K63-Sq-rIZ" secondAttribute="leading" constant="20" id="bqf-s9-ECM"/>
                                     <constraint firstItem="XzG-CU-XH0" firstAttribute="leading" secondItem="K63-Sq-rIZ" secondAttribute="leading" constant="34" id="buN-Rt-54q">
                                         <variation key="widthClass=compact" constant="20"/>
                                     </constraint>
                                     <constraint firstItem="wt8-8O-e6m" firstAttribute="top" secondItem="V2J-u7-ccC" secondAttribute="top" constant="-5" id="cCj-7d-oWs"/>
                                     <constraint firstItem="wt8-8O-e6m" firstAttribute="top" secondItem="V2J-u7-ccC" secondAttribute="bottom" constant="-30" id="cyN-QO-E5O"/>
-                                    <constraint firstItem="ULA-3v-rPd" firstAttribute="top" secondItem="2t5-UC-kJu" secondAttribute="bottom" constant="8" id="e8B-kX-uda">
-                                        <variation key="widthClass=compact" constant="15"/>
-                                    </constraint>
                                     <constraint firstItem="V2J-u7-ccC" firstAttribute="top" secondItem="SDS-OL-l0x" secondAttribute="bottom" constant="10" id="eUr-8p-QLZ">
                                         <variation key="widthClass=compact" constant="0.0"/>
                                     </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="2t5-UC-kJu" secondAttribute="trailing" constant="20" id="fYP-wN-xfm"/>
                                     <constraint firstItem="wt8-8O-e6m" firstAttribute="leading" secondItem="K63-Sq-rIZ" secondAttribute="leading" id="fe2-PN-8aV"/>
                                     <constraint firstAttribute="trailing" secondItem="XzG-CU-XH0" secondAttribute="trailing" constant="34" id="gsI-Oc-0eJ">
                                         <variation key="widthClass=compact" constant="50"/>
                                     </constraint>
-                                    <constraint firstItem="2t5-UC-kJu" firstAttribute="top" secondItem="V2J-u7-ccC" secondAttribute="bottom" constant="-4" id="jLG-9P-KDP">
-                                        <variation key="widthClass=compact" constant="0.0"/>
-                                    </constraint>
-                                    <constraint firstItem="2t5-UC-kJu" firstAttribute="bottom" secondItem="wt8-8O-e6m" secondAttribute="bottom" constant="-30" id="jsd-ih-Nkk">
-                                        <variation key="widthClass=compact" constant="-5"/>
-                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="Lqq-2f-nuU" secondAttribute="trailing" constant="120" id="mBw-MV-ykc">
-                                        <variation key="widthClass=compact" constant="20"/>
+                                        <variation key="widthClass=compact" constant="40"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="SDS-OL-l0x" secondAttribute="trailing" id="nuu-ou-6R7"/>
                                     <constraint firstItem="wt8-8O-e6m" firstAttribute="top" secondItem="SDS-OL-l0x" secondAttribute="bottom" id="pRS-gj-Qq5"/>
@@ -4448,41 +4509,36 @@ deserves a caddie.</string>
                                         <exclude reference="wt8-8O-e6m"/>
                                         <exclude reference="Lqq-2f-nuU"/>
                                         <exclude reference="V2J-u7-ccC"/>
-                                        <exclude reference="2t5-UC-kJu"/>
                                         <exclude reference="XzG-CU-XH0"/>
                                         <exclude reference="ULA-3v-rPd"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="BB5-yW-uHo"/>
-                                        <exclude reference="D3K-71-PYr"/>
-                                        <exclude reference="mBw-MV-ykc"/>
-                                        <exclude reference="zXU-9o-j5j"/>
-                                        <exclude reference="bqf-s9-ECM"/>
-                                        <exclude reference="fYP-wN-xfm"/>
-                                        <exclude reference="jLG-9P-KDP"/>
-                                        <exclude reference="jsd-ih-Nkk"/>
-                                        <exclude reference="4y1-gf-foS"/>
-                                        <exclude reference="Lnp-L7-SUm"/>
-                                        <exclude reference="XML-Pv-ku2"/>
-                                        <exclude reference="eUr-8p-QLZ"/>
-                                        <exclude reference="uad-7W-gvV"/>
-                                        <exclude reference="Aj7-JI-oNk"/>
-                                        <exclude reference="PXY-gd-gdO"/>
-                                        <exclude reference="buN-Rt-54q"/>
-                                        <exclude reference="gsI-Oc-0eJ"/>
-                                        <exclude reference="vyn-Cv-SDd"/>
                                         <exclude reference="GHi-hY-12f"/>
                                         <exclude reference="K2f-cC-FxS"/>
                                         <exclude reference="nuu-ou-6R7"/>
-                                        <exclude reference="FA0-ya-V6Y"/>
-                                        <exclude reference="TgM-2n-nN9"/>
-                                        <exclude reference="e8B-kX-uda"/>
-                                        <exclude reference="ziD-eS-apa"/>
                                         <exclude reference="cCj-7d-oWs"/>
                                         <exclude reference="cyN-QO-E5O"/>
                                         <exclude reference="fe2-PN-8aV"/>
                                         <exclude reference="pRS-gj-Qq5"/>
                                         <exclude reference="uVr-i2-hCC"/>
+                                        <exclude reference="0Hv-a1-eq8"/>
+                                        <exclude reference="4y1-gf-foS"/>
+                                        <exclude reference="Lnp-L7-SUm"/>
+                                        <exclude reference="XML-Pv-ku2"/>
+                                        <exclude reference="eUr-8p-QLZ"/>
+                                        <exclude reference="uad-7W-gvV"/>
+                                        <exclude reference="FA0-ya-V6Y"/>
+                                        <exclude reference="TgM-2n-nN9"/>
+                                        <exclude reference="ziD-eS-apa"/>
+                                        <exclude reference="Aj7-JI-oNk"/>
+                                        <exclude reference="PXY-gd-gdO"/>
+                                        <exclude reference="buN-Rt-54q"/>
+                                        <exclude reference="gsI-Oc-0eJ"/>
+                                        <exclude reference="vyn-Cv-SDd"/>
+                                        <exclude reference="BB5-yW-uHo"/>
+                                        <exclude reference="D3K-71-PYr"/>
+                                        <exclude reference="mBw-MV-ykc"/>
+                                        <exclude reference="zXU-9o-j5j"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -4491,41 +4547,36 @@ deserves a caddie.</string>
                                         <include reference="wt8-8O-e6m"/>
                                         <include reference="Lqq-2f-nuU"/>
                                         <include reference="V2J-u7-ccC"/>
-                                        <include reference="2t5-UC-kJu"/>
                                         <include reference="XzG-CU-XH0"/>
                                         <include reference="ULA-3v-rPd"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="BB5-yW-uHo"/>
-                                        <include reference="D3K-71-PYr"/>
-                                        <include reference="mBw-MV-ykc"/>
-                                        <include reference="zXU-9o-j5j"/>
-                                        <include reference="bqf-s9-ECM"/>
-                                        <include reference="fYP-wN-xfm"/>
-                                        <exclude reference="jLG-9P-KDP"/>
-                                        <include reference="jsd-ih-Nkk"/>
+                                        <include reference="GHi-hY-12f"/>
+                                        <include reference="K2f-cC-FxS"/>
+                                        <include reference="nuu-ou-6R7"/>
+                                        <exclude reference="cCj-7d-oWs"/>
+                                        <exclude reference="cyN-QO-E5O"/>
+                                        <include reference="fe2-PN-8aV"/>
+                                        <include reference="pRS-gj-Qq5"/>
+                                        <include reference="uVr-i2-hCC"/>
+                                        <include reference="0Hv-a1-eq8"/>
                                         <include reference="4y1-gf-foS"/>
                                         <exclude reference="Lnp-L7-SUm"/>
                                         <include reference="XML-Pv-ku2"/>
                                         <exclude reference="eUr-8p-QLZ"/>
                                         <exclude reference="uad-7W-gvV"/>
+                                        <include reference="FA0-ya-V6Y"/>
+                                        <include reference="TgM-2n-nN9"/>
+                                        <include reference="ziD-eS-apa"/>
                                         <include reference="Aj7-JI-oNk"/>
                                         <exclude reference="PXY-gd-gdO"/>
                                         <include reference="buN-Rt-54q"/>
                                         <exclude reference="gsI-Oc-0eJ"/>
                                         <include reference="vyn-Cv-SDd"/>
-                                        <include reference="GHi-hY-12f"/>
-                                        <include reference="K2f-cC-FxS"/>
-                                        <include reference="nuu-ou-6R7"/>
-                                        <include reference="FA0-ya-V6Y"/>
-                                        <include reference="TgM-2n-nN9"/>
-                                        <exclude reference="e8B-kX-uda"/>
-                                        <include reference="ziD-eS-apa"/>
-                                        <include reference="cCj-7d-oWs"/>
-                                        <exclude reference="cyN-QO-E5O"/>
-                                        <include reference="fe2-PN-8aV"/>
-                                        <include reference="pRS-gj-Qq5"/>
-                                        <include reference="uVr-i2-hCC"/>
+                                        <include reference="BB5-yW-uHo"/>
+                                        <include reference="D3K-71-PYr"/>
+                                        <include reference="mBw-MV-ykc"/>
+                                        <include reference="zXU-9o-j5j"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -4536,7 +4587,7 @@ deserves a caddie.</string>
                                 <variation key="widthClass=compact" constant="69"/>
                             </constraint>
                             <constraint firstItem="K63-Sq-rIZ" firstAttribute="leading" secondItem="NcZ-fl-iz6" secondAttribute="leadingMargin" constant="-20" id="Jvl-6d-SCG">
-                                <variation key="widthClass=compact" constant="-15"/>
+                                <variation key="widthClass=compact" constant="-12"/>
                             </constraint>
                             <constraint firstAttribute="leadingMargin" secondItem="K63-Sq-rIZ" secondAttribute="leading" id="Poq-Cc-6Dr">
                                 <variation key="widthClass=compact" constant="10"/>
@@ -4545,7 +4596,7 @@ deserves a caddie.</string>
                                 <variation key="widthClass=compact" constant="-10"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="K63-Sq-rIZ" secondAttribute="trailing" constant="-20" id="q3f-Ab-qOt">
-                                <variation key="widthClass=compact" constant="-15"/>
+                                <variation key="widthClass=compact" constant="-12"/>
                             </constraint>
                             <constraint firstAttribute="leadingMargin" secondItem="K63-Sq-rIZ" secondAttribute="leading" id="uAQ-r9-ZuZ">
                                 <variation key="widthClass=compact" constant="-10"/>
@@ -10097,16 +10148,17 @@ deserves a caddie.</string>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNf-KD-Aye">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="0i5-Zl-gq2"/>
+                                                <constraint firstAttribute="height" constant="30" id="0i5-Zl-gq2">
+                                                    <variation key="widthClass=compact" constant="30"/>
+                                                </constraint>
                                                 <constraint firstAttribute="width" constant="75" id="Rks-iM-TjI">
                                                     <variation key="widthClass=compact" constant="150"/>
                                                 </constraint>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                             <state key="normal" title="Choose this course">
-                                                <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -10267,7 +10319,7 @@ deserves a caddie.</string>
                                             <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="Choose Your Caddie" id="GRX-Z1-kW2">
+                                            <navigationItem title="Caddies Available" id="GRX-Z1-kW2">
                                                 <barButtonItem key="leftBarButtonItem" systemItem="stop" id="tBj-Cw-3lk">
                                                     <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
@@ -10301,6 +10353,9 @@ deserves a caddie.</string>
                                         <variation key="widthClass=compact" constant="0.0"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="S0u-15-hes" secondAttribute="trailing" id="voY-cA-3RV"/>
+                                    <constraint firstItem="iQQ-Po-HFe" firstAttribute="top" secondItem="S0u-15-hes" secondAttribute="bottom" constant="1" id="xwp-Qr-9He">
+                                        <variation key="widthClass=compact" constant="-8"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -10317,6 +10372,7 @@ deserves a caddie.</string>
                                         <exclude reference="dXE-MR-DTn"/>
                                         <exclude reference="fvo-Sc-bp1"/>
                                         <exclude reference="hvG-Sd-YcR"/>
+                                        <exclude reference="xwp-Qr-9He"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -10333,7 +10389,8 @@ deserves a caddie.</string>
                                         <include reference="cnj-hG-Kxq"/>
                                         <include reference="dXE-MR-DTn"/>
                                         <exclude reference="fvo-Sc-bp1"/>
-                                        <include reference="hvG-Sd-YcR"/>
+                                        <exclude reference="hvG-Sd-YcR"/>
+                                        <include reference="xwp-Qr-9He"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -10344,10 +10401,10 @@ deserves a caddie.</string>
                             </constraint>
                             <constraint firstItem="1SV-bZ-pFi" firstAttribute="top" secondItem="eld-bW-wWW" secondAttribute="bottom" constant="20" id="dxL-M5-ERI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eld-bW-wWW" secondAttribute="trailing" id="lnx-Ut-qN7">
-                                <variation key="widthClass=compact" constant="-10"/>
+                                <variation key="widthClass=compact" constant="-8"/>
                             </constraint>
                             <constraint firstAttribute="leadingMargin" secondItem="eld-bW-wWW" secondAttribute="leading" id="tuK-ZE-ynJ">
-                                <variation key="widthClass=compact" constant="10"/>
+                                <variation key="widthClass=compact" constant="8"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
