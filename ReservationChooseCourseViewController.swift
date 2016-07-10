@@ -54,7 +54,7 @@ class ReservationChooseCourseViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         UIView.animateWithDuration(0.25, delay: 0, options: .CurveEaseOut, animations: {
-            self.blackFadedBackground.alpha = 0.1
+            self.blackFadedBackground.alpha = 0.2
             }, completion: nil)
     }
     

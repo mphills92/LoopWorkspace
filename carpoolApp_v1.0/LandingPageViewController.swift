@@ -10,9 +10,9 @@ import UIKit
 
 class LandingPageViewController: UIViewController {
     
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var findCaddyButton: UIButton!
-    @IBOutlet weak var constraintToBottomFindCaddyButton: NSLayoutConstraint!
     
     var screenSize = UIScreen.mainScreen().bounds
     
@@ -35,50 +35,28 @@ class LandingPageViewController: UIViewController {
         self.view.sendSubviewToBack(imageViewBackground)
         
         
-        //findCaddyButton.layer.borderColor = UIColor.whiteColor().CGColor
-        //findCaddyButton.layer.borderWidth = 1
+        //Green "start reservation" button.
+        /*
         findCaddyButton.layer.cornerRadius = findCaddyButton.bounds.height / 2
-        //findCaddyButton.layer.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.3).CGColor
         findCaddyButton.layer.backgroundColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
         findCaddyButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-    
-        navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 25)!]
+         */
 
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
         
+        findCaddyButton.layer.cornerRadius = findCaddyButton.bounds.height / 2
+        findCaddyButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2).CGColor
+        findCaddyButton.layer.borderColor = UIColor.whiteColor().CGColor
+        findCaddyButton.layer.borderWidth = 1
+        findCaddyButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+ 
     }
     
     @IBAction func findCaddyButtonPressed(sender: AnyObject) {
-        presentReservationView()
-    }
-    
-    func presentReservationView() {
-        
-        // Hide the "Find a Caddy" button by sliding it down out of the frame.
-        /*UIView.animateWithDuration(1, delay: 0, options: .CurveEaseIn, animations: {
-            self.constraintToBottomFindCaddyButton.constant -= self.screenSize.height / 2
-            self.view.layoutIfNeeded()
-            }, completion: nil)*/
-    }
-    
-    func submitReservationView() {
-        
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "toStartReservationSegue") {
-            //menuButton.enabled = false
-        }
     }
     
 }

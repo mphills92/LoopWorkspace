@@ -33,7 +33,7 @@ class UserAccount {
     var membershipHistory: String = "July 2016"
     var lifetimeRounds: Int = 22
     var currentCredit: Int = 4
-    var userHasCaddieAccount: Bool = true
+    var userHasCaddieAccount: Bool = false
 }
 
 class UserReferralCode {

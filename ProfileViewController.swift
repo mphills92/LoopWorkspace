@@ -21,6 +21,9 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pastCaddiesContainer: UIView!
     @IBOutlet weak var notificationsContainer: UIView!
     @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var membershipHistoryLabel: UILabel!
+    
     @IBOutlet weak var lifetimeRoundsLabel: UILabel!
     @IBOutlet weak var currentCreditLabel: UILabel!
     
@@ -42,8 +45,9 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         
         self.userProfileImage.layer.cornerRadius = 8
         userNameLabel.text = "\(userName.firstName)" + " " + "\(userName.lastName)"
-        lifetimeRoundsLabel.text = "\(userAccount.lifetimeRounds) Lifetime Rounds"
-        currentCreditLabel.text = "$\(userAccount.currentCredit) Loop Credit"
+        membershipHistoryLabel.text = "Member since \(userAccount.membershipHistory)"
+        lifetimeRoundsLabel.text = "\(userAccount.lifetimeRounds) lifetime rounds"
+        currentCreditLabel.text = "$\(userAccount.currentCredit) Loop credit"
         
         
         self.stickySegmentedTab.layer.shadowOpacity = 0.25

@@ -15,7 +15,7 @@ import UIKit
     var lineView = UIView()
     var pillView = UIView()
     
-    var items: [String] = ["LOOPx", "LOOPvip"] {
+    var items: [String] = ["LOOP F.M.", "LOOP S.S."] {
         didSet {
             setupLabels()
         }
