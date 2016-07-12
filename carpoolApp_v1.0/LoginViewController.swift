@@ -43,8 +43,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(imageViewBackground)
         self.view.sendSubviewToBack(imageViewBackground)
         
-        emailTextField.attributedPlaceholder = NSAttributedString(string:"Email", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
-        passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
+        emailTextField.attributedPlaceholder = NSAttributedString(string:"Email", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
+        passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         
         self.loginButtonCenterConstraint.constant = screenSize.width
         
@@ -52,10 +52,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.tag = 1
         passwordTextField.tag = 2
-    }
-    
-    override func prefersStatusBarHidden() -> Bool {
-        return true
     }
 }
 

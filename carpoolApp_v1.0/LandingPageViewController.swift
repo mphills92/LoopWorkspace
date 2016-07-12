@@ -20,7 +20,7 @@ class LandingPageViewController: UIViewController {
         super.viewDidLoad()
         definesPresentationContext = true
         
-        let navBarLogo = UIImage(named: "LoopLogoNavBar")! as UIImage
+        let navBarLogo = UIImage(named: "LoopLogoNavBarWhite")! as UIImage
         let imageView = UIImageView(image: navBarLogo)
         imageView.frame.size.width = 35.0
         imageView.frame.size.height = 35.0

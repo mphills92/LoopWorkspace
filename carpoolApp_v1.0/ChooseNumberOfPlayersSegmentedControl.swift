@@ -1,21 +1,21 @@
 //
-//  ChooseServiceLevelSegmentedControl.swift
+//  ChooseNumberOfPlayersSegmentedControl.swift
 //  carpoolApp_v1.0
 //
-//  Created by Matt Hills on 6/8/16.
+//  Created by Matt Hills on 7/11/16.
 //  Copyright © 2016 Matthew Hills. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class ChooseServiceLevelSegmentedControl: UIControl {
+@IBDesignable class ChooseNumberOfPlayersSegmentedControl: UIControl {
     
     private var labels = [UILabel]()
     var thumbView = UIView()
     var lineView = UIView()
     var pillView = UIView()
     
-    var items: [String] = ["Free Market", "Standard Service"] {
+    var items: [String] = ["1-2", "3-4"] {
         didSet {
             setupLabels()
         }

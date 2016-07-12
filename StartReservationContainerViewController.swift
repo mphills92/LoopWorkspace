@@ -10,8 +10,13 @@ import UIKit
 
 class StartReservationContainerViewController: UITableViewController {
     
+    @IBOutlet weak var chooseServiceLevelSegementedControl: ChooseServiceLevelSegmentedControl!
+    @IBOutlet weak var chooseNumberOfPlayersSegmentedControl: ChooseNumberOfPlayersSegmentedControl!
+    
     var dateCellTapped = false
     var timeCellTapped = false
+    var numberOfPlayersCellTapped = false
+    var serviceLevelCellTapped = false
     var aCellIsExpanded = false
     var openRow = Int()
     var selectedRow = Int()
@@ -33,11 +38,21 @@ class StartReservationContainerViewController: UITableViewController {
     @IBOutlet weak var chooseTimeLabel: UILabel!
     @IBOutlet weak var chooseTimePicker: UIDatePicker!
     @IBOutlet weak var chooseTimeDisclosureIndicator: UIImageView!
+    
+//Choose number of players tableViewCell and dropdown outlet properties.
+    @IBOutlet weak var chooseNumberOfPlayersDisclosureIndicator: UIImageView!
+    
+//Choose service level tableViewCell and dropdown outlet properties.
+    @IBOutlet weak var chooseServiceLevelDisclosureIndicator: UIImageView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
+        
+        chooseNumberOfPlayersSegmentedControl.hidden = true
+        chooseServiceLevelSegementedControl.hidden = true
         
         morningButtonSelected = true
         afternoonButtonSelected = false
@@ -65,10 +80,24 @@ class StartReservationContainerViewController: UITableViewController {
         
         if (indexPath.row == selectedRow) {
             if (dateCellTapped == true) {
+                chooseNumberOfPlayersSegmentedControl.hidden = true
+                chooseServiceLevelSegementedControl.hidden = true
                 return (view.frame.height) - 88
             } else if (timeCellTapped == true) {
+                chooseNumberOfPlayersSegmentedControl.hidden = true
+                chooseServiceLevelSegementedControl.hidden = true
                 return (view.frame.height) - 88
+            } else if (numberOfPlayersCellTapped == true) {
+                chooseNumberOfPlayersSegmentedControl.hidden = false
+                chooseServiceLevelSegementedControl.hidden = true
+                return 100
+            } else if (serviceLevelCellTapped == true) {
+                chooseNumberOfPlayersSegmentedControl.hidden = true
+                chooseServiceLevelSegementedControl.hidden = false
+                return 100
             } else {
+                chooseNumberOfPlayersSegmentedControl.hidden = true
+                chooseServiceLevelSegementedControl.hidden = true
                 return 44
             }
         }
@@ -77,18 +106,38 @@ class StartReservationContainerViewController: UITableViewController {
     }
 
     func selectedCellIndex() {
-        // If no cells are open, set tapped cell identifier as true and store the index of the newly openned row as openRow.
+        // If no cells are open, set tapped cell identifier as true and store the index of the newly opened row as openRow.
         if (aCellIsExpanded == false) {
             if (selectedRow == 0) {
                 dateCellTapped = true
                 openedDateCellDisclosureIndicator()
                 timeCellTapped = false
+                numberOfPlayersCellTapped = false
+                serviceLevelCellTapped = false
                 aCellIsExpanded = true
                 openRow = selectedRow
             } else if (selectedRow == 1) {
                 dateCellTapped = false
                 timeCellTapped = true
                 openedTimeCellDisclosureIndicator()
+                numberOfPlayersCellTapped = false
+                serviceLevelCellTapped = false
+                aCellIsExpanded = true
+                openRow = selectedRow
+            } else if (selectedRow == 2) {
+                dateCellTapped = false
+                timeCellTapped = false
+                numberOfPlayersCellTapped = true
+                openedPlayersCellDisclosureIndicator()
+                serviceLevelCellTapped = false
+                aCellIsExpanded = true
+                openRow = selectedRow
+            } else if (selectedRow == 3) {
+                dateCellTapped = false
+                timeCellTapped = false
+                numberOfPlayersCellTapped = false
+                serviceLevelCellTapped = true
+                openedServiceLevelCellDisclosureIndicator()
                 aCellIsExpanded = true
                 openRow = selectedRow
             }
@@ -100,6 +149,10 @@ class StartReservationContainerViewController: UITableViewController {
                 openedDateCellDisclosureIndicator()
                 timeCellTapped = false
                 closedTimeCellDisclosureIndicator()
+                numberOfPlayersCellTapped = false
+                closedPlayersCellDisclosureIndicator()
+                serviceLevelCellTapped = false
+                closedServiceLevelCellDisclosureIndicator()
                 aCellIsExpanded = true
                 openRow = selectedRow
             } else if (selectedRow == 1) {
@@ -107,8 +160,32 @@ class StartReservationContainerViewController: UITableViewController {
                 closedDateCellDisclosureIndicator()
                 timeCellTapped = true
                 openedTimeCellDisclosureIndicator()
+                numberOfPlayersCellTapped = false
+                closedPlayersCellDisclosureIndicator()
+                serviceLevelCellTapped = false
+                closedServiceLevelCellDisclosureIndicator()
                 aCellIsExpanded = true
                 openRow = selectedRow
+            } else if (selectedRow == 2) {
+                dateCellTapped = false
+                closedDateCellDisclosureIndicator()
+                timeCellTapped = false
+                closedTimeCellDisclosureIndicator()
+                numberOfPlayersCellTapped = true
+                openedPlayersCellDisclosureIndicator()
+                serviceLevelCellTapped = false
+                closedServiceLevelCellDisclosureIndicator()
+                aCellIsExpanded = true
+            } else if (selectedRow == 3) {
+                dateCellTapped = false
+                closedDateCellDisclosureIndicator()
+                timeCellTapped = false
+                closedTimeCellDisclosureIndicator()
+                numberOfPlayersCellTapped = false
+                closedPlayersCellDisclosureIndicator()
+                serviceLevelCellTapped = true
+                openedServiceLevelCellDisclosureIndicator()
+                aCellIsExpanded = true
             }
         }
         // If a cell is open and the index of the selected cell matches the open cell.
@@ -117,11 +194,29 @@ class StartReservationContainerViewController: UITableViewController {
                 dateCellTapped = false
                 closedDateCellDisclosureIndicator()
                 timeCellTapped = false
+                numberOfPlayersCellTapped = false
+                serviceLevelCellTapped = false
                 aCellIsExpanded = false
             } else if (selectedRow == 1) {
                 dateCellTapped = false
                 timeCellTapped = false
                 closedTimeCellDisclosureIndicator()
+                numberOfPlayersCellTapped = false
+                serviceLevelCellTapped = false
+                aCellIsExpanded = false
+            } else if (selectedRow == 2) {
+                dateCellTapped = false
+                timeCellTapped = false
+                numberOfPlayersCellTapped = false
+                closedPlayersCellDisclosureIndicator()
+                serviceLevelCellTapped = false
+                aCellIsExpanded = false
+            } else if (selectedRow == 3) {
+                dateCellTapped = false
+                timeCellTapped = false
+                numberOfPlayersCellTapped = false
+                serviceLevelCellTapped = false
+                closedServiceLevelCellDisclosureIndicator()
                 aCellIsExpanded = false
             }
         }
@@ -146,6 +241,26 @@ class StartReservationContainerViewController: UITableViewController {
     func closedTimeCellDisclosureIndicator() {
         UIView.animateWithDuration(0.2, animations: {
             self.chooseTimeDisclosureIndicator.transform = CGAffineTransformMakeRotation(CGFloat(M_PI*2))
+        })
+    }
+    func openedPlayersCellDisclosureIndicator() {
+        UIView.animateWithDuration(0.2, animations: {
+            self.chooseNumberOfPlayersDisclosureIndicator.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        })
+    }
+    func closedPlayersCellDisclosureIndicator() {
+        UIView.animateWithDuration(0.2, animations: {
+            self.chooseNumberOfPlayersDisclosureIndicator.transform = CGAffineTransformMakeRotation(CGFloat(M_PI*2))
+        })
+    }
+    func openedServiceLevelCellDisclosureIndicator() {
+        UIView.animateWithDuration(0.2, animations: {
+            self.chooseServiceLevelDisclosureIndicator.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        })
+    }
+    func closedServiceLevelCellDisclosureIndicator() {
+        UIView.animateWithDuration(0.2, animations: {
+            self.chooseServiceLevelDisclosureIndicator.transform = CGAffineTransformMakeRotation(CGFloat(M_PI*2))
         })
     }
     
