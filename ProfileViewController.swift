@@ -41,25 +41,32 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"HelveticaNeue-Light", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         
         self.userProfileImage.layer.cornerRadius = 8
         userNameLabel.text = "\(userName.firstName)" + " " + "\(userName.lastName)"
-        membershipHistoryLabel.text = "Member since \(userAccount.membershipHistory)"
-        lifetimeRoundsLabel.text = "\(userAccount.lifetimeRounds) lifetime rounds"
-        currentCreditLabel.text = "$\(userAccount.currentCredit) Loop credit"
+        membershipHistoryLabel.text = "\(userAccount.membershipHistory)"
+        lifetimeRoundsLabel.text = "\(userAccount.lifetimeRounds)"
+        currentCreditLabel.text = "$\(userAccount.currentCredit)"
         
         
         self.stickySegmentedTab.layer.shadowOpacity = 0.25
         self.stickySegmentedTab.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
-        let distBetweenScrollSectionAndNavBar : CGFloat = 230 - 64
+        let distBetweenScrollSectionAndNavBar : CGFloat = 300 - 64
         let screenSizeAdjustment = 1 + (distBetweenScrollSectionAndNavBar / screenSize.height)
         self.scrollView.contentSize.height = screenSize.height * screenSizeAdjustment
         self.scrollView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
         
+        
         // Sets up observer to receive notifications from segmented control when new index has been selected.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "notifyWithSelectedIndex:", name: "selectedIndexNotification", object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
     
     func notifyWithSelectedIndex (notification: NSNotification) {
@@ -86,10 +93,10 @@ extension ProfileViewController {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let scrollOffset = scrollView.contentOffset.y
         
-        if (scrollOffset >= 230) {
-            constrainedStickyTabToNavBar.constant = 230 + (scrollOffset - 230)
+        if (scrollOffset >= 300) {
+            constrainedStickyTabToNavBar.constant = 300 + (scrollOffset - 300)
         } else {
-            constrainedStickyTabToNavBar.constant = 230
+            constrainedStickyTabToNavBar.constant = 300
         }
     }
 }

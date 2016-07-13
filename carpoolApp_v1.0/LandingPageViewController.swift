@@ -48,7 +48,7 @@ class LandingPageViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        findCaddyButton.layer.cornerRadius = findCaddyButton.bounds.height / 2
+        findCaddyButton.layer.cornerRadius = 20 //findCaddyButton.bounds.height / 2
         findCaddyButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2).CGColor
         findCaddyButton.layer.borderColor = UIColor.whiteColor().CGColor
         findCaddyButton.layer.borderWidth = 1

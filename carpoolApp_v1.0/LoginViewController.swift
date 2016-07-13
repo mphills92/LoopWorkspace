@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         
         backgroundView.layer.cornerRadius = 8
-        loginButton.layer.cornerRadius = loginButton.bounds.height / 2
+        loginButton.layer.cornerRadius = 20 //loginButton.bounds.height / 2
         
         let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, screenSize.width, screenSize.height))
         imageViewBackground.image = UIImage(named: "LandingPageBackground")

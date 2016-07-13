@@ -30,7 +30,7 @@ class InviteViewController: UIViewController, MFMessageComposeViewControllerDele
         navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"HelveticaNeue-Light", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         
         referralCodeLabel.text = "\(userReferralCode.referralCode)"
         
@@ -49,8 +49,8 @@ extension InviteViewController {
         
         if (MFMessageComposeViewController.canSendText()) {
             let controller = MFMessageComposeViewController()
-            controller.body = "Start golfing with Loop to see how great having a caddy can be! Because ever golfer deserves a caddy. User my referral code to receive $10 credit toward your first round of golf."
-            controller.recipients = ["Enter tel-nr"]
+            controller.body = "Start golfing with Loop to see how great having a caddie can be. Use my referral code \(userReferralCode.referralCode) to receive $10 credit toward your first round of golf. Because every golfer deserves a caddie."
+            //controller.recipients = [""]
             controller.messageComposeDelegate = self
             self.presentViewController(controller, animated: true, completion: {})
         } else {

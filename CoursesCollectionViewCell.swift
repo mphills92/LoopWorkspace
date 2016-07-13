@@ -23,7 +23,7 @@ class CoursesCollectionCell: UICollectionViewCell {
                 imageView.image = UIImage(named: "GolfCourseBackgroundImage")
                 courseNameLabel.text = coursesAvailable.name
                 membershipHistoryLabel.text = "Member since \(coursesAvailable.membershipHistory)"
-                chooseCourseButton.layer.cornerRadius = chooseCourseButton.bounds.height / 2
+                chooseCourseButton.layer.cornerRadius = 20 //chooseCourseButton.bounds.height / 2
                 chooseCourseButton.layer.borderColor = UIColor.whiteColor().CGColor
                 chooseCourseButton.layer.borderWidth = 1
                 chooseCourseButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.25).CGColor

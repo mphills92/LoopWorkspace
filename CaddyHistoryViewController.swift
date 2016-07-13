@@ -46,11 +46,13 @@ extension CaddyHistoryViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        return 120
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("caddieHistoryRecapCell", forIndexPath: indexPath) as! ReservationRecapCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("caddieHistoryRecapCell", forIndexPath: indexPath) as! CaddieHistoryCell
+        
+        cell.userProfileImage.layer.cornerRadius = 8
         
         return cell
     }

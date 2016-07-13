@@ -23,7 +23,7 @@ class ChooseAvailableCaddiesCell: UITableViewCell {
                 caddieNameLabel.text = caddiesAvailable.name
                 membershipHistoryLabel.text = "Member since \(caddiesAvailable.membership)"
                 roundsHistoryLabel.text = "\(caddiesAvailable.rounds) rounds caddied"
-                reserveButton.layer.cornerRadius = reserveButton.bounds.height / 2
+                reserveButton.layer.cornerRadius = 20 //reserveButton.bounds.height / 2
                 reserveButton.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
                 reserveButton.layer.borderWidth = 1
                 

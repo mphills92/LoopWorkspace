@@ -23,10 +23,10 @@ class SignUpChooseAuthenticationViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"HelveticaNeue-Light", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         
-        signUpFacebookButton.layer.cornerRadius = signUpFacebookButton.bounds.height / 2
-        signUpEmailButton.layer.cornerRadius = signUpEmailButton.bounds.height / 2
+        signUpFacebookButton.layer.cornerRadius = 20 //signUpFacebookButton.bounds.height / 2
+        signUpEmailButton.layer.cornerRadius = 20 //signUpEmailButton.bounds.height / 2
         
         
     }

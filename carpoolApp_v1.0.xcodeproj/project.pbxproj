@@ -21,6 +21,7 @@
 		C95385D31D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385D21D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift */; };
 		C95385D51D120CC5007BCA15 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385D41D120CC5007BCA15 /* ProfileSegmentedControl.swift */; };
 		C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */; };
+		C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */; };
 		C956FD221D2420BE00E7143B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD211D2420BE00E7143B /* Login.swift */; };
 		C956FD251D24289900E7143B /* CaddieSignUpWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD241D24289900E7143B /* CaddieSignUpWebViewController.swift */; };
 		C956FD271D242E0B00E7143B /* ReservationChooseCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD261D242E0B00E7143B /* ReservationChooseCourseViewController.swift */; };
@@ -104,6 +105,7 @@
 		C95385D21D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerConfirmReservationViewController.swift; path = ../ContainerConfirmReservationViewController.swift; sourceTree = "<group>"; };
 		C95385D41D120CC5007BCA15 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSegmentedControl.swift; path = ../ProfileSegmentedControl.swift; sourceTree = "<group>"; };
 		C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNumberOfPlayersSegmentedControl.swift; sourceTree = "<group>"; };
+		C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieHistoryCell.swift; sourceTree = "<group>"; };
 		C956FD211D2420BE00E7143B /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C956FD241D24289900E7143B /* CaddieSignUpWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaddieSignUpWebViewController.swift; path = ../CaddieSignUpWebViewController.swift; sourceTree = "<group>"; };
 		C956FD261D242E0B00E7143B /* ReservationChooseCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationChooseCourseViewController.swift; sourceTree = "<group>"; };
@@ -160,7 +162,7 @@
 		C9EE3F2C1D0A1C5900F86EF2 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		C9EE3F2F1D0A1EBC00F86EF2 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		C9EE3F321D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BecomeCaddieViewController.swift; path = ../BecomeCaddieViewController.swift; sourceTree = "<group>"; };
-		C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				C95385CD1D0F5B9F007BCA15 /* ChooseAvailableCaddiesCell.swift */,
 				C956FD331D256D8B00E7143B /* CalendarCell.swift */,
 				C990CFA81D21D2F2005E05F2 /* ReservationRecapCell.swift */,
+				C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */,
 			);
 			name = Views;
 			path = ..;
@@ -249,6 +252,7 @@
 				C994B4C51D144A90009848F2 /* HelpAndSupportViewController.swift */,
 			);
 			name = "Settings Subviews";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C956FD231D2420C300E7143B /* Authentication */ = {
@@ -441,13 +445,6 @@
 			name = "Choose Options";
 			sourceTree = "<group>";
 		};
-		C9EE3F221D09D0D900F86EF2 /* Available Caddies */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Available Caddies";
-			sourceTree = "<group>";
-		};
 		C9EE3F231D09D0E600F86EF2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,14 +462,12 @@
 				C956FD301D2448C900E7143B /* Choose Course */,
 				C9EE3F211D09D0C400F86EF2 /* Choose Options */,
 				C956FD3A1D280B4D00E7143B /* Choose Caddie */,
-				C9EE3F221D09D0D900F86EF2 /* Available Caddies */,
 				C95385D11D10B8F7007BCA15 /* Confirm Reservation */,
 				C9EE3F2B1D0A1A2000F86EF2 /* My Profile */,
 				C9EE3F2E1D0A1CC600F86EF2 /* Our Story */,
 				C9EE3F311D0A1F1E00F86EF2 /* Invite Others */,
 				C9EE3F361D0A20EC00F86EF2 /* Become Caddie */,
 				C92042C51D2DB18E003654CB /* Caddie Mode */,
-				C9EE3F391D0A21DC00F86EF2 /* Settings */,
 				C990CF971D1B8F64005E05F2 /* Help Center */,
 				C91D13DC1D0E7DAE00D177B4 /* Other */,
 			);
@@ -484,6 +479,8 @@
 			children = (
 				C9EE3F291D0A196C00F86EF2 /* ProfileViewController.swift */,
 				C95385D41D120CC5007BCA15 /* ProfileSegmentedControl.swift */,
+				C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */,
+				C95385DC1D133EAD007BCA15 /* Settings Subviews */,
 				C994B4C91D145BFA009848F2 /* Upcoming Reservation */,
 				C9D7FA871D2EEDDC00F52A1B /* Caddie History */,
 				C9D7FA881D2EEDEB00F52A1B /* Notifications */,
@@ -517,16 +514,6 @@
 				C956FD241D24289900E7143B /* CaddieSignUpWebViewController.swift */,
 			);
 			name = "Become Caddie";
-			sourceTree = "<group>";
-		};
-		C9EE3F391D0A21DC00F86EF2 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */,
-				C95385DC1D133EAD007BCA15 /* Settings Subviews */,
-			);
-			name = Settings;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -597,6 +584,7 @@
 				TargetAttributes = {
 					C95A00AC1CB5CB38008237B1 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 54DUQP4AYT;
 					};
 					C95A00C01CB5CB38008237B1 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -698,6 +686,7 @@
 				C95385C21D0F5A41007BCA15 /* UltravisualLayout.swift in Sources */,
 				C956FD2D1D24338500E7143B /* CoursesCollectionViewCell.swift in Sources */,
 				C9EE3F381D0A217F00F86EF2 /* SettingsViewController.swift in Sources */,
+				C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */,
 				C990CFA51D2168C0005E05F2 /* SignUpChooseAuthenticationViewController.swift in Sources */,
 				C990CF9E1D209512005E05F2 /* SignUpNameInfoViewController.swift in Sources */,
 				C994B4C21D143CC9009848F2 /* NotificationsSettingsViewController.swift in Sources */,
@@ -858,10 +847,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = carpoolApp_v1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.carpoolApp-v1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "carpoolApp_v1.0/carpoolApp_v1.0-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -872,10 +864,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = carpoolApp_v1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.carpoolApp-v1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "carpoolApp_v1.0/carpoolApp_v1.0-Bridging-Header.h";
 			};
 			name = Release;
