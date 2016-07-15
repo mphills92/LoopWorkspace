@@ -1,5 +1,5 @@
 //
-//  StartReservationViewController.swift
+//  ChooseDateViewController.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 6/7/16.
@@ -8,23 +8,20 @@
 
 import UIKit
 
-class StartReservationViewController: UIViewController {
+class ChooseDateViewController: UIViewController {
     
     @IBOutlet weak var popoverView: UIView!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var bottomWhiteView: UIView!
     @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var findAvailableCaddiesButton: UIButton!
-    
+    @IBOutlet weak var nextButton: UIButton!
     
     @IBAction func closeViewButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
-    @IBAction func searchAvailableCaddiesButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
+    @IBAction func nextButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("toChooseTimeSegue", sender: self)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +37,7 @@ class StartReservationViewController: UIViewController {
         popoverView.layer.shadowRadius = 5
         popoverView.layer.shouldRasterize = true
         
-        containerView.layer.cornerRadius = 8
-        containerView.layer.masksToBounds = true
-        
-        findAvailableCaddiesButton.layer.cornerRadius = 20 //findAvailableCaddiesButton.bounds.height / 2
+        nextButton.layer.cornerRadius = 20
         
     }
 }

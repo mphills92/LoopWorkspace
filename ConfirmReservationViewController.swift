@@ -51,7 +51,7 @@ class ConfirmReservationViewController: UIViewController {
     
     // Implement unwind segue method in the future.
     func closeAllReservationProcesses() {
-        self.presentingViewController!.presentingViewController!.presentingViewController!.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
+        self.presentingViewController!.presentingViewController!.presentingViewController!.presentingViewController!.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
 
     }
     
