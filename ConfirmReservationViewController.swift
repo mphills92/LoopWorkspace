@@ -33,6 +33,8 @@ class ConfirmReservationViewController: UIViewController {
         navigationBar.shadowImage = UIImage()
         
         confirmReservationButton.layer.cornerRadius = 20 //confirmReservationButton.bounds.height / 2
+        
+        // Unicode character for cells...black large dot... \u{25CF}
     }
     
     
