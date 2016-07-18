@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         
         self.userProfileImage.layer.cornerRadius = 8
         userNameLabel.text = "\(userName.firstName)" + " " + "\(userName.lastName)"
-        membershipHistoryLabel.text = "\(userAccount.membershipHistory)"
+        membershipHistoryLabel.text = "Member since \(userAccount.membershipHistory)"
         lifetimeRoundsLabel.text = "\(userAccount.lifetimeRounds)"
         currentCreditLabel.text = "$\(userAccount.currentCredit)"
         

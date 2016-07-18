@@ -14,9 +14,12 @@ class ChooseTimeViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var searchCaddiesButton: UIButton!
     @IBOutlet weak var chooseTimePicker: UIDatePicker!
+    @IBOutlet weak var pickerBackgroundView: UIView!
     
     var selectedDate = NSDate()
     var dateFormatter = NSDateFormatter()
+    
+    let timeComponents = NSCalendar.currentCalendar().componentsInTimeZone(NSTimeZone.localTimeZone(), fromDate: NSDate())
     
     @IBAction func closeViewButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
@@ -40,10 +43,15 @@ class ChooseTimeViewController: UIViewController {
         popoverView.layer.shadowOffset = CGSizeZero
         popoverView.layer.shadowRadius = 5
         popoverView.layer.shouldRasterize = true
+        
+        pickerBackgroundView.layer.cornerRadius = 8
+        pickerBackgroundView.layer.shadowColor = UIColor.blackColor().CGColor
+        pickerBackgroundView.layer.shadowOpacity = 0.5
+        pickerBackgroundView.layer.shadowOffset = CGSizeZero
+        pickerBackgroundView.layer.shadowRadius = 5
 
         searchCaddiesButton.layer.cornerRadius = 20 //findAvailableCaddiesButton.bounds.height / 2
         
-        self.chooseTimePicker.setValue(UIColor.whiteColor(), forKey: "textColor")
         chooseTimePicker.addTarget(self, action: "timeChangedValue:", forControlEvents: UIControlEvents.ValueChanged)
         
     }
@@ -53,7 +61,11 @@ extension ChooseTimeViewController {
     
     func timeChangedValue(date: NSDate) {
         selectedDate = chooseTimePicker.date
-        dateFormatter.dateFormat = "HH:mm a"
+        //dateFormatter.dateFormat = "HH:mm a"
+        dateFormatter.timeStyle = .ShortStyle
         let convertedTime = dateFormatter.stringFromDate(selectedDate)
+        print (convertedTime)
     }
+    
+    
 }
