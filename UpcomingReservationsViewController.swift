@@ -59,7 +59,9 @@ extension UpcomingReservationsViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        self.performSegueWithIdentifier("toReservationConfirmationSegue", sender: self)
+        self.performSegueWithIdentifier("toUpcomingReservationOverviewSegue", sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
         /*
         let alertController = UIAlertController(title: "Reminders", message:  "\n Caddies have set their own communication privacy preferences. Some caddies choose to be available via email or text message while others do not. Options displayed below reflect these privacy preferences. Any deleted reservations will be final and subject to Loop's Terms of Service related to canceled reservations.", preferredStyle: .ActionSheet)
         alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)

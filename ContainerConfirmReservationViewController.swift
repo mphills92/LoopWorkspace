@@ -48,6 +48,8 @@ extension ContainerConfirmReservationViewController {
         let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
         if cellClicked == promoCodeTableViewCell {
             performSegueWithIdentifier("toPromoCodePopoverSegue", sender: self)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
         }
         
     }

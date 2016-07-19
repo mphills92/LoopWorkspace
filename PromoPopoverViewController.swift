@@ -89,7 +89,7 @@ extension PromoPopoverViewController {
             alertController.addAction(tryAgainAction)
             
             self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = UIColor(red: 19/255, green: 86/255, blue: 99/255, alpha: 1.0)
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             }
 
         } else {
@@ -104,7 +104,7 @@ extension PromoPopoverViewController {
             alertController.addAction(tryAgainAction)
             
             self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = UIColor(red: 19/255, green: 86/255, blue: 99/255, alpha: 1.0)
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             }
         }
     }

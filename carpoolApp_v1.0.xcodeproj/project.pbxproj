@@ -20,6 +20,8 @@
 		C95385D01D10B8EE007BCA15 /* ConfirmReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385CF1D10B8EE007BCA15 /* ConfirmReservationViewController.swift */; };
 		C95385D31D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385D21D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift */; };
 		C95385D51D120CC5007BCA15 /* ProfileSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385D41D120CC5007BCA15 /* ProfileSegmentedControl.swift */; };
+		C955272A1D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527291D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift */; };
+		C955272D1D3E92D50069554C /* ReservationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955272C1D3E92D50069554C /* ReservationInformation.swift */; };
 		C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */; };
 		C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */; };
 		C956C1111D3756300057B776 /* ChooseTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C1101D3756300057B776 /* ChooseTimeViewController.swift */; };
@@ -62,7 +64,6 @@
 		C994B4CF1D15A67F009848F2 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4CE1D15A67F009848F2 /* ChangeEmailViewController.swift */; };
 		C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4D21D15A83E009848F2 /* UserInformation.swift */; };
 		C9C016461D3D9A9800675ABB /* PromoPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C016451D3D9A9800675ABB /* PromoPopoverViewController.swift */; };
-		C9D7FA861D2EED5700F52A1B /* ReservationConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7FA851D2EED5700F52A1B /* ReservationConfirmationViewController.swift */; };
 		C9EE3ED81D06643800F86EF2 /* SidebarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3ED71D06643800F86EF2 /* SidebarMenuViewController.swift */; };
 		C9EE3F1A1D07383200F86EF2 /* ChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F191D07383200F86EF2 /* ChooseDateViewController.swift */; };
 		C9EE3F1C1D075F0B00F86EF2 /* StartReservationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F1B1D075F0B00F86EF2 /* StartReservationContainerViewController.swift */; };
@@ -106,6 +107,8 @@
 		C95385CF1D10B8EE007BCA15 /* ConfirmReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmReservationViewController.swift; path = ../ConfirmReservationViewController.swift; sourceTree = "<group>"; };
 		C95385D21D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerConfirmReservationViewController.swift; path = ../ContainerConfirmReservationViewController.swift; sourceTree = "<group>"; };
 		C95385D41D120CC5007BCA15 /* ProfileSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSegmentedControl.swift; path = ../ProfileSegmentedControl.swift; sourceTree = "<group>"; };
+		C95527291D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewUpcomingReservationViewController.swift; sourceTree = "<group>"; };
+		C955272C1D3E92D50069554C /* ReservationInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationInformation.swift; sourceTree = "<group>"; };
 		C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNumberOfPlayersSegmentedControl.swift; sourceTree = "<group>"; };
 		C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieHistoryCell.swift; sourceTree = "<group>"; };
 		C956C1101D3756300057B776 /* ChooseTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTimeViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +159,6 @@
 		C994B4CE1D15A67F009848F2 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		C994B4D21D15A83E009848F2 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		C9C016451D3D9A9800675ABB /* PromoPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromoPopoverViewController.swift; path = ../PromoPopoverViewController.swift; sourceTree = "<group>"; };
-		C9D7FA851D2EED5700F52A1B /* ReservationConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationConfirmationViewController.swift; sourceTree = "<group>"; };
 		C9EE3ED71D06643800F86EF2 /* SidebarMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarMenuViewController.swift; path = ../SidebarMenuViewController.swift; sourceTree = "<group>"; };
 		C9EE3F191D07383200F86EF2 /* ChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseDateViewController.swift; path = ../ChooseDateViewController.swift; sourceTree = "<group>"; };
 		C9EE3F1B1D075F0B00F86EF2 /* StartReservationContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartReservationContainerViewController.swift; path = ../StartReservationContainerViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				C994B4D11D15A7E6009848F2 /* Available Options */,
 				C956FD231D2420C300E7143B /* Authentication */,
 				C994B4D41D15A853009848F2 /* User Information */,
+				C955272E1D3E92DB0069554C /* Reservation Information */,
 			);
 			name = Models;
 			path = ..;
@@ -258,6 +261,14 @@
 			);
 			name = "Settings Subviews";
 			path = ..;
+			sourceTree = "<group>";
+		};
+		C955272E1D3E92DB0069554C /* Reservation Information */ = {
+			isa = PBXGroup;
+			children = (
+				C955272C1D3E92D50069554C /* ReservationInformation.swift */,
+			);
+			name = "Reservation Information";
 			sourceTree = "<group>";
 		};
 		C956C1121D375A250057B776 /* Choose Time */ = {
@@ -398,7 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				C994B4C71D145BDB009848F2 /* UpcomingReservationsViewController.swift */,
-				C9D7FA851D2EED5700F52A1B /* ReservationConfirmationViewController.swift */,
+				C95527291D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift */,
 			);
 			name = "Upcoming Reservation";
 			sourceTree = "<group>";
@@ -673,11 +684,11 @@
 				C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */,
 				C9EE3F1A1D07383200F86EF2 /* ChooseDateViewController.swift in Sources */,
 				C9EE3F331D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift in Sources */,
-				C9D7FA861D2EED5700F52A1B /* ReservationConfirmationViewController.swift in Sources */,
 				C92042C71D2DB9E4003654CB /* CaddieModeSegmentedControl.swift in Sources */,
 				C994B4C81D145BDB009848F2 /* UpcomingReservationsViewController.swift in Sources */,
 				C956FD221D2420BE00E7143B /* Login.swift in Sources */,
 				C990CFA11D209AFE005E05F2 /* SignUpContactInfoViewController.swift in Sources */,
+				C955272A1D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift in Sources */,
 				C990CFA91D21D2F2005E05F2 /* ReservationRecapCell.swift in Sources */,
 				C990CF9C1D207615005E05F2 /* ForgotPasswordViewController.swift in Sources */,
 				C9EE3ED81D06643800F86EF2 /* SidebarMenuViewController.swift in Sources */,
@@ -700,6 +711,7 @@
 				C994B4CB1D145D24009848F2 /* CaddyHistoryViewController.swift in Sources */,
 				C95385C21D0F5A41007BCA15 /* UltravisualLayout.swift in Sources */,
 				C956C1111D3756300057B776 /* ChooseTimeViewController.swift in Sources */,
+				C955272D1D3E92D50069554C /* ReservationInformation.swift in Sources */,
 				C956FD2D1D24338500E7143B /* CoursesCollectionViewCell.swift in Sources */,
 				C9EE3F381D0A217F00F86EF2 /* SettingsViewController.swift in Sources */,
 				C9C016461D3D9A9800675ABB /* PromoPopoverViewController.swift in Sources */,
