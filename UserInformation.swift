@@ -37,7 +37,7 @@ class UserAccount {
 }
 
 class UserReferralCode {
-    var referralCode: String = "A1B2C3D4"
+    var referralCode: String = "ABC123"
 }
 
 class UpcomingReservations {

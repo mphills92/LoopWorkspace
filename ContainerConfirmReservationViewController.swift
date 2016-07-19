@@ -10,10 +10,14 @@ import UIKit
 
 class ContainerConfirmReservationViewController: UITableViewController {
     
+    @IBOutlet weak var promoCodeTableViewCell: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -32, 0)
+        
+        promoCodeTableViewCell.tag = 1
 
     }
     
@@ -38,7 +42,13 @@ extension ContainerConfirmReservationViewController {
         self.presentViewController(alertController, animated: true) {
             alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+        if cellClicked == promoCodeTableViewCell {
+            performSegueWithIdentifier("toPromoCodePopoverSegue", sender: self)
+        }
         
     }
-
 }
