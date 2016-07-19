@@ -56,3 +56,7 @@ class Notifications {
     var numberOfNotificationsCells: Int = 0
 }
 
+class MostRecentRound {
+    var reviewHasBeenSubmittedForMostRecentRound: Bool = false
+}
+

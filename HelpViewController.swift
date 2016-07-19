@@ -10,6 +10,10 @@ import UIKit
 
 class HelpViewController: UITableViewController {
     
+    @IBOutlet weak var reviewCaddieCell: UITableViewCell!
+    
+    var mostRecentRound = MostRecentRound()
+    
     @IBAction func closeViewButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})        
     }
@@ -24,6 +28,12 @@ class HelpViewController: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
 }
 
 extension HelpViewController {
@@ -34,5 +44,30 @@ extension HelpViewController {
         } else {
             return 12
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+        if cellClicked == reviewCaddieCell {
+            if (mostRecentRound.reviewHasBeenSubmittedForMostRecentRound == false) {
+                performSegueWithIdentifier("toReviewCaddieSegue", sender: self)
+            } else if (mostRecentRound.reviewHasBeenSubmittedForMostRecentRound == true) {
+                let alertController = UIAlertController(title: "Review already submitted.", message: "It looks like you've already reviewed the caddie from your previous round. We appreciate your enthusiasm, but you'll just have to play another round of golf to have another caddie to review!", preferredStyle: .Alert)
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                
+                let doneAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                }
+                
+                alertController.addAction(doneAction)
+                
+                self.presentViewController(alertController, animated: true) {
+                    alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                }
+
+            }
+        }
+
     }
 }
