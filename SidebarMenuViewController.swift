@@ -30,9 +30,10 @@ extension SidebarMenuViewController {
         } else {
             caddieMenuOptionButton.setTitle("Go To Caddie Mode", forState: .Normal)
             caddieMenuOptionButton.titleLabel!.font = UIFont(name: "AvenirNext-Regular", size: 20)
-            caddieMenuOptionButton.backgroundColor = UIColor.clearColor()
-            caddieMenuOptionButton.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
-            caddieMenuOptionButton.layer.borderWidth = 1
+            caddieMenuOptionButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            caddieMenuOptionButton.backgroundColor = UIColor(red: 31/255, green: 33/255, blue: 36/255, alpha: 1.0)
+            //caddieMenuOptionButton.layer.borderColor = UIColor.yellowColor().CGColor
+            //caddieMenuOptionButton.layer.borderWidth = 1
             caddieMenuOptionButton.layer.cornerRadius = 20 //caddieMenuOptionButton.bounds.height / 2
         }
     }

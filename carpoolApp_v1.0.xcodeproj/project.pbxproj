@@ -24,6 +24,9 @@
 		C955272D1D3E92D50069554C /* ReservationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955272C1D3E92D50069554C /* ReservationInformation.swift */; };
 		C95527301D3EA8850069554C /* ReviewCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955272F1D3EA8850069554C /* ReviewCaddieViewController.swift */; };
 		C95527331D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */; };
+		C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527341D3EEA690069554C /* DashboardViewController.swift */; };
+		C95527381D3F30760069554C /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527371D3F30760069554C /* AlertsViewController.swift */; };
+		C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */; };
 		C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */; };
 		C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */; };
 		C956C1111D3756300057B776 /* ChooseTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C1101D3756300057B776 /* ChooseTimeViewController.swift */; };
@@ -113,6 +116,9 @@
 		C955272C1D3E92D50069554C /* ReservationInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationInformation.swift; sourceTree = "<group>"; };
 		C955272F1D3EA8850069554C /* ReviewCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCaddieViewController.swift; sourceTree = "<group>"; };
 		C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCaddieSegmentedControl.swift; sourceTree = "<group>"; };
+		C95527341D3EEA690069554C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		C95527371D3F30760069554C /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDashboardViewController.swift; sourceTree = "<group>"; };
 		C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNumberOfPlayersSegmentedControl.swift; sourceTree = "<group>"; };
 		C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieHistoryCell.swift; sourceTree = "<group>"; };
 		C956C1101D3756300057B776 /* ChooseTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTimeViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +220,8 @@
 			children = (
 				C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */,
 				C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */,
+				C95527391D3F349B0069554C /* Alerts */,
+				C95527361D3EEC1B0069554C /* Dashboard */,
 			);
 			name = "Caddie Mode";
 			path = ..;
@@ -282,6 +290,23 @@
 				C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */,
 			);
 			name = "Help Subviews";
+			sourceTree = "<group>";
+		};
+		C95527361D3EEC1B0069554C /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				C95527341D3EEA690069554C /* DashboardViewController.swift */,
+				C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		C95527391D3F349B0069554C /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				C95527371D3F30760069554C /* AlertsViewController.swift */,
+			);
+			name = Alerts;
 			sourceTree = "<group>";
 		};
 		C956C1121D375A250057B776 /* Choose Time */ = {
@@ -691,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C956C1171D3D4E940057B776 /* EditProfileViewController.swift in Sources */,
+				C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */,
 				C990CF991D1F3FBA005E05F2 /* LoginViewController.swift in Sources */,
 				C956FD2F1D24356600E7143B /* SessionForCourses.swift in Sources */,
 				C95385D01D10B8EE007BCA15 /* ConfirmReservationViewController.swift in Sources */,
@@ -720,6 +746,7 @@
 				C990CF961D1B8F56005E05F2 /* HelpViewController.swift in Sources */,
 				C994B4C41D144417009848F2 /* PrivacySettingsViewController.swift in Sources */,
 				C95385CE1D0F5B9F007BCA15 /* ChooseAvailableCaddiesCell.swift in Sources */,
+				C95527381D3F30760069554C /* AlertsViewController.swift in Sources */,
 				C956FD391D280B1E00E7143B /* ContainerChooseCaddieViewController.swift in Sources */,
 				C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */,
 				C990CFA31D20A175005E05F2 /* SignUpProfilePictureViewController.swift in Sources */,
@@ -736,6 +763,7 @@
 				C990CF9E1D209512005E05F2 /* SignUpNameInfoViewController.swift in Sources */,
 				C994B4C21D143CC9009848F2 /* NotificationsSettingsViewController.swift in Sources */,
 				C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */,
+				C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */,
 				C994B4C61D144A90009848F2 /* HelpAndSupportViewController.swift in Sources */,
 				C9EE3F2A1D0A196C00F86EF2 /* ProfileViewController.swift in Sources */,
 				C95385CC1D0F5B98007BCA15 /* SessionForCaddies.swift in Sources */,

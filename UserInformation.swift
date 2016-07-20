@@ -9,8 +9,8 @@
 import UIKit
 
 class UserName {
-    var firstName: String = "Test"
-    var lastName: String = "Name"
+    var firstName: String = "Mark"
+    var lastName: String = "Johnson"
 }
 
 class UserPassword {

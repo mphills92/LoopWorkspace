@@ -32,6 +32,7 @@ extension CaddyHistoryViewController {
         } else {
             let noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height))
             noDataLabel.text = "You have no past caddies."
+            noDataLabel.font = UIFont(name: "AvenirNext-Regular", size: 17)
             noDataLabel.textColor = UIColor.darkGrayColor()
             noDataLabel.textAlignment = NSTextAlignment.Center
             tableView.backgroundView = noDataLabel

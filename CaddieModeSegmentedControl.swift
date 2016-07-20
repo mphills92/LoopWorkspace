@@ -15,7 +15,7 @@ import UIKit
     var lineView = UIView()
     var pillView = UIView()
     
-    var items: [String] = ["Today", "Upcoming", "Alerts", "Account"] {
+    var items: [String] = ["Dashboard", "Upcoming", "Alerts"] {
         didSet {
             setupLabels()
         }
@@ -54,7 +54,7 @@ import UIKit
             label.text = items[index - 1]
             label.textAlignment = .Center
             label.textColor = UIColor.whiteColor()
-            label.font = UIFont(name: "HelveticaNeue-Light", size: 14)
+            label.font = UIFont(name: "AvenirNext-Regular", size: 17)
             self.addSubview(label)
             labels.append(label)
         }
@@ -71,7 +71,7 @@ import UIKit
         let labelWidth = self.bounds.width / CGFloat(labels.count)
         
         lineView.frame = CGRectMake((labelWidth * 0.05), labelHeight - 1.0, (labelWidth * 0.9), 1.5)
-        lineView.backgroundColor = UIColor(red: 19/255, green: 86/255, blue:99/255, alpha: 1.0)
+        lineView.backgroundColor = UIColor.whiteColor() //(red: 19/255, green: 86/255, blue:99/255, alpha: 1.0)
         
         pillView.frame = CGRectMake ((labelWidth * 0.045), 0, (labelWidth * 0.92), labelHeight)
         pillView.backgroundColor = UIColor.clearColor()
