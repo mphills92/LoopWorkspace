@@ -13,12 +13,23 @@ class LandingPageViewController: UIViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var findCaddyButton: UIButton!
+    @IBOutlet weak var golferBarButtonItem: UIBarButtonItem!
     
     var screenSize = UIScreen.mainScreen().bounds
+    
+    @IBAction func golferActionButtonPressed(sender: AnyObject) {
+        
+        
+        
+    }
+    
+    var reservationDetails = ReservationDetails()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         definesPresentationContext = true
+        
+        showOrHideGolferBarButtonItem()
         
         let navBarLogo = UIImage(named: "LoopLogoNavBarWhite")! as UIImage
         let imageView = UIImageView(image: navBarLogo)
@@ -59,6 +70,19 @@ class LandingPageViewController: UIViewController {
     @IBAction func findCaddyButtonPressed(sender: AnyObject) {
     }
     
+}
+
+extension LandingPageViewController {
+    
+    func showOrHideGolferBarButtonItem() {
+        if (reservationDetails.reservationIsWithinOneHour == true) {
+            golferBarButtonItem.enabled = true
+            golferBarButtonItem.tintColor = UIColor.yellowColor()
+        } else {
+            golferBarButtonItem.enabled = false
+            golferBarButtonItem.tintColor = UIColor.clearColor()
+        }
+    }
 }
 
 

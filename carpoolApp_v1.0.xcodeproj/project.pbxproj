@@ -27,6 +27,7 @@
 		C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527341D3EEA690069554C /* DashboardViewController.swift */; };
 		C95527381D3F30760069554C /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527371D3F30760069554C /* AlertsViewController.swift */; };
 		C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */; };
+		C955273D1D3FCCA20069554C /* GolferRoundInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */; };
 		C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */; };
 		C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */; };
 		C956C1111D3756300057B776 /* ChooseTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C1101D3756300057B776 /* ChooseTimeViewController.swift */; };
@@ -119,6 +120,7 @@
 		C95527341D3EEA690069554C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		C95527371D3F30760069554C /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDashboardViewController.swift; sourceTree = "<group>"; };
+		C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolferRoundInProgressViewController.swift; sourceTree = "<group>"; };
 		C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNumberOfPlayersSegmentedControl.swift; sourceTree = "<group>"; };
 		C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieHistoryCell.swift; sourceTree = "<group>"; };
 		C956C1101D3756300057B776 /* ChooseTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTimeViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +309,14 @@
 				C95527371D3F30760069554C /* AlertsViewController.swift */,
 			);
 			name = Alerts;
+			sourceTree = "<group>";
+		};
+		C955273E1D3FCCDD0069554C /* Current Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */,
+			);
+			name = "Current Reservation";
 			sourceTree = "<group>";
 		};
 		C956C1121D375A250057B776 /* Choose Time */ = {
@@ -523,6 +533,7 @@
 			children = (
 				C990CF9A1D1F3FEB005E05F2 /* Authentication */,
 				C9EE3F231D09D0E600F86EF2 /* Home */,
+				C955273E1D3FCCDD0069554C /* Current Reservation */,
 				C956FD301D2448C900E7143B /* Choose Course */,
 				C9EE3F211D09D0C400F86EF2 /* Choose Date */,
 				C956C1121D375A250057B776 /* Choose Time */,
@@ -732,6 +743,7 @@
 				C95527301D3EA8850069554C /* ReviewCaddieViewController.swift in Sources */,
 				C990CFA91D21D2F2005E05F2 /* ReservationRecapCell.swift in Sources */,
 				C990CF9C1D207615005E05F2 /* ForgotPasswordViewController.swift in Sources */,
+				C955273D1D3FCCA20069554C /* GolferRoundInProgressViewController.swift in Sources */,
 				C9EE3ED81D06643800F86EF2 /* SidebarMenuViewController.swift in Sources */,
 				C994B4CF1D15A67F009848F2 /* ChangeEmailViewController.swift in Sources */,
 				C9EE3F301D0A1EBC00F86EF2 /* InviteViewController.swift in Sources */,
