@@ -1,5 +1,5 @@
 //
-//  ContainerGolferCurrentReservationViewController.swift
+//  ContainerGolferRoundInProgressViewController.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 7/20/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerGolferCurrentReservationViewController: UITableViewController {
+class ContainerGolferRoundInProgressViewController: UITableViewController {
     
     @IBOutlet weak var caddieProfileImageView: UIImageView!
     
@@ -22,7 +22,7 @@ class ContainerGolferCurrentReservationViewController: UITableViewController {
     }
 }
 
-extension ContainerGolferCurrentReservationViewController {
+extension ContainerGolferRoundInProgressViewController {
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 0) {

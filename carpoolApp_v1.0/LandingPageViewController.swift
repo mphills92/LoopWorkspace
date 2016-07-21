@@ -65,9 +65,25 @@ class LandingPageViewController: UIViewController {
 
 extension LandingPageViewController {
     
+    
+    @IBAction func activeReservationButtonPressed(sender: AnyObject) {
+        if (nextReservation.userHasCheckedInForNextReservation == false) {
+            performSegueWithIdentifier("toCheckInSegue", sender: self)
+        } else {
+            performSegueWithIdentifier("toRoundInProgressSegue", sender: self)
+        }
+    }
+    
     func showOrHideActiveLoopButton() {
         if (nextReservation.reservationIsWithinOneHour == true) {
             activeLoopButton.hidden = false
+            
+            if (nextReservation.userHasCheckedInForNextReservation == false) {
+                activeLoopButton.setTitle("Reservation Check In", forState: .Normal)
+            } else {
+                activeLoopButton.setTitle("Round In Progress", forState: .Normal)
+            }
+            
         } else {
             activeLoopButton.hidden = true
         }
