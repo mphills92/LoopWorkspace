@@ -11,6 +11,8 @@
 		C92042C71D2DB9E4003654CB /* CaddieModeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */; };
 		C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E61D174E4600EEE328 /* ChangePhoneViewController.swift */; };
 		C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */; };
+		C944F1BA1D3FF0F1008E2B4C /* ContainerGolferCurrentReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1B91D3FF0F1008E2B4C /* ContainerGolferCurrentReservationViewController.swift */; };
+		C944F1BC1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */; };
 		C95385C21D0F5A41007BCA15 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C11D0F5A41007BCA15 /* UltravisualLayout.swift */; };
 		C95385C41D0F5B80007BCA15 /* CaddiesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C95385C31D0F5B80007BCA15 /* CaddiesList.plist */; };
 		C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */; };
@@ -27,7 +29,7 @@
 		C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527341D3EEA690069554C /* DashboardViewController.swift */; };
 		C95527381D3F30760069554C /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527371D3F30760069554C /* AlertsViewController.swift */; };
 		C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */; };
-		C955273D1D3FCCA20069554C /* GolferRoundInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */; };
+		C955273D1D3FCCA20069554C /* GolferCurrentReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273C1D3FCCA20069554C /* GolferCurrentReservationViewController.swift */; };
 		C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */; };
 		C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */; };
 		C956C1111D3756300057B776 /* ChooseTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C1101D3756300057B776 /* ChooseTimeViewController.swift */; };
@@ -104,6 +106,8 @@
 		C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeSegmentedControl.swift; sourceTree = "<group>"; };
 		C94259E61D174E4600EEE328 /* ChangePhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePhoneViewController.swift; sourceTree = "<group>"; };
 		C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerAboutUsViewController.swift; sourceTree = "<group>"; };
+		C944F1B91D3FF0F1008E2B4C /* ContainerGolferCurrentReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGolferCurrentReservationViewController.swift; sourceTree = "<group>"; };
+		C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerReviewCaddieViewController.swift; sourceTree = "<group>"; };
 		C95385C11D0F5A41007BCA15 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UltravisualLayout.swift; path = ../UltravisualLayout.swift; sourceTree = "<group>"; };
 		C95385C31D0F5B80007BCA15 /* CaddiesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CaddiesList.plist; sourceTree = "<group>"; };
 		C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
@@ -120,7 +124,7 @@
 		C95527341D3EEA690069554C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		C95527371D3F30760069554C /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDashboardViewController.swift; sourceTree = "<group>"; };
-		C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolferRoundInProgressViewController.swift; sourceTree = "<group>"; };
+		C955273C1D3FCCA20069554C /* GolferCurrentReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolferCurrentReservationViewController.swift; sourceTree = "<group>"; };
 		C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNumberOfPlayersSegmentedControl.swift; sourceTree = "<group>"; };
 		C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieHistoryCell.swift; sourceTree = "<group>"; };
 		C956C1101D3756300057B776 /* ChooseTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTimeViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +233,25 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		C944F1B81D3FF0C6008E2B4C /* Golfer Active Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				C955273C1D3FCCA20069554C /* GolferCurrentReservationViewController.swift */,
+				C944F1B91D3FF0F1008E2B4C /* ContainerGolferCurrentReservationViewController.swift */,
+				C944F1BD1D4018E5008E2B4C /* Review Caddie */,
+			);
+			name = "Golfer Active Reservation";
+			sourceTree = "<group>";
+		};
+		C944F1BD1D4018E5008E2B4C /* Review Caddie */ = {
+			isa = PBXGroup;
+			children = (
+				C955272F1D3EA8850069554C /* ReviewCaddieViewController.swift */,
+				C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */,
+			);
+			name = "Review Caddie";
+			sourceTree = "<group>";
+		};
 		C95385BD1D0F402D007BCA15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,7 +311,6 @@
 		C95527311D3EA9440069554C /* Help Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				C955272F1D3EA8850069554C /* ReviewCaddieViewController.swift */,
 				C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */,
 			);
 			name = "Help Subviews";
@@ -311,12 +333,12 @@
 			name = Alerts;
 			sourceTree = "<group>";
 		};
-		C955273E1D3FCCDD0069554C /* Current Reservation */ = {
+		C955273E1D3FCCDD0069554C /* Active Reservation */ = {
 			isa = PBXGroup;
 			children = (
-				C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */,
+				C944F1B81D3FF0C6008E2B4C /* Golfer Active Reservation */,
 			);
-			name = "Current Reservation";
+			name = "Active Reservation";
 			sourceTree = "<group>";
 		};
 		C956C1121D375A250057B776 /* Choose Time */ = {
@@ -533,7 +555,7 @@
 			children = (
 				C990CF9A1D1F3FEB005E05F2 /* Authentication */,
 				C9EE3F231D09D0E600F86EF2 /* Home */,
-				C955273E1D3FCCDD0069554C /* Current Reservation */,
+				C955273E1D3FCCDD0069554C /* Active Reservation */,
 				C956FD301D2448C900E7143B /* Choose Course */,
 				C9EE3F211D09D0C400F86EF2 /* Choose Date */,
 				C956C1121D375A250057B776 /* Choose Time */,
@@ -743,7 +765,7 @@
 				C95527301D3EA8850069554C /* ReviewCaddieViewController.swift in Sources */,
 				C990CFA91D21D2F2005E05F2 /* ReservationRecapCell.swift in Sources */,
 				C990CF9C1D207615005E05F2 /* ForgotPasswordViewController.swift in Sources */,
-				C955273D1D3FCCA20069554C /* GolferRoundInProgressViewController.swift in Sources */,
+				C955273D1D3FCCA20069554C /* GolferCurrentReservationViewController.swift in Sources */,
 				C9EE3ED81D06643800F86EF2 /* SidebarMenuViewController.swift in Sources */,
 				C994B4CF1D15A67F009848F2 /* ChangeEmailViewController.swift in Sources */,
 				C9EE3F301D0A1EBC00F86EF2 /* InviteViewController.swift in Sources */,
@@ -787,10 +809,12 @@
 				C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */,
 				C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */,
 				C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */,
+				C944F1BA1D3FF0F1008E2B4C /* ContainerGolferCurrentReservationViewController.swift in Sources */,
 				C994B4CD1D145E23009848F2 /* NotificationsViewController.swift in Sources */,
 				C990CFA71D219D93005E05F2 /* SignUpPasswordViewController.swift in Sources */,
 				C95A00E81CB5F9D6008237B1 /* LandingPageViewController.swift in Sources */,
 				C9EE3F201D090A5900F86EF2 /* CaddiesAvailableViewController.swift in Sources */,
+				C944F1BC1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift in Sources */,
 				C956FD251D24289900E7143B /* CaddieSignUpWebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

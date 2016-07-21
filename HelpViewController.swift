@@ -12,7 +12,7 @@ class HelpViewController: UITableViewController {
     
     @IBOutlet weak var reviewCaddieCell: UITableViewCell!
     
-    var mostRecentRound = MostRecentRound()
+    var previousReservation = PreviousReservation()
     
     @IBAction func closeViewButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})        
@@ -51,9 +51,9 @@ extension HelpViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         if cellClicked == reviewCaddieCell {
-            if (mostRecentRound.reviewHasBeenSubmittedForMostRecentRound == false) {
+            if (previousReservation.reviewHasBeenSubmittedForPreviousReservation == false) {
                 performSegueWithIdentifier("toReviewCaddieSegue", sender: self)
-            } else if (mostRecentRound.reviewHasBeenSubmittedForMostRecentRound == true) {
+            } else if (previousReservation.reviewHasBeenSubmittedForPreviousReservation == true) {
                 let alertController = UIAlertController(title: "Review already submitted.", message: "It looks like you've already reviewed the caddie from your previous round. We appreciate your enthusiasm, but you'll just have to play another round of golf to have another caddie to review!", preferredStyle: .Alert)
                 alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
                 

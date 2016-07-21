@@ -8,7 +8,3 @@
 
 import UIKit
 
-class ReservationDetails {
-    var reservationIsWithinOneHour: Bool = true
-    
-}

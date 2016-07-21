@@ -18,7 +18,7 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
     @IBOutlet weak var cancelReservationCell: UITableViewCell!
     
     var userName = UserName()
-    var reservationDetails = ReservationDetails()
+    var nextReservation = NextReservation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
 extension OverviewUpcomingReservationViewController {
     
     func setNumberOfTableViewSections() {
-        if (reservationDetails.reservationIsWithinOneHour == true) {
+        if (nextReservation.reservationIsWithinOneHour == true) {
             checkInCell.hidden = false
             tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         } else {

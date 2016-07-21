@@ -45,6 +45,17 @@ class UpcomingReservations {
     var numberOfUpcomingReservationsCells: Int = 5
 }
 
+class NextReservation {
+    var reservationIsWithinOneHour: Bool = true
+    var userHasCheckedInForNextReservation: Bool = true
+}
+
+class PreviousReservation {
+    var previousReservationID: Int = 123456789
+    var reviewHasBeenSubmittedForPreviousReservation: Bool = false
+
+}
+
 class CaddieHistory {
     var caddieHistoryDataExists: Bool = true
     var numberOfCaddieHistoryCells: Int = 5
@@ -55,8 +66,3 @@ class Notifications {
     var notificationsDataExists: Bool = false
     var numberOfNotificationsCells: Int = 0
 }
-
-class MostRecentRound {
-    var reviewHasBeenSubmittedForMostRecentRound: Bool = false
-}
-

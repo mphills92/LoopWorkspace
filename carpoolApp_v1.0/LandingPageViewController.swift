@@ -13,23 +13,17 @@ class LandingPageViewController: UIViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var findCaddyButton: UIButton!
-    @IBOutlet weak var golferBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var sloganLabel: UILabel!
+    @IBOutlet weak var activeLoopButton: UIButton!
     
     var screenSize = UIScreen.mainScreen().bounds
-    
-    @IBAction func golferActionButtonPressed(sender: AnyObject) {
-        
-        
-        
-    }
-    
-    var reservationDetails = ReservationDetails()
+    var nextReservation = NextReservation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         definesPresentationContext = true
         
-        showOrHideGolferBarButtonItem()
+        showOrHideActiveLoopButton()
         
         let navBarLogo = UIImage(named: "LoopLogoNavBarWhite")! as UIImage
         let imageView = UIImageView(image: navBarLogo)
@@ -45,13 +39,10 @@ class LandingPageViewController: UIViewController {
         self.view.addSubview(imageViewBackground)
         self.view.sendSubviewToBack(imageViewBackground)
         
-        
-        //Green "start reservation" button.
-        /*
-        findCaddyButton.layer.cornerRadius = findCaddyButton.bounds.height / 2
-        findCaddyButton.layer.backgroundColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
-        findCaddyButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-         */
+        activeLoopButton.layer.borderColor = UIColor.yellowColor().CGColor
+        activeLoopButton.layer.borderWidth = 1
+        activeLoopButton.layer.cornerRadius = 20
+        activeLoopButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2).CGColor
 
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -74,13 +65,11 @@ class LandingPageViewController: UIViewController {
 
 extension LandingPageViewController {
     
-    func showOrHideGolferBarButtonItem() {
-        if (reservationDetails.reservationIsWithinOneHour == true) {
-            golferBarButtonItem.enabled = true
-            golferBarButtonItem.tintColor = UIColor.yellowColor()
+    func showOrHideActiveLoopButton() {
+        if (nextReservation.reservationIsWithinOneHour == true) {
+            activeLoopButton.hidden = false
         } else {
-            golferBarButtonItem.enabled = false
-            golferBarButtonItem.tintColor = UIColor.clearColor()
+            activeLoopButton.hidden = true
         }
     }
 }
