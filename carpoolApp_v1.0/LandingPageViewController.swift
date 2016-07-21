@@ -79,9 +79,9 @@ extension LandingPageViewController {
             activeLoopButton.hidden = false
             
             if (nextReservation.userHasCheckedInForNextReservation == false) {
-                activeLoopButton.setTitle("Reservation Check In", forState: .Normal)
+                activeLoopButton.setTitle("Check in for reservation", forState: .Normal)
             } else {
-                activeLoopButton.setTitle("Round In Progress", forState: .Normal)
+                activeLoopButton.setTitle("Reservation in progress ...", forState: .Normal)
             }
             
         } else {

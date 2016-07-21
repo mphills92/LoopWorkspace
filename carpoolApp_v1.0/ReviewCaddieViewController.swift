@@ -10,23 +10,18 @@ import UIKit
 
 class ReviewCaddieViewController: UIViewController {
     
-    @IBOutlet weak var popoverView: UIView!
-    @IBOutlet weak var navigationBar: UINavigationBar!
+
     @IBOutlet weak var submitReviewButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
-        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationBar.shadowImage = UIImage()
-        
-        popoverView.layer.shadowColor = UIColor.blackColor().CGColor
-        popoverView.layer.shadowOpacity = 0.5
-        popoverView.layer.shadowOffset = CGSizeZero
-        popoverView.layer.shadowRadius = 5
-        popoverView.layer.shouldRasterize = true
-        
+        navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
+        //navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+
+
         submitReviewButton.layer.cornerRadius = 20
     }
 }

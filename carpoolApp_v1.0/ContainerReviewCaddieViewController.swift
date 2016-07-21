@@ -14,7 +14,7 @@ class ContainerReviewCaddieViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(-100, 0, -40, 0)
         
         
     }
