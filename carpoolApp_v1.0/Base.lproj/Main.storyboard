@@ -476,8 +476,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="findCaddyButtonPressed:" destination="zKG-Ol-Fil" eventType="touchUpInside" id="7qi-Em-F0F"/>
-                                    <segue destination="PVF-jM-i61" kind="presentation" id="76J-Cf-pb3"/>
+                                    <action selector="startReservationButtonPressed:" destination="zKG-Ol-Fil" eventType="touchUpInside" id="pof-6u-Cj6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWw-ek-YPY">
@@ -494,7 +493,7 @@ deserves a caddie.</string>
                                     <constraint firstAttribute="height" constant="40" id="4TZ-8Q-H1E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="Active Reservation">
+                                <state key="normal" title="Check in for reservation">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -508,7 +507,34 @@ deserves a caddie.</string>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="activeReservationButtonPressed:" destination="zKG-Ol-Fil" eventType="touchUpInside" id="roT-ak-wvc"/>
+                                    <action selector="checkInButtonPressed:" destination="zKG-Ol-Fil" eventType="touchUpInside" id="wgE-Rs-iL0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85F-5S-zzH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="bVt-Dh-Cvt">
+                                        <variation key="widthClass=compact" constant="44"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Reservation in progress ...">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bVt-Dh-Cvt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="bVt-Dh-Cvt"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="reservationInProgressButtonPressed:" destination="zKG-Ol-Fil" eventType="touchUpInside" id="0Nz-YF-z8V"/>
+                                    <action selector="reservationInProgressButtonSwipedUp:" destination="zKG-Ol-Fil" eventType="touchDragExit" id="czw-ux-Fkn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -516,7 +542,7 @@ deserves a caddie.</string>
                         <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ddk-9v-fz2" firstAttribute="top" secondItem="S6d-dO-dyG" secondAttribute="bottom" constant="32" id="0AZ-8D-pKH">
-                                <variation key="widthClass=compact" constant="40"/>
+                                <variation key="widthClass=compact" constant="64"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="S6d-dO-dyG" secondAttribute="trailing" id="24b-tP-ZWO">
                                 <variation key="widthClass=compact" constant="30"/>
@@ -524,10 +550,20 @@ deserves a caddie.</string>
                             <constraint firstItem="lWw-ek-YPY" firstAttribute="centerY" secondItem="IX8-h3-AiC" secondAttribute="centerY" id="Bld-Dt-wg3">
                                 <variation key="widthClass=compact" constant="-50"/>
                             </constraint>
+                            <constraint firstItem="85F-5S-zzH" firstAttribute="top" secondItem="S6d-dO-dyG" secondAttribute="bottom" constant="20" id="L8N-9V-1Ne"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lWw-ek-YPY" secondAttribute="trailing" constant="49" id="NWZ-47-xtm">
                                 <variation key="widthClass=compact" constant="30"/>
                             </constraint>
+                            <constraint firstItem="ddk-9v-fz2" firstAttribute="top" secondItem="FoN-pv-Yom" secondAttribute="bottom" constant="100" id="RGR-R4-5D5">
+                                <variation key="widthClass=compact" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="85F-5S-zzH" firstAttribute="width" secondItem="IX8-h3-AiC" secondAttribute="width" id="SYc-wh-yVa"/>
+                            <constraint firstItem="85F-5S-zzH" firstAttribute="centerX" secondItem="IX8-h3-AiC" secondAttribute="centerX" id="WI2-pT-Tlk"/>
                             <constraint firstItem="FoN-pv-Yom" firstAttribute="width" secondItem="S6d-dO-dyG" secondAttribute="width" id="ZkT-PW-m4F"/>
+                            <constraint firstItem="S6d-dO-dyG" firstAttribute="top" secondItem="FoN-pv-Yom" secondAttribute="bottom" constant="-4" id="btq-oh-vpL">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="ddk-9v-fz2" firstAttribute="top" secondItem="85F-5S-zzH" secondAttribute="bottom" id="cjf-Ku-jxu"/>
                             <constraint firstItem="lWw-ek-YPY" firstAttribute="centerX" secondItem="IX8-h3-AiC" secondAttribute="centerX" id="hbv-wg-jRc"/>
                             <constraint firstItem="lWw-ek-YPY" firstAttribute="top" secondItem="RNW-t3-gFe" secondAttribute="bottom" constant="84" id="iI0-f5-wQq">
                                 <variation key="widthClass=compact" constant="180"/>
@@ -548,6 +584,7 @@ deserves a caddie.</string>
                                 <exclude reference="S6d-dO-dyG"/>
                                 <exclude reference="lWw-ek-YPY"/>
                                 <exclude reference="FoN-pv-Yom"/>
+                                <exclude reference="85F-5S-zzH"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Bld-Dt-wg3"/>
@@ -558,9 +595,15 @@ deserves a caddie.</string>
                                 <exclude reference="ZkT-PW-m4F"/>
                                 <exclude reference="iRC-FW-bkY"/>
                                 <exclude reference="24b-tP-ZWO"/>
+                                <exclude reference="btq-oh-vpL"/>
                                 <exclude reference="iYX-gZ-hej"/>
                                 <exclude reference="u2q-6S-p37"/>
+                                <exclude reference="L8N-9V-1Ne"/>
+                                <exclude reference="SYc-wh-yVa"/>
+                                <exclude reference="WI2-pT-Tlk"/>
                                 <exclude reference="0AZ-8D-pKH"/>
+                                <exclude reference="RGR-R4-5D5"/>
+                                <exclude reference="cjf-Ku-jxu"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -568,6 +611,7 @@ deserves a caddie.</string>
                                 <include reference="S6d-dO-dyG"/>
                                 <include reference="lWw-ek-YPY"/>
                                 <include reference="FoN-pv-Yom"/>
+                                <include reference="85F-5S-zzH"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Bld-Dt-wg3"/>
@@ -578,9 +622,15 @@ deserves a caddie.</string>
                                 <include reference="ZkT-PW-m4F"/>
                                 <include reference="iRC-FW-bkY"/>
                                 <include reference="24b-tP-ZWO"/>
-                                <include reference="iYX-gZ-hej"/>
+                                <include reference="btq-oh-vpL"/>
+                                <exclude reference="iYX-gZ-hej"/>
                                 <include reference="u2q-6S-p37"/>
-                                <include reference="0AZ-8D-pKH"/>
+                                <include reference="L8N-9V-1Ne"/>
+                                <include reference="SYc-wh-yVa"/>
+                                <include reference="WI2-pT-Tlk"/>
+                                <exclude reference="0AZ-8D-pKH"/>
+                                <exclude reference="RGR-R4-5D5"/>
+                                <include reference="cjf-Ku-jxu"/>
                             </mask>
                         </variation>
                     </view>
@@ -592,12 +642,14 @@ deserves a caddie.</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="600"/>
                     <connections>
-                        <outlet property="activeLoopButton" destination="FoN-pv-Yom" id="FeW-Tx-f9F"/>
-                        <outlet property="findCaddyButton" destination="S6d-dO-dyG" id="a8Z-AL-MdS"/>
+                        <outlet property="checkInButton" destination="FoN-pv-Yom" id="eOc-hM-tDR"/>
                         <outlet property="menuButton" destination="tFz-49-qhw" id="bd6-2j-cRT"/>
+                        <outlet property="reservationInProgressButton" destination="85F-5S-zzH" id="bo6-3I-vNB"/>
                         <outlet property="sloganLabel" destination="lWw-ek-YPY" id="9ym-Zl-xSM"/>
+                        <outlet property="startReservationButton" destination="S6d-dO-dyG" id="aET-Ve-28K"/>
                         <segue destination="12K-y1-ACy" kind="presentation" identifier="toRoundInProgressSegue" id="pWU-pc-GTQ"/>
                         <segue destination="Rhg-UX-6Zd" kind="presentation" identifier="toCheckInSegue" id="kfM-u3-CUG"/>
+                        <segue destination="PVF-jM-i61" kind="presentation" identifier="toChooseCourseSegue" id="ZG5-ce-DgS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FC4-Ug-FiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -15705,7 +15757,7 @@ deserves a caddie.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iQl-E5-rpJ"/>
-        <segue reference="Ju8-pj-sag"/>
+        <segue reference="pWU-pc-GTQ"/>
         <segue reference="b9o-6O-XVN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
