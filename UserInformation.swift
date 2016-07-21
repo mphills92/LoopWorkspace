@@ -47,7 +47,7 @@ class UpcomingReservations {
 
 class NextReservation {
     var reservationIsWithinOneHour: Bool = true
-    var userHasCheckedInForNextReservation: Bool = false
+    var userHasCheckedInForNextReservation: Bool = true
 }
 
 class PreviousReservation {
@@ -65,4 +65,8 @@ class CaddieHistory {
 class Notifications {
     var notificationsDataExists: Bool = false
     var numberOfNotificationsCells: Int = 0
+}
+
+class CaddieAccount {
+    
 }

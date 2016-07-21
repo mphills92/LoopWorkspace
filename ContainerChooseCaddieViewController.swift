@@ -73,12 +73,12 @@ extension ContainerChooseCaddieViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if (aCellIsExpanded == true) {
             if (currentRow == indexPath.row) {
-                return 170
+                return 190
             }
         } else {
-            return 100
+            return 120
         }
-        return 100
+        return 120
     }
     
     func selectedCellIndex() {

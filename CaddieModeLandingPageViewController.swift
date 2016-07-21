@@ -12,7 +12,6 @@ class CaddieModeLandingPageViewController: UIViewController {
     
     @IBOutlet weak var dashboardContainer: UIView!
     @IBOutlet weak var upcomingContainer: UIView!
-    @IBOutlet weak var alertsContainer: UIView!
     
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     var selectedIndex = Int()
@@ -34,6 +33,12 @@ class CaddieModeLandingPageViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "notifyWithSelectedIndex:", name: "selectedIndexNotification", object: nil)
 
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
 }
 
 extension CaddieModeLandingPageViewController {
@@ -44,15 +49,9 @@ extension CaddieModeLandingPageViewController {
         if (selectedIndex == 0) {
             self.dashboardContainer.hidden = false
             self.upcomingContainer.hidden = true
-            self.alertsContainer.hidden = true
         } else if (selectedIndex == 1) {
             self.dashboardContainer.hidden = true
             self.upcomingContainer.hidden = false
-            self.alertsContainer.hidden = true
-        } else {
-            self.dashboardContainer.hidden = true
-            self.upcomingContainer.hidden = true
-            self.alertsContainer.hidden = false
         }
     }
 

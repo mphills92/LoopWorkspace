@@ -15,6 +15,10 @@
 		C944F1BC1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */; };
 		C944F1BF1D40655C008E2B4C /* GolferCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1BE1D40655C008E2B4C /* GolferCheckInViewController.swift */; };
 		C944F1C21D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1C11D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift */; };
+		C944F1C91D408E8C008E2B4C /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1C81D408E8C008E2B4C /* PaymentsViewController.swift */; };
+		C944F1CC1D408FBD008E2B4C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1CB1D408FBD008E2B4C /* TermsOfServiceViewController.swift */; };
+		C944F1CF1D40903F008E2B4C /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1CE1D40903F008E2B4C /* PrivacyPolicyViewController.swift */; };
+		C944F1D21D40910F008E2B4C /* AcknowledgmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1D11D40910F008E2B4C /* AcknowledgmentsViewController.swift */; };
 		C95385C21D0F5A41007BCA15 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C11D0F5A41007BCA15 /* UltravisualLayout.swift */; };
 		C95385C41D0F5B80007BCA15 /* CaddiesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C95385C31D0F5B80007BCA15 /* CaddiesList.plist */; };
 		C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */; };
@@ -29,7 +33,7 @@
 		C95527301D3EA8850069554C /* ReviewCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955272F1D3EA8850069554C /* ReviewCaddieViewController.swift */; };
 		C95527331D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */; };
 		C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527341D3EEA690069554C /* DashboardViewController.swift */; };
-		C95527381D3F30760069554C /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527371D3F30760069554C /* AlertsViewController.swift */; };
+		C95527381D3F30760069554C /* CaddieNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527371D3F30760069554C /* CaddieNotificationsViewController.swift */; };
 		C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */; };
 		C955273D1D3FCCA20069554C /* GolferRoundInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */; };
 		C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */; };
@@ -112,6 +116,10 @@
 		C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerReviewCaddieViewController.swift; sourceTree = "<group>"; };
 		C944F1BE1D40655C008E2B4C /* GolferCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolferCheckInViewController.swift; sourceTree = "<group>"; };
 		C944F1C11D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGolferCheckInViewController.swift; sourceTree = "<group>"; };
+		C944F1C81D408E8C008E2B4C /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		C944F1CB1D408FBD008E2B4C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		C944F1CE1D40903F008E2B4C /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		C944F1D11D40910F008E2B4C /* AcknowledgmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgmentsViewController.swift; sourceTree = "<group>"; };
 		C95385C11D0F5A41007BCA15 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UltravisualLayout.swift; path = ../UltravisualLayout.swift; sourceTree = "<group>"; };
 		C95385C31D0F5B80007BCA15 /* CaddiesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CaddiesList.plist; sourceTree = "<group>"; };
 		C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
@@ -126,7 +134,7 @@
 		C955272F1D3EA8850069554C /* ReviewCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCaddieViewController.swift; sourceTree = "<group>"; };
 		C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCaddieSegmentedControl.swift; sourceTree = "<group>"; };
 		C95527341D3EEA690069554C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		C95527371D3F30760069554C /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		C95527371D3F30760069554C /* CaddieNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieNotificationsViewController.swift; sourceTree = "<group>"; };
 		C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDashboardViewController.swift; sourceTree = "<group>"; };
 		C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolferRoundInProgressViewController.swift; sourceTree = "<group>"; };
 		C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNumberOfPlayersSegmentedControl.swift; sourceTree = "<group>"; };
@@ -188,7 +196,7 @@
 		C9EE3F2C1D0A1C5900F86EF2 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		C9EE3F2F1D0A1EBC00F86EF2 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		C9EE3F321D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BecomeCaddieViewController.swift; path = ../BecomeCaddieViewController.swift; sourceTree = "<group>"; };
-		C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
+		C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,8 +238,9 @@
 			children = (
 				C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */,
 				C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */,
-				C95527391D3F349B0069554C /* Alerts */,
 				C95527361D3EEC1B0069554C /* Dashboard */,
+				C944F1C31D408C4F008E2B4C /* Upcoming */,
+				C95527391D3F349B0069554C /* Notifications */,
 			);
 			name = "Caddie Mode";
 			path = ..;
@@ -263,6 +272,78 @@
 				C944F1C11D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift */,
 			);
 			name = "Golfer Check In";
+			sourceTree = "<group>";
+		};
+		C944F1C31D408C4F008E2B4C /* Upcoming */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Upcoming;
+			sourceTree = "<group>";
+		};
+		C944F1C41D408E27008E2B4C /* Edit Account Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C956C1161D3D4E940057B776 /* EditProfileViewController.swift */,
+				C994B4D01D15A6C5009848F2 /* Edit Profile Subviews */,
+			);
+			name = "Edit Account Settings";
+			sourceTree = "<group>";
+		};
+		C944F1C51D408E50008E2B4C /* Notifications Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C994B4C11D143CC9009848F2 /* NotificationsSettingsViewController.swift */,
+			);
+			name = "Notifications Settings";
+			sourceTree = "<group>";
+		};
+		C944F1C61D408E65008E2B4C /* Privacy Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C994B4C31D144417009848F2 /* PrivacySettingsViewController.swift */,
+			);
+			name = "Privacy Settings";
+			sourceTree = "<group>";
+		};
+		C944F1C71D408E6F008E2B4C /* Help & Support Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C994B4C51D144A90009848F2 /* HelpAndSupportViewController.swift */,
+			);
+			name = "Help & Support Settings";
+			sourceTree = "<group>";
+		};
+		C944F1CA1D408EB8008E2B4C /* Payments Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C944F1C81D408E8C008E2B4C /* PaymentsViewController.swift */,
+			);
+			name = "Payments Settings";
+			sourceTree = "<group>";
+		};
+		C944F1CD1D408FD6008E2B4C /* Terms of Service */ = {
+			isa = PBXGroup;
+			children = (
+				C944F1CB1D408FBD008E2B4C /* TermsOfServiceViewController.swift */,
+			);
+			name = "Terms of Service";
+			sourceTree = "<group>";
+		};
+		C944F1D01D409043008E2B4C /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				C944F1CE1D40903F008E2B4C /* PrivacyPolicyViewController.swift */,
+			);
+			name = PrivacyPolicy;
+			sourceTree = "<group>";
+		};
+		C944F1D31D409137008E2B4C /* Acknowledgments */ = {
+			isa = PBXGroup;
+			children = (
+				C944F1D11D40910F008E2B4C /* AcknowledgmentsViewController.swift */,
+			);
+			name = Acknowledgments;
 			sourceTree = "<group>";
 		};
 		C95385BD1D0F402D007BCA15 /* Models */ = {
@@ -300,16 +381,20 @@
 			name = "Confirm Reservation";
 			sourceTree = "<group>";
 		};
-		C95385DC1D133EAD007BCA15 /* Settings Subviews */ = {
+		C95385DC1D133EAD007BCA15 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				C956C1161D3D4E940057B776 /* EditProfileViewController.swift */,
-				C994B4D01D15A6C5009848F2 /* Edit Profile Subviews */,
-				C994B4C11D143CC9009848F2 /* NotificationsSettingsViewController.swift */,
-				C994B4C31D144417009848F2 /* PrivacySettingsViewController.swift */,
-				C994B4C51D144A90009848F2 /* HelpAndSupportViewController.swift */,
+				C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */,
+				C944F1C41D408E27008E2B4C /* Edit Account Settings */,
+				C944F1CA1D408EB8008E2B4C /* Payments Settings */,
+				C944F1C51D408E50008E2B4C /* Notifications Settings */,
+				C944F1C61D408E65008E2B4C /* Privacy Settings */,
+				C944F1C71D408E6F008E2B4C /* Help & Support Settings */,
+				C944F1CD1D408FD6008E2B4C /* Terms of Service */,
+				C944F1D01D409043008E2B4C /* PrivacyPolicy */,
+				C944F1D31D409137008E2B4C /* Acknowledgments */,
 			);
-			name = "Settings Subviews";
+			name = Settings;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -338,12 +423,12 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
-		C95527391D3F349B0069554C /* Alerts */ = {
+		C95527391D3F349B0069554C /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				C95527371D3F30760069554C /* AlertsViewController.swift */,
+				C95527371D3F30760069554C /* CaddieNotificationsViewController.swift */,
 			);
-			name = Alerts;
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 		C955273E1D3FCCDD0069554C /* Active Reservation */ = {
@@ -578,6 +663,7 @@
 				C9EE3F2B1D0A1A2000F86EF2 /* My Profile */,
 				C9EE3F2E1D0A1CC600F86EF2 /* Our Story */,
 				C9EE3F311D0A1F1E00F86EF2 /* Invite Others */,
+				C95385DC1D133EAD007BCA15 /* Settings */,
 				C9EE3F361D0A20EC00F86EF2 /* Become Caddie */,
 				C92042C51D2DB18E003654CB /* Caddie Mode */,
 				C990CF971D1B8F64005E05F2 /* Help Center */,
@@ -591,8 +677,6 @@
 			children = (
 				C9EE3F291D0A196C00F86EF2 /* ProfileViewController.swift */,
 				C95385D41D120CC5007BCA15 /* ProfileSegmentedControl.swift */,
-				C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */,
-				C95385DC1D133EAD007BCA15 /* Settings Subviews */,
 				C994B4C91D145BFA009848F2 /* Upcoming Reservation */,
 				C9D7FA871D2EEDDC00F52A1B /* Caddie History */,
 				C9D7FA881D2EEDEB00F52A1B /* Notifications */,
@@ -771,6 +855,7 @@
 				C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */,
 				C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */,
 				C9EE3F1A1D07383200F86EF2 /* ChooseDateViewController.swift in Sources */,
+				C944F1CF1D40903F008E2B4C /* PrivacyPolicyViewController.swift in Sources */,
 				C9EE3F331D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift in Sources */,
 				C92042C71D2DB9E4003654CB /* CaddieModeSegmentedControl.swift in Sources */,
 				C994B4C81D145BDB009848F2 /* UpcomingReservationsViewController.swift in Sources */,
@@ -787,16 +872,18 @@
 				C9EE3F301D0A1EBC00F86EF2 /* InviteViewController.swift in Sources */,
 				C95385D31D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift in Sources */,
 				C98784881D15CE6600EED776 /* ChangePasswordViewController.swift in Sources */,
+				C944F1CC1D408FBD008E2B4C /* TermsOfServiceViewController.swift in Sources */,
 				C956FD371D280AE900E7143B /* ChooseCaddieViewController.swift in Sources */,
 				C9EE3F1E1D08D3DB00F86EF2 /* ChooseServiceLevelSegmentedControl.swift in Sources */,
 				C956FD271D242E0B00E7143B /* ReservationChooseCourseViewController.swift in Sources */,
 				C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */,
+				C944F1C91D408E8C008E2B4C /* PaymentsViewController.swift in Sources */,
 				C9EE3F2D1D0A1C5900F86EF2 /* AboutUsViewController.swift in Sources */,
 				C95527331D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift in Sources */,
 				C990CF961D1B8F56005E05F2 /* HelpViewController.swift in Sources */,
 				C994B4C41D144417009848F2 /* PrivacySettingsViewController.swift in Sources */,
 				C95385CE1D0F5B9F007BCA15 /* ChooseAvailableCaddiesCell.swift in Sources */,
-				C95527381D3F30760069554C /* AlertsViewController.swift in Sources */,
+				C95527381D3F30760069554C /* CaddieNotificationsViewController.swift in Sources */,
 				C956FD391D280B1E00E7143B /* ContainerChooseCaddieViewController.swift in Sources */,
 				C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */,
 				C990CFA31D20A175005E05F2 /* SignUpProfilePictureViewController.swift in Sources */,
@@ -814,6 +901,7 @@
 				C994B4C21D143CC9009848F2 /* NotificationsSettingsViewController.swift in Sources */,
 				C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */,
 				C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */,
+				C944F1D21D40910F008E2B4C /* AcknowledgmentsViewController.swift in Sources */,
 				C994B4C61D144A90009848F2 /* HelpAndSupportViewController.swift in Sources */,
 				C9EE3F2A1D0A196C00F86EF2 /* ProfileViewController.swift in Sources */,
 				C95385CC1D0F5B98007BCA15 /* SessionForCaddies.swift in Sources */,

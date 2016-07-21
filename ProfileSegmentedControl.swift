@@ -15,7 +15,7 @@ import UIKit
     var lineView = UIView()
     var pillView = UIView()
     
-    var items: [String] = ["Reservations", "History", "Notifications"] {
+    var items: [String] = ["Reservations", "History"] {
         didSet {
             setupLabels()
         }
@@ -90,10 +90,10 @@ import UIKit
         let labelHeight = self.bounds.height
         let labelWidth = self.bounds.width / CGFloat(labels.count)
         
-        lineView.frame = CGRectMake((labelWidth * 0.03), labelHeight - 1.0, (labelWidth * 0.94), 1.5)
+        lineView.frame = CGRectMake((labelWidth * 0.15), labelHeight - 1.0, (labelWidth * 0.7), 1.5)
         lineView.backgroundColor = UIColor(red: 19/255, green: 86/255, blue:99/255, alpha: 1.0)
         
-        pillView.frame = CGRectMake ((labelWidth * 0.045), 0, (labelWidth * 0.92), labelHeight)
+        pillView.frame = CGRectMake ((labelWidth * 0.125), 0, (labelWidth * 0.75), labelHeight)
         pillView.backgroundColor = UIColor.clearColor() //.groupTableViewBackgroundColor()
         pillView.layer.borderWidth = 1
         pillView.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor

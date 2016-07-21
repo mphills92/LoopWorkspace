@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var constrainedStickyTabToNavBar: NSLayoutConstraint!
     @IBOutlet weak var upcomingReservationsContainer: UIView!
     @IBOutlet weak var pastCaddiesContainer: UIView!
-    @IBOutlet weak var notificationsContainer: UIView!
     @IBOutlet weak var userNameLabel: UILabel!
     
     @IBOutlet weak var membershipHistoryLabel: UILabel!
@@ -75,15 +74,9 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         if (selectedIndex == 0) {
             self.upcomingReservationsContainer.hidden = false
             self.pastCaddiesContainer.hidden = true
-            self.notificationsContainer.hidden = true
         } else if (selectedIndex == 1) {
             self.upcomingReservationsContainer.hidden = true
             self.pastCaddiesContainer.hidden = false
-            self.notificationsContainer.hidden = true
-        } else {
-            self.upcomingReservationsContainer.hidden = true
-            self.pastCaddiesContainer.hidden = true
-            self.notificationsContainer.hidden = false
         }
     }
 }

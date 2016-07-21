@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingsViewController: UITableViewController {
+class SettingsViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
+    @IBOutlet weak var sendFeedbackCell: UITableViewCell!
     @IBOutlet weak var signOutCell: UITableViewCell!
     
     override func viewDidLoad() {
@@ -33,6 +35,11 @@ class SettingsViewController: UITableViewController {
 
 extension SettingsViewController {
     
+    
+    @IBAction func closeViewButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 0) {
             return 32
@@ -51,9 +58,34 @@ extension SettingsViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
-        if cellClicked == signOutCell {
+        
+        if cellClicked == sendFeedbackCell {
+            let emailAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "We cannot find an email account for us to send your invitation. Please make sure your email settings are correct or try again later.", preferredStyle: .Alert)
+            emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            if (MFMailComposeViewController.canSendMail()) {
+                let controller = MFMailComposeViewController()
+                controller.setSubject("Feedback for Loop")
+                controller.setToRecipients(["feedback@loopgolf.com"])
+                controller.setMessageBody("", isHTML: true)
+                controller.mailComposeDelegate = self
+                self.presentViewController(controller, animated: true, completion: {})
+            } else {
+                let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+                emailAlertController.addAction(closeAction)
+                
+                presentViewController(emailAlertController, animated: true) {
+                    emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                }
+            }
+        } else if cellClicked == signOutCell {
             print("TO DO: Sign out user from Loop and release credentials. Pop view back to login page.")
             // TO DO: Sign out user from Loop and release credentials. Pop view back to login page.
         }
     }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        dismissViewControllerAnimated(true, completion: {})
+    }
+    
 }
