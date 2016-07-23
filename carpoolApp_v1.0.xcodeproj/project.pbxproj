@@ -19,6 +19,8 @@
 		C944F1CC1D408FBD008E2B4C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1CB1D408FBD008E2B4C /* TermsOfServiceViewController.swift */; };
 		C944F1CF1D40903F008E2B4C /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1CE1D40903F008E2B4C /* PrivacyPolicyViewController.swift */; };
 		C944F1D21D40910F008E2B4C /* AcknowledgmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1D11D40910F008E2B4C /* AcknowledgmentsViewController.swift */; };
+		C944F1D71D4177CA008E2B4C /* CustomInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1D61D4177CA008E2B4C /* CustomInteractionController.swift */; };
+		C944F1D91D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1D81D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift */; };
 		C95385C21D0F5A41007BCA15 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C11D0F5A41007BCA15 /* UltravisualLayout.swift */; };
 		C95385C41D0F5B80007BCA15 /* CaddiesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = C95385C31D0F5B80007BCA15 /* CaddiesList.plist */; };
 		C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */; };
@@ -120,6 +122,8 @@
 		C944F1CB1D408FBD008E2B4C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		C944F1CE1D40903F008E2B4C /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		C944F1D11D40910F008E2B4C /* AcknowledgmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcknowledgmentsViewController.swift; sourceTree = "<group>"; };
+		C944F1D61D4177CA008E2B4C /* CustomInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInteractionController.swift; sourceTree = "<group>"; };
+		C944F1D81D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolferReservationInProgressSidebarViewController.swift; sourceTree = "<group>"; };
 		C95385C11D0F5A41007BCA15 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UltravisualLayout.swift; path = ../UltravisualLayout.swift; sourceTree = "<group>"; };
 		C95385C31D0F5B80007BCA15 /* CaddiesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CaddiesList.plist; sourceTree = "<group>"; };
 		C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Decompression.swift"; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 			children = (
 				C95385C71D0F5B8C007BCA15 /* UIImage+Decompression.swift */,
 				C95385C11D0F5A41007BCA15 /* UltravisualLayout.swift */,
+				C944F1D61D4177CA008E2B4C /* CustomInteractionController.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -645,6 +650,7 @@
 			children = (
 				C95A00E71CB5F9D5008237B1 /* LandingPageViewController.swift */,
 				C9EE3ED71D06643800F86EF2 /* SidebarMenuViewController.swift */,
+				C944F1D81D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -900,6 +906,7 @@
 				C990CF9E1D209512005E05F2 /* SignUpNameInfoViewController.swift in Sources */,
 				C994B4C21D143CC9009848F2 /* NotificationsSettingsViewController.swift in Sources */,
 				C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */,
+				C944F1D71D4177CA008E2B4C /* CustomInteractionController.swift in Sources */,
 				C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */,
 				C944F1D21D40910F008E2B4C /* AcknowledgmentsViewController.swift in Sources */,
 				C994B4C61D144A90009848F2 /* HelpAndSupportViewController.swift in Sources */,
@@ -916,6 +923,7 @@
 				C944F1BA1D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift in Sources */,
 				C994B4CD1D145E23009848F2 /* NotificationsViewController.swift in Sources */,
 				C990CFA71D219D93005E05F2 /* SignUpPasswordViewController.swift in Sources */,
+				C944F1D91D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift in Sources */,
 				C95A00E81CB5F9D6008237B1 /* LandingPageViewController.swift in Sources */,
 				C9EE3F201D090A5900F86EF2 /* CaddiesAvailableViewController.swift in Sources */,
 				C944F1BC1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift in Sources */,

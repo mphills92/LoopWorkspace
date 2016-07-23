@@ -8,10 +8,11 @@
 
 import UIKit
 
-class LandingPageViewController: UIViewController {
+class LandingPageViewController: UIViewController, SWRevealViewControllerDelegate {
     
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var reservationInProgressBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var startReservationButton: UIButton!
     @IBOutlet weak var checkInButton: UIButton!
@@ -19,9 +20,10 @@ class LandingPageViewController: UIViewController {
     
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        revealViewController().delegate = self
         definesPresentationContext = true
         
         positionAndDisplayViewButtons()
@@ -47,9 +49,15 @@ class LandingPageViewController: UIViewController {
         checkInButton.layer.cornerRadius = 20
         checkInButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2).CGColor
 
+        // SWRevealViewController targets and actions.
+        self.revealViewController().tapGestureRecognizer()
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            reservationInProgressBarButtonItem.target = self.revealViewController()
+            reservationInProgressBarButtonItem.action = "rightRevealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -63,6 +71,26 @@ class LandingPageViewController: UIViewController {
 }
 
 extension LandingPageViewController {
+    
+    func revealController(revealController: SWRevealViewController, animateToPosition position: FrontViewPosition) {
+        if position == FrontViewPosition.Left {
+            self.view.alpha = 1.0
+        } else if position == FrontViewPosition.RightMost {
+            self.view.alpha = 1.0
+        } else {
+            self.view.alpha = 0.6
+        }
+    }
+    
+    func revealController(revealController: SWRevealViewController!, didMoveToPosition position: FrontViewPosition) {
+        if (position == FrontViewPosition.Left || position == FrontViewPosition.RightMost) {
+            self.startReservationButton.enabled = true
+            self.checkInButton.enabled = true
+        } else {
+            self.startReservationButton.enabled = false
+            self.checkInButton.enabled = false
+        }
+    }
     
     @IBAction func startReservationButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("toChooseCourseSegue", sender: self)
@@ -122,7 +150,7 @@ extension LandingPageViewController {
                 
             } else if (nextReservation.userHasCheckedInForNextReservation == true) {
                 // Display In Progress button
-                reservationInProgressButton.hidden = false
+                //reservationInProgressButton.hidden = false
                 // Hide Check In button
                 checkInButton.hidden = true
 

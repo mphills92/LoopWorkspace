@@ -99,7 +99,6 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     return self;
 }
 
-
 - (void)reloadShadow
 {
     CALayer *frontViewLayer = _frontView.layer;
@@ -645,17 +644,17 @@ const int FrontViewPositionNone = 0xff;
     _rearViewPosition = FrontViewPositionLeft;
     _rightViewPosition = FrontViewPositionLeft;
     _rearViewRevealWidth = 280.0f;
-    _rearViewRevealOverdraw = 60.0f;
+    _rearViewRevealOverdraw = 0.0f;  //60.0f;
     _rearViewRevealDisplacement = 40.0f;
-    _rightViewRevealWidth = 260.0f;
-    _rightViewRevealOverdraw = 60.0f;
+    _rightViewRevealWidth = 280.0f;
+    _rightViewRevealOverdraw = 0.0f;  //60.0f;
     _rightViewRevealDisplacement = 40.0f;
     _bounceBackOnOverdraw = YES;
     _bounceBackOnLeftOverdraw = YES;
     _stableDragOnOverdraw = NO;
     _stableDragOnLeftOverdraw = NO;
     _presentFrontViewHierarchically = NO;
-    _quickFlickVelocity = 250.0f;
+    _quickFlickVelocity = 250.0f;  //250.0f;
     _toggleAnimationDuration = 0.3;
     _toggleAnimationType = SWRevealToggleAnimationTypeSpring;
     _springDampingRatio = 1;

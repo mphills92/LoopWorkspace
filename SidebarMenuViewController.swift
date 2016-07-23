@@ -16,9 +16,13 @@ class SidebarMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = UIRectEdge.None
         
         setCaddieMenuOptionButton()
-        
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 }
 
