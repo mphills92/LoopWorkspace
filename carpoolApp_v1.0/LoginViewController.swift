@@ -14,11 +14,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var cancelButtonCenterConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginButtonCenterConstraint: NSLayoutConstraint!
     
+    
     var screenSize = UIScreen.mainScreen().bounds
     
+    var userWantsToCancel = Bool()
     var emailToValidate = String()
     var emailFieldHasEditedPrior = Bool()
     var passwordToValidate = String()
@@ -35,7 +43,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         
         backgroundView.layer.cornerRadius = 8
-        loginButton.layer.cornerRadius = 20 //loginButton.bounds.height / 2
+        
+        signUpButton.layer.cornerRadius = 20
+        signUpButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
+        signUpButton.layer.borderColor = UIColor.whiteColor().CGColor
+        signUpButton.layer.borderWidth = 1
+        
+        cancelButton.layer.cornerRadius = 20
+        cancelButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
+        cancelButton.layer.borderColor = UIColor.whiteColor().CGColor
+        cancelButton.layer.borderWidth = 1
+        cancelButton.layer.shadowColor = UIColor.blackColor().CGColor
+        cancelButton.layer.shadowOpacity = 0.5
+        cancelButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        
+        loginButton.layer.cornerRadius = 20
+        loginButton.layer.shadowColor = UIColor.blackColor().CGColor
+        loginButton.layer.shadowOpacity = 0.5
+        loginButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
         let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, screenSize.width, screenSize.height))
         imageViewBackground.image = UIImage(named: "LandingPageBackground")
@@ -47,6 +72,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         
         self.loginButtonCenterConstraint.constant = screenSize.width
+        self.cancelButtonCenterConstraint.constant = screenSize.width
         
         emailFieldHasEditedPrior = false
         
@@ -61,9 +87,11 @@ extension LoginViewController {
         switch (textField.tag) {
         case 1:
             if (emailFieldHasEditedPrior == false) {
+                cancelButtonEntersFromRight()
                 loginButtonOutOfView()
                 emailFieldHasEditedPrior = true
             } else {
+                cancelButtonEntersFromRight()
                 loginButtonOutOfView()
             }
         case 2:
@@ -76,10 +104,16 @@ extension LoginViewController {
     func textFieldDidEndEditing(textField: UITextField) {
         switch (textField.tag) {
         case 1:
-            emailToValidate = emailTextField.text!
-            passwordTextField.becomeFirstResponder()
-            emailFieldHasEditedPrior = true
-            loginButtonInView()
+            if (userWantsToCancel == true) {
+                emailTextField.resignFirstResponder()
+                cancelButtonExitsToRight()
+            } else {
+                emailToValidate = emailTextField.text!
+                passwordTextField.becomeFirstResponder()
+                emailFieldHasEditedPrior = true
+                userWantsToCancel = false
+                loginButtonInView()
+            }
         case 2:
             passwordToValidate = passwordTextField.text!
             passwordTextField.resignFirstResponder()
@@ -140,10 +174,41 @@ extension LoginViewController {
         
     }
     
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        userWantsToCancel = true
+        emailTextField.resignFirstResponder()
+    }
+    
+    
+    // Cancel button slides into view from right to left.
+    func cancelButtonEntersFromRight() {
+        userWantsToCancel = false
+        self.cancelButtonCenterConstraint.constant = self.screenSize.width
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.cancelButtonCenterConstraint.constant -= self.screenSize.width
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
+    
+    // Cancel button slides out of view from left to right.
+    func cancelButtonExitsToRight() {
+        userWantsToCancel = false
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.cancelButtonCenterConstraint.constant = self.screenSize.width
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
+
     // Login button slides into view from right to left.
     func loginButtonInView() {
+        
+        UIView.animateWithDuration(0.1, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            self.cancelButton.alpha = 0
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
         self.loginButtonCenterConstraint.constant = self.screenSize.width
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.loginButtonCenterConstraint.constant -= self.screenSize.width
             self.view.layoutIfNeeded()
             }, completion: nil)
@@ -151,6 +216,12 @@ extension LoginViewController {
     
     // Login button slides out of view from left to right.
     func loginButtonOutOfView() {
+        
+        UIView.animateWithDuration(0.1, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            self.cancelButton.alpha = 1.0
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.loginButtonCenterConstraint.constant = self.screenSize.width
             self.view.layoutIfNeeded()

@@ -47,7 +47,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         checkInButton.layer.borderColor = UIColor.yellowColor().CGColor
         checkInButton.layer.borderWidth = 1
         checkInButton.layer.cornerRadius = 20
-        checkInButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2).CGColor
+        checkInButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
 
         // SWRevealViewController targets and actions.
         self.revealViewController().tapGestureRecognizer()
@@ -62,7 +62,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         }
         
         startReservationButton.layer.cornerRadius = 20
-        startReservationButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2).CGColor
+        startReservationButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
         startReservationButton.layer.borderColor = UIColor.whiteColor().CGColor
         startReservationButton.layer.borderWidth = 1
         startReservationButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
@@ -80,6 +80,18 @@ extension LandingPageViewController {
         } else {
             self.view.alpha = 0.6
         }
+    }
+    
+    func revealController(revealController: SWRevealViewController, panGestureMovedToLocation location: CGFloat, progress: CGFloat) {
+        if progress > 1 {
+            self.view.alpha = 0.6
+        }
+        else if progress == 0 {
+            self.view.alpha = 1
+        }
+        else {
+            self.view.alpha = 1 - (0.4 * progress)
+        }        
     }
     
     func revealController(revealController: SWRevealViewController!, didMoveToPosition position: FrontViewPosition) {
