@@ -15,12 +15,11 @@ class ReviewCaddieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
-        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
-        //navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-
+        navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
 
         submitReviewButton.layer.cornerRadius = 20
     }
@@ -35,7 +34,7 @@ extension ReviewCaddieViewController {
         let doneAction = UIAlertAction(title: "OK", style: .Default) { (action) in
 // TODO: Set nextReservation.reservationIsWithinOneHour to 'false' and store in DB
 // TODO: Set completed reservation ID as previousReservation.previousReservationID and store in DB
-            self.presentingViewController!.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
+            self.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
         }
         alertController.addAction(doneAction)
         self.presentViewController(alertController, animated: true) {
@@ -50,7 +49,7 @@ extension ReviewCaddieViewController {
         let doneAction = UIAlertAction(title: "OK", style: .Default) { (action) in
 // TODO: Set nextReservation.reservationIsWithinOneHour to 'false' and store in DB
 // TODO: Set completed reservation ID as previousReservation.previousReservationID and store in DB
-            self.presentingViewController!.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
+            self.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
         }
         alertController.addAction(doneAction)
         self.presentViewController(alertController, animated: true) {

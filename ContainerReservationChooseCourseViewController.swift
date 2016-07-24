@@ -20,7 +20,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView!.backgroundColor = UIColor.clearColor()
+        collectionView!.backgroundColor = UIColor.blackColor()
         collectionView!.layoutIfNeeded()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast //UIScrollViewDecelerationRateNormal //UIScrollViewDecelerationRateFast
     }

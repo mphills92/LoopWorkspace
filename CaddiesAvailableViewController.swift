@@ -10,29 +10,29 @@ import UIKit
 
 class CaddiesAvailableViewController: UIViewController {
     
-    @IBOutlet weak var popoverView: UIView!
-    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var containerView: UIView!
-    
-    @IBAction func cancelViewButtonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {})
-    }
+    @IBOutlet weak var reservationSnapshotView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), NSFontAttributeName: UIFont.systemFontOfSize(20, weight: UIFontWeightRegular)]
-        navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
-        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationBar.shadowImage = UIImage()
+        navigationItem.title = "Available Caddies"
+        navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
-        popoverView.layer.shadowColor = UIColor.blackColor().CGColor
-        popoverView.layer.shadowOpacity = 0.5
-        popoverView.layer.shadowOffset = CGSizeZero
-        popoverView.layer.shadowRadius = 5
-        popoverView.layer.shouldRasterize = true
-        
-        containerView.layer.cornerRadius = 8
+        reservationSnapshotView.layer.shadowColor = UIColor.blackColor().CGColor
+        reservationSnapshotView.layer.shadowOpacity = 0.25
+        reservationSnapshotView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+
         containerView.layer.masksToBounds = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 }
 

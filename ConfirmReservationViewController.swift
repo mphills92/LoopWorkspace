@@ -9,31 +9,29 @@
 import UIKit
 
 class ConfirmReservationViewController: UIViewController {
-    
-    @IBOutlet weak var popoverView: UIView!
-    @IBOutlet weak var navigationBar: UINavigationBar!
+
     @IBOutlet weak var confirmReservationButton: UIButton!
-    
-    @IBAction func cancelViewButtonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {})
-    }
+    @IBOutlet weak var reservationSnapshotView: UIView!
+    @IBOutlet weak var bottomButtonHolderView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Review Reservation"
+        navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barStyle = UIBarStyle.Default
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
-        popoverView.layer.shadowColor = UIColor.blackColor().CGColor
-        popoverView.layer.shadowOpacity = 0.5
-        popoverView.layer.shadowOffset = CGSizeZero
-        popoverView.layer.shadowRadius = 5
-        popoverView.layer.shouldRasterize = true
+        reservationSnapshotView.layer.shadowColor = UIColor.blackColor().CGColor
+        reservationSnapshotView.layer.shadowOpacity = 0.25
+        reservationSnapshotView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
-        navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
-        //navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), NSFontAttributeName: UIFont.systemFontOfSize(20, weight: UIFontWeightRegular)]
-        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationBar.shadowImage = UIImage()
+        bottomButtonHolderView.layer.shadowColor = UIColor.blackColor().CGColor
+        bottomButtonHolderView.layer.shadowOpacity = 0.25
+        bottomButtonHolderView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
-        confirmReservationButton.layer.cornerRadius = 20 //confirmReservationButton.bounds.height / 2
-        
+        confirmReservationButton.layer.cornerRadius = 20
         // Unicode character for cells...black large dot... \u{25CF}
     }
     
@@ -53,7 +51,7 @@ class ConfirmReservationViewController: UIViewController {
     
     // Implement unwind segue method in the future.
     func closeAllReservationProcesses() {
-        self.presentingViewController!.presentingViewController!.presentingViewController!.presentingViewController!.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
+        self.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
 
     }
     

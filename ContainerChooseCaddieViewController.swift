@@ -27,7 +27,7 @@ class ContainerChooseCaddieViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsetsMake(-28, 0, -28, 0)
+        tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
     }
 }
 

@@ -51,7 +51,6 @@
 		C956FD2F1D24356600E7143B /* SessionForCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD2E1D24356600E7143B /* SessionForCourses.swift */; };
 		C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */; };
 		C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD331D256D8B00E7143B /* CalendarCell.swift */; };
-		C956FD371D280AE900E7143B /* ChooseCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD361D280AE900E7143B /* ChooseCaddieViewController.swift */; };
 		C956FD391D280B1E00E7143B /* ContainerChooseCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD381D280B1E00E7143B /* ContainerChooseCaddieViewController.swift */; };
 		C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A00B01CB5CB38008237B1 /* AppDelegate.swift */; };
 		C95A00B61CB5CB38008237B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B41CB5CB38008237B1 /* Main.storyboard */; };
@@ -154,7 +153,6 @@
 		C956FD2E1D24356600E7143B /* SessionForCourses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionForCourses.swift; sourceTree = "<group>"; };
 		C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerChooseDateViewController.swift; path = ../ContainerChooseDateViewController.swift; sourceTree = "<group>"; };
 		C956FD331D256D8B00E7143B /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarCell.swift; path = carpoolApp_v1.0/CalendarCell.swift; sourceTree = "<group>"; };
-		C956FD361D280AE900E7143B /* ChooseCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCaddieViewController.swift; sourceTree = "<group>"; };
 		C956FD381D280B1E00E7143B /* ContainerChooseCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerChooseCaddieViewController.swift; sourceTree = "<group>"; };
 		C95A00AD1CB5CB38008237B1 /* carpoolApp_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpoolApp_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95A00B01CB5CB38008237B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -251,14 +249,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		C944F1B81D3FF0C6008E2B4C /* Golfer Round In Progress Reservation */ = {
+		C944F1B81D3FF0C6008E2B4C /* Golfer Reservation In Progress */ = {
 			isa = PBXGroup;
 			children = (
+				C944F1D81D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift */,
 				C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */,
 				C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */,
 				C944F1BD1D4018E5008E2B4C /* Review Caddie */,
 			);
-			name = "Golfer Round In Progress Reservation";
+			name = "Golfer Reservation In Progress";
 			sourceTree = "<group>";
 		};
 		C944F1BD1D4018E5008E2B4C /* Review Caddie */ = {
@@ -440,7 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				C944F1C01D406DB9008E2B4C /* Golfer Check In */,
-				C944F1B81D3FF0C6008E2B4C /* Golfer Round In Progress Reservation */,
+				C944F1B81D3FF0C6008E2B4C /* Golfer Reservation In Progress */,
 			);
 			name = "Active Reservation";
 			sourceTree = "<group>";
@@ -475,7 +474,6 @@
 		C956FD3A1D280B4D00E7143B /* Choose Caddie */ = {
 			isa = PBXGroup;
 			children = (
-				C956FD361D280AE900E7143B /* ChooseCaddieViewController.swift */,
 				C9EE3F1F1D090A5900F86EF2 /* CaddiesAvailableViewController.swift */,
 				C956FD381D280B1E00E7143B /* ContainerChooseCaddieViewController.swift */,
 			);
@@ -650,7 +648,6 @@
 			children = (
 				C95A00E71CB5F9D5008237B1 /* LandingPageViewController.swift */,
 				C9EE3ED71D06643800F86EF2 /* SidebarMenuViewController.swift */,
-				C944F1D81D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -879,7 +876,6 @@
 				C95385D31D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift in Sources */,
 				C98784881D15CE6600EED776 /* ChangePasswordViewController.swift in Sources */,
 				C944F1CC1D408FBD008E2B4C /* TermsOfServiceViewController.swift in Sources */,
-				C956FD371D280AE900E7143B /* ChooseCaddieViewController.swift in Sources */,
 				C9EE3F1E1D08D3DB00F86EF2 /* ChooseServiceLevelSegmentedControl.swift in Sources */,
 				C956FD271D242E0B00E7143B /* ReservationChooseCourseViewController.swift in Sources */,
 				C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */,

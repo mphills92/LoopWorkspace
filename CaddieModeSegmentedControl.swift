@@ -73,7 +73,7 @@ import UIKit
         lineView.frame = CGRectMake((labelWidth * 0.05), labelHeight - 1.0, (labelWidth * 0.9), 1.5)
         lineView.backgroundColor = UIColor.whiteColor() //(red: 19/255, green: 86/255, blue:99/255, alpha: 1.0)
         
-        pillView.frame = CGRectMake ((labelWidth * 0.045), 0, (labelWidth * 0.92), labelHeight)
+        pillView.frame = CGRectMake ((labelWidth * 0.05), 0, (labelWidth * 0.9), labelHeight)
         pillView.backgroundColor = UIColor.clearColor()
         pillView.layer.borderWidth = 1
         pillView.layer.borderColor = UIColor.whiteColor().CGColor

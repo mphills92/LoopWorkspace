@@ -16,7 +16,6 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var startReservationButton: UIButton!
     @IBOutlet weak var checkInButton: UIButton!
-    @IBOutlet weak var reservationInProgressButton: UIButton!
     
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
@@ -49,6 +48,16 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         checkInButton.layer.cornerRadius = 20
         checkInButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
 
+        if (nextReservation.reservationIsWithinOneHour == true && nextReservation.userHasCheckedInForNextReservation == true) {
+            //self.revealViewController().rightRevealToggleAnimated(true)
+            self.revealViewController().rightViewRevealWidth = 280
+            print("right swipe should be available")
+        } else {
+            self.revealViewController().rightViewRevealWidth = 0
+            //self.revealViewController().rightRevealToggleAnimated(false)
+            print("right swipe should be disabled")
+        }
+        
         // SWRevealViewController targets and actions.
         self.revealViewController().tapGestureRecognizer()
         if self.revealViewController() != nil {
@@ -60,13 +69,12 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
             reservationInProgressBarButtonItem.action = "rightRevealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+
         startReservationButton.layer.cornerRadius = 20
         startReservationButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
         startReservationButton.layer.borderColor = UIColor.whiteColor().CGColor
         startReservationButton.layer.borderWidth = 1
         startReservationButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
- 
     }
 }
 
@@ -149,7 +157,8 @@ extension LandingPageViewController {
         if (nextReservation.reservationIsWithinOneHour == false) {
             // Hide Check In and In Progress Buttons
             checkInButton.hidden = true
-            reservationInProgressButton.hidden = true
+            reservationInProgressBarButtonItem.enabled = false
+            reservationInProgressBarButtonItem.tintColor = UIColor.clearColor()
 
         } else if (nextReservation.reservationIsWithinOneHour == true) {
             if (nextReservation.userHasCheckedInForNextReservation == false) {
@@ -157,12 +166,13 @@ extension LandingPageViewController {
                 checkInButton.hidden = false
                 
                 // Hide In Progress button
-                reservationInProgressButton.hidden = true
-
+                reservationInProgressBarButtonItem.enabled = false
+                reservationInProgressBarButtonItem.tintColor = UIColor.clearColor()
                 
             } else if (nextReservation.userHasCheckedInForNextReservation == true) {
                 // Display In Progress button
-                //reservationInProgressButton.hidden = false
+                reservationInProgressBarButtonItem.enabled = true
+                reservationInProgressBarButtonItem.tintColor = UIColor.whiteColor()
                 // Hide Check In button
                 checkInButton.hidden = true
 

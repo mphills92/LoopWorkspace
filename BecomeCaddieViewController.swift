@@ -35,8 +35,8 @@ class BecomeCaddieViewController: UIViewController {
         
         getStartedButton.layer.borderColor = UIColor.whiteColor().CGColor
         getStartedButton.layer.borderWidth = 1
-        getStartedButton.layer.cornerRadius = getStartedButton.bounds.height / 2
-        getStartedButton.layer.backgroundColor = UIColor.darkGrayColor().colorWithAlphaComponent(0.2).CGColor
+        getStartedButton.layer.cornerRadius = 20
+        getStartedButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -24,3 +24,11 @@ class GolferReservationInProgressSidebarViewController: UIViewController {
         return UIStatusBarStyle.LightContent
     }
 }
+
+extension GolferReservationInProgressSidebarViewController {
+    
+    @IBAction func reservationCompleteButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("toReviewCaddieSegue", sender: self)
+    }
+    
+}
