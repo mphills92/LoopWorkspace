@@ -13,6 +13,7 @@ class ConfirmReservationViewController: UIViewController {
     @IBOutlet weak var confirmReservationButton: UIButton!
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var bottomButtonHolderView: UIView!
+    @IBOutlet weak var containerBottonConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,23 @@ class ConfirmReservationViewController: UIViewController {
         // Unicode character for cells...black large dot... \u{25CF}
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
     
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
+    }
+}
+
+    
+extension ConfirmReservationViewController {
     @IBAction func confirmReservationButtonPressed(sender: AnyObject) {
         let alertController = UIAlertController(title: "See you on the course!", message:  "\n Your reservation has been received. You can now find it listed in the Reservations section of your profile, where you can also view its details or delete it. \n \n We'll send you future reminders as the date and time of your reservation approaches.", preferredStyle: .Alert)
         alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
@@ -47,6 +64,19 @@ class ConfirmReservationViewController: UIViewController {
         self.presentViewController(alertController, animated: true) {
             alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         }
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardHeight = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue.size.height else {
+            return
+        }
+        containerBottonConstraint.constant = keyboardHeight - 120
+        view.layoutIfNeeded()
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        containerBottonConstraint.constant = 0
+        view.layoutIfNeeded()
     }
     
     // Implement unwind segue method in the future.

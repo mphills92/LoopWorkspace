@@ -8,23 +8,60 @@
 
 import UIKit
 
-class ContainerConfirmReservationViewController: UITableViewController {
+class ContainerConfirmReservationViewController: UITableViewController, UITextFieldDelegate {
+
+    @IBOutlet weak var cancelPromoCodeButton: UIButton!
+    @IBOutlet weak var applyPromoCodeButton: UIButton!
+    @IBOutlet weak var promoCodeTextField: UITextField!
     
-    @IBOutlet weak var promoCodeTableViewCell: UITableViewCell!
+    let userReferralCode = UserReferralCode()
+    
+    var textFieldCharactersCount = Int()
+    var enteredPromoCode = String()
+    var promoCodeIsValid: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        promoCodeTextField.delegate = self
         
-        self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -32, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -37, 0)
         
-        promoCodeTableViewCell.tag = 1
-
+        cancelPromoCodeButton.hidden = true
+        applyPromoCodeButton.hidden = true
+        applyPromoCodeButton.layer.cornerRadius = 15
     }
-    
 }
 
 extension ContainerConfirmReservationViewController {
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.tableView.contentOffset = CGPointMake(0, 100)
+            self.applyPromoCodeButton.hidden = false
+            self.cancelPromoCodeButton.hidden = false
+            }, completion: nil)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.applyPromoCodeButton.hidden = true
+            self.cancelPromoCodeButton.hidden = true
+            }, completion: nil)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        evaluatePromoCode()
+        promoCodeTextField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = promoCodeTextField.text else {return true}
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= 15
+    }
+
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 0) {
             return 32
@@ -44,13 +81,55 @@ extension ContainerConfirmReservationViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
-        if cellClicked == promoCodeTableViewCell {
-            performSegueWithIdentifier("toPromoCodePopoverSegue", sender: self)
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
+    @IBAction func cancelPromoCodeButtonPressed(sender: AnyObject) {
+        if (enteredPromoCode == "") {
+            promoCodeTextField.text = ""
+        } else {
+            promoCodeTextField.text = enteredPromoCode
         }
-        
+        promoCodeTextField.resignFirstResponder()
     }
+    
+    @IBAction func applyPromoCodeButtonPressed(sender: AnyObject) {
+        evaluatePromoCode()
+    }
+    
+    func evaluatePromoCode() {
+        enteredPromoCode = promoCodeTextField.text!
+        
+        if (enteredPromoCode == userReferralCode.referralCode) {
+            promoCodeIsValid == true
+            
+            let alertController = UIAlertController(title: "Happy golfing!", message: "Your promo code has been applied.", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                self.promoCodeTextField.text = self.enteredPromoCode
+                self.promoCodeTextField.resignFirstResponder()
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            }
+            
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+            
+        } else {
+            promoCodeTextField == false
+            let alertController = UIAlertController(title: "", message: "The promo code you entered is invalid. Please try something else.", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            let tryAgainAction = UIAlertAction(title: "Try Again", style: .Cancel) { (action) in
+                self.promoCodeTextField.text = ""
+            }
+            
+            alertController.addAction(tryAgainAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+        }
+    }
+
+
 }
