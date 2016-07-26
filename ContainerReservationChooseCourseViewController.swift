@@ -10,16 +10,14 @@ import UIKit
 
 class ContainerReservationChooseCourseViewController: UICollectionViewController {
     
-    
-    @IBAction func chooseCourseButtonPressed(sender: AnyObject) {
-        self.performSegueWithIdentifier("courseHasBeenSelectedSegue", sender: self)
-    }
-    
     let coursesAvailable = Courses.coursesAvailable()
+    
+    var selectedCourseNameToSend = String()
+    var selectedCourseIDToPass = Int()
+    var selectedCourseCollectionCellIndexPath = NSIndexPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionView!.backgroundColor = UIColor.blackColor()
         collectionView!.layoutIfNeeded()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast //UIScrollViewDecelerationRateNormal //UIScrollViewDecelerationRateFast
@@ -29,6 +27,9 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
 
 extension ContainerReservationChooseCourseViewController {
     
+    @IBAction func chooseCourseButtonPressed(sender: AnyObject) {
+        let chooseCourseButtonRow = sender.tag
+    }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -43,10 +44,32 @@ extension ContainerReservationChooseCourseViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CoursesCollectionCell
         
         cell.coursesAvailable = coursesAvailable[indexPath.item]
-        //cell.inspiration = inspirations[indexPath.item]
-        //cell.contentView.backgroundColor = UIColor.groupTableViewBackgroundColor() //colors[indexPath.item]
+        
+        cell.chooseCourseButton.tag = indexPath.row
+        
+        selectedCourseCollectionCellIndexPath = indexPath
+        
+        cell.chooseCourseButton.addTarget(self, action: "chooseCourseButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        
         cell.layoutIfNeeded()
         return cell
+    }
+    
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! CoursesCollectionCell
+
+        selectedCourseNameToSend = (cell.courseNameLabel.text)!
+        
+        self.performSegueWithIdentifier("courseHasBeenSelectedSegue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "courseHasBeenSelectedSegue") {
+            let destinationVC = segue.destinationViewController as! ChooseDateViewController
+            
+            destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
+        }
     }
     
 }

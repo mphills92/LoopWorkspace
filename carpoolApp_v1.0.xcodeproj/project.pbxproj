@@ -37,7 +37,6 @@
 		C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527341D3EEA690069554C /* DashboardViewController.swift */; };
 		C95527381D3F30760069554C /* CaddieNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527371D3F30760069554C /* CaddieNotificationsViewController.swift */; };
 		C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */; };
-		C955273D1D3FCCA20069554C /* GolferRoundInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */; };
 		C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */; };
 		C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */; };
 		C956C1111D3756300057B776 /* ChooseTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C1101D3756300057B776 /* ChooseTimeViewController.swift */; };
@@ -138,7 +137,6 @@
 		C95527341D3EEA690069554C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		C95527371D3F30760069554C /* CaddieNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieNotificationsViewController.swift; sourceTree = "<group>"; };
 		C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDashboardViewController.swift; sourceTree = "<group>"; };
-		C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolferRoundInProgressViewController.swift; sourceTree = "<group>"; };
 		C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNumberOfPlayersSegmentedControl.swift; sourceTree = "<group>"; };
 		C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieHistoryCell.swift; sourceTree = "<group>"; };
 		C956C1101D3756300057B776 /* ChooseTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseTimeViewController.swift; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				C944F1D81D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift */,
-				C955273C1D3FCCA20069554C /* GolferRoundInProgressViewController.swift */,
 				C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */,
 				C944F1BD1D4018E5008E2B4C /* Review Caddie */,
 			);
@@ -865,7 +862,6 @@
 				C95527301D3EA8850069554C /* ReviewCaddieViewController.swift in Sources */,
 				C990CFA91D21D2F2005E05F2 /* ReservationRecapCell.swift in Sources */,
 				C990CF9C1D207615005E05F2 /* ForgotPasswordViewController.swift in Sources */,
-				C955273D1D3FCCA20069554C /* GolferRoundInProgressViewController.swift in Sources */,
 				C9EE3ED81D06643800F86EF2 /* SidebarMenuViewController.swift in Sources */,
 				C994B4CF1D15A67F009848F2 /* ChangeEmailViewController.swift in Sources */,
 				C944F1C21D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift in Sources */,

@@ -15,6 +15,14 @@ class ChooseTimeViewController: UIViewController {
     @IBOutlet weak var pickerBackgroundView: UIView!
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var bottomButtonHolderView: UIView!
+    @IBOutlet weak var selectedCourseNameLabel: UILabel!
+    
+    // Pass data via segue.
+    var selectedCourseNameToSendAgain = String()
+    var selectedTimeToSend = String()
+    
+    // Receive data from segue.
+    var selectedCourseNameHasBeenSent: String?
     
     var selectedDate = NSDate()
     var dateFormatter = NSDateFormatter()
@@ -51,6 +59,8 @@ class ChooseTimeViewController: UIViewController {
 
         searchCaddiesButton.layer.cornerRadius = 20
         
+        selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
+        
         chooseTimePicker.addTarget(self, action: "timeChangedValue:", forControlEvents: UIControlEvents.ValueChanged)
     }
     
@@ -68,8 +78,16 @@ extension ChooseTimeViewController {
         //dateFormatter.dateFormat = "HH:mm a"
         dateFormatter.timeStyle = .ShortStyle
         let convertedTime = dateFormatter.stringFromDate(selectedDate)
-        print (convertedTime)
+        selectedTimeToSend = convertedTime
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toChooseCaddieSegue") {
+            let destinationVC = segue.destinationViewController as! CaddiesAvailableViewController
+            selectedCourseNameToSendAgain = selectedCourseNameHasBeenSent!
+
+            destinationVC.selectedCourseNameHasBeenSentAgain = selectedCourseNameToSendAgain
+            destinationVC.selectedTimeHasBeenSent = selectedTimeToSend
+        }
+    }
 }

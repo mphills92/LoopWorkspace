@@ -12,6 +12,15 @@ class CaddiesAvailableViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var reservationSnapshotView: UIView!
+    @IBOutlet weak var selectedCourseNameLabel: UILabel!
+    @IBOutlet weak var selectedTimeLabel: UILabel!
+    
+    // Pass data via segue.
+    var selectedCourseNameToSend = String()
+    
+    // Receive data from segue.
+    var selectedCourseNameHasBeenSentAgain: String?
+    var selectedTimeHasBeenSent: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +36,9 @@ class CaddiesAvailableViewController: UIViewController {
         reservationSnapshotView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
 
         containerView.layer.masksToBounds = true
+        
+        selectedCourseNameLabel.text = selectedCourseNameHasBeenSentAgain
+        selectedTimeLabel.text = selectedTimeHasBeenSent
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,5 +46,10 @@ class CaddiesAvailableViewController: UIViewController {
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
+}
+
+extension CaddiesAvailableViewController {
+
+    
 }
 

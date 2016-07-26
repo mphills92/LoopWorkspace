@@ -156,9 +156,9 @@ extension LoginViewController {
         validatedEmail()
         validatedPassword()
         
+        //rotateLayerInfinite(logoImageView.layer)
+        
         if (emailTextField.text! == "" || passwordTextField.text! == "") {
-            
-            
             let alertController = UIAlertController(title: "You forgot to enter either an email or password.", message:  "\n Please enter your full email and password before attempting to login.", preferredStyle: .Alert)
             
             
@@ -309,5 +309,17 @@ extension LoginViewController {
     func clearTextFields() {
         emailTextField.text = ""
         passwordTextField.text = ""
+    }
+    
+    func rotateLayerInfinite(layer: CALayer) {
+        var rotation: CABasicAnimation
+        rotation = CABasicAnimation(keyPath: "transform.rotation")
+        rotation.fromValue = Int(0)
+        rotation.toValue = Int((2 * M_PI))
+        rotation.duration = 1.0
+        rotation.repeatCount = HUGE
+        layer.removeAllAnimations()
+        layer.addAnimation(rotation, forKey: "Spin")
+        
     }
 }

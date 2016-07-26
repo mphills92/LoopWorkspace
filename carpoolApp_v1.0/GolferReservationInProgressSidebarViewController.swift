@@ -28,6 +28,8 @@ class GolferReservationInProgressSidebarViewController: UIViewController {
 extension GolferReservationInProgressSidebarViewController {
     
     @IBAction func reservationCompleteButtonPressed(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName("reservationHasCompletedNotification", object: true)
+        
         performSegueWithIdentifier("toReviewCaddieSegue", sender: self)
     }
     

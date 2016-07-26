@@ -14,8 +14,8 @@ class ChooseAvailableCaddiesCell: UITableViewCell {
     @IBOutlet weak var caddieNameLabel: UILabel!
     @IBOutlet weak var membershipHistoryLabel: UILabel!
     @IBOutlet weak var roundsHistoryLabel: UILabel!
-    @IBOutlet weak var reserveButton: UIButton!
     @IBOutlet weak var detailsDisclosureIndicator: UIImageView!
+    @IBOutlet weak var detailsButton: UIButton!
     
     var caddiesAvailable: Caddies? {
         didSet {
@@ -23,9 +23,9 @@ class ChooseAvailableCaddiesCell: UITableViewCell {
                 caddieNameLabel.text = caddiesAvailable.name
                 membershipHistoryLabel.text = "Member since \(caddiesAvailable.membership)"
                 roundsHistoryLabel.text = "\(caddiesAvailable.rounds) rounds caddied"
-                reserveButton.layer.cornerRadius = 20 //reserveButton.bounds.height / 2
-                reserveButton.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
-                reserveButton.layer.borderWidth = 1
+                //detailsButton.layer.cornerRadius = 12
+                //detailsButton.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
+                //detailsButton.layer.borderWidth = 1
                 
                 profileImageView.layer.cornerRadius = 8
             }

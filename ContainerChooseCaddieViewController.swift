@@ -20,11 +20,6 @@ class ContainerChooseCaddieViewController: UITableViewController {
     
     let caddiesAvailable = Caddies.caddiesAvailable()
     
-    @IBAction func reserveButtonPressed(sender: AnyObject) {
-        self.performSegueWithIdentifier("caddieSelectedSegue", sender: self)
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
@@ -32,6 +27,10 @@ class ContainerChooseCaddieViewController: UITableViewController {
 }
 
 extension ContainerChooseCaddieViewController {
+    
+    @IBAction func detailsButtonPressed(sender: AnyObject) {
+        
+    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numOfSections: Int = 0
@@ -64,21 +63,28 @@ extension ContainerChooseCaddieViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = self.tableView?.cellForRowAtIndexPath(indexPath) as! ChooseAvailableCaddiesCell
+        
+        self.performSegueWithIdentifier("caddieSelectedSegue", sender: self)
+        /*
         currentRow = indexPath.row
         selectedCellIndex()
         tableView.beginUpdates()
         tableView.endUpdates()
+        */
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        /*
         if (aCellIsExpanded == true) {
             if (currentRow == indexPath.row) {
                 return 190
             }
         } else {
             return 120
-        }
-        return 120
+        }*/
+        return 200
     }
     
     func selectedCellIndex() {

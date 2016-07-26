@@ -14,7 +14,13 @@ class ChooseDateViewController: UIViewController {
     @IBOutlet weak var chooseDateButton: UIButton!
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var bottomButtonHolderView: UIView!
+    @IBOutlet weak var selectedCourseNameLabel: UILabel!
     
+    // Pass data via segue.
+    var selectedCourseNameToSend = String()
+    
+    // Receive data from segue.
+    var selectedCourseNameHasBeenSent: String?
     
     @IBAction func chooseDateButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("toChooseTimeSegue", sender: self)
@@ -38,11 +44,25 @@ class ChooseDateViewController: UIViewController {
         bottomButtonHolderView.layer.shadowColor = UIColor.blackColor().CGColor
         bottomButtonHolderView.layer.shadowOpacity = 0.25
         bottomButtonHolderView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        
+        selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
+}
+
+extension ChooseDateViewController {
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toChooseTimeSegue") {
+            let destinationVC = segue.destinationViewController as! ChooseTimeViewController
+            selectedCourseNameToSend = selectedCourseNameHasBeenSent!
+            
+            destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
+        }
     }
 }

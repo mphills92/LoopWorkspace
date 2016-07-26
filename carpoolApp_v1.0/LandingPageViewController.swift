@@ -1,5 +1,5 @@
 //
-//  OurViewController.swift
+//  LandingPageViewController.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 4/6/16.
@@ -19,13 +19,14 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         revealViewController().delegate = self
         definesPresentationContext = true
         
         positionAndDisplayViewButtons()
+        
         self.view.updateConstraints()
         self.view.layoutIfNeeded()
         
@@ -48,15 +49,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         checkInButton.layer.cornerRadius = 20
         checkInButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
 
-        if (nextReservation.reservationIsWithinOneHour == true && nextReservation.userHasCheckedInForNextReservation == true) {
-            //self.revealViewController().rightRevealToggleAnimated(true)
-            self.revealViewController().rightViewRevealWidth = 280
-            print("right swipe should be available")
-        } else {
-            self.revealViewController().rightViewRevealWidth = 0
-            //self.revealViewController().rightRevealToggleAnimated(false)
-            print("right swipe should be disabled")
-        }
+
         
         // SWRevealViewController targets and actions.
         self.revealViewController().tapGestureRecognizer()
@@ -75,6 +68,20 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         startReservationButton.layer.borderColor = UIColor.whiteColor().CGColor
         startReservationButton.layer.borderWidth = 1
         startReservationButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reservationHasCompleted:", name: "reservationHasCompletedNotification", object: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        positionAndDisplayViewButtons()
+        
+        if (nextReservation.reservationIsWithinOneHour == true && nextReservation.userHasCheckedInForNextReservation == true) {
+            self.revealViewController().rightViewRevealWidth = 280
+        } else {
+            self.revealViewController().rightViewRevealWidth = 0
+        }
     }
 }
 
@@ -175,12 +182,14 @@ extension LandingPageViewController {
                 reservationInProgressBarButtonItem.tintColor = UIColor.whiteColor()
                 // Hide Check In button
                 checkInButton.hidden = true
-
             }
         }
     }
     
-    
+    func reservationHasCompleted(notification: NSNotification) {
+        
+            self.revealViewController().rightRevealToggleAnimated(true)
+    }
 }
 
 
