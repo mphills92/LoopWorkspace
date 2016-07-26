@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C92042C41D2DB05A003654CB /* CaddieModeLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */; };
 		C92042C71D2DB9E4003654CB /* CaddieModeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */; };
+		C9359E091D479F370027D40D /* AboutUsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E081D479F370027D40D /* AboutUsPageViewController.swift */; };
 		C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E61D174E4600EEE328 /* ChangePhoneViewController.swift */; };
 		C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */; };
 		C944F1BA1D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */; };
@@ -109,6 +110,7 @@
 /* Begin PBXFileReference section */
 		C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeLandingPageViewController.swift; sourceTree = "<group>"; };
 		C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeSegmentedControl.swift; sourceTree = "<group>"; };
+		C9359E081D479F370027D40D /* AboutUsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsPageViewController.swift; sourceTree = "<group>"; };
 		C94259E61D174E4600EEE328 /* ChangePhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePhoneViewController.swift; sourceTree = "<group>"; };
 		C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerAboutUsViewController.swift; sourceTree = "<group>"; };
 		C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGolferRoundInProgressViewController.swift; sourceTree = "<group>"; };
@@ -658,7 +660,7 @@
 				C956FD3A1D280B4D00E7143B /* Choose Caddie */,
 				C95385D11D10B8F7007BCA15 /* Confirm Reservation */,
 				C9EE3F2B1D0A1A2000F86EF2 /* My Profile */,
-				C9EE3F2E1D0A1CC600F86EF2 /* Our Story */,
+				C9EE3F2E1D0A1CC600F86EF2 /* About Us */,
 				C9EE3F311D0A1F1E00F86EF2 /* Invite Others */,
 				C95385DC1D133EAD007BCA15 /* Settings */,
 				C9EE3F361D0A20EC00F86EF2 /* Become Caddie */,
@@ -681,13 +683,14 @@
 			name = "My Profile";
 			sourceTree = "<group>";
 		};
-		C9EE3F2E1D0A1CC600F86EF2 /* Our Story */ = {
+		C9EE3F2E1D0A1CC600F86EF2 /* About Us */ = {
 			isa = PBXGroup;
 			children = (
 				C9EE3F2C1D0A1C5900F86EF2 /* AboutUsViewController.swift */,
 				C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */,
+				C9359E081D479F370027D40D /* AboutUsPageViewController.swift */,
 			);
-			name = "Our Story";
+			name = "About Us";
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -894,6 +897,7 @@
 				C990CF9E1D209512005E05F2 /* SignUpNameInfoViewController.swift in Sources */,
 				C994B4C21D143CC9009848F2 /* NotificationsSettingsViewController.swift in Sources */,
 				C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */,
+				C9359E091D479F370027D40D /* AboutUsPageViewController.swift in Sources */,
 				C944F1D71D4177CA008E2B4C /* CustomInteractionController.swift in Sources */,
 				C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */,
 				C944F1D21D40910F008E2B4C /* AcknowledgmentsViewController.swift in Sources */,

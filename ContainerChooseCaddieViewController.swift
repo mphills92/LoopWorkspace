@@ -65,6 +65,8 @@ extension ContainerChooseCaddieViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let cell = self.tableView?.cellForRowAtIndexPath(indexPath) as! ChooseAvailableCaddiesCell
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         self.performSegueWithIdentifier("caddieSelectedSegue", sender: self)
         /*
