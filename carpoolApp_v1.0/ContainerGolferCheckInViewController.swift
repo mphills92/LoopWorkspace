@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import MessageUI
 
-class ContainerGolferCheckInViewController: UITableViewController {
+class ContainerGolferCheckInViewController: UITableViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var caddieProfileImageView: UIImageView!
+    @IBOutlet weak var textCaddieCell: UITableViewCell!
+    @IBOutlet weak var emailCaddieCell: UITableViewCell!
+    @IBOutlet weak var callCaddieCell: UITableViewCell!
+    @IBOutlet weak var lateCaddieCell: UITableViewCell!
+    @IBOutlet weak var loopContactRequestCell: UITableViewCell!
+    
+    var userName = UserName()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.contentInset = UIEdgeInsetsMake(-96, 0, 0, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(-96, 0, -38, 0)
 
         caddieProfileImageView.layer.cornerRadius = 8
 
@@ -32,4 +40,79 @@ extension ContainerGolferCheckInViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if (cellClicked == textCaddieCell) {
+            let textAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "It looks like you can't send a text message right now. Please try again later.", preferredStyle: .Alert)
+            textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            if (MFMessageComposeViewController.canSendText()) {
+                let controller = MFMessageComposeViewController()
+                controller.body = "Hi, this is \(userName.firstName) " + "\(userName.lastName) and I'm checking in for my Loop reservation with you that starts within the hour..."
+                controller.recipients = ["caddiePhoneNumber"]
+                
+// TODO: Set caddie phone information as recipient.
+                
+                controller.messageComposeDelegate = self
+                self.presentViewController(controller, animated: true, completion: {})
+            } else {
+                let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+                textAlertController.addAction(closeAction)
+                
+                presentViewController(textAlertController, animated: true) {
+                    textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                }
+            }
+            
+            
+        } else if (cellClicked == emailCaddieCell) {
+            let emailAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "We cannot find an email account for us to use to contact your caddie. Please make sure your email settings are correct or try again later.", preferredStyle: .Alert)
+            emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            if (MFMailComposeViewController.canSendMail()) {
+                let controller = MFMailComposeViewController()
+                controller.setSubject("Loop Reservation Check In Contact Request")
+                controller.setMessageBody("Hi, this is \(userName.firstName) " + "\(userName.lastName) and II'm checking in for my Loop reservation with you that starts within the hour...", isHTML: true)
+                controller.mailComposeDelegate = self
+                self.presentViewController(controller, animated: true, completion: {})
+            } else {
+                let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+                emailAlertController.addAction(closeAction)
+                
+                presentViewController(emailAlertController, animated: true) {
+                    emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                }
+            }
+        } else if (cellClicked == callCaddieCell) {
+            print("call caddie initiated")
+// TODO: Launch phone call to caddie phone number.
+        } else if (cellClicked == lateCaddieCell) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let lateCaddieViewController = storyboard.instantiateViewControllerWithIdentifier("LateCaddieNavigationController") as! UIViewController
+            self.presentViewController(lateCaddieViewController, animated: true, completion: nil)
+        } else if (cellClicked == loopContactRequestCell) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loopContactRequestViewController = storyboard.instantiateViewControllerWithIdentifier("LoopContactRequestNavigationController") as! UIViewController
+            self.presentViewController(loopContactRequestViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        switch (result.rawValue) {
+        case MessageComposeResultCancelled.rawValue:
+            self.dismissViewControllerAnimated(true, completion: {})
+        case MessageComposeResultFailed.rawValue:
+            self.dismissViewControllerAnimated(true, completion: {})
+        case MessageComposeResultSent.rawValue:
+            self.dismissViewControllerAnimated(true, completion: {})
+        default:
+            break
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        dismissViewControllerAnimated(true, completion: {})
+    }
 }

@@ -10,6 +10,9 @@
 		C92042C41D2DB05A003654CB /* CaddieModeLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */; };
 		C92042C71D2DB9E4003654CB /* CaddieModeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */; };
 		C9359E091D479F370027D40D /* AboutUsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E081D479F370027D40D /* AboutUsPageViewController.swift */; };
+		C9359E0B1D48496E0027D40D /* LateCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E0A1D48496E0027D40D /* LateCaddieViewController.swift */; };
+		C9359E0D1D48553F0027D40D /* LoopContactRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E0C1D48553F0027D40D /* LoopContactRequestViewController.swift */; };
+		C9359E0F1D485B4F0027D40D /* CaddieComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E0E1D485B4F0027D40D /* CaddieComplaintViewController.swift */; };
 		C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E61D174E4600EEE328 /* ChangePhoneViewController.swift */; };
 		C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */; };
 		C944F1BA1D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */; };
@@ -111,6 +114,9 @@
 		C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeLandingPageViewController.swift; sourceTree = "<group>"; };
 		C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeSegmentedControl.swift; sourceTree = "<group>"; };
 		C9359E081D479F370027D40D /* AboutUsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsPageViewController.swift; sourceTree = "<group>"; };
+		C9359E0A1D48496E0027D40D /* LateCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateCaddieViewController.swift; sourceTree = "<group>"; };
+		C9359E0C1D48553F0027D40D /* LoopContactRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopContactRequestViewController.swift; sourceTree = "<group>"; };
+		C9359E0E1D485B4F0027D40D /* CaddieComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieComplaintViewController.swift; sourceTree = "<group>"; };
 		C94259E61D174E4600EEE328 /* ChangePhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePhoneViewController.swift; sourceTree = "<group>"; };
 		C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerAboutUsViewController.swift; sourceTree = "<group>"; };
 		C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGolferRoundInProgressViewController.swift; sourceTree = "<group>"; };
@@ -548,6 +554,9 @@
 			children = (
 				C990CF951D1B8F56005E05F2 /* HelpViewController.swift */,
 				C95527311D3EA9440069554C /* Help Subviews */,
+				C9359E0A1D48496E0027D40D /* LateCaddieViewController.swift */,
+				C9359E0C1D48553F0027D40D /* LoopContactRequestViewController.swift */,
+				C9359E0E1D485B4F0027D40D /* CaddieComplaintViewController.swift */,
 			);
 			name = "Help Center";
 			sourceTree = "<group>";
@@ -885,6 +894,7 @@
 				C956FD391D280B1E00E7143B /* ContainerChooseCaddieViewController.swift in Sources */,
 				C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */,
 				C990CFA31D20A175005E05F2 /* SignUpProfilePictureViewController.swift in Sources */,
+				C9359E0D1D48553F0027D40D /* LoopContactRequestViewController.swift in Sources */,
 				C95385D51D120CC5007BCA15 /* ProfileSegmentedControl.swift in Sources */,
 				C994B4CB1D145D24009848F2 /* CaddyHistoryViewController.swift in Sources */,
 				C95385C21D0F5A41007BCA15 /* UltravisualLayout.swift in Sources */,
@@ -892,7 +902,9 @@
 				C955272D1D3E92D50069554C /* ReservationInformation.swift in Sources */,
 				C956FD2D1D24338500E7143B /* CoursesCollectionViewCell.swift in Sources */,
 				C9EE3F381D0A217F00F86EF2 /* SettingsViewController.swift in Sources */,
+				C9359E0F1D485B4F0027D40D /* CaddieComplaintViewController.swift in Sources */,
 				C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */,
+				C9359E0B1D48496E0027D40D /* LateCaddieViewController.swift in Sources */,
 				C990CFA51D2168C0005E05F2 /* SignUpChooseAuthenticationViewController.swift in Sources */,
 				C990CF9E1D209512005E05F2 /* SignUpNameInfoViewController.swift in Sources */,
 				C994B4C21D143CC9009848F2 /* NotificationsSettingsViewController.swift in Sources */,

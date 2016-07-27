@@ -30,7 +30,7 @@ class UserPhone {
 }
 
 class UserPayment {
-    var paymentMethod: String = ""
+    var paymentMethod: String = "Visa"
     var paymentCardNumber: String = "1234"
 }
 
