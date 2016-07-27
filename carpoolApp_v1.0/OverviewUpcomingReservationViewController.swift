@@ -39,6 +39,14 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
 
 extension OverviewUpcomingReservationViewController {
     
+    @IBAction func checkInButtonPressed(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let golferCheckInViewController = storyboard.instantiateViewControllerWithIdentifier("GolferCheckInNavigationController") as! UIViewController
+        self.presentViewController(golferCheckInViewController, animated: true, completion: nil)
+
+    }
+    
+    
     func setNumberOfTableViewSections() {
         if (nextReservation.reservationIsWithinOneHour == true) {
             checkInCell.hidden = false

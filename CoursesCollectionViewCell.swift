@@ -14,6 +14,7 @@ class CoursesCollectionCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var imageCoverView: UIView!
     @IBOutlet weak var courseNameLabel: UILabel!
+    @IBOutlet weak var courseLocationLabel: UILabel!
     @IBOutlet weak var membershipHistoryLabel: UILabel!
     @IBOutlet weak var chooseCourseButton: UIButton!
     
@@ -22,6 +23,7 @@ class CoursesCollectionCell: UICollectionViewCell {
             if let coursesAvailable = coursesAvailable {
                 imageView.image = UIImage(named: "GolfCourseBackgroundImage")
                 courseNameLabel.text = coursesAvailable.name
+                courseLocationLabel.text = coursesAvailable.courseLocation
                 membershipHistoryLabel.text = "Member since \(coursesAvailable.membershipHistory)"
                 //imageView.image = caddiesAvailable.backgroundImage
             }
@@ -43,8 +45,11 @@ class CoursesCollectionCell: UICollectionViewCell {
         let scale = max(delta, 0.65)
         //titleLabel.transform = CGAffineTransformMakeScale(scale, scale)
         courseNameLabel.transform = CGAffineTransformMakeScale(scale, scale)
+        courseLocationLabel.transform = CGAffineTransformMakeScale(scale, scale)
         membershipHistoryLabel.transform = CGAffineTransformMakeScale(scale, scale)
-        chooseCourseButton.alpha = delta
+        
+        courseLocationLabel.alpha = delta
+        membershipHistoryLabel.alpha = delta
     }
     
 }

@@ -59,6 +59,8 @@ extension SettingsViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
         
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
         if cellClicked == sendFeedbackCell {
             let emailAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "We cannot find an email account for us to send your invitation. Please make sure your email settings are correct or try again later.", preferredStyle: .Alert)
             emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
@@ -79,8 +81,34 @@ extension SettingsViewController {
                 }
             }
         } else if cellClicked == signOutCell {
-            print("TO DO: Sign out user from Loop and release credentials. Pop view back to login page.")
-            // TO DO: Sign out user from Loop and release credentials. Pop view back to login page.
+            
+            let actionSheetController = UIAlertController(title: "Are you sure you want to sign out?", message: "", preferredStyle: .ActionSheet)
+            actionSheetController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            let signOutAction = UIAlertAction(title: "Sign Out", style: .Destructive) { (action) in
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! UIViewController
+                    self.presentViewController(loginViewController, animated: true, completion: nil)
+                    print("TO DO: Sign out user from Loop and release credentials to require new login.")
+// TO DO: Sign out user from Loop and release credentials. Pop view back to login page.
+            }
+            actionSheetController.addAction(signOutAction)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            }
+            actionSheetController.addAction(cancelAction)
+            
+            presentViewController(actionSheetController, animated: true) {
+                actionSheetController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+
+            
+            
+            
+            
+            
+            
+
         }
     }
     

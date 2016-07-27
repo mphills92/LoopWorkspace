@@ -4,27 +4,75 @@
 <array>
 	<dict>
 		<key>Name</key>
-		<string>The Woodlands Country Club</string>
+		<string>The Woodlands Country Club: Panther Trail</string>
 		<key>Membership History</key>
-		<integer>3</integer>
+		<string>July 2016</string>
+		<key>Location</key>
+		<string>The Woodlands, Texas</string>
 	</dict>
 	<dict>
 		<key>Name</key>
 		<string>The Club at Carlton Woods Creekside</string>
 		<key>Membership History</key>
-		<integer>2</integer>
+		<string>July 2016</string>
+		<key>Location</key>
+		<string>The Woodlands, Texas</string>
 	</dict>
 	<dict>
 		<key>Name</key>
 		<string>Cypresswood Golf Club</string>
 		<key>Membership History</key>
-		<integer>1</integer>
+		<string>August 2016</string>
+		<key>Location</key>
+		<string>Humble, Texas</string>
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>The Oaks &amp; Panther Trail Golf Courses</string>
+		<string>High Meadow Ranch Golf Course</string>
 		<key>Membership History</key>
-		<integer>5</integer>
+		<string>June 2016</string>
+		<key>Location</key>
+		<string>Magnolia, Texas</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Augusta Pines Country Club</string>
+		<key>Membership History</key>
+		<string>July 2016</string>
+		<key>Location</key>
+		<string>Spring, Texas</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Oakhurst Country Club</string>
+		<key>Membership History</key>
+		<string>July 2016</string>
+		<key>Location</key>
+		<string>Kingwood, Texas</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Kingwood Cove Golf Club</string>
+		<key>Membership History</key>
+		<string>June 2016</string>
+		<key>Location</key>
+		<string>Kingwood, Texas</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Willow Creek Golf Club</string>
+		<key>Membership History</key>
+		<string>August 2016</string>
+		<key>Location</key>
+		<string>Spring, Texas</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Walden on Lake Conroe Golf Club</string>
+		<key>Membership History</key>
+		<string>June 2016</string>
+		<key>Location</key>
+		<string>Montgomery, Texas</string>
 	</dict>
 </array>
 </plist>

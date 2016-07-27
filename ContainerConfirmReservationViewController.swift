@@ -10,11 +10,20 @@ import UIKit
 
 class ContainerConfirmReservationViewController: UITableViewController, UITextFieldDelegate {
 
+    
+    @IBOutlet weak var noPaymentMethodLabel: UILabel!
+    @IBOutlet weak var paymentMethodLabel: UILabel!
+    @IBOutlet weak var paymentCardNumberLabel: UILabel!
+    
     @IBOutlet weak var cancelPromoCodeButton: UIButton!
     @IBOutlet weak var applyPromoCodeButton: UIButton!
     @IBOutlet weak var promoCodeTextField: UITextField!
     
+    @IBOutlet weak var paymentMethodCell: UITableViewCell!
+    
+    
     let userReferralCode = UserReferralCode()
+    let userPayment = UserPayment()
     
     var textFieldCharactersCount = Int()
     var enteredPromoCode = String()
@@ -25,6 +34,8 @@ class ContainerConfirmReservationViewController: UITableViewController, UITextFi
         promoCodeTextField.delegate = self
         
         self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -37, 0)
+        
+        displayPaymentMethod()
         
         cancelPromoCodeButton.hidden = true
         applyPromoCodeButton.hidden = true
@@ -81,6 +92,18 @@ extension ContainerConfirmReservationViewController {
         }
     }
     
+    func displayPaymentMethod() {
+        if (userPayment.paymentMethod == "") {
+            noPaymentMethodLabel.hidden = false
+            paymentMethodLabel.hidden = true
+            paymentCardNumberLabel.hidden = true
+        } else {
+            noPaymentMethodLabel.hidden = true
+            paymentMethodLabel.hidden = false
+            paymentCardNumberLabel.hidden = false
+        }
+    }
+    
     @IBAction func cancelPromoCodeButtonPressed(sender: AnyObject) {
         if (enteredPromoCode == "") {
             promoCodeTextField.text = ""
@@ -128,6 +151,16 @@ extension ContainerConfirmReservationViewController {
             self.presentViewController(alertController, animated: true) {
                 alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             }
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+        
+        if (cellClicked == paymentMethodCell) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let paymentsViewController = storyboard.instantiateViewControllerWithIdentifier("PaymentsNavigationController") as! UIViewController
+            self.presentViewController(paymentsViewController, animated: true, completion: nil)
         }
     }
 

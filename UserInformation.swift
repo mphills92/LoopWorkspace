@@ -29,6 +29,11 @@ class UserPhone {
     var phoneNumber: String = "7778889999"
 }
 
+class UserPayment {
+    var paymentMethod: String = ""
+    var paymentCardNumber: String = "1234"
+}
+
 class UserAccount {
     var membershipHistory: String = "July 2016"
     var lifetimeRounds: Int = 22
@@ -47,7 +52,7 @@ class UpcomingReservations {
 
 class NextReservation {
     var reservationIsWithinOneHour: Bool = true
-    var userHasCheckedInForNextReservation: Bool = false
+    var userHasCheckedInForNextReservation: Bool = true
 }
 
 class PreviousReservation {
