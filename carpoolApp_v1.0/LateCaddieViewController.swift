@@ -14,7 +14,6 @@ class LateCaddieViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var closeTextFieldButton: UIButton!
     @IBOutlet weak var infoTextView: UITextView!
     
-    @IBOutlet weak var thirdParagraphToTopReferenceConstraint: NSLayoutConstraint!
     @IBOutlet weak var topConstraintInfoTextFieldBackground: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraintInfoTextFieldBackground: NSLayoutConstraint!
     
@@ -46,6 +45,7 @@ class LateCaddieViewController: UIViewController, UITextViewDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        infoTextView.resignFirstResponder()
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
@@ -96,7 +96,7 @@ extension LateCaddieViewController {
             let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
             let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
             if endFrame?.origin.y >= UIScreen.mainScreen().bounds.size.height {
-                self.topConstraintInfoTextFieldBackground.constant = 280
+                self.topConstraintInfoTextFieldBackground.constant = 285
                 self.bottomConstraintTextFieldDistanceMoved = 80
                 self.bottomConstraintInfoTextFieldBackground.constant = bottomConstraintTextFieldDistanceMoved
                 closeTextFieldButton.hidden = true

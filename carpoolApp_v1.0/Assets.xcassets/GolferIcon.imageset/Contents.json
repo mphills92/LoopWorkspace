@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "golf_filled-50-29.png",
+      "filename" : "GolfBallAndTeeIcon-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "golf_filled-50-29@2x.png",
+      "filename" : "GolfBallAndTeeIcon-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "golf_filled-50-76.png",
+      "filename" : "GolfBallAndTeeIcon.png",
       "scale" : "3x"
     }
   ],

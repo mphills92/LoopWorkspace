@@ -241,7 +241,7 @@ extension LoginViewController {
     
     func keyboardWillHide(notification: NSNotification) {
         loginBackgroundViewCenterYConstraint.constant = 0
-        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+        UIView.animateWithDuration(0.5, delay: 0.16, options: UIViewAnimationOptions.CurveLinear, animations: {
             self.logoImageView.transform = CGAffineTransformMakeScale(1, 1)
             self.mainTitle.alpha = 1.0
             self.view.layoutIfNeeded()

@@ -20,7 +20,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
         super.viewDidLoad()
         collectionView!.backgroundColor = UIColor.blackColor()
         collectionView!.layoutIfNeeded()
-        collectionView!.decelerationRate = UIScrollViewDecelerationRateFast //UIScrollViewDecelerationRateNormal //UIScrollViewDecelerationRateFast
+        collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
     }
 }
 
