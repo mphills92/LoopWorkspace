@@ -36,5 +36,5 @@ class Courses: SessionForCourses {
         }
         return coursesList
     }
-    
 }
+

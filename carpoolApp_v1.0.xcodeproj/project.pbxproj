@@ -13,6 +13,7 @@
 		C9359E0B1D48496E0027D40D /* LateCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E0A1D48496E0027D40D /* LateCaddieViewController.swift */; };
 		C9359E0D1D48553F0027D40D /* LoopContactRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E0C1D48553F0027D40D /* LoopContactRequestViewController.swift */; };
 		C9359E0F1D485B4F0027D40D /* CaddieComplaintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E0E1D485B4F0027D40D /* CaddieComplaintViewController.swift */; };
+		C9359E111D4D28A30027D40D /* FilterResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E101D4D28A20027D40D /* FilterResultsViewController.swift */; };
 		C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E61D174E4600EEE328 /* ChangePhoneViewController.swift */; };
 		C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */; };
 		C944F1BA1D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */; };
@@ -81,6 +82,7 @@
 		C994B4CD1D145E23009848F2 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4CC1D145E23009848F2 /* NotificationsViewController.swift */; };
 		C994B4CF1D15A67F009848F2 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4CE1D15A67F009848F2 /* ChangeEmailViewController.swift */; };
 		C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4D21D15A83E009848F2 /* UserInformation.swift */; };
+		C99AD9191D4FA962001ABA09 /* AvailableCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD9181D4FA962001ABA09 /* AvailableCities.swift */; };
 		C9EE3ED81D06643800F86EF2 /* SidebarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3ED71D06643800F86EF2 /* SidebarMenuViewController.swift */; };
 		C9EE3F1A1D07383200F86EF2 /* ChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F191D07383200F86EF2 /* ChooseDateViewController.swift */; };
 		C9EE3F1C1D075F0B00F86EF2 /* StartReservationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F1B1D075F0B00F86EF2 /* StartReservationContainerViewController.swift */; };
@@ -117,6 +119,7 @@
 		C9359E0A1D48496E0027D40D /* LateCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateCaddieViewController.swift; sourceTree = "<group>"; };
 		C9359E0C1D48553F0027D40D /* LoopContactRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopContactRequestViewController.swift; sourceTree = "<group>"; };
 		C9359E0E1D485B4F0027D40D /* CaddieComplaintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieComplaintViewController.swift; sourceTree = "<group>"; };
+		C9359E101D4D28A20027D40D /* FilterResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterResultsViewController.swift; sourceTree = "<group>"; };
 		C94259E61D174E4600EEE328 /* ChangePhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePhoneViewController.swift; sourceTree = "<group>"; };
 		C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerAboutUsViewController.swift; sourceTree = "<group>"; };
 		C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGolferRoundInProgressViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 		C994B4CC1D145E23009848F2 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsViewController.swift; path = ../NotificationsViewController.swift; sourceTree = "<group>"; };
 		C994B4CE1D15A67F009848F2 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		C994B4D21D15A83E009848F2 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		C99AD9181D4FA962001ABA09 /* AvailableCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableCities.swift; sourceTree = "<group>"; };
 		C9EE3ED71D06643800F86EF2 /* SidebarMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SidebarMenuViewController.swift; path = ../SidebarMenuViewController.swift; sourceTree = "<group>"; };
 		C9EE3F191D07383200F86EF2 /* ChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseDateViewController.swift; path = ../ChooseDateViewController.swift; sourceTree = "<group>"; };
 		C9EE3F1B1D075F0B00F86EF2 /* StartReservationContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartReservationContainerViewController.swift; path = ../StartReservationContainerViewController.swift; sourceTree = "<group>"; };
@@ -468,6 +472,7 @@
 			children = (
 				C956FD261D242E0B00E7143B /* ReservationChooseCourseViewController.swift */,
 				C956FD281D2430AB00E7143B /* ContainerReservationChooseCourseViewController.swift */,
+				C9359E101D4D28A20027D40D /* FilterResultsViewController.swift */,
 			);
 			name = "Choose Course";
 			path = ..;
@@ -606,6 +611,7 @@
 			isa = PBXGroup;
 			children = (
 				C95385C91D0F5B93007BCA15 /* CoursesAndCaddies.swift */,
+				C99AD9181D4FA962001ABA09 /* AvailableCities.swift */,
 				C95385CB1D0F5B98007BCA15 /* SessionForCaddies.swift */,
 				C956FD2E1D24356600E7143B /* SessionForCourses.swift */,
 			);
@@ -896,6 +902,7 @@
 				C990CFA31D20A175005E05F2 /* SignUpProfilePictureViewController.swift in Sources */,
 				C9359E0D1D48553F0027D40D /* LoopContactRequestViewController.swift in Sources */,
 				C95385D51D120CC5007BCA15 /* ProfileSegmentedControl.swift in Sources */,
+				C9359E111D4D28A30027D40D /* FilterResultsViewController.swift in Sources */,
 				C994B4CB1D145D24009848F2 /* CaddyHistoryViewController.swift in Sources */,
 				C95385C21D0F5A41007BCA15 /* UltravisualLayout.swift in Sources */,
 				C956C1111D3756300057B776 /* ChooseTimeViewController.swift in Sources */,
@@ -927,6 +934,7 @@
 				C944F1BA1D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift in Sources */,
 				C994B4CD1D145E23009848F2 /* NotificationsViewController.swift in Sources */,
 				C990CFA71D219D93005E05F2 /* SignUpPasswordViewController.swift in Sources */,
+				C99AD9191D4FA962001ABA09 /* AvailableCities.swift in Sources */,
 				C944F1D91D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift in Sources */,
 				C95A00E81CB5F9D6008237B1 /* LandingPageViewController.swift in Sources */,
 				C9EE3F201D090A5900F86EF2 /* CaddiesAvailableViewController.swift in Sources */,
