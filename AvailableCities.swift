@@ -10,9 +10,18 @@ import UIKit
 
 class CitiesAvailable {
     
-    var cities = ["Houston, Texas",
+    var regions = ["Texas - Houston",
+                   "Texas - San Antonio"]
+    
+    var region1 = ["Houston, Texas",
                   "The Woodlands, Texas",
                   "Spring, Texas",
                   "Katy, Texas",
                   "Sugar Land, Texas"]
+    
+    var region2 = ["San Antonio, Texas",
+                    "Alamo Heights, Texas",
+                    "Balcones Heights, Texas",
+                    "Lackland Heights, Texas",
+                    "Castle Hills, Texas"]
 }

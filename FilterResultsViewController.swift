@@ -16,12 +16,14 @@ class FilterResultsViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var distanceSliderLabel: UILabel!
     @IBOutlet weak var saveFiltersButton: UIButton!
     
-
-    var citiesAvailable = CitiesAvailable().cities
+    let currentLocation = ["Use current location"]
+    
+    var regionsAvailable = CitiesAvailable().regions
+    var region1 = CitiesAvailable().region1
+    var region2 = CitiesAvailable().region2
     
     var aCellIsSelected = false
     var selectedCity = [String!]()
-    var currentLocationCellShowsCheckmark = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,9 @@ class FilterResultsViewController: UIViewController, UITableViewDelegate, UITabl
         
         saveFiltersButton.layer.cornerRadius = 20
         
-        tableView.contentInset = UIEdgeInsetsMake(-35, 0, -35, 0)
+        //tableView.contentInset = UIEdgeInsetsMake(-35, 0, -35, 0)
         tableView.allowsMultipleSelection = false
+        tableView.estimatedRowHeight = 44
     }
 }
 
@@ -48,54 +51,78 @@ extension FilterResultsViewController {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return (regionsAvailable.count + 1)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return citiesAvailable.count + 1
+        if (section == 0) {
+            return 1
+        } else if (section == 1) {
+            return region1.count
+        } else if (section == 2) {
+            return region2.count
+        }
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section == 0) {
+            return nil
+        } else if (section == 1) {
+            return regionsAvailable[section - 1]
+        } else if (section == 2) {
+            return regionsAvailable[section - 1]
+        }
+        return nil
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+        
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
         cell.textLabel?.font = UIFont(name: "AvenirNext-Regular", size: 17)
         
-        if (indexPath.row == 0) {
+        if (indexPath.section == 0) {
             cell.textLabel?.text = "Use current location"
-            cell.textLabel?.textColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-        } else {
-            cell.textLabel?.text = citiesAvailable[indexPath.row - 1]
+        } else if (indexPath.section == 1) {
+            cell.textLabel?.text = region1[indexPath.row]
+        } else if (indexPath.section == 2) {
+            cell.textLabel?.text = region2[indexPath.row]
         }
         return cell
     }
     
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        var selectedCell = UITableViewCell()
         
         if (aCellIsSelected == false) {
-                tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
-                let selectedCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
-                aCellIsSelected = true
-        } else {
+            tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
+            selectedCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+            //selectedCity.append(potentialTravelers.nearbyFriendsForTravel[indexPath.row] as NSString as String)
+            aCellIsSelected = true
+        } else if (aCellIsSelected == true) {
             tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
-            selectedCity.removeAll()
-            let selectedCell = 0
+            selectedCell = UITableViewCell()
             aCellIsSelected = false
         }
-        print(aCellIsSelected)
     }
     
+    
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if aCellIsSelected == true {
+        if (aCellIsSelected == true) {
             tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.None
             selectedCity.removeAll()
-            
             aCellIsSelected = false
         } else {}
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     @IBAction func distanceSliderValueChanged(sender: UISlider) {

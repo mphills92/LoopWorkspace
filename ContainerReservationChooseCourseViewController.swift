@@ -15,6 +15,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     var selectedCourseNameToSend = String()
     var selectedCourseIDToPass = Int()
     var selectedCourseCollectionCellIndexPath = NSIndexPath()
+    var lastContentOffset = CGFloat()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,4 +73,20 @@ extension ContainerReservationChooseCourseViewController {
         }
     }
     
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        self.lastContentOffset = scrollView.contentOffset.y
+    }
+
+    override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        var upwardScroll = Bool()
+        if (self.lastContentOffset < scrollView.contentOffset.y) {
+            upwardScroll = true
+        } else if (self.lastContentOffset > scrollView.contentOffset.y) {
+            upwardScroll = false
+        } else {
+            
+        }
+        NSNotificationCenter.defaultCenter().postNotificationName("userHasSwipedContainerNotification", object: upwardScroll)
+    }
 }

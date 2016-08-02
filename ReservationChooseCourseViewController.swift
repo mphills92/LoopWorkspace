@@ -12,8 +12,11 @@ class ReservationChooseCourseViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var resultsFilterButton: UIButton!
+    @IBOutlet weak var resultsFilterButtonBottomConstraint: NSLayoutConstraint!
     
     let gradientLayer = CAGradientLayer()
+    
+    var upwardScroll = Bool()
     
     @IBAction func cancelReservationButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
@@ -28,17 +31,44 @@ class ReservationChooseCourseViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
-        resultsFilterButton.layer.cornerRadius = 15
+        resultsFilterButton.layer.cornerRadius = 17
         resultsFilterButton.layer.shadowColor = UIColor.blackColor().CGColor
         resultsFilterButton.layer.shadowOpacity = 0.5
         resultsFilterButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
+
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "userHasSwipedContainerNotification", object: self.view.window)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSwipedContainer:", name: "userHasSwipedContainerNotification", object: nil)
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
+}
+
+extension ReservationChooseCourseViewController {
+    func userHasSwipedContainer(notification: NSNotification) {
+        upwardScroll = notification.object! as! Bool
+        
+        if (upwardScroll == true) {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.resultsFilterButtonBottomConstraint.constant = -80
+                self.view.layoutIfNeeded()
+                }, completion: nil)
+
+
+        } else {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                self.resultsFilterButtonBottomConstraint.constant = 37
+                self.view.layoutIfNeeded()
+                }, completion: nil)
+        }
     }
 }
 
