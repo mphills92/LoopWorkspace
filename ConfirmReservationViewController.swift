@@ -15,6 +15,13 @@ class ConfirmReservationViewController: UIViewController {
     @IBOutlet weak var bottomButtonHolderView: UIView!
     @IBOutlet weak var containerBottonConstraint: NSLayoutConstraint!
 
+    let userReferralCode = UserReferralCode()
+    let userPayment = UserPayment()
+    
+    var textFieldCharactersCount = Int()
+    var enteredPromoCode = String()
+    var promoCodeIsValid: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Review Reservation"
@@ -45,12 +52,12 @@ class ConfirmReservationViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    
     override func viewWillDisappear(animated: Bool) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
     }
 }
-
     
 extension ConfirmReservationViewController {
     @IBAction func confirmReservationButtonPressed(sender: AnyObject) {
@@ -65,6 +72,7 @@ extension ConfirmReservationViewController {
             alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         }
     }
+    
     
     func keyboardWillShow(notification: NSNotification) {
         guard let keyboardHeight = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue.size.height else {

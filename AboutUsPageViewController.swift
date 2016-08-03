@@ -34,6 +34,9 @@ class AboutUsPageViewController: UIPageViewController {
                                animated: true,
                                completion: nil)
         }
+        
+        print(view.bounds.height)
+        print(view.bounds.width)
     }
     
     override func viewDidLayoutSubviews() {

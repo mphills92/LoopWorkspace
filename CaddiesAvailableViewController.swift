@@ -8,12 +8,26 @@
 
 import UIKit
 
-class CaddiesAvailableViewController: UIViewController {
+class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var selectedCourseNameLabel: UILabel!
     @IBOutlet weak var selectedTimeLabel: UILabel!
+    
+    
+    //////////////
+    // Dummy data.
+    var caddiesFound = true
+    
+    var currentRow = Int()
+    var aCellIsExpanded = false
+    
+    let caddiesAvailable = Caddies.caddiesAvailable()
+    //////////////
+    
+    
     
     // Pass data via segue.
     var selectedCourseNameToSend = String()
@@ -31,12 +45,12 @@ class CaddiesAvailableViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        //tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
+        
         reservationSnapshotView.layer.shadowColor = UIColor.blackColor().CGColor
         reservationSnapshotView.layer.shadowOpacity = 0.25
         reservationSnapshotView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
 
-        containerView.layer.masksToBounds = true
-        
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSentAgain
         selectedTimeLabel.text = selectedTimeHasBeenSent
     }
@@ -49,6 +63,57 @@ class CaddiesAvailableViewController: UIViewController {
 }
 
 extension CaddiesAvailableViewController {
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        var numOfSections: Int = 0
+        if (caddiesFound == true) {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+            numOfSections = 1
+            tableView.backgroundView = nil
+        } else {
+            let noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height))
+            noDataLabel.text = "No caddies found that match your criteria."
+            noDataLabel.textColor = UIColor.darkGrayColor()
+            noDataLabel.textAlignment = NSTextAlignment.Center
+            tableView.backgroundView = noDataLabel
+            tableView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        }
+        return numOfSections
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return caddiesAvailable.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ChooseAvailableCaddiesCell
+        
+        cell.caddiesAvailable = caddiesAvailable[indexPath.item]
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = self.tableView?.cellForRowAtIndexPath(indexPath) as! ChooseAvailableCaddiesCell
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        self.performSegueWithIdentifier("caddieSelectedSegue", sender: self)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func selectedCellIndex() {
+        if (aCellIsExpanded == false) {
+            aCellIsExpanded = true
+        } else {
+            aCellIsExpanded = false
+        }
+    }
 
     
 }
