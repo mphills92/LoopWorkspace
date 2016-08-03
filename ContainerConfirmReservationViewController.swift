@@ -10,6 +10,16 @@ import UIKit
 
 class ContainerConfirmReservationViewController: UITableViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var caddieProfileImageView: UIImageView!
+    @IBOutlet weak var caddieNameLabel: UILabel!
+    @IBOutlet weak var membershipHistoryLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    
+    @IBOutlet weak var golfCourseNameLabel: UILabel!
+    @IBOutlet weak var courseLocationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     
     @IBOutlet weak var noPaymentMethodLabel: UILabel!
     @IBOutlet weak var paymentMethodLabel: UILabel!
@@ -22,6 +32,10 @@ class ContainerConfirmReservationViewController: UITableViewController, UITextFi
     @IBOutlet weak var paymentMethodCell: UITableViewCell!
     
     
+    var selectedCourseNameHasBeenSent = String()
+    var selectedLocationHasBeenSent = String()
+    var selectedTimeHasBeenSentAgain = String()
+    
     let userReferralCode = UserReferralCode()
     let userPayment = UserPayment()
     
@@ -33,31 +47,78 @@ class ContainerConfirmReservationViewController: UITableViewController, UITextFi
         super.viewDidLoad()
         promoCodeTextField.delegate = self
         
-        self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -37, 0)
-        
-        displayPaymentMethod()
+        self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -8, 0)
+
+        caddieProfileImageView.layer.cornerRadius = 8
         
         cancelPromoCodeButton.hidden = true
         applyPromoCodeButton.hidden = true
         applyPromoCodeButton.layer.cornerRadius = 15
+
+        
+        // Set up NSNotifications to receive data from container's parent view controller.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCourseNameToDisplay:", name: "selectedCourseNameNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCourseLocationToDisplay:", name: "selectedCourseLocationNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpTimeToDisplay:", name: "selectedTimeNotification", object: nil)
+        
+        displayPaymentMethod()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        displayReservationInformation()
+    }
+    
 }
 
 extension ContainerConfirmReservationViewController {
+    // \u{25CF}
+    
+    
+    func setUpCourseNameToDisplay(notification: NSNotification) {
+        selectedCourseNameHasBeenSent = notification.object! as! String
+        golfCourseNameLabel.text = "\(selectedCourseNameHasBeenSent)"
+    }
+    
+    func setUpTimeToDisplay(notification: NSNotification) {
+        selectedTimeHasBeenSentAgain = notification.object! as! String
+        timeLabel.text = "\(selectedTimeHasBeenSentAgain)"
+
+    }
+    
+    func setUpCourseLocationToDisplay(notification: NSNotification) {
+        selectedLocationHasBeenSent = notification.object! as! String
+        courseLocationLabel.text = "\(selectedLocationHasBeenSent)"
+    }
+    
+    func displayReservationInformation() {
+        golfCourseNameLabel.text = "\(selectedCourseNameHasBeenSent)"
+        timeLabel.text = "\(selectedTimeHasBeenSentAgain)"
+    }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.tableView.contentOffset = CGPointMake(0, 100)
+        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 115, 0)
+            //self.tableView.contentOffset = CGPointMake(0, 100)
             self.applyPromoCodeButton.hidden = false
             self.cancelPromoCodeButton.hidden = false
-            }, completion: nil)
+            }, completion: {
+                (value: Bool) in
+                self.tableView.scrollEnabled = false
+                self.paymentMethodCell.userInteractionEnabled = false
+            })
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -8, 0)
             self.applyPromoCodeButton.hidden = true
             self.cancelPromoCodeButton.hidden = true
-            }, completion: nil)
+            }, completion: {
+                (value: Bool) in
+                self.tableView.scrollEnabled = true
+                self.paymentMethodCell.userInteractionEnabled = true
+            })
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

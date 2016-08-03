@@ -15,25 +15,20 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var selectedCourseNameLabel: UILabel!
     @IBOutlet weak var selectedTimeLabel: UILabel!
-    
-    
-    //////////////
-    // Dummy data.
+
     var caddiesFound = true
     
-    var currentRow = Int()
-    var aCellIsExpanded = false
     
     let caddiesAvailable = Caddies.caddiesAvailable()
-    //////////////
-    
-    
-    
+
     // Pass data via segue.
     var selectedCourseNameToSend = String()
+    var selectedLocationToSend = String()
+    var selectedTimeToSendAgain = String()
     
     // Receive data from segue.
     var selectedCourseNameHasBeenSentAgain: String?
+    var selectedLocationHasBeenSentAgain: String?
     var selectedTimeHasBeenSent: String?
     
     override func viewDidLoad() {
@@ -107,14 +102,21 @@ extension CaddiesAvailableViewController {
         return 200
     }
     
-    func selectedCellIndex() {
-        if (aCellIsExpanded == false) {
-            aCellIsExpanded = true
-        } else {
-            aCellIsExpanded = false
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "caddieSelectedSegue") {
+            let destinationVC = segue.destinationViewController as! ConfirmReservationViewController
+            selectedCourseNameToSend = selectedCourseNameHasBeenSentAgain!
+            selectedLocationToSend = selectedLocationHasBeenSentAgain!
+            selectedTimeToSendAgain = selectedTimeHasBeenSent!
+            
+            destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
+            destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
+            destinationVC.selectedTimeHasBeenSentAgain = selectedTimeToSendAgain
+            
+            print(selectedLocationToSend)
+
+
         }
     }
-
-    
 }
 

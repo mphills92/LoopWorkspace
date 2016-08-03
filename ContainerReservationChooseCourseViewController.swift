@@ -13,6 +13,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     let coursesAvailable = Courses.coursesAvailable()
     
     var selectedCourseNameToSend = String()
+    var selectedLocationToSend = String()
     var selectedCourseIDToPass = Int()
     var selectedCourseCollectionCellIndexPath = NSIndexPath()
     var lastContentOffset = CGFloat()
@@ -61,6 +62,7 @@ extension ContainerReservationChooseCourseViewController {
         let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! CoursesCollectionCell
 
         selectedCourseNameToSend = (cell.courseNameLabel.text)!
+        selectedLocationToSend = (cell.courseLocationLabel.text)!
         
         self.performSegueWithIdentifier("courseHasBeenSelectedSegue", sender: self)
     }
@@ -70,6 +72,10 @@ extension ContainerReservationChooseCourseViewController {
             let destinationVC = segue.destinationViewController as! ChooseDateViewController
             
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
+            destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
+            
+            print(selectedLocationToSend)
+            
         }
     }
     

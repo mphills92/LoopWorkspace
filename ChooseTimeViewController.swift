@@ -19,10 +19,12 @@ class ChooseTimeViewController: UIViewController {
     
     // Pass data via segue.
     var selectedCourseNameToSendAgain = String()
+    var selectedLocationToSendAgain = String()
     var selectedTimeToSend = String()
     
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
+    var selectedLocationHasBeenSent: String?
     
     var selectedDate = NSDate()
     var dateFormatter = NSDateFormatter()
@@ -59,9 +61,12 @@ class ChooseTimeViewController: UIViewController {
 
         searchCaddiesButton.layer.cornerRadius = 20
         
+        timestampOnLoad()
+        
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
         
         chooseTimePicker.addTarget(self, action: "timeChangedValue:", forControlEvents: UIControlEvents.ValueChanged)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -72,6 +77,11 @@ class ChooseTimeViewController: UIViewController {
 }
 
 extension ChooseTimeViewController {
+    
+    func timestampOnLoad() {
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .ShortStyle)
+        selectedTimeToSend = timestamp
+    }
     
     func timeChangedValue(date: NSDate) {
         selectedDate = chooseTimePicker.date
@@ -85,9 +95,13 @@ extension ChooseTimeViewController {
         if (segue.identifier == "toChooseCaddieSegue") {
             let destinationVC = segue.destinationViewController as! CaddiesAvailableViewController
             selectedCourseNameToSendAgain = selectedCourseNameHasBeenSent!
+            selectedLocationToSendAgain = selectedLocationHasBeenSent!
 
             destinationVC.selectedCourseNameHasBeenSentAgain = selectedCourseNameToSendAgain
+            destinationVC.selectedLocationHasBeenSentAgain = selectedLocationToSendAgain
             destinationVC.selectedTimeHasBeenSent = selectedTimeToSend
+            
+            print(selectedLocationToSendAgain)
         }
     }
 }

@@ -18,9 +18,11 @@ class ChooseDateViewController: UIViewController {
     
     // Pass data via segue.
     var selectedCourseNameToSend = String()
+    var selectedLocationToSend = String()
     
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
+    var selectedLocationHasBeenSent: String?
     
     @IBAction func chooseDateButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("toChooseTimeSegue", sender: self)
@@ -61,8 +63,12 @@ extension ChooseDateViewController {
         if (segue.identifier == "toChooseTimeSegue") {
             let destinationVC = segue.destinationViewController as! ChooseTimeViewController
             selectedCourseNameToSend = selectedCourseNameHasBeenSent!
+            selectedLocationToSend = selectedLocationHasBeenSent!
             
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
+            destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
+            print(selectedLocationToSend)
+
         }
     }
 }

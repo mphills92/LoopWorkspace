@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class ConfirmReservationViewController: UIViewController {
 
     @IBOutlet weak var confirmReservationButton: UIButton!
@@ -15,13 +17,18 @@ class ConfirmReservationViewController: UIViewController {
     @IBOutlet weak var bottomButtonHolderView: UIView!
     @IBOutlet weak var containerBottonConstraint: NSLayoutConstraint!
 
+    // Receive data from segue.
+    var selectedCourseNameHasBeenSent: String?
+    var selectedLocationHasBeenSent: String?
+    var selectedTimeHasBeenSentAgain: String?
+    
     let userReferralCode = UserReferralCode()
     let userPayment = UserPayment()
     
     var textFieldCharactersCount = Int()
     var enteredPromoCode = String()
     var promoCodeIsValid: Bool = true
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Review Reservation"
@@ -39,8 +46,12 @@ class ConfirmReservationViewController: UIViewController {
         bottomButtonHolderView.layer.shadowOpacity = 0.25
         bottomButtonHolderView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
-        confirmReservationButton.layer.cornerRadius = 20
-        // Unicode character for cells...black large dot... \u{25CF}
+        confirmReservationButton.layer.cornerRadius = 20        
+        
+        // Set up NSNotifications for passed data to pass to container.
+        NSNotificationCenter.defaultCenter().postNotificationName("selectedCourseNameNotification", object: selectedCourseNameHasBeenSent!)
+        NSNotificationCenter.defaultCenter().postNotificationName("selectedCourseLocationNotification", object: selectedLocationHasBeenSent!)
+        NSNotificationCenter.defaultCenter().postNotificationName("selectedTimeNotification", object: selectedTimeHasBeenSentAgain!)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,6 +67,12 @@ class ConfirmReservationViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
+        
+        // Remove NSNotifications for passed data observers.
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedCourseNameNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedCourseLocationNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedTimeNotification", object: self.view.window)
+        
     }
 }
     
@@ -78,12 +95,13 @@ extension ConfirmReservationViewController {
         guard let keyboardHeight = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameBeginUserInfoKey)?.CGRectValue.size.height else {
             return
         }
-        containerBottonConstraint.constant = keyboardHeight - 120
+
+        //self.containerBottonConstraint.constant = keyboardHeight - 120
         view.layoutIfNeeded()
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        containerBottonConstraint.constant = 0
+        //containerBottonConstraint.constant = 0
         view.layoutIfNeeded()
     }
     
