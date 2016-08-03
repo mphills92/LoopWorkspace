@@ -13,11 +13,24 @@ class CitiesAvailable {
     var regions = ["Texas - Houston",
                    "Texas - San Antonio"]
     
-    var region1 = ["Houston, Texas",
-                  "The Woodlands, Texas",
-                  "Spring, Texas",
-                  "Katy, Texas",
-                  "Sugar Land, Texas"]
+    var region1 = ["Alvin, Texas",
+                   "Baytown, Texas",
+                   "Cinco Ranch, Texas",
+                   "Conroe, Texas",
+                   "Cypress, Texas",
+                   "Deer Park, Texas",
+                   "Galveston, Texas",
+                   "Houston, Texas",
+                   "Humble, Texas",
+                   "Katy, Texas",
+                   "Kingwood, Texas",
+                   "League City, Texas",
+                   "Pasadena, Texas",
+                   "Pearland, Texas",
+                   "Richmond, Texas",
+                   "Spring, Texas",
+                   "Sugar Land, Texas",
+                   "The Woodlands, Texas"]
     
     var region2 = ["San Antonio, Texas",
                     "Alamo Heights, Texas",

@@ -563,7 +563,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="8AT-JD-mEi"/>
+                                    <constraint firstAttribute="width" constant="210" id="8AT-JD-mEi">
+                                        <variation key="widthClass=compact" constant="220"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="30" id="9aL-48-2js">
                                         <variation key="widthClass=compact" constant="40"/>
                                     </constraint>
@@ -610,7 +612,7 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="trailing" secondItem="rfZ-2H-FCF" secondAttribute="trailing" constant="16" id="nca-ee-KRa">
-                                <variation key="widthClass=compact" constant="35"/>
+                                <variation key="widthClass=compact" constant="30"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -895,8 +897,7 @@ deserves a caddie.</string>
                                                             <exclude reference="IzY-Th-wFz"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="42" y="0.0" width="32" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="IzY-Th-wFz"/>
                                                         </mask>
@@ -917,8 +918,7 @@ deserves a caddie.</string>
                                                             <exclude reference="mnw-AV-Qzc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="74" y="0.0" width="32" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="mnw-AV-Qzc"/>
                                                         </mask>
@@ -939,8 +939,7 @@ deserves a caddie.</string>
                                                             <exclude reference="JxW-jP-0AB"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="106" y="0.0" width="32" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="JxW-jP-0AB"/>
                                                         </mask>
@@ -961,8 +960,7 @@ deserves a caddie.</string>
                                                             <exclude reference="UI4-2D-jXc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="138" y="0.0" width="32" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="UI4-2D-jXc"/>
                                                         </mask>
@@ -983,8 +981,7 @@ deserves a caddie.</string>
                                                             <exclude reference="TgL-mW-Rdb"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="170" y="0.0" width="32" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="TgL-mW-Rdb"/>
                                                         </mask>
@@ -1005,8 +1002,7 @@ deserves a caddie.</string>
                                                             <exclude reference="nAz-RQ-yCz"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="202" y="0.0" width="32" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="nAz-RQ-yCz"/>
                                                         </mask>
@@ -1027,8 +1023,7 @@ deserves a caddie.</string>
                                                             <exclude reference="bEB-Ly-tzo"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="10" y="0.0" width="32" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="bEB-Ly-tzo"/>
                                                         </mask>
@@ -1115,8 +1110,7 @@ deserves a caddie.</string>
                                                     <exclude reference="fnI-Ld-THj"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="-2" y="33" width="244" height="300"/>
+                                            <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="WzS-M8-VJc"/>
                                                     <include reference="l32-dC-GAM"/>
@@ -5613,8 +5607,12 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                     <constraint firstItem="XzG-CU-XH0" firstAttribute="top" secondItem="Lqq-2f-nuU" secondAttribute="bottom" constant="-38" id="Vay-Dt-HyC">
                                         <variation key="widthClass=compact" constant="20"/>
                                     </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="Lqq-2f-nuU" secondAttribute="trailing" constant="40" id="i6l-ez-phO"/>
-                                    <constraint firstItem="Lqq-2f-nuU" firstAttribute="leading" secondItem="gae-Ml-PZw" secondAttribute="leading" constant="40" id="pH3-Wp-XNH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lqq-2f-nuU" secondAttribute="trailing" constant="40" id="i6l-ez-phO">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
+                                    <constraint firstItem="Lqq-2f-nuU" firstAttribute="leading" secondItem="gae-Ml-PZw" secondAttribute="leading" constant="40" id="pH3-Wp-XNH">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
                                     <constraint firstItem="XzG-CU-XH0" firstAttribute="centerX" secondItem="gae-Ml-PZw" secondAttribute="centerX" id="r8y-A8-NPa"/>
                                     <constraint firstItem="Lqq-2f-nuU" firstAttribute="top" secondItem="XzG-CU-XH0" secondAttribute="bottom" constant="18" id="yhc-XI-tEC">
                                         <variation key="widthClass=compact" constant="10"/>
@@ -13248,7 +13246,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
             </objects>
             <point key="canvasLocation" x="5329.5" y="-303"/>
         </scene>
-        <!--Filter Results-->
+        <!--Filter by Location-->
         <scene sceneID="y3j-CM-6tD">
             <objects>
                 <viewController id="xhi-n1-M3s" customClass="FilterResultsViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -13260,7 +13258,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ow1-Qk-gi4">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ow1-Qk-gi4">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -13422,7 +13420,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="OhR-E1-bwN"/>
+                                                <exclude reference="OhR-E1-bwN"/>
                                                 <include reference="wKg-Da-MZN"/>
                                             </mask>
                                         </variation>
@@ -13434,7 +13432,11 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ztq-bl-yEK" firstAttribute="centerX" secondItem="S2q-YZ-8aw" secondAttribute="centerX" id="20Z-3b-FxC"/>
+                                    <constraint firstAttribute="trailing" secondItem="ztq-bl-yEK" secondAttribute="trailing" constant="30" id="DYS-zC-cOw"/>
                                     <constraint firstItem="ztq-bl-yEK" firstAttribute="centerY" secondItem="S2q-YZ-8aw" secondAttribute="centerY" id="SM5-of-mjT"/>
+                                    <constraint firstItem="ztq-bl-yEK" firstAttribute="leading" secondItem="S2q-YZ-8aw" secondAttribute="leading" constant="125" id="X4y-Xn-Q9M">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="80" id="gMg-4f-eud"/>
                                 </constraints>
                                 <variation key="default">
@@ -13444,7 +13446,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                     <mask key="constraints">
                                         <exclude reference="gMg-4f-eud"/>
                                         <exclude reference="20Z-3b-FxC"/>
+                                        <exclude reference="DYS-zC-cOw"/>
                                         <exclude reference="SM5-of-mjT"/>
+                                        <exclude reference="X4y-Xn-Q9M"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -13454,7 +13458,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                     <mask key="constraints">
                                         <include reference="gMg-4f-eud"/>
                                         <include reference="20Z-3b-FxC"/>
+                                        <include reference="DYS-zC-cOw"/>
                                         <include reference="SM5-of-mjT"/>
+                                        <include reference="X4y-Xn-Q9M"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -13522,7 +13528,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Filter Results" id="YPl-0m-k40">
+                    <navigationItem key="navigationItem" title="Filter by Location" id="YPl-0m-k40">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Unq-kP-gIf">
                             <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -13535,6 +13541,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <outlet property="distanceSlider" destination="3cV-9l-cna" id="hTP-cT-UHy"/>
                         <outlet property="distanceSliderLabel" destination="Vpc-vL-R3t" id="48h-7r-1AF"/>
                         <outlet property="saveFiltersButton" destination="ztq-bl-yEK" id="nzm-oe-i7x"/>
+                        <outlet property="sliderBackgroundView" destination="REb-DZ-jS5" id="ewS-f3-cZI"/>
                         <outlet property="tableView" destination="ow1-Qk-gi4" id="R0C-d5-wRE"/>
                     </connections>
                 </viewController>
@@ -13566,11 +13573,11 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hbZ-BP-bl3">
-                                        <variation key="widthClass=compact" constant="34"/>
+                                        <variation key="widthClass=compact" constant="30"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <state key="normal" title="   Showing results for: Current Location (20 mi)   ">
+                                <state key="normal" title="   Filter by: Current Location (20 mi)   ">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -13578,7 +13585,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="hbZ-BP-bl3"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="76" y="19" width="249" height="32"/>
                                     <mask key="constraints">
                                         <include reference="hbZ-BP-bl3"/>
                                     </mask>
@@ -13598,6 +13606,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                             <constraint firstItem="gVr-iL-PuD" firstAttribute="top" secondItem="xVf-A5-ilD" secondAttribute="bottom" constant="59" id="NLo-rP-1Fe">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="0ra-Gt-acr" firstAttribute="top" secondItem="osZ-9M-ReA" secondAttribute="bottom" constant="465" id="cyE-Y1-4fe">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="xVf-A5-ilD" firstAttribute="top" secondItem="osZ-9M-ReA" secondAttribute="bottom" constant="-5" id="pNf-p1-tmB">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -13610,13 +13621,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <exclude reference="0ra-Gt-acr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4jp-ax-dFE"/>
-                                <exclude reference="NLo-rP-1Fe"/>
-                                <exclude reference="tWs-mU-1NM"/>
-                                <exclude reference="y5Z-t8-yWy"/>
                                 <exclude reference="AFc-hv-YbI"/>
                                 <exclude reference="Fqz-ME-fUz"/>
                                 <exclude reference="pNf-p1-tmB"/>
+                                <exclude reference="cyE-Y1-4fe"/>
+                                <exclude reference="tWs-mU-1NM"/>
+                                <exclude reference="y5Z-t8-yWy"/>
+                                <exclude reference="4jp-ax-dFE"/>
+                                <exclude reference="NLo-rP-1Fe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -13625,13 +13637,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <include reference="0ra-Gt-acr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4jp-ax-dFE"/>
-                                <include reference="NLo-rP-1Fe"/>
-                                <include reference="tWs-mU-1NM"/>
-                                <exclude reference="y5Z-t8-yWy"/>
                                 <include reference="AFc-hv-YbI"/>
                                 <include reference="Fqz-ME-fUz"/>
                                 <include reference="pNf-p1-tmB"/>
+                                <include reference="cyE-Y1-4fe"/>
+                                <include reference="tWs-mU-1NM"/>
+                                <exclude reference="y5Z-t8-yWy"/>
+                                <exclude reference="4jp-ax-dFE"/>
+                                <include reference="NLo-rP-1Fe"/>
                             </mask>
                         </variation>
                     </view>
@@ -13646,7 +13659,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                     <connections>
                         <outlet property="containerView" destination="xVf-A5-ilD" id="9dR-yJ-ass"/>
                         <outlet property="resultsFilterButton" destination="0ra-Gt-acr" id="iMj-h9-brN"/>
-                        <outlet property="resultsFilterButtonBottomConstraint" destination="4jp-ax-dFE" id="4A5-Pm-AzM"/>
+                        <outlet property="resultsFilterButtonTopConstraint" destination="cyE-Y1-4fe" id="6b3-xV-E7e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBU-Pg-2k3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -13932,9 +13945,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQQ-Po-HFe">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
-                                </variation>
                                 <connections>
                                     <segue destination="NRc-g2-8Cx" kind="embed" id="MsT-Ld-5NG"/>
                                 </connections>
@@ -13980,8 +13990,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="sga-go-Je7"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="blG-ke-hra"/>
                                         <include reference="v45-Ts-Mg7"/>
@@ -14274,8 +14283,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="j4i-P8-OH9"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="SdH-ez-gdD"/>
                                         <include reference="NdY-av-kyq"/>
@@ -14325,8 +14333,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="o2U-gy-u2O"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="Zer-KC-rS0"/>
                                     </mask>
@@ -14402,8 +14409,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="Q0a-qg-TKt"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="BGB-N4-M7H"/>
                                         <include reference="6QM-xz-XmY"/>
@@ -14445,7 +14451,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="tKA-ne-uwk"/>
+                                                <exclude reference="tKA-ne-uwk"/>
                                                 <include reference="tmK-ks-EZY"/>
                                             </mask>
                                         </variation>
@@ -14460,8 +14466,12 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                     <constraint firstItem="mmf-DK-2c0" firstAttribute="top" secondItem="TuX-Qj-MHy" secondAttribute="top" constant="31" id="RNd-M5-Tl8">
                                         <variation key="widthClass=compact" constant="20"/>
                                     </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="mmf-DK-2c0" secondAttribute="trailing" constant="30" id="cbk-OE-Hcz"/>
                                     <constraint firstAttribute="bottom" secondItem="mmf-DK-2c0" secondAttribute="bottom" constant="30" id="r3i-sp-AYN">
                                         <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="mmf-DK-2c0" firstAttribute="leading" secondItem="TuX-Qj-MHy" secondAttribute="leading" constant="120" id="zfE-ap-LwX">
+                                        <variation key="widthClass=compact" constant="30"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
@@ -14471,18 +14481,21 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                     <mask key="constraints">
                                         <exclude reference="FDB-fo-apI"/>
                                         <exclude reference="RNd-M5-Tl8"/>
+                                        <exclude reference="cbk-OE-Hcz"/>
                                         <exclude reference="r3i-sp-AYN"/>
+                                        <exclude reference="zfE-ap-LwX"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="mmf-DK-2c0"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="FDB-fo-apI"/>
                                         <include reference="RNd-M5-Tl8"/>
+                                        <include reference="cbk-OE-Hcz"/>
                                         <include reference="r3i-sp-AYN"/>
+                                        <include reference="zfE-ap-LwX"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -14586,9 +14599,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anX-yh-NPp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
-                                </variation>
                                 <connections>
                                     <segue destination="5Y0-dh-JlS" kind="embed" id="bIP-wT-CrM"/>
                                 </connections>
@@ -14619,7 +14629,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="QUP-0A-LSi"/>
+                                                <exclude reference="QUP-0A-LSi"/>
                                                 <include reference="uYY-Oh-jWf"/>
                                             </mask>
                                         </variation>
@@ -14630,6 +14640,10 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="qfV-iI-guC" firstAttribute="leading" secondItem="Egp-3Q-VH7" secondAttribute="leading" constant="120" id="Gis-Zn-uxk">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="qfV-iI-guC" secondAttribute="trailing" constant="30" id="K1k-fa-XBR"/>
                                     <constraint firstItem="qfV-iI-guC" firstAttribute="centerX" secondItem="Egp-3Q-VH7" secondAttribute="centerX" id="Ljb-4b-hU5"/>
                                     <constraint firstItem="qfV-iI-guC" firstAttribute="top" secondItem="Egp-3Q-VH7" secondAttribute="top" constant="40" id="PVR-1i-yig">
                                         <variation key="widthClass=compact" constant="20"/>
@@ -14643,17 +14657,20 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="qfV-iI-guC"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="Gis-Zn-uxk"/>
+                                        <exclude reference="K1k-fa-XBR"/>
                                         <exclude reference="Ljb-4b-hU5"/>
                                         <exclude reference="PVR-1i-yig"/>
                                         <exclude reference="rlh-Ia-XZ0"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="qfV-iI-guC"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="Gis-Zn-uxk"/>
+                                        <include reference="K1k-fa-XBR"/>
                                         <include reference="Ljb-4b-hU5"/>
                                         <include reference="PVR-1i-yig"/>
                                         <include reference="rlh-Ia-XZ0"/>
@@ -16220,11 +16237,15 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="zHa-3B-l3H" secondAttribute="trailing" constant="50" id="28v-Pj-I9B"/>
+                                    <constraint firstAttribute="trailing" secondItem="zHa-3B-l3H" secondAttribute="trailing" constant="50" id="28v-Pj-I9B">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
                                     <constraint firstItem="zHa-3B-l3H" firstAttribute="top" secondItem="l81-Vw-bZJ" secondAttribute="bottom" constant="8" id="3yu-ry-b4C">
                                         <variation key="widthClass=compact" constant="10"/>
                                     </constraint>
-                                    <constraint firstItem="zHa-3B-l3H" firstAttribute="leading" secondItem="jIX-3I-JUU" secondAttribute="leading" constant="50" id="BqB-jk-ifl"/>
+                                    <constraint firstItem="zHa-3B-l3H" firstAttribute="leading" secondItem="jIX-3I-JUU" secondAttribute="leading" constant="50" id="BqB-jk-ifl">
+                                        <variation key="widthClass=compact" constant="30"/>
+                                    </constraint>
                                     <constraint firstItem="l81-Vw-bZJ" firstAttribute="centerX" secondItem="jIX-3I-JUU" secondAttribute="centerX" id="Dxn-4T-zYv"/>
                                     <constraint firstAttribute="height" constant="60" id="Ybq-rj-AG1"/>
                                     <constraint firstAttribute="trailing" secondItem="l81-Vw-bZJ" secondAttribute="trailing" constant="20" id="YoE-f6-cTS"/>
