@@ -67,8 +67,6 @@ extension ChooseDateViewController {
             
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
             destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
-            print(selectedLocationToSend)
-
         }
     }
 }

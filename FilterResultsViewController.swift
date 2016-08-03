@@ -46,7 +46,7 @@ class FilterResultsViewController: UIViewController, UITableViewDelegate, UITabl
         
         saveFiltersButton.layer.cornerRadius = 20
 
-        evaluateButtonState()
+        //evaluateButtonState()
         
         tableView.estimatedRowHeight = 44
     }
@@ -60,10 +60,14 @@ extension FilterResultsViewController {
     
     @IBAction func saveFiltersButtonPressed(sender: AnyObject) {
         
-        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedCityFromFilterNotification", object: selectedCity)
-        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedDistanceFromFilterNotification", object: selectedDistance)
+        if (noCellIsSelected == false || selectedDistance != 20) {
+            NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedCityFromFilterNotification", object: selectedCity)
+            NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedDistanceFromFilterNotification", object: selectedDistance)
+            self.dismissViewControllerAnimated(true, completion: {})
+        } else {
+            self.dismissViewControllerAnimated(true, completion: {})
+        }
 
-        self.dismissViewControllerAnimated(true, completion: {})
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -123,7 +127,7 @@ extension FilterResultsViewController {
         selectedCity = (selectedCell.textLabel?.text)!
         configure(selectedCell, forRowAtIndexPath: indexPath)
         noCellIsSelected = false
-        evaluateButtonState()
+        //evaluateButtonState()
     }
     
     
@@ -146,7 +150,7 @@ extension FilterResultsViewController {
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath)!
         configure(selectedCell, forRowAtIndexPath: indexPath)
         noCellIsSelected = true
-        evaluateButtonState()
+        //evaluateButtonState()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -170,6 +174,7 @@ extension FilterResultsViewController {
         }
     }
     
+    /*
     func evaluateButtonState() {
         if (noCellIsSelected == false || selectedDistance != 20) {
             saveFiltersButton.enabled = true
@@ -180,23 +185,12 @@ extension FilterResultsViewController {
             saveFiltersButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
             saveFiltersButton.backgroundColor = UIColor.groupTableViewBackgroundColor()
         }
-        
-        /*
-        if ((selectedCity != "" || selectedDistance != 20) || ()) {
-            saveFiltersButton.enabled = true
-            saveFiltersButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            saveFiltersButton.backgroundColor = UIColor(red: 0/255, green: 51/255, blue: 0/155, alpha: 1.0)
-        } else {
-            saveFiltersButton.enabled = false
-            saveFiltersButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-            saveFiltersButton.backgroundColor = UIColor.groupTableViewBackgroundColor()
-        }*/
-    }
+    }*/
 
     @IBAction func distanceSliderValueChanged(sender: UISlider) {
         var currentValue = Int(sender.value)
         distanceSliderLabel.text = "\(currentValue) mi"
         selectedDistance = currentValue
-        evaluateButtonState()
+        //evaluateButtonState()
     }
 }

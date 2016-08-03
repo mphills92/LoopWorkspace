@@ -21,6 +21,7 @@ class ConfirmReservationViewController: UIViewController {
     var selectedCourseNameHasBeenSent: String?
     var selectedLocationHasBeenSent: String?
     var selectedTimeHasBeenSentAgain: String?
+    var selectedCaddieNameHasBeenSent: String?
     
     let userReferralCode = UserReferralCode()
     let userPayment = UserPayment()
@@ -49,6 +50,7 @@ class ConfirmReservationViewController: UIViewController {
         confirmReservationButton.layer.cornerRadius = 20        
         
         // Set up NSNotifications for passed data to pass to container.
+        NSNotificationCenter.defaultCenter().postNotificationName("selectedCaddieNameNotification", object: selectedCaddieNameHasBeenSent!)
         NSNotificationCenter.defaultCenter().postNotificationName("selectedCourseNameNotification", object: selectedCourseNameHasBeenSent!)
         NSNotificationCenter.defaultCenter().postNotificationName("selectedCourseLocationNotification", object: selectedLocationHasBeenSent!)
         NSNotificationCenter.defaultCenter().postNotificationName("selectedTimeNotification", object: selectedTimeHasBeenSentAgain!)
@@ -69,6 +71,7 @@ class ConfirmReservationViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
         
         // Remove NSNotifications for passed data observers.
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedCaddieNameNotification", object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedCourseNameNotification", object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedCourseLocationNotification", object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedTimeNotification", object: self.view.window)

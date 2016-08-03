@@ -5508,7 +5508,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Payment Information" id="heB-rw-mdD">
+                            <tableViewSection headerTitle="Payment" id="heB-rw-mdD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="XU9-vD-PPz">
                                         <rect key="frame" x="0.0" y="159" width="380" height="44"/>
@@ -5537,7 +5537,54 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10% of reservation amount to be charged now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4C-uP-8nH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bv-w2-jdm">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="OS4-f2-Afy">
+                                                            <variation key="widthClass=compact" constant="30"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="OS4-f2-Afy"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="OS4-f2-Afy"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZq-5H-VHc">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <connections>
+                                                        <action selector="infoButtonPressed:" destination="LA2-tG-bSF" eventType="touchUpInside" id="w9c-Xy-Rv8"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3F-Tk-TOE">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="JKf-b6-5Me">
+                                                            <variation key="widthClass=compact" constant="25"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="JKf-b6-5Me"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="JKf-b6-5Me"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to be charged now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4C-uP-8nH">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="2z0-45-hXZ">
@@ -5552,25 +5599,30 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <exclude reference="2z0-45-hXZ"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact">
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="144" y="10" width="123" height="25"/>
                                                         <mask key="constraints">
                                                             <include reference="2z0-45-hXZ"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZq-5H-VHc">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <connections>
-                                                        <action selector="infoButtonPressed:" destination="LA2-tG-bSF" eventType="touchUpInside" id="w9c-Xy-Rv8"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="7bv-w2-jdm" firstAttribute="centerY" secondItem="l3F-Tk-TOE" secondAttribute="centerY" id="1RB-Io-XBx"/>
+                                                <constraint firstItem="B4C-uP-8nH" firstAttribute="leading" secondItem="7bv-w2-jdm" secondAttribute="trailing" constant="8" id="G2T-qM-MLc">
+                                                    <variation key="widthClass=compact" constant="5"/>
+                                                </constraint>
+                                                <constraint firstItem="Wcg-3R-pDN" firstAttribute="centerY" secondItem="mcL-uS-FOw" secondAttribute="centerY" id="Kuu-m3-2aN"/>
+                                                <constraint firstItem="7bv-w2-jdm" firstAttribute="leading" secondItem="l3F-Tk-TOE" secondAttribute="trailing" constant="-1" id="PJk-Jt-699">
+                                                    <variation key="widthClass=compact" constant="5"/>
+                                                </constraint>
                                                 <constraint firstItem="UZq-5H-VHc" firstAttribute="centerY" secondItem="mcL-uS-FOw" secondAttribute="centerY" id="S74-4o-dj0"/>
                                                 <constraint firstItem="B4C-uP-8nH" firstAttribute="top" secondItem="Wcg-3R-pDN" secondAttribute="bottom" constant="-11" id="TxF-g6-uzT"/>
+                                                <constraint firstItem="B4C-uP-8nH" firstAttribute="centerY" secondItem="7bv-w2-jdm" secondAttribute="centerY" id="VVW-lx-QEy"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="B4C-uP-8nH" secondAttribute="bottom" constant="-9" id="X5r-Se-ngc">
                                                     <variation key="widthClass=compact" constant="-8"/>
                                                 </constraint>
+                                                <constraint firstItem="l3F-Tk-TOE" firstAttribute="centerY" secondItem="Wcg-3R-pDN" secondAttribute="centerY" id="gpy-5O-xss"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="UZq-5H-VHc" secondAttribute="trailing" constant="6" id="hM9-DG-tuS">
                                                     <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
@@ -5578,35 +5630,56 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                 <constraint firstItem="Wcg-3R-pDN" firstAttribute="leading" secondItem="mcL-uS-FOw" secondAttribute="leadingMargin" constant="11" id="qlC-9C-2lP">
                                                     <variation key="widthClass=compact" constant="10"/>
                                                 </constraint>
+                                                <constraint firstItem="l3F-Tk-TOE" firstAttribute="leading" secondItem="Wcg-3R-pDN" secondAttribute="trailing" constant="4" id="wEM-xI-CvZ">
+                                                    <variation key="widthClass=compact" constant="5"/>
+                                                </constraint>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Wcg-3R-pDN"/>
-                                                    <exclude reference="B4C-uP-8nH"/>
+                                                    <exclude reference="7bv-w2-jdm"/>
                                                     <exclude reference="UZq-5H-VHc"/>
+                                                    <exclude reference="l3F-Tk-TOE"/>
+                                                    <exclude reference="B4C-uP-8nH"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="S74-4o-dj0"/>
-                                                    <exclude reference="hM9-DG-tuS"/>
+                                                    <exclude reference="Kuu-m3-2aN"/>
+                                                    <exclude reference="qlC-9C-2lP"/>
+                                                    <exclude reference="gpy-5O-xss"/>
+                                                    <exclude reference="wEM-xI-CvZ"/>
+                                                    <exclude reference="1RB-Io-XBx"/>
+                                                    <exclude reference="PJk-Jt-699"/>
+                                                    <exclude reference="G2T-qM-MLc"/>
                                                     <exclude reference="TxF-g6-uzT"/>
+                                                    <exclude reference="VVW-lx-QEy"/>
                                                     <exclude reference="X5r-Se-ngc"/>
                                                     <exclude reference="jSj-dD-QSI"/>
-                                                    <exclude reference="qlC-9C-2lP"/>
+                                                    <exclude reference="S74-4o-dj0"/>
+                                                    <exclude reference="hM9-DG-tuS"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="Wcg-3R-pDN"/>
-                                                    <include reference="B4C-uP-8nH"/>
+                                                    <include reference="7bv-w2-jdm"/>
                                                     <include reference="UZq-5H-VHc"/>
+                                                    <include reference="l3F-Tk-TOE"/>
+                                                    <include reference="B4C-uP-8nH"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="Kuu-m3-2aN"/>
+                                                    <include reference="qlC-9C-2lP"/>
+                                                    <include reference="gpy-5O-xss"/>
+                                                    <include reference="wEM-xI-CvZ"/>
+                                                    <include reference="1RB-Io-XBx"/>
+                                                    <include reference="PJk-Jt-699"/>
+                                                    <include reference="G2T-qM-MLc"/>
+                                                    <exclude reference="TxF-g6-uzT"/>
+                                                    <include reference="VVW-lx-QEy"/>
+                                                    <exclude reference="X5r-Se-ngc"/>
+                                                    <exclude reference="jSj-dD-QSI"/>
                                                     <include reference="S74-4o-dj0"/>
                                                     <include reference="hM9-DG-tuS"/>
-                                                    <exclude reference="TxF-g6-uzT"/>
-                                                    <include reference="X5r-Se-ngc"/>
-                                                    <include reference="jSj-dD-QSI"/>
-                                                    <include reference="qlC-9C-2lP"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -5623,108 +5696,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="wpe-rG-PWK"/>
-                                                <include reference="WUC-rc-IEM"/>
-                                            </mask>
-                                        </variation>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Ll8-Py-Sfe">
-                                        <rect key="frame" x="0.0" y="203" width="380" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ll8-Py-Sfe" id="XMW-l9-Jbh">
-                                            <rect key="frame" x="0.0" y="0.0" width="380" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$53.50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akI-sp-q5h">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="nBz-TG-B9H">
-                                                            <variation key="widthClass=compact" constant="30"/>
-                                                        </constraint>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="nBz-TG-B9H"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="nBz-TG-B9H"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To be charged at the time of completed reservation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-es-awl">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="gJN-gU-mbH">
-                                                            <variation key="widthClass=compact" constant="25"/>
-                                                        </constraint>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="gJN-gU-mbH"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="gJN-gU-mbH"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="akI-sp-q5h" firstAttribute="leading" secondItem="XMW-l9-Jbh" secondAttribute="leadingMargin" constant="11" id="Flw-7B-b5d">
-                                                    <variation key="widthClass=compact" constant="10"/>
-                                                </constraint>
-                                                <constraint firstItem="A5M-es-awl" firstAttribute="leading" secondItem="akI-sp-q5h" secondAttribute="leading" id="LRt-lZ-Ee7"/>
-                                                <constraint firstItem="A5M-es-awl" firstAttribute="top" secondItem="akI-sp-q5h" secondAttribute="bottom" constant="-11" id="j4g-dF-8wx"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="A5M-es-awl" secondAttribute="bottom" constant="-9" id="kQR-FS-5jO">
-                                                    <variation key="widthClass=compact" constant="-8"/>
-                                                </constraint>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="akI-sp-q5h"/>
-                                                    <exclude reference="A5M-es-awl"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="LRt-lZ-Ee7"/>
-                                                    <exclude reference="j4g-dF-8wx"/>
-                                                    <exclude reference="kQR-FS-5jO"/>
-                                                    <exclude reference="Flw-7B-b5d"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="akI-sp-q5h"/>
-                                                    <include reference="A5M-es-awl"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="LRt-lZ-Ee7"/>
-                                                    <exclude reference="j4g-dF-8wx"/>
-                                                    <include reference="kQR-FS-5jO"/>
-                                                    <include reference="Flw-7B-b5d"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="akI-sp-q5h" firstAttribute="top" secondItem="Ll8-Py-Sfe" secondAttribute="top" id="D6f-fU-htc"/>
-                                            <constraint firstAttribute="bottom" secondItem="A5M-es-awl" secondAttribute="bottom" id="EoU-3w-DbU"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="EoU-3w-DbU"/>
-                                                <exclude reference="D6f-fU-htc"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <exclude reference="EoU-3w-DbU"/>
-                                                <include reference="D6f-fU-htc"/>
+                                                <exclude reference="WUC-rc-IEM"/>
                                             </mask>
                                         </variation>
                                     </tableViewCell>
@@ -5755,7 +5727,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ending in 1234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-56-hXx">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ending in 1234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-56-hXx">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="80U-m6-mGb">
@@ -5784,6 +5756,11 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Zkm-hj-AQz" firstAttribute="leading" secondItem="zPG-C6-mBS" secondAttribute="leadingMargin" constant="-8" id="0BA-3p-kF9">
+                                                    <variation key="widthClass=compact" constant="10"/>
+                                                </constraint>
+                                                <constraint firstItem="eYG-56-hXx" firstAttribute="centerY" secondItem="Zkm-hj-AQz" secondAttribute="centerY" id="N8J-GD-mfh"/>
+                                                <constraint firstItem="eYG-56-hXx" firstAttribute="centerY" secondItem="Zkm-hj-AQz" secondAttribute="centerY" id="S5b-JO-usJ"/>
                                                 <constraint firstItem="eYG-56-hXx" firstAttribute="leading" secondItem="Zkm-hj-AQz" secondAttribute="leading" id="TJL-Rz-pH4"/>
                                                 <constraint firstItem="fER-va-xhQ" firstAttribute="leading" secondItem="zPG-C6-mBS" secondAttribute="leadingMargin" constant="15" id="Us4-B4-zdz">
                                                     <variation key="widthClass=compact" constant="10"/>
@@ -5799,6 +5776,10 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                 <constraint firstAttribute="bottomMargin" secondItem="eYG-56-hXx" secondAttribute="bottom" constant="-9" id="kxf-3G-ErW">
                                                     <variation key="widthClass=compact" constant="-8"/>
                                                 </constraint>
+                                                <constraint firstItem="Zkm-hj-AQz" firstAttribute="centerY" secondItem="zPG-C6-mBS" secondAttribute="centerY" id="tsH-Ex-nyu"/>
+                                                <constraint firstItem="eYG-56-hXx" firstAttribute="leading" secondItem="Zkm-hj-AQz" secondAttribute="trailing" constant="-32" id="vZZ-q6-J7h">
+                                                    <variation key="widthClass=compact" constant="5"/>
+                                                </constraint>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
@@ -5807,13 +5788,18 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="fER-va-xhQ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="kJX-sh-Xoq"/>
-                                                    <exclude reference="TJL-Rz-pH4"/>
-                                                    <exclude reference="baH-6L-mSI"/>
-                                                    <exclude reference="kxf-3G-ErW"/>
                                                     <exclude reference="Us4-B4-zdz"/>
                                                     <exclude reference="d7H-8t-LV9"/>
                                                     <exclude reference="eFC-HM-bAS"/>
+                                                    <exclude reference="0BA-3p-kF9"/>
+                                                    <exclude reference="kJX-sh-Xoq"/>
+                                                    <exclude reference="tsH-Ex-nyu"/>
+                                                    <exclude reference="N8J-GD-mfh"/>
+                                                    <exclude reference="S5b-JO-usJ"/>
+                                                    <exclude reference="TJL-Rz-pH4"/>
+                                                    <exclude reference="baH-6L-mSI"/>
+                                                    <exclude reference="kxf-3G-ErW"/>
+                                                    <exclude reference="vZZ-q6-J7h"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -5823,13 +5809,18 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <include reference="fER-va-xhQ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="kJX-sh-Xoq"/>
-                                                    <include reference="TJL-Rz-pH4"/>
-                                                    <exclude reference="baH-6L-mSI"/>
-                                                    <include reference="kxf-3G-ErW"/>
                                                     <include reference="Us4-B4-zdz"/>
                                                     <include reference="d7H-8t-LV9"/>
                                                     <include reference="eFC-HM-bAS"/>
+                                                    <include reference="0BA-3p-kF9"/>
+                                                    <exclude reference="kJX-sh-Xoq"/>
+                                                    <include reference="tsH-Ex-nyu"/>
+                                                    <include reference="N8J-GD-mfh"/>
+                                                    <exclude reference="S5b-JO-usJ"/>
+                                                    <exclude reference="TJL-Rz-pH4"/>
+                                                    <exclude reference="baH-6L-mSI"/>
+                                                    <exclude reference="kxf-3G-ErW"/>
+                                                    <include reference="vZZ-q6-J7h"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -5845,7 +5836,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="FG7-Mv-JgJ"/>
+                                                <exclude reference="FG7-Mv-JgJ"/>
                                                 <exclude reference="IL7-IL-nez"/>
                                             </mask>
                                         </variation>
@@ -13499,6 +13490,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-pK-x5L">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="hod-xq-uiL" customClass="ChooseAvailableCaddiesCell" customModule="carpoolApp_v1_0" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="400" height="200"/>
@@ -14067,7 +14059,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$60.50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-t8-BWv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-t8-BWv">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="dCu-np-gYh"/>
@@ -14410,7 +14402,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$60.50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QM-xz-XmY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QM-xz-XmY">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="0xp-rd-SIa">
@@ -14743,7 +14735,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$60.50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaS-tZ-dtK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaS-tZ-dtK">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="DeF-Py-b9m">

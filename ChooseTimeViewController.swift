@@ -100,8 +100,6 @@ extension ChooseTimeViewController {
             destinationVC.selectedCourseNameHasBeenSentAgain = selectedCourseNameToSendAgain
             destinationVC.selectedLocationHasBeenSentAgain = selectedLocationToSendAgain
             destinationVC.selectedTimeHasBeenSent = selectedTimeToSend
-            
-            print(selectedLocationToSendAgain)
         }
     }
 }

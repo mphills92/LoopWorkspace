@@ -31,7 +31,7 @@ class ContainerConfirmReservationViewController: UITableViewController, UITextFi
     
     @IBOutlet weak var paymentMethodCell: UITableViewCell!
     
-    
+    var selectedCaddieNameHasBeenSent = String()
     var selectedCourseNameHasBeenSent = String()
     var selectedLocationHasBeenSent = String()
     var selectedTimeHasBeenSentAgain = String()
@@ -42,6 +42,8 @@ class ContainerConfirmReservationViewController: UITableViewController, UITextFi
     var textFieldCharactersCount = Int()
     var enteredPromoCode = String()
     var promoCodeIsValid: Bool = true
+    
+    var paymentMethodCellHasBeenTappedBefore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,7 @@ class ContainerConfirmReservationViewController: UITableViewController, UITextFi
 
         
         // Set up NSNotifications to receive data from container's parent view controller.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCaddieNameToDisplay:", name: "selectedCaddieNameNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCourseNameToDisplay:", name: "selectedCourseNameNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCourseLocationToDisplay:", name: "selectedCourseLocationNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpTimeToDisplay:", name: "selectedTimeNotification", object: nil)
@@ -74,6 +77,11 @@ class ContainerConfirmReservationViewController: UITableViewController, UITextFi
 extension ContainerConfirmReservationViewController {
     // \u{25CF}
     
+    
+    func setUpCaddieNameToDisplay(notification: NSNotification) {
+        selectedCaddieNameHasBeenSent = notification.object! as! String
+        caddieNameLabel.text = "\(selectedCaddieNameHasBeenSent)"
+    }
     
     func setUpCourseNameToDisplay(notification: NSNotification) {
         selectedCourseNameHasBeenSent = notification.object! as! String
@@ -98,10 +106,14 @@ extension ContainerConfirmReservationViewController {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 115, 0)
-            //self.tableView.contentOffset = CGPointMake(0, 100)
             self.applyPromoCodeButton.hidden = false
             self.cancelPromoCodeButton.hidden = false
+            if (self.paymentMethodCellHasBeenTappedBefore == false) {
+                self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 115, 0)
+            } else {
+                self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            }
+
             }, completion: {
                 (value: Bool) in
                 self.tableView.scrollEnabled = false
@@ -111,9 +123,14 @@ extension ContainerConfirmReservationViewController {
     
     func textFieldDidEndEditing(textField: UITextField) {
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-            self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -8, 0)
             self.applyPromoCodeButton.hidden = true
             self.cancelPromoCodeButton.hidden = true
+            if (self.paymentMethodCellHasBeenTappedBefore == false) {
+                self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, -8, 0)
+            } else {
+                self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, 84, 0)
+            }
+            
             }, completion: {
                 (value: Bool) in
                 self.tableView.scrollEnabled = true
@@ -219,11 +236,10 @@ extension ContainerConfirmReservationViewController {
         let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
         
         if (cellClicked == paymentMethodCell) {
+            paymentMethodCellHasBeenTappedBefore = true
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let paymentsViewController = storyboard.instantiateViewControllerWithIdentifier("PaymentsNavigationController") as! UIViewController
             self.presentViewController(paymentsViewController, animated: true, completion: nil)
         }
     }
-
-
 }

@@ -25,6 +25,7 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
     var selectedCourseNameToSend = String()
     var selectedLocationToSend = String()
     var selectedTimeToSendAgain = String()
+    var selectedCaddieNameToSend = String()    
     
     // Receive data from segue.
     var selectedCourseNameHasBeenSentAgain: String?
@@ -93,6 +94,8 @@ extension CaddiesAvailableViewController {
         
         let cell = self.tableView?.cellForRowAtIndexPath(indexPath) as! ChooseAvailableCaddiesCell
         
+        selectedCaddieNameToSend = cell.caddieNameLabel.text!
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         self.performSegueWithIdentifier("caddieSelectedSegue", sender: self)
@@ -112,10 +115,7 @@ extension CaddiesAvailableViewController {
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
             destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
             destinationVC.selectedTimeHasBeenSentAgain = selectedTimeToSendAgain
-            
-            print(selectedLocationToSend)
-
-
+            destinationVC.selectedCaddieNameHasBeenSent = selectedCaddieNameToSend
         }
     }
 }
