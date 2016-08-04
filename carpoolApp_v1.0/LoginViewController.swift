@@ -13,8 +13,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var mainTitle: UILabel!
     
+    // Initially visible.
+    @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var emailLoginButton: UIButton!
+
+    // Fade in when prompted.
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var lineInBackgroundView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginBackgroundViewCenterYConstraint: NSLayoutConstraint!
 
@@ -25,6 +31,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginButtonCenterConstraint: NSLayoutConstraint!
+    
+    
     
     
     var screenSize = UIScreen.mainScreen().bounds
@@ -49,6 +57,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         backgroundView.layer.cornerRadius = 8
         
+        emailLoginButton.layer.cornerRadius = 20
+        emailLoginButton.layer.shadowColor = UIColor.blackColor().CGColor
+        emailLoginButton.layer.shadowOpacity = 0.5
+        emailLoginButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        emailLoginButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
+        emailLoginButton.layer.borderColor = UIColor.whiteColor().CGColor
+        emailLoginButton.layer.borderWidth = 1
+        
+        facebookLoginButton.layer.cornerRadius = 20
+        facebookLoginButton.layer.shadowColor = UIColor.blackColor().CGColor
+        facebookLoginButton.layer.shadowOpacity = 0.5
+        facebookLoginButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        
         signUpButton.layer.cornerRadius = 15
         signUpButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
         signUpButton.layer.borderColor = UIColor.whiteColor().CGColor
@@ -67,6 +88,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.layer.shadowOpacity = 0.5
         loginButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
+
+        
         let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, screenSize.width, screenSize.height))
         imageViewBackground.image = UIImage(named: "LandingPageBackground")
         imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
@@ -78,6 +101,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         //self.loginButtonCenterConstraint.constant = screenSize.width
         //self.cancelButtonCenterConstraint.constant = screenSize.width
+        self.backgroundView.alpha = 0
+        self.emailTextField.alpha = 0
+        self.lineInBackgroundView.alpha = 0
+        self.passwordTextField.alpha = 0
+        
         self.loginButton.alpha = 0
         self.cancelButton.alpha = 0
         
@@ -108,6 +136,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension LoginViewController {
+    
+    
+    @IBAction func emailLoginButtonPressed(sender: AnyObject) {
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            self.backgroundView.alpha = 0.6
+            self.emailTextField.alpha = 1.0
+            self.lineInBackgroundView.alpha = 1.0
+            self.passwordTextField.alpha = 1.0
+            
+            self.emailLoginButton.alpha = 0
+            self.facebookLoginButton.alpha = 0
+            }, completion: nil)
+        
+        emailTextField.becomeFirstResponder()
+    }
     
     func textFieldDidBeginEditing(textField: UITextField) {
         cancelButtonEnters()
@@ -143,6 +186,7 @@ extension LoginViewController {
         case 1:
             passwordTextField.becomeFirstResponder()
         case 2:
+            loginEvaluation()
             passwordTextField.resignFirstResponder()
         default:
             break
@@ -155,54 +199,7 @@ extension LoginViewController {
     @IBAction func loginButtonPressed(sender: AnyObject) {
         validatedEmail()
         validatedPassword()
-        
-        //rotateLayerInfinite(logoImageView.layer)
-        
-        if (emailTextField.text! == "" || passwordTextField.text! == "") {
-            let alertController = UIAlertController(title: "You forgot to enter either an email or password.", message:  "\n Please enter your full email and password before attempting to login.", preferredStyle: .Alert)
-            
-            
-                self.emailTextField.resignFirstResponder()
-                self.passwordTextField.resignFirstResponder()
-                self.clearTextFields()
-                self.cancelButtonExits()
-                self.loginButtonExits()
-            
-            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                self.userHasStartedLoginProcess = false
-            }
-            alertController.addAction(doneAction)
-            
-            self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            }
-            
-        } else if (validatedEmail() == false || validatedPassword() == false) {
-            let alertController = UIAlertController(title: "Trouble logging you in.", message:  "\n We can't find an account with the email and password combination that you entered. Please try again.", preferredStyle: .Alert)
-            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            let forgotPasswordAction = UIAlertAction(title: "Forgot your password?", style: .Default) { (action) in
-                self.performSegueWithIdentifier("toForgotPasswordSegue", sender: self)
-            }
-            alertController.addAction(forgotPasswordAction)
-            
-                self.emailTextField.resignFirstResponder()
-                self.passwordTextField.resignFirstResponder()
-                self.clearTextFields()
-                self.cancelButtonExits()
-                self.loginButtonExits()
-            
-            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                self.userHasStartedLoginProcess = false
-            }
-            alertController.addAction(doneAction)
-            
-            self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            }
-        } else {
-            performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
-        }
-        
+        loginEvaluation()
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
@@ -213,6 +210,16 @@ extension LoginViewController {
         clearTextFields()
         cancelButtonExits()
         loginButtonExits()
+        
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            self.backgroundView.alpha = 0
+            self.emailTextField.alpha = 0
+            self.lineInBackgroundView.alpha = 0
+            self.passwordTextField.alpha = 0
+            
+            self.emailLoginButton.alpha = 1.0
+            self.facebookLoginButton.alpha = 1.0
+            }, completion: nil)
         
     }
     
@@ -304,6 +311,54 @@ extension LoginViewController {
         } else {
             return false
         }
+    }
+    
+    func loginEvaluation() {
+        if (emailTextField.text! == "" || passwordTextField.text! == "") {
+            let alertController = UIAlertController(title: "You forgot to enter either an email or password.", message:  "\n Please enter your full email and password before attempting to login.", preferredStyle: .Alert)
+            
+            
+            self.emailTextField.resignFirstResponder()
+            self.passwordTextField.resignFirstResponder()
+            self.clearTextFields()
+            self.cancelButtonExits()
+            self.loginButtonExits()
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                self.userHasStartedLoginProcess = false
+            }
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+            
+        } else if (validatedEmail() == false || validatedPassword() == false) {
+            let alertController = UIAlertController(title: "Trouble logging you in.", message:  "\n We can't find an account with the email and password combination that you entered. Please try again.", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            let forgotPasswordAction = UIAlertAction(title: "Forgot your password?", style: .Default) { (action) in
+                self.performSegueWithIdentifier("toForgotPasswordSegue", sender: self)
+            }
+            alertController.addAction(forgotPasswordAction)
+            
+            self.emailTextField.resignFirstResponder()
+            self.passwordTextField.resignFirstResponder()
+            self.clearTextFields()
+            self.cancelButtonExits()
+            self.loginButtonExits()
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                self.userHasStartedLoginProcess = false
+            }
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+        } else {
+            performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
+        }
+
     }
     
     func clearTextFields() {
