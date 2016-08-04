@@ -21,8 +21,5 @@ class PaymentsViewController: UIViewController {
 }
 
 extension PaymentsViewController {
-    
-    @IBAction func closeViewButtonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {})
-    }
+
 }
