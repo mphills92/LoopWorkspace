@@ -9718,6 +9718,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="Mbo-gK-eOD"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="newEmailTextFieldEditingDidChange:" destination="ewr-2U-64i" eventType="editingChanged" id="wo0-74-9wJ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -9778,6 +9781,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="KSb-QB-Rr7"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="confirmEmailTextFieldEditingDidChange:" destination="ewr-2U-64i" eventType="editingChanged" id="XhD-fz-nn3"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -9810,56 +9816,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="6MH-iu-gKv">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="hYz-Te-GD6">
-                                        <rect key="frame" x="0.0" y="333" width="400" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hYz-Te-GD6" id="Jz7-g4-YEF">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6O-Qg-a47">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <state key="normal" title="Save">
-                                                        <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="saveChangesButtonPressed:" destination="ewr-2U-64i" eventType="touchUpInside" id="5BJ-UY-OwN"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="r6O-Qg-a47" firstAttribute="width" secondItem="Jz7-g4-YEF" secondAttribute="width" id="EN9-l5-OGZ"/>
-                                                <constraint firstItem="r6O-Qg-a47" firstAttribute="centerX" secondItem="Jz7-g4-YEF" secondAttribute="centerX" id="Exi-O4-hWJ"/>
-                                                <constraint firstItem="r6O-Qg-a47" firstAttribute="height" secondItem="Jz7-g4-YEF" secondAttribute="height" id="YWk-xm-pqV"/>
-                                                <constraint firstItem="r6O-Qg-a47" firstAttribute="centerY" secondItem="Jz7-g4-YEF" secondAttribute="centerY" id="aQE-dv-o4l"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="r6O-Qg-a47"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="EN9-l5-OGZ"/>
-                                                    <exclude reference="Exi-O4-hWJ"/>
-                                                    <exclude reference="YWk-xm-pqV"/>
-                                                    <exclude reference="aQE-dv-o4l"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="r6O-Qg-a47"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="EN9-l5-OGZ"/>
-                                                    <include reference="Exi-O4-hWJ"/>
-                                                    <include reference="YWk-xm-pqV"/>
-                                                    <include reference="aQE-dv-o4l"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -9871,7 +9828,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <outlet property="confirmNewEmailTextField" destination="1w7-iT-kHd" id="Odg-Wg-q28"/>
                         <outlet property="currentEmailTextField" destination="pIW-Hb-EzH" id="fHg-6C-zJx"/>
                         <outlet property="newEmailTextField" destination="6up-Q2-tAR" id="bu3-e5-aha"/>
-                        <outlet property="saveChangesButton" destination="r6O-Qg-a47" id="sje-D4-0B3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXX-vt-Gak" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -9916,6 +9872,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="1cv-Ob-gPD"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="currentPasswordTextFieldDidChange:" destination="J4C-BW-0pU" eventType="editingChanged" id="5K2-Zd-vlP"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -10040,6 +9999,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="07h-da-6kt"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="confirmedPasswordTextFieldDidChange:" destination="J4C-BW-0pU" eventType="editingChanged" id="cGq-26-mFc"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -10072,53 +10034,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="r8r-fG-6Ir">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="fj8-N9-ONm">
-                                        <rect key="frame" x="0.0" y="333" width="400" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fj8-N9-ONm" id="rhy-1x-eHU">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bne-cU-gPj">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Save"/>
-                                                    <connections>
-                                                        <action selector="saveChangesButtonPressed:" destination="J4C-BW-0pU" eventType="touchUpInside" id="iH3-VS-HwV"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="bne-cU-gPj" firstAttribute="width" secondItem="rhy-1x-eHU" secondAttribute="width" id="163-cP-ieY"/>
-                                                <constraint firstItem="bne-cU-gPj" firstAttribute="height" secondItem="rhy-1x-eHU" secondAttribute="height" id="2D4-Lr-bSU"/>
-                                                <constraint firstItem="bne-cU-gPj" firstAttribute="centerX" secondItem="rhy-1x-eHU" secondAttribute="centerX" id="2mZ-Eh-o3d"/>
-                                                <constraint firstItem="bne-cU-gPj" firstAttribute="centerY" secondItem="rhy-1x-eHU" secondAttribute="centerY" id="DT4-h0-Szt"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="bne-cU-gPj"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="163-cP-ieY"/>
-                                                    <exclude reference="2D4-Lr-bSU"/>
-                                                    <exclude reference="2mZ-Eh-o3d"/>
-                                                    <exclude reference="DT4-h0-Szt"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="bne-cU-gPj"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="163-cP-ieY"/>
-                                                    <include reference="2D4-Lr-bSU"/>
-                                                    <include reference="2mZ-Eh-o3d"/>
-                                                    <include reference="DT4-h0-Szt"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -10130,7 +10046,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <outlet property="confirmNewPasswordTextField" destination="Cdh-qL-eyI" id="YAZ-NI-f4b"/>
                         <outlet property="currentPasswordTextField" destination="qjP-yW-2m4" id="e5O-bs-zwT"/>
                         <outlet property="newPasswordTextField" destination="wg2-dJ-eea" id="SEt-aY-Mvc"/>
-                        <outlet property="saveChangesButton" destination="bne-cU-gPj" id="zwg-Ba-Rie"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXS-f1-0ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -10275,56 +10190,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="fMk-P8-KpX">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="wPc-gN-l3j">
-                                        <rect key="frame" x="0.0" y="289" width="400" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wPc-gN-l3j" id="tjU-YU-EWg">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3f-D1-Exw">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <state key="normal" title="Save">
-                                                        <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="saveChangesButtonPressed:" destination="mCh-qp-9xb" eventType="touchUpInside" id="1Ly-be-0Hw"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="S3f-D1-Exw" firstAttribute="centerX" secondItem="tjU-YU-EWg" secondAttribute="centerX" id="QqJ-Qn-EK6"/>
-                                                <constraint firstItem="S3f-D1-Exw" firstAttribute="width" secondItem="tjU-YU-EWg" secondAttribute="width" id="V2t-KX-g3B"/>
-                                                <constraint firstItem="S3f-D1-Exw" firstAttribute="centerY" secondItem="tjU-YU-EWg" secondAttribute="centerY" id="iQV-0r-YaA"/>
-                                                <constraint firstItem="S3f-D1-Exw" firstAttribute="height" secondItem="tjU-YU-EWg" secondAttribute="height" id="n2y-Zq-omE"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="S3f-D1-Exw"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="QqJ-Qn-EK6"/>
-                                                    <exclude reference="V2t-KX-g3B"/>
-                                                    <exclude reference="iQV-0r-YaA"/>
-                                                    <exclude reference="n2y-Zq-omE"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="S3f-D1-Exw"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="QqJ-Qn-EK6"/>
-                                                    <include reference="V2t-KX-g3B"/>
-                                                    <include reference="iQV-0r-YaA"/>
-                                                    <include reference="n2y-Zq-omE"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -10335,7 +10201,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                     <connections>
                         <outlet property="currentPhoneTextField" destination="kBU-Qs-21a" id="zoY-hY-Ij5"/>
                         <outlet property="newPhoneTextField" destination="j7D-4J-U0E" id="koZ-iN-4wm"/>
-                        <outlet property="saveChangesButton" destination="S3f-D1-Exw" id="xyi-IP-Qiz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEN-Tj-LQf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -11958,7 +11823,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9r-oW-J4b">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="jFJ-1m-lh9"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="217" id="oa2-2c-Q9Z"/>
@@ -11971,7 +11836,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <state key="normal" title="Sign Up with Email">
-                                    <color key="titleColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -12077,7 +11942,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="yeJ-h7-xry" firstAttribute="top" secondItem="NgW-zw-hBn" secondAttribute="bottom" constant="15" id="GnD-dC-LNo">
-                                <variation key="widthClass=compact" constant="30"/>
+                                <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="yeJ-h7-xry" firstAttribute="centerX" secondItem="j2v-av-P4M" secondAttribute="centerX" id="NPf-iV-nun"/>
                             <constraint firstItem="W9r-oW-J4b" firstAttribute="top" secondItem="j2v-av-P4M" secondAttribute="centerY" id="koX-d5-GAq">

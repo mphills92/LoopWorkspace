@@ -33,6 +33,10 @@ class EditProfileViewController: UITableViewController, UITextFieldDelegate {
         
         firstNameTextField.tag = 1
         lastNameTextField.tag = 2
+        
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: ("saveChanges"))
+        saveButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!], forState: UIControlState.Normal)
+        self.navigationItem.rightBarButtonItem = saveButton
 
     }
     
@@ -44,6 +48,36 @@ class EditProfileViewController: UITableViewController, UITextFieldDelegate {
 }
 
 extension EditProfileViewController {
+    
+    func saveChanges() {
+        if (firstNameTextField.text != "" && lastNameTextField.text != "") {
+            firstNameTextField.resignFirstResponder()
+            lastNameTextField.resignFirstResponder()
+            
+            let alertController = UIAlertController(title: "Your account changes have been saved.", message:  "", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            }
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+            
+        } else {
+            let alertController = UIAlertController(title: "Missing first or last name.", message:  "\n Please enter a first and last name to save changes to your account.", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            }
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+        }
+    }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 0) {
