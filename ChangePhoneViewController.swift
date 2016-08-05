@@ -33,6 +33,7 @@ class ChangePhoneViewController: UITableViewController, UITextFieldDelegate {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: ("saveChanges"))
         saveButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!], forState: UIControlState.Normal)
         self.navigationItem.rightBarButtonItem = saveButton
+        self.navigationItem.rightBarButtonItem?.enabled = false
     }
 }
 
@@ -74,8 +75,10 @@ extension ChangePhoneViewController {
         
         if (newLength <= 9) {
             newPhoneIsValid = false
+            self.navigationItem.rightBarButtonItem?.enabled = false
         } else {
             newPhoneIsValid = true
+            self.navigationItem.rightBarButtonItem?.enabled = true
         }
         return newLength <= 10
     }

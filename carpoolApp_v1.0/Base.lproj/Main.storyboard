@@ -6314,6 +6314,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="QAW-X5-UvF"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="firstNameTextFieldEditingDidChange:" destination="CjQ-IC-CzP" eventType="editingChanged" id="Nub-jL-osk"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -6374,6 +6377,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="AUe-X4-ofM"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="lastNameTextFieldEditingDidChange:" destination="CjQ-IC-CzP" eventType="editingChanged" id="vPV-23-Zgq"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>

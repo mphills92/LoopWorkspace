@@ -54,11 +54,6 @@ class ChangePasswordViewController: UITableViewController, UITextFieldDelegate {
         super.viewWillDisappear(animated)
         userIsNavigatingBack = true
     }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        userIsNavigatingBack = true
-    }
 }
 
 extension ChangePasswordViewController {
@@ -91,8 +86,6 @@ extension ChangePasswordViewController {
                 alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             }
         }
-
-        
     }
     
     @IBAction func currentPasswordTextFieldDidChange(sender: AnyObject) {
@@ -183,97 +176,4 @@ extension ChangePasswordViewController {
         }
         return true
     }
-    
-    
-
-    /*
-    func textFieldDidBeginEditing(textField: UITextField) {
-        switch (textField.tag) {
-        case 1:
-            currentPasswordTextField.userInteractionEnabled = true
-            newPasswordTextField.userInteractionEnabled = true
-            confirmNewPasswordTextField.userInteractionEnabled = false
-        case 2:
-            currentPasswordTextField.userInteractionEnabled = false
-            newPasswordTextField.userInteractionEnabled = true
-            confirmNewPasswordTextField.userInteractionEnabled = true
-        case 3:
-            currentPasswordTextField.userInteractionEnabled = false
-        default:
-            break
-        }
-    }
-    
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        switch (textField.tag) {
-        case 1:
-            if (currentPasswordTextField.text == userPassword.password) {
-                newPasswordTextField.becomeFirstResponder()
-            } else {
-                let alertController = UIAlertController(title: "That's not your current password.", message:  "\n You must enter your current password correctly before proceeding to change your password.", preferredStyle: .Alert)
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                }
-                alertController.addAction(doneAction)
-                
-                self.presentViewController(alertController, animated: true) {
-                    alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                }
-                currentPasswordTextField.becomeFirstResponder()
-            }
-        case 2:
-            newPasswordEntered = newPasswordTextField.text!
-            
-        case 3:
-            validateConfirmedPassword(confirmedPasswordToValidate)
-        default:
-            break
-        }
-        return true
-    }
- 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        switch (textField.tag) {
-        case 1:
-            print("")
-        case 2:
-            print("")
-        case 3:
-            confirmedPasswordToValidate = confirmNewPasswordTextField.text!
-            
-            if (confirmedPasswordToValidate == userPassword.newPassword) {
-                self.userPassword.confirmedNewPassword = confirmedPasswordToValidate
-                self.confirmNewPasswordTextField.resignFirstResponder()
-            } else {
-                let alertController = UIAlertController(title: "Oops, passwords don't match.", message:  "\n Your confirmed password must match the one you entered above.", preferredStyle: .Alert)
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
-                alertController.addAction(doneAction)
-                
-                self.presentViewController(alertController, animated: true) {
-                    alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                }
-            }
-        default:
-            break
-        }
-        textField.resignFirstResponder()
-        return true
-    }
-    
-
-    
-    
-        confirmedPasswordToValidate = confirmNewPasswordTextField.text!
-    }
-    
-    func validateConfirmedPassword(confirmedPasswordToValidate: String) -> Bool {
-        if (newPasswordEntered != "") {
-            if (confirmedPasswordToValidate == newPasswordEntered) {
-                passwordHasBeenConfirmed = true
-            }
-        }
-        return passwordHasBeenConfirmed
-    }
- */
 }

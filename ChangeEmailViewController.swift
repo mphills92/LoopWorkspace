@@ -14,10 +14,11 @@ class ChangeEmailViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var newEmailTextField: UITextField!
     @IBOutlet weak var confirmNewEmailTextField: UITextField!
     
-    var newEmailToValidate = String()
+    var newEmailString = String()
     var newEmailIsValid = false
-    var confirmedEmailToValidate = String()
-    var emailHasBeenConfirmed = false
+    
+    var confirmedEmailString = String()
+    var confirmedEmailIsValid = false
     
     var userIsNavigatingBack = Bool()
     
@@ -29,6 +30,7 @@ class ChangeEmailViewController: UITableViewController, UITextFieldDelegate {
         newEmailTextField.delegate = self
         confirmNewEmailTextField.delegate = self
         newEmailTextField.becomeFirstResponder()
+        confirmNewEmailTextField.userInteractionEnabled = false
         
         navigationItem.title = "Change Email"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
@@ -43,6 +45,7 @@ class ChangeEmailViewController: UITableViewController, UITextFieldDelegate {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: ("saveChanges"))
         saveButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!], forState: UIControlState.Normal)
         self.navigationItem.rightBarButtonItem = saveButton
+        self.navigationItem.rightBarButtonItem?.enabled = false
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -54,44 +57,28 @@ class ChangeEmailViewController: UITableViewController, UITextFieldDelegate {
 extension ChangeEmailViewController {
     
     func saveChanges() {
-        // Must gather the most updated version of newEmailIsValid and emailHasBeenConfirmed before entering conditional.
-        validateNewEmail(newEmailToValidate)
-        validateConfirmedEmail(confirmedEmailToValidate)
+        validateConfirmedEmail(confirmedEmailString)
         
-        if (newEmailIsValid == true) {
-            if (emailHasBeenConfirmed == true) {
-                newEmailTextField.resignFirstResponder()
-                confirmNewEmailTextField.resignFirstResponder()
-                // If the user has input two validated emails that match and presses Save.
-                let alertController = UIAlertController(title: "Your account changes have been saved.", message:  "", preferredStyle: .Alert)
+        if (confirmedEmailIsValid == true) {
+            confirmNewEmailTextField.resignFirstResponder()
+            let alertController = UIAlertController(title: "Your account changes have been saved.", message:  "", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
                 alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                
-                let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                    self.navigationController?.popViewControllerAnimated(true)
-                }
-                alertController.addAction(doneAction)
-                
-                self.presentViewController(alertController, animated: true) {
-                    alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                }
-            } else {
-                // If the user has input text into "new email" text field but not "confirm email" text field, or if the email inputs for the two text fields do not match.
-                let alertController = UIAlertController(title: "Emails don't match.", message:  "\n Your confirmed email must match the one you entered above to save account changes.", preferredStyle: .Alert)
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                
-                let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                }
-                alertController.addAction(doneAction)
-                
-                self.presentViewController(alertController, animated: true) {
-                    alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                }
             }
         } else {
-            // If the user is not exiting the view but the email input has been identified as invalid.
-            let alertController = UIAlertController(title: "Not a valid email.", message:  "\n The email that you entered is not valid. Enter a valid email before continuing. ", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Emails don't match.", message:  "\n Your confirmed email must match the one you entered above to save account changes.", preferredStyle: .Alert)
             alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                self.confirmNewEmailTextField.becomeFirstResponder()
+            }
             alertController.addAction(doneAction)
             
             self.presentViewController(alertController, animated: true) {
@@ -101,76 +88,84 @@ extension ChangeEmailViewController {
         }
     }
     
+    @IBAction func newEmailTextFieldEditingDidChange(sender: AnyObject) {
+        newEmailString = newEmailTextField.text!
+        
+        if (newEmailString != "") {
+            confirmNewEmailTextField.userInteractionEnabled = true
+        }
+    }
+    
+    func validateNewEmail(newEmailString: String) -> Bool {
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        newEmailIsValid = emailPredicate.evaluateWithObject(newEmailString)
+        return newEmailIsValid
+    }
+    
+    @IBAction func confirmEmailTextFieldEditingDidChange(sender: AnyObject) {
+        confirmedEmailString = confirmNewEmailTextField.text!
+        
+        if (confirmedEmailString != "") {
+            self.navigationItem.rightBarButtonItem?.enabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.enabled = false
+        }
+    }
+    
+    func validateConfirmedEmail(confirmedEmailString: String) -> Bool {
+        if (confirmedEmailString == newEmailString) {
+            confirmedEmailIsValid = true
+        }
+        return confirmedEmailIsValid
+    }
+    
     func textFieldDidBeginEditing(textField: UITextField) {
-        if (newEmailTextField.isFirstResponder()) {
-            confirmNewEmailTextField.text = ""
+        switch (textField.tag) {
+        case 1:
+            confirmedEmailString = ""
+            self.navigationItem.rightBarButtonItem?.enabled = false
+        default:
+            break
         }
     }
     
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         switch (textField.tag) {
         case 1:
-            // Check new email input to ensure it follows the form of a valid email address.
-            validateNewEmail(newEmailToValidate)
+            validateNewEmail(newEmailString)
             
-            // If the user is not exiting the view and if the email input has been identified as valid (above method), the first responder is passed to the next text field.
-            if (userIsNavigatingBack != true) {
+            if (userIsNavigatingBack == false) {
                 if (newEmailIsValid == true) {
-                    self.userEmail.newEmail = newEmailToValidate
-                    self.confirmNewEmailTextField.becomeFirstResponder()
+                    confirmNewEmailTextField.becomeFirstResponder()
+                } else {
+                    let alertController = UIAlertController(title: "Not a valid email.", message:  "\n The email that you entered is not valid. Enter a valid email before continuing. ", preferredStyle: .Alert)
+                    alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                    let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                        self.newEmailTextField.becomeFirstResponder()
+                    }
+                    alertController.addAction(doneAction)
+                    
+                    self.presentViewController(alertController, animated: true) {
+                        alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                    }
                 }
             }
-
-        case 2:
-            // Check confirmed email input to capture the most recent character input as a string.
-            validateConfirmedEmail(confirmedEmailToValidate)
-            // If the user deselects the "confirm email" text field, it resigns first responder.
-            confirmNewEmailTextField.resignFirstResponder()
         default:
             break
         }
-        textField.resignFirstResponder()
         return true
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch (textField.tag) {
         case 1:
-            // If the user presses return (Next) for the "new email" text field, it resigns first responder status and passes first responder status along to "confirm password" text field.
-            newEmailTextField.resignFirstResponder()
             confirmNewEmailTextField.becomeFirstResponder()
         case 2:
-            // If the user presses return (Done) for the "confirm email" text field, it calls the method that is called to evaluate the email input and save account information, if appropriate.
             saveChanges()
         default:
             break
         }
-        textField.resignFirstResponder()
         return true
-    }
-    
-    @IBAction func newEmailTextFieldEditingDidChange(sender: AnyObject) {
-        newEmailToValidate = newEmailTextField.text!
-    }
-    
-    func validateNewEmail(newEmailToValidate: String) -> Bool {
-        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
-        newEmailIsValid = emailPredicate.evaluateWithObject(newEmailToValidate)
-        return newEmailIsValid
-    }
-    
-    @IBAction func confirmEmailTextFieldEditingDidChange(sender: AnyObject) {
-        confirmedEmailToValidate = confirmNewEmailTextField.text!
-
-    }
-
-    func validateConfirmedEmail(confirmedEmailToValidate: String) -> Bool {
-        if (newEmailIsValid == true) {
-            if (confirmedEmailToValidate == newEmailToValidate) {
-                emailHasBeenConfirmed = true
-            }
-        }
-        return emailHasBeenConfirmed
     }
 }
