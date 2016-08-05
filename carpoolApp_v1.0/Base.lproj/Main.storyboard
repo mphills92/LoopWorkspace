@@ -112,14 +112,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rd1-la-InU"/>
                                         <exclude reference="SEc-wX-7W0"/>
+                                        <exclude reference="rd1-la-InU"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="rd1-la-InU"/>
                                         <include reference="SEc-wX-7W0"/>
+                                        <include reference="rd1-la-InU"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -143,14 +143,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="TOP-9l-4DT"/>
                                         <exclude reference="Keq-IW-BXB"/>
+                                        <exclude reference="TOP-9l-4DT"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="TOP-9l-4DT"/>
                                         <include reference="Keq-IW-BXB"/>
+                                        <include reference="TOP-9l-4DT"/>
                                     </mask>
                                 </variation>
                             </button>
@@ -452,27 +452,27 @@
                                 <exclude reference="aD5-Qs-GR7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="wSo-wu-J5C"/>
+                                <exclude reference="ku0-NU-XfP"/>
+                                <exclude reference="tdv-Vg-Rju"/>
+                                <exclude reference="2Tp-BQ-ogL"/>
+                                <exclude reference="YXM-2W-aRU"/>
+                                <exclude reference="QZA-zU-aAe"/>
+                                <exclude reference="yo9-pu-SJ4"/>
+                                <exclude reference="499-lh-M5x"/>
+                                <exclude reference="UJL-ES-gKM"/>
+                                <exclude reference="Cec-vJ-Y9z"/>
+                                <exclude reference="sOk-1v-1Bb"/>
+                                <exclude reference="Do4-8y-NaW"/>
+                                <exclude reference="91d-yu-sHc"/>
+                                <exclude reference="PR2-oX-OJs"/>
+                                <exclude reference="fmw-yT-7ZQ"/>
+                                <exclude reference="gpj-qs-90P"/>
                                 <exclude reference="42H-AI-uCA"/>
                                 <exclude reference="QS8-jb-NpN"/>
                                 <exclude reference="s3D-E5-rks"/>
                                 <exclude reference="7Vw-IP-Xvy"/>
                                 <exclude reference="szs-AS-qkT"/>
-                                <exclude reference="91d-yu-sHc"/>
-                                <exclude reference="PR2-oX-OJs"/>
-                                <exclude reference="fmw-yT-7ZQ"/>
-                                <exclude reference="gpj-qs-90P"/>
-                                <exclude reference="QZA-zU-aAe"/>
-                                <exclude reference="yo9-pu-SJ4"/>
-                                <exclude reference="ku0-NU-XfP"/>
-                                <exclude reference="tdv-Vg-Rju"/>
-                                <exclude reference="2Tp-BQ-ogL"/>
-                                <exclude reference="YXM-2W-aRU"/>
-                                <exclude reference="Cec-vJ-Y9z"/>
-                                <exclude reference="sOk-1v-1Bb"/>
-                                <exclude reference="Do4-8y-NaW"/>
-                                <exclude reference="499-lh-M5x"/>
-                                <exclude reference="UJL-ES-gKM"/>
-                                <exclude reference="wSo-wu-J5C"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -488,27 +488,27 @@
                                 <include reference="aD5-Qs-GR7"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="wSo-wu-J5C"/>
+                                <include reference="ku0-NU-XfP"/>
+                                <include reference="tdv-Vg-Rju"/>
+                                <include reference="2Tp-BQ-ogL"/>
+                                <include reference="YXM-2W-aRU"/>
+                                <include reference="QZA-zU-aAe"/>
+                                <include reference="yo9-pu-SJ4"/>
+                                <include reference="499-lh-M5x"/>
+                                <include reference="UJL-ES-gKM"/>
+                                <include reference="Cec-vJ-Y9z"/>
+                                <include reference="sOk-1v-1Bb"/>
+                                <include reference="Do4-8y-NaW"/>
+                                <include reference="91d-yu-sHc"/>
+                                <include reference="PR2-oX-OJs"/>
+                                <include reference="fmw-yT-7ZQ"/>
+                                <include reference="gpj-qs-90P"/>
                                 <include reference="42H-AI-uCA"/>
                                 <include reference="QS8-jb-NpN"/>
                                 <include reference="s3D-E5-rks"/>
                                 <include reference="7Vw-IP-Xvy"/>
                                 <include reference="szs-AS-qkT"/>
-                                <include reference="91d-yu-sHc"/>
-                                <include reference="PR2-oX-OJs"/>
-                                <include reference="fmw-yT-7ZQ"/>
-                                <include reference="gpj-qs-90P"/>
-                                <include reference="QZA-zU-aAe"/>
-                                <include reference="yo9-pu-SJ4"/>
-                                <include reference="ku0-NU-XfP"/>
-                                <include reference="tdv-Vg-Rju"/>
-                                <include reference="2Tp-BQ-ogL"/>
-                                <include reference="YXM-2W-aRU"/>
-                                <include reference="Cec-vJ-Y9z"/>
-                                <include reference="sOk-1v-1Bb"/>
-                                <include reference="Do4-8y-NaW"/>
-                                <include reference="499-lh-M5x"/>
-                                <include reference="UJL-ES-gKM"/>
-                                <include reference="wSo-wu-J5C"/>
                             </mask>
                         </variation>
                     </view>
@@ -1922,7 +1922,8 @@ deserves a caddie.</string>
                                                     <exclude reference="naB-IV-51B"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="139" y="10" width="60" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="kIi-oo-eSn"/>
                                                     <include reference="naB-IV-51B"/>
@@ -1946,7 +1947,8 @@ deserves a caddie.</string>
                                                     <exclude reference="wJH-1N-JWf"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="139" y="43" width="60" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="Yr8-X1-qzx"/>
                                                     <include reference="wJH-1N-JWf"/>
@@ -1970,7 +1972,8 @@ deserves a caddie.</string>
                                                     <exclude reference="kz3-qc-uB5"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="129" y="72" width="80" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="SMf-kf-q4z"/>
                                                     <include reference="kz3-qc-uB5"/>
@@ -2243,7 +2246,8 @@ deserves a caddie.</string>
                                                     <exclude reference="FGM-t8-uBW"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="162" y="10" width="60" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="8HY-O1-7ur"/>
                                                     <include reference="FGM-t8-uBW"/>
@@ -2267,7 +2271,8 @@ deserves a caddie.</string>
                                                     <exclude reference="jRo-Uw-rTK"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="162" y="43" width="60" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="XJ4-7V-p7h"/>
                                                     <include reference="jRo-Uw-rTK"/>
@@ -2291,7 +2296,8 @@ deserves a caddie.</string>
                                                     <exclude reference="jvb-zL-zEK"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="152" y="72" width="80" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="OTg-Cc-7c5"/>
                                                     <include reference="jvb-zL-zEK"/>
@@ -4982,7 +4988,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <viewControllerLayoutGuide type="bottom" id="hAR-lP-7fz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NcZ-fl-iz6">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERj-BI-nc3">
@@ -5200,16 +5206,16 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <exclude reference="gae-Ml-PZw"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2Ii-dx-wP9"/>
-                                <exclude reference="9c4-ux-ao3"/>
-                                <exclude reference="jBe-v0-Ibt"/>
+                                <exclude reference="eVj-sA-GnD"/>
                                 <exclude reference="4mz-64-lqQ"/>
                                 <exclude reference="jIf-WC-IN9"/>
                                 <exclude reference="lKN-D2-7AH"/>
                                 <exclude reference="TXa-nx-sO5"/>
                                 <exclude reference="XfW-th-oSR"/>
                                 <exclude reference="eQg-0d-D6o"/>
-                                <exclude reference="eVj-sA-GnD"/>
+                                <exclude reference="2Ii-dx-wP9"/>
+                                <exclude reference="9c4-ux-ao3"/>
+                                <exclude reference="jBe-v0-Ibt"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -5219,16 +5225,16 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <include reference="gae-Ml-PZw"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2Ii-dx-wP9"/>
-                                <include reference="9c4-ux-ao3"/>
-                                <include reference="jBe-v0-Ibt"/>
+                                <include reference="eVj-sA-GnD"/>
                                 <include reference="4mz-64-lqQ"/>
                                 <include reference="jIf-WC-IN9"/>
                                 <include reference="lKN-D2-7AH"/>
                                 <include reference="TXa-nx-sO5"/>
                                 <include reference="XfW-th-oSR"/>
                                 <include reference="eQg-0d-D6o"/>
-                                <include reference="eVj-sA-GnD"/>
+                                <include reference="2Ii-dx-wP9"/>
+                                <include reference="9c4-ux-ao3"/>
+                                <include reference="jBe-v0-Ibt"/>
                             </mask>
                         </variation>
                     </view>
@@ -5252,17 +5258,17 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
             <objects>
                 <tableViewController id="LA2-tG-bSF" customClass="ContainerConfirmReservationViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="UGY-1Z-Rkl">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="ywl-7k-PUv">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="215" id="GgW-bp-cks" customClass="CaddieHistoryCell" customModule="carpoolApp_v1_0" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="95" width="400" height="195"/>
+                                        <rect key="frame" x="0.0" y="35" width="380" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GgW-bp-cks" id="Qp9-fD-anE">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="194"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="380" height="214"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultUserProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="9di-19-NkM">
@@ -5378,14 +5384,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="Oz8-51-78D"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="XsR-sm-ehG"/>
-                                                    <exclude reference="oLl-8w-a6B"/>
-                                                    <exclude reference="1aJ-0R-kbY"/>
-                                                    <exclude reference="E2A-G2-O0P"/>
                                                     <exclude reference="fYT-ef-mk0"/>
                                                     <exclude reference="jEL-nx-cQR"/>
                                                     <exclude reference="DKQ-1i-cGI"/>
                                                     <exclude reference="P9d-r4-usy"/>
+                                                    <exclude reference="1aJ-0R-kbY"/>
+                                                    <exclude reference="E2A-G2-O0P"/>
+                                                    <exclude reference="XsR-sm-ehG"/>
+                                                    <exclude reference="oLl-8w-a6B"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -5396,24 +5402,24 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <include reference="Oz8-51-78D"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="XsR-sm-ehG"/>
-                                                    <include reference="oLl-8w-a6B"/>
-                                                    <include reference="1aJ-0R-kbY"/>
-                                                    <include reference="E2A-G2-O0P"/>
                                                     <include reference="fYT-ef-mk0"/>
                                                     <include reference="jEL-nx-cQR"/>
                                                     <include reference="DKQ-1i-cGI"/>
                                                     <include reference="P9d-r4-usy"/>
+                                                    <include reference="1aJ-0R-kbY"/>
+                                                    <include reference="E2A-G2-O0P"/>
+                                                    <include reference="XsR-sm-ehG"/>
+                                                    <include reference="oLl-8w-a6B"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="125" id="vpU-Wx-xIC">
-                                        <rect key="frame" x="0.0" y="290" width="400" height="85"/>
+                                        <rect key="frame" x="0.0" y="250" width="380" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vpU-Wx-xIC" id="Zm4-NQ-P67">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="380" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golf Course Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upm-ST-RKI">
@@ -5522,14 +5528,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="ArF-Q5-AJe"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="3lo-sU-RE5"/>
-                                                    <exclude reference="6zz-Bt-VFf"/>
-                                                    <exclude reference="g70-Tv-1mr"/>
-                                                    <exclude reference="lYF-le-RbI"/>
                                                     <exclude reference="8NU-qI-Bdw"/>
                                                     <exclude reference="bJ4-tr-a4F"/>
                                                     <exclude reference="Kcz-Wt-xkB"/>
                                                     <exclude reference="gpP-67-jwd"/>
+                                                    <exclude reference="3lo-sU-RE5"/>
+                                                    <exclude reference="6zz-Bt-VFf"/>
+                                                    <exclude reference="g70-Tv-1mr"/>
+                                                    <exclude reference="lYF-le-RbI"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -5540,14 +5546,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <include reference="ArF-Q5-AJe"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="3lo-sU-RE5"/>
-                                                    <include reference="6zz-Bt-VFf"/>
-                                                    <include reference="g70-Tv-1mr"/>
-                                                    <include reference="lYF-le-RbI"/>
                                                     <include reference="8NU-qI-Bdw"/>
                                                     <include reference="bJ4-tr-a4F"/>
                                                     <include reference="Kcz-Wt-xkB"/>
                                                     <include reference="gpP-67-jwd"/>
+                                                    <include reference="3lo-sU-RE5"/>
+                                                    <include reference="6zz-Bt-VFf"/>
+                                                    <include reference="g70-Tv-1mr"/>
+                                                    <include reference="lYF-le-RbI"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -5558,7 +5564,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                             <tableViewSection headerTitle="Payment Information" id="heB-rw-mdD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="XU9-vD-PPz">
-                                        <rect key="frame" x="0.0" y="159" width="380" height="44"/>
+                                        <rect key="frame" x="0.0" y="426" width="380" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XU9-vD-PPz" id="mcL-uS-FOw">
                                             <rect key="frame" x="0.0" y="0.0" width="380" height="43"/>
@@ -5646,8 +5652,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <exclude reference="2z0-45-hXZ"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="144" y="10" width="123" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="2z0-45-hXZ"/>
                                                         </mask>
@@ -5690,10 +5695,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="B4C-uP-8nH"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Kuu-m3-2aN"/>
-                                                    <exclude reference="qlC-9C-2lP"/>
-                                                    <exclude reference="gpy-5O-xss"/>
-                                                    <exclude reference="wEM-xI-CvZ"/>
+                                                    <exclude reference="S74-4o-dj0"/>
+                                                    <exclude reference="hM9-DG-tuS"/>
                                                     <exclude reference="1RB-Io-XBx"/>
                                                     <exclude reference="PJk-Jt-699"/>
                                                     <exclude reference="G2T-qM-MLc"/>
@@ -5701,8 +5704,10 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="VVW-lx-QEy"/>
                                                     <exclude reference="X5r-Se-ngc"/>
                                                     <exclude reference="jSj-dD-QSI"/>
-                                                    <exclude reference="S74-4o-dj0"/>
-                                                    <exclude reference="hM9-DG-tuS"/>
+                                                    <exclude reference="Kuu-m3-2aN"/>
+                                                    <exclude reference="qlC-9C-2lP"/>
+                                                    <exclude reference="gpy-5O-xss"/>
+                                                    <exclude reference="wEM-xI-CvZ"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -5714,10 +5719,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <include reference="B4C-uP-8nH"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Kuu-m3-2aN"/>
-                                                    <include reference="qlC-9C-2lP"/>
-                                                    <include reference="gpy-5O-xss"/>
-                                                    <include reference="wEM-xI-CvZ"/>
+                                                    <include reference="S74-4o-dj0"/>
+                                                    <include reference="hM9-DG-tuS"/>
                                                     <include reference="1RB-Io-XBx"/>
                                                     <include reference="PJk-Jt-699"/>
                                                     <include reference="G2T-qM-MLc"/>
@@ -5725,8 +5728,10 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <include reference="VVW-lx-QEy"/>
                                                     <exclude reference="X5r-Se-ngc"/>
                                                     <exclude reference="jSj-dD-QSI"/>
-                                                    <include reference="S74-4o-dj0"/>
-                                                    <include reference="hM9-DG-tuS"/>
+                                                    <include reference="Kuu-m3-2aN"/>
+                                                    <include reference="qlC-9C-2lP"/>
+                                                    <include reference="gpy-5O-xss"/>
+                                                    <include reference="wEM-xI-CvZ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -5748,7 +5753,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         </variation>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="VHA-vb-y0e">
-                                        <rect key="frame" x="0.0" y="247" width="380" height="44"/>
+                                        <rect key="frame" x="0.0" y="470" width="380" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VHA-vb-y0e" id="zPG-C6-mBS">
                                             <rect key="frame" x="0.0" y="0.0" width="347" height="43"/>
@@ -5835,9 +5840,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="fER-va-xhQ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="Us4-B4-zdz"/>
-                                                    <exclude reference="d7H-8t-LV9"/>
-                                                    <exclude reference="eFC-HM-bAS"/>
                                                     <exclude reference="0BA-3p-kF9"/>
                                                     <exclude reference="kJX-sh-Xoq"/>
                                                     <exclude reference="tsH-Ex-nyu"/>
@@ -5847,6 +5849,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="baH-6L-mSI"/>
                                                     <exclude reference="kxf-3G-ErW"/>
                                                     <exclude reference="vZZ-q6-J7h"/>
+                                                    <exclude reference="Us4-B4-zdz"/>
+                                                    <exclude reference="d7H-8t-LV9"/>
+                                                    <exclude reference="eFC-HM-bAS"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -5856,9 +5861,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <include reference="fER-va-xhQ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="Us4-B4-zdz"/>
-                                                    <include reference="d7H-8t-LV9"/>
-                                                    <include reference="eFC-HM-bAS"/>
                                                     <include reference="0BA-3p-kF9"/>
                                                     <exclude reference="kJX-sh-Xoq"/>
                                                     <include reference="tsH-Ex-nyu"/>
@@ -5868,6 +5870,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="baH-6L-mSI"/>
                                                     <exclude reference="kxf-3G-ErW"/>
                                                     <include reference="vZZ-q6-J7h"/>
+                                                    <include reference="Us4-B4-zdz"/>
+                                                    <include reference="d7H-8t-LV9"/>
+                                                    <include reference="eFC-HM-bAS"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -5896,10 +5901,10 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                             <tableViewSection headerTitle="Promo Code" footerTitle="Only 1 code may be applied per reservation" id="NLz-1e-rqg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="kzz-Fz-z2y">
-                                        <rect key="frame" x="0.0" y="327" width="380" height="44"/>
+                                        <rect key="frame" x="0.0" y="565" width="380" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kzz-Fz-z2y" id="2CB-Kw-Fl9">
-                                            <rect key="frame" x="0.0" y="0.0" width="380" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="347" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply a promo code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrE-7d-qs7">
@@ -6009,6 +6014,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <viewControllerLayoutGuide type="bottom" id="Ta2-W3-KLx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0ck-4K-igk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why am I charged 10% of my reservation cost right now?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7B-Mz-tnA">
@@ -6026,14 +6032,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="seH-nQ-8zj"/>
                                         <exclude reference="4m9-op-MjA"/>
+                                        <exclude reference="seH-nQ-8zj"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="seH-nQ-8zj"/>
                                         <include reference="4m9-op-MjA"/>
+                                        <include reference="seH-nQ-8zj"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -6102,17 +6108,17 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <exclude reference="v2e-Vg-6oy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Xd6-S5-sd3"/>
-                                <exclude reference="yRj-ed-b2K"/>
-                                <exclude reference="Eea-tC-11X"/>
-                                <exclude reference="TJx-rq-gXJ"/>
-                                <exclude reference="VUe-fe-ByH"/>
-                                <exclude reference="ttY-RD-YHo"/>
                                 <exclude reference="ZUl-gN-DZC"/>
                                 <exclude reference="bbH-uE-ccv"/>
                                 <exclude reference="cq9-Va-7Xe"/>
                                 <exclude reference="jKr-2B-rKv"/>
                                 <exclude reference="k2a-8o-haH"/>
+                                <exclude reference="Eea-tC-11X"/>
+                                <exclude reference="TJx-rq-gXJ"/>
+                                <exclude reference="VUe-fe-ByH"/>
+                                <exclude reference="ttY-RD-YHo"/>
+                                <exclude reference="Xd6-S5-sd3"/>
+                                <exclude reference="yRj-ed-b2K"/>
                                 <exclude reference="PG4-aX-15B"/>
                                 <exclude reference="Skn-Ld-cSh"/>
                                 <exclude reference="aGJ-DP-UFZ"/>
@@ -6127,17 +6133,17 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <include reference="v2e-Vg-6oy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Xd6-S5-sd3"/>
-                                <include reference="yRj-ed-b2K"/>
-                                <include reference="Eea-tC-11X"/>
-                                <include reference="TJx-rq-gXJ"/>
-                                <include reference="VUe-fe-ByH"/>
-                                <include reference="ttY-RD-YHo"/>
                                 <include reference="ZUl-gN-DZC"/>
                                 <include reference="bbH-uE-ccv"/>
                                 <include reference="cq9-Va-7Xe"/>
                                 <include reference="jKr-2B-rKv"/>
                                 <include reference="k2a-8o-haH"/>
+                                <include reference="Eea-tC-11X"/>
+                                <include reference="TJx-rq-gXJ"/>
+                                <include reference="VUe-fe-ByH"/>
+                                <include reference="ttY-RD-YHo"/>
+                                <exclude reference="Xd6-S5-sd3"/>
+                                <include reference="yRj-ed-b2K"/>
                                 <include reference="PG4-aX-15B"/>
                                 <include reference="Skn-Ld-cSh"/>
                                 <include reference="aGJ-DP-UFZ"/>
@@ -11597,7 +11603,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection id="4de-Y1-HyJ">
+                            <tableViewSection headerTitle="First &amp; Last Name" id="4de-Y1-HyJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Uz6-Rm-yrO">
                                         <rect key="frame" x="0.0" y="99" width="600" height="44"/>
@@ -11606,7 +11612,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="omX-nn-NeI">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omX-nn-NeI">
                                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="53N-dP-aKi">
@@ -11614,7 +11620,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                         </constraint>
                                                     </constraints>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -11626,6 +11632,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="53N-dP-aKi"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="firstNameTextFieldEditingDidChange:" destination="Es1-AN-Beb" eventType="editingChanged" id="jRB-br-3qs"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -11666,7 +11675,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Tc-7n-nUC">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Tc-7n-nUC">
                                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="vkM-6d-Ouh">
@@ -11674,7 +11683,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                         </constraint>
                                                     </constraints>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -11686,6 +11695,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="vkM-6d-Ouh"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="lastNameTextFieldEditingDidChange:" destination="Es1-AN-Beb" eventType="editingChanged" id="eLb-BA-YIn"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -11722,53 +11734,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="y4Y-9C-Yhf">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="p4B-m2-hcu">
-                                        <rect key="frame" x="0.0" y="223" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p4B-m2-hcu" id="GHC-I2-8Or">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbM-Nm-kb9">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Continue"/>
-                                                    <connections>
-                                                        <segue destination="wMi-LR-eg2" kind="show" id="gmz-kY-A90"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="qbM-Nm-kb9" firstAttribute="centerY" secondItem="GHC-I2-8Or" secondAttribute="centerY" id="1RE-Lo-qAE"/>
-                                                <constraint firstItem="qbM-Nm-kb9" firstAttribute="width" secondItem="GHC-I2-8Or" secondAttribute="width" id="I69-jK-BlH"/>
-                                                <constraint firstItem="qbM-Nm-kb9" firstAttribute="height" secondItem="GHC-I2-8Or" secondAttribute="height" id="OHt-b7-fww"/>
-                                                <constraint firstItem="qbM-Nm-kb9" firstAttribute="centerX" secondItem="GHC-I2-8Or" secondAttribute="centerX" id="oUl-l7-zaU"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="qbM-Nm-kb9"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="1RE-Lo-qAE"/>
-                                                    <exclude reference="I69-jK-BlH"/>
-                                                    <exclude reference="OHt-b7-fww"/>
-                                                    <exclude reference="oUl-l7-zaU"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="qbM-Nm-kb9"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="1RE-Lo-qAE"/>
-                                                    <include reference="I69-jK-BlH"/>
-                                                    <include reference="OHt-b7-fww"/>
-                                                    <include reference="oUl-l7-zaU"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -11778,14 +11744,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                     </tableView>
                     <navigationItem key="navigationItem" id="hrY-8c-MrF"/>
                     <connections>
-                        <outlet property="continueButton" destination="qbM-Nm-kb9" id="sAb-Un-gzu"/>
                         <outlet property="firstNameTextField" destination="omX-nn-NeI" id="KSO-dF-NVU"/>
                         <outlet property="lastNameTextField" destination="1Tc-7n-nUC" id="KFo-bq-cZh"/>
+                        <segue destination="wMi-LR-eg2" kind="show" identifier="toEmailSignUpSegue" id="mnF-Zn-ZRQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckK-ZY-NlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3598.5" y="1922"/>
+            <point key="canvasLocation" x="-3745.5" y="1883"/>
         </scene>
         <!--Sign Up Choose Authentication View Controller-->
         <scene sceneID="xQX-QI-VCQ">
@@ -12047,7 +12013,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-nN-fdm">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBq-nN-fdm">
                                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="yRe-nb-bmc">
@@ -12055,7 +12021,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                         </constraint>
                                                     </constraints>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -12067,6 +12033,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="yRe-nb-bmc"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="emailTextFieldEditingDidChange:" destination="wMi-LR-eg2" eventType="editingChanged" id="5Ie-1J-vD0"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -12107,7 +12076,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2kg-V8-vB5">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2kg-V8-vB5">
                                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="cmD-JM-qko">
@@ -12115,7 +12084,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                         </constraint>
                                                     </constraints>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -12127,6 +12096,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="cmD-JM-qko"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="confirmEmailTextFieldEditingDidChange:" destination="wMi-LR-eg2" eventType="editingChanged" id="1I5-tY-bsX"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -12171,7 +12143,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(888) 888-8888" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bON-NL-JoB">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(888) 888-8888" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bON-NL-JoB">
                                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="KIj-eT-uky">
@@ -12179,7 +12151,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                         </constraint>
                                                     </constraints>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="done"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -12191,6 +12163,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="KIj-eT-uky"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="phoneTextFieldEditingDidChange:" destination="wMi-LR-eg2" eventType="editingChanged" id="uJa-so-Qbs"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -12227,87 +12202,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="wpo-dR-C5C">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="v6x-0d-P6x">
-                                        <rect key="frame" x="0.0" y="333" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v6x-0d-P6x" id="pmB-9k-lUU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j3-J7-2CG">
-                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                    <state key="normal" title="Continue"/>
-                                                    <connections>
-                                                        <segue destination="50h-9o-pBg" kind="show" id="aU5-1o-tK7"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="2j3-J7-2CG" firstAttribute="centerY" secondItem="pmB-9k-lUU" secondAttribute="centerY" id="LI4-TE-Yy0"/>
-                                                <constraint firstItem="2j3-J7-2CG" firstAttribute="height" secondItem="pmB-9k-lUU" secondAttribute="height" id="NnL-z4-ju0"/>
-                                                <constraint firstItem="2j3-J7-2CG" firstAttribute="width" secondItem="pmB-9k-lUU" secondAttribute="width" id="Xvz-C4-Lsy"/>
-                                                <constraint firstItem="2j3-J7-2CG" firstAttribute="centerX" secondItem="pmB-9k-lUU" secondAttribute="centerX" id="sLc-eO-ks8"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="2j3-J7-2CG"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <exclude reference="LI4-TE-Yy0"/>
-                                                    <exclude reference="NnL-z4-ju0"/>
-                                                    <exclude reference="Xvz-C4-Lsy"/>
-                                                    <exclude reference="sLc-eO-ks8"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="2j3-J7-2CG"/>
-                                                </mask>
-                                                <mask key="constraints">
-                                                    <include reference="LI4-TE-Yy0"/>
-                                                    <include reference="NnL-z4-ju0"/>
-                                                    <include reference="Xvz-C4-Lsy"/>
-                                                    <include reference="sLc-eO-ks8"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="2j3-J7-2CG" firstAttribute="centerY" secondItem="v6x-0d-P6x" secondAttribute="centerY" id="ZEv-3T-S6T"/>
-                                            <constraint firstItem="2j3-J7-2CG" firstAttribute="height" secondItem="v6x-0d-P6x" secondAttribute="height" id="avi-SZ-Cd1"/>
-                                            <constraint firstItem="2j3-J7-2CG" firstAttribute="centerX" secondItem="v6x-0d-P6x" secondAttribute="centerX" id="cuy-Nz-Bnb"/>
-                                            <constraint firstItem="2j3-J7-2CG" firstAttribute="width" secondItem="v6x-0d-P6x" secondAttribute="width" id="eG9-eL-fCz"/>
-                                            <constraint firstItem="2j3-J7-2CG" firstAttribute="top" secondItem="v6x-0d-P6x" secondAttribute="top" id="ee3-Dp-tKT"/>
-                                            <constraint firstAttribute="bottom" secondItem="2j3-J7-2CG" secondAttribute="bottom" constant="1" id="lA5-1J-IdS"/>
-                                            <constraint firstItem="2j3-J7-2CG" firstAttribute="leading" secondItem="v6x-0d-P6x" secondAttribute="leading" id="tyj-Kb-cPU"/>
-                                            <constraint firstAttribute="trailing" secondItem="2j3-J7-2CG" secondAttribute="trailing" id="zc0-Vu-9Rc"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="ZEv-3T-S6T"/>
-                                                <exclude reference="avi-SZ-Cd1"/>
-                                                <exclude reference="cuy-Nz-Bnb"/>
-                                                <exclude reference="eG9-eL-fCz"/>
-                                                <exclude reference="ee3-Dp-tKT"/>
-                                                <exclude reference="lA5-1J-IdS"/>
-                                                <exclude reference="tyj-Kb-cPU"/>
-                                                <exclude reference="zc0-Vu-9Rc"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <exclude reference="ZEv-3T-S6T"/>
-                                                <exclude reference="avi-SZ-Cd1"/>
-                                                <exclude reference="cuy-Nz-Bnb"/>
-                                                <exclude reference="eG9-eL-fCz"/>
-                                                <exclude reference="ee3-Dp-tKT"/>
-                                                <exclude reference="lA5-1J-IdS"/>
-                                                <exclude reference="tyj-Kb-cPU"/>
-                                                <exclude reference="zc0-Vu-9Rc"/>
-                                            </mask>
-                                        </variation>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -12317,9 +12212,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                     </tableView>
                     <connections>
                         <outlet property="confirmEmailTextField" destination="2kg-V8-vB5" id="Cbd-h6-T2K"/>
-                        <outlet property="continueButton" destination="2j3-J7-2CG" id="1Pg-9X-xvs"/>
                         <outlet property="emailTextField" destination="qBq-nN-fdm" id="FG9-9L-4UK"/>
                         <outlet property="phoneTextField" destination="bON-NL-JoB" id="3Bn-sH-2da"/>
+                        <segue destination="50h-9o-pBg" kind="show" identifier="toProfilePictureSignUpSegue" id="aIV-9b-HgA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5P-tY-2fe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -12814,7 +12709,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                         <viewControllerLayoutGuide type="bottom" id="bio-H9-GPT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sny-ma-4EV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ow1-Qk-gi4">
@@ -12920,8 +12815,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="lKi-x7-4aU"/>
-                                        <exclude reference="1Cx-dX-21r"/>
-                                        <exclude reference="nrT-IX-Ubp"/>
                                         <exclude reference="KqH-9E-IoI"/>
                                         <exclude reference="d2l-7e-7IN"/>
                                         <exclude reference="gfe-RG-nuj"/>
@@ -12930,6 +12823,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="dy9-h4-bfh"/>
                                         <exclude reference="tQs-Ve-Xku"/>
                                         <exclude reference="xkx-Yy-sKp"/>
+                                        <exclude reference="1Cx-dX-21r"/>
+                                        <exclude reference="nrT-IX-Ubp"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -12940,8 +12835,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="lKi-x7-4aU"/>
-                                        <include reference="1Cx-dX-21r"/>
-                                        <include reference="nrT-IX-Ubp"/>
                                         <include reference="KqH-9E-IoI"/>
                                         <include reference="d2l-7e-7IN"/>
                                         <exclude reference="gfe-RG-nuj"/>
@@ -12950,6 +12843,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <include reference="dy9-h4-bfh"/>
                                         <include reference="tQs-Ve-Xku"/>
                                         <exclude reference="xkx-Yy-sKp"/>
+                                        <include reference="1Cx-dX-21r"/>
+                                        <include reference="nrT-IX-Ubp"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -13053,9 +12948,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <exclude reference="S2q-YZ-8aw"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Br7-lN-gFP"/>
-                                <exclude reference="KKH-6d-DGl"/>
-                                <exclude reference="wCM-ot-CFv"/>
+                                <exclude reference="kqZ-JO-XK5"/>
                                 <exclude reference="Pub-ux-c3Q"/>
                                 <exclude reference="RoF-6i-RaM"/>
                                 <exclude reference="ePd-n0-0hO"/>
@@ -13063,7 +12956,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <exclude reference="BbH-w6-gXI"/>
                                 <exclude reference="dgF-a1-GE5"/>
                                 <exclude reference="hmw-tE-FUq"/>
-                                <exclude reference="kqZ-JO-XK5"/>
+                                <exclude reference="Br7-lN-gFP"/>
+                                <exclude reference="KKH-6d-DGl"/>
+                                <exclude reference="wCM-ot-CFv"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -13073,9 +12968,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <include reference="S2q-YZ-8aw"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Br7-lN-gFP"/>
-                                <include reference="KKH-6d-DGl"/>
-                                <include reference="wCM-ot-CFv"/>
+                                <include reference="kqZ-JO-XK5"/>
                                 <include reference="Pub-ux-c3Q"/>
                                 <include reference="RoF-6i-RaM"/>
                                 <include reference="ePd-n0-0hO"/>
@@ -13083,7 +12976,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <include reference="BbH-w6-gXI"/>
                                 <include reference="dgF-a1-GE5"/>
                                 <exclude reference="hmw-tE-FUq"/>
-                                <include reference="kqZ-JO-XK5"/>
+                                <include reference="Br7-lN-gFP"/>
+                                <include reference="KKH-6d-DGl"/>
+                                <include reference="wCM-ot-CFv"/>
                             </mask>
                         </variation>
                     </view>
@@ -13144,8 +13039,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="hbZ-BP-bl3"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="76" y="19" width="249" height="32"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="hbZ-BP-bl3"/>
                                     </mask>
@@ -13180,14 +13074,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <exclude reference="0ra-Gt-acr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="AFc-hv-YbI"/>
-                                <exclude reference="Fqz-ME-fUz"/>
-                                <exclude reference="pNf-p1-tmB"/>
+                                <exclude reference="4jp-ax-dFE"/>
+                                <exclude reference="NLo-rP-1Fe"/>
                                 <exclude reference="cyE-Y1-4fe"/>
                                 <exclude reference="tWs-mU-1NM"/>
                                 <exclude reference="y5Z-t8-yWy"/>
-                                <exclude reference="4jp-ax-dFE"/>
-                                <exclude reference="NLo-rP-1Fe"/>
+                                <exclude reference="AFc-hv-YbI"/>
+                                <exclude reference="Fqz-ME-fUz"/>
+                                <exclude reference="pNf-p1-tmB"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -13196,14 +13090,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <include reference="0ra-Gt-acr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="AFc-hv-YbI"/>
-                                <include reference="Fqz-ME-fUz"/>
-                                <include reference="pNf-p1-tmB"/>
+                                <exclude reference="4jp-ax-dFE"/>
+                                <include reference="NLo-rP-1Fe"/>
                                 <include reference="cyE-Y1-4fe"/>
                                 <include reference="tWs-mU-1NM"/>
                                 <exclude reference="y5Z-t8-yWy"/>
-                                <exclude reference="4jp-ax-dFE"/>
-                                <include reference="NLo-rP-1Fe"/>
+                                <include reference="AFc-hv-YbI"/>
+                                <include reference="Fqz-ME-fUz"/>
+                                <include reference="pNf-p1-tmB"/>
                             </mask>
                         </variation>
                     </view>
@@ -13511,7 +13405,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <rect key="frame" x="0.0" y="50" width="400" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hod-xq-uiL" id="2Hl-Ie-wey">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBw-HI-X3l">
@@ -13650,14 +13544,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             </constraints>
                                                             <variation key="default">
                                                                 <mask key="constraints">
-                                                                    <exclude reference="gnO-nG-hVn"/>
                                                                     <exclude reference="gbH-pK-9eE"/>
+                                                                    <exclude reference="gnO-nG-hVn"/>
                                                                 </mask>
                                                             </variation>
                                                             <variation key="widthClass=compact">
                                                                 <mask key="constraints">
-                                                                    <include reference="gnO-nG-hVn"/>
                                                                     <include reference="gbH-pK-9eE"/>
+                                                                    <include reference="gnO-nG-hVn"/>
                                                                 </mask>
                                                             </variation>
                                                         </imageView>
@@ -13709,25 +13603,25 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <exclude reference="0LB-qu-h56"/>
                                                         </mask>
                                                         <mask key="constraints">
-                                                            <exclude reference="CFn-4D-JWO"/>
                                                             <exclude reference="6Br-AA-OKl"/>
+                                                            <exclude reference="CFn-4D-JWO"/>
                                                             <exclude reference="l9f-Nf-H3a"/>
-                                                            <exclude reference="Mlg-Hj-fxm"/>
-                                                            <exclude reference="NhP-ed-9qC"/>
                                                             <exclude reference="md1-jc-WrJ"/>
                                                             <exclude reference="rYo-x3-auk"/>
-                                                            <exclude reference="OW1-Bs-ONz"/>
-                                                            <exclude reference="5hd-wq-PfH"/>
-                                                            <exclude reference="NaA-mb-6KR"/>
-                                                            <exclude reference="f9i-rR-Ihu"/>
-                                                            <exclude reference="vbT-4N-bMU"/>
-                                                            <exclude reference="jIU-6e-m6q"/>
-                                                            <exclude reference="vK4-ta-CFV"/>
-                                                            <exclude reference="Oll-Dp-FXz"/>
-                                                            <exclude reference="tW3-fI-kaA"/>
+                                                            <exclude reference="Mlg-Hj-fxm"/>
+                                                            <exclude reference="NhP-ed-9qC"/>
                                                             <exclude reference="LL4-ts-ekq"/>
                                                             <exclude reference="QoS-54-nFs"/>
                                                             <exclude reference="yjT-fa-gjv"/>
+                                                            <exclude reference="Oll-Dp-FXz"/>
+                                                            <exclude reference="tW3-fI-kaA"/>
+                                                            <exclude reference="jIU-6e-m6q"/>
+                                                            <exclude reference="vK4-ta-CFV"/>
+                                                            <exclude reference="5hd-wq-PfH"/>
+                                                            <exclude reference="NaA-mb-6KR"/>
+                                                            <exclude reference="OW1-Bs-ONz"/>
+                                                            <exclude reference="f9i-rR-Ihu"/>
+                                                            <exclude reference="vbT-4N-bMU"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
@@ -13741,25 +13635,25 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                             <include reference="0LB-qu-h56"/>
                                                         </mask>
                                                         <mask key="constraints">
-                                                            <include reference="CFn-4D-JWO"/>
                                                             <include reference="6Br-AA-OKl"/>
+                                                            <include reference="CFn-4D-JWO"/>
                                                             <include reference="l9f-Nf-H3a"/>
-                                                            <include reference="Mlg-Hj-fxm"/>
-                                                            <include reference="NhP-ed-9qC"/>
                                                             <include reference="md1-jc-WrJ"/>
                                                             <include reference="rYo-x3-auk"/>
-                                                            <include reference="OW1-Bs-ONz"/>
-                                                            <include reference="5hd-wq-PfH"/>
-                                                            <include reference="NaA-mb-6KR"/>
-                                                            <include reference="f9i-rR-Ihu"/>
-                                                            <include reference="vbT-4N-bMU"/>
-                                                            <include reference="jIU-6e-m6q"/>
-                                                            <include reference="vK4-ta-CFV"/>
-                                                            <include reference="Oll-Dp-FXz"/>
-                                                            <include reference="tW3-fI-kaA"/>
+                                                            <include reference="Mlg-Hj-fxm"/>
+                                                            <include reference="NhP-ed-9qC"/>
                                                             <exclude reference="LL4-ts-ekq"/>
                                                             <include reference="QoS-54-nFs"/>
                                                             <include reference="yjT-fa-gjv"/>
+                                                            <include reference="Oll-Dp-FXz"/>
+                                                            <include reference="tW3-fI-kaA"/>
+                                                            <include reference="jIU-6e-m6q"/>
+                                                            <include reference="vK4-ta-CFV"/>
+                                                            <include reference="5hd-wq-PfH"/>
+                                                            <include reference="NaA-mb-6KR"/>
+                                                            <include reference="OW1-Bs-ONz"/>
+                                                            <include reference="f9i-rR-Ihu"/>
+                                                            <include reference="vbT-4N-bMU"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -13880,14 +13774,14 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="ccm-gf-W80"/>
                                                             <exclude reference="Ems-wr-MQ6"/>
+                                                            <exclude reference="ccm-gf-W80"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="ccm-gf-W80"/>
                                                             <include reference="Ems-wr-MQ6"/>
+                                                            <include reference="ccm-gf-W80"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>
@@ -13945,24 +13839,24 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <exclude reference="zKs-Hf-1SJ"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="LWI-mH-EC3"/>
+                                                    <exclude reference="XNa-5x-ueY"/>
                                                     <exclude reference="5PH-Fc-BBv"/>
                                                     <exclude reference="Epu-ar-Rgy"/>
-                                                    <exclude reference="XNa-5x-ueY"/>
-                                                    <exclude reference="LWI-mH-EC3"/>
                                                     <exclude reference="3ek-xe-6vM"/>
                                                     <exclude reference="ewp-qk-D9b"/>
-                                                    <exclude reference="ZKp-mu-Za4"/>
+                                                    <exclude reference="62q-Xo-9Qj"/>
+                                                    <exclude reference="uyU-yG-Gyt"/>
                                                     <exclude reference="5YX-WW-80J"/>
                                                     <exclude reference="CGi-UM-cKa"/>
                                                     <exclude reference="RRs-FE-w9E"/>
-                                                    <exclude reference="cue-oz-APW"/>
+                                                    <exclude reference="ZKp-mu-Za4"/>
                                                     <exclude reference="Dif-pz-qXd"/>
-                                                    <exclude reference="atu-X0-Zly"/>
                                                     <exclude reference="TYI-g8-qKh"/>
-                                                    <exclude reference="uyU-yG-Gyt"/>
-                                                    <exclude reference="62q-Xo-9Qj"/>
-                                                    <exclude reference="wZ7-8X-MhP"/>
+                                                    <exclude reference="atu-X0-Zly"/>
+                                                    <exclude reference="cue-oz-APW"/>
                                                     <exclude reference="D4m-gz-cDw"/>
+                                                    <exclude reference="wZ7-8X-MhP"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -13976,24 +13870,24 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                                     <include reference="zKs-Hf-1SJ"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="LWI-mH-EC3"/>
+                                                    <include reference="XNa-5x-ueY"/>
                                                     <include reference="5PH-Fc-BBv"/>
                                                     <include reference="Epu-ar-Rgy"/>
-                                                    <include reference="XNa-5x-ueY"/>
-                                                    <include reference="LWI-mH-EC3"/>
                                                     <include reference="3ek-xe-6vM"/>
                                                     <include reference="ewp-qk-D9b"/>
-                                                    <exclude reference="ZKp-mu-Za4"/>
+                                                    <include reference="62q-Xo-9Qj"/>
+                                                    <include reference="uyU-yG-Gyt"/>
                                                     <include reference="5YX-WW-80J"/>
                                                     <include reference="CGi-UM-cKa"/>
                                                     <include reference="RRs-FE-w9E"/>
-                                                    <include reference="cue-oz-APW"/>
+                                                    <exclude reference="ZKp-mu-Za4"/>
                                                     <include reference="Dif-pz-qXd"/>
-                                                    <include reference="atu-X0-Zly"/>
                                                     <include reference="TYI-g8-qKh"/>
-                                                    <include reference="uyU-yG-Gyt"/>
-                                                    <include reference="62q-Xo-9Qj"/>
-                                                    <include reference="wZ7-8X-MhP"/>
+                                                    <include reference="atu-X0-Zly"/>
+                                                    <include reference="cue-oz-APW"/>
                                                     <include reference="D4m-gz-cDw"/>
+                                                    <include reference="wZ7-8X-MhP"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -14005,6 +13899,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Atd-Z6-gBB" id="eh3-Oa-ytV"/>
                                     <outlet property="delegate" destination="Atd-Z6-gBB" id="3Sl-7K-Sda"/>
@@ -14051,7 +13948,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="sga-go-Je7"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
                                     <mask key="subviews">
                                         <include reference="blG-ke-hra"/>
                                         <include reference="v45-Ts-Mg7"/>
@@ -14162,6 +14060,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <exclude reference="5Lc-Bh-STT"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="vvd-7l-eBf"/>
                                 <exclude reference="P3V-Z1-C7N"/>
                                 <exclude reference="f3v-eO-fYv"/>
                                 <exclude reference="y9g-MI-Ze4"/>
@@ -14171,7 +14070,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <exclude reference="16D-6a-i7K"/>
                                 <exclude reference="Drd-Yb-VVc"/>
                                 <exclude reference="qB2-5c-dcy"/>
-                                <exclude reference="vvd-7l-eBf"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -14181,6 +14079,7 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <include reference="5Lc-Bh-STT"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="vvd-7l-eBf"/>
                                 <include reference="P3V-Z1-C7N"/>
                                 <include reference="f3v-eO-fYv"/>
                                 <include reference="y9g-MI-Ze4"/>
@@ -14190,7 +14089,6 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                 <include reference="16D-6a-i7K"/>
                                 <include reference="Drd-Yb-VVc"/>
                                 <include reference="qB2-5c-dcy"/>
-                                <include reference="vvd-7l-eBf"/>
                             </mask>
                         </variation>
                     </view>
@@ -14347,7 +14245,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="j4i-P8-OH9"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
                                     <mask key="subviews">
                                         <include reference="SdH-ez-gdD"/>
                                         <include reference="NdY-av-kyq"/>
@@ -14397,7 +14296,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="o2U-gy-u2O"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
                                     <mask key="subviews">
                                         <include reference="Zer-KC-rS0"/>
                                     </mask>
@@ -14550,7 +14450,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="zfE-ap-LwX"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
                                     <mask key="subviews">
                                         <include reference="mmf-DK-2c0"/>
                                     </mask>
@@ -14663,6 +14564,9 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anX-yh-NPp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                </variation>
                                 <connections>
                                     <segue destination="5Y0-dh-JlS" kind="embed" id="bIP-wT-CrM"/>
                                 </connections>
@@ -14728,7 +14632,8 @@ Golf can be so much more fun and rewarding when you've got a great caddie by you
                                         <exclude reference="rlh-Ia-XZ0"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
                                     <mask key="subviews">
                                         <include reference="qfV-iI-guC"/>
                                     </mask>
@@ -17195,6 +17100,7 @@ We want to bring the caddie back to every golf course, available to you at the t
                         <viewControllerLayoutGuide type="bottom" id="G62-7f-U7p"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="39s-yl-h5c">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-ka-Z7x">
@@ -17214,14 +17120,14 @@ If you've got a promo code, enter it here.</string>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="isS-8c-fuC"/>
                                         <exclude reference="aZy-eg-kXW"/>
+                                        <exclude reference="isS-8c-fuC"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="isS-8c-fuC"/>
                                         <include reference="aZy-eg-kXW"/>
+                                        <include reference="isS-8c-fuC"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -17327,18 +17233,18 @@ If you've got a promo code, enter it here.</string>
                                 <exclude reference="GY9-Fc-n9d"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ja4-Ht-lhP"/>
                                 <exclude reference="Ycm-UL-3aU"/>
                                 <exclude reference="dXp-m9-iaJ"/>
                                 <exclude reference="trb-oX-fBd"/>
                                 <exclude reference="vkD-GY-FA3"/>
-                                <exclude reference="07X-lr-0sl"/>
-                                <exclude reference="LYk-PA-IrZ"/>
-                                <exclude reference="OLF-Ib-nC1"/>
                                 <exclude reference="9SM-bh-0mr"/>
                                 <exclude reference="k38-t8-0FK"/>
                                 <exclude reference="qsS-kA-beo"/>
                                 <exclude reference="v8T-KO-J6D"/>
+                                <exclude reference="ja4-Ht-lhP"/>
+                                <exclude reference="07X-lr-0sl"/>
+                                <exclude reference="LYk-PA-IrZ"/>
+                                <exclude reference="OLF-Ib-nC1"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -17349,18 +17255,18 @@ If you've got a promo code, enter it here.</string>
                                 <include reference="GY9-Fc-n9d"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ja4-Ht-lhP"/>
                                 <include reference="Ycm-UL-3aU"/>
                                 <include reference="dXp-m9-iaJ"/>
                                 <exclude reference="trb-oX-fBd"/>
                                 <include reference="vkD-GY-FA3"/>
-                                <include reference="07X-lr-0sl"/>
-                                <include reference="LYk-PA-IrZ"/>
-                                <include reference="OLF-Ib-nC1"/>
                                 <include reference="9SM-bh-0mr"/>
                                 <include reference="k38-t8-0FK"/>
                                 <include reference="qsS-kA-beo"/>
                                 <include reference="v8T-KO-J6D"/>
+                                <include reference="ja4-Ht-lhP"/>
+                                <include reference="07X-lr-0sl"/>
+                                <include reference="LYk-PA-IrZ"/>
+                                <include reference="OLF-Ib-nC1"/>
                             </mask>
                         </variation>
                     </view>
@@ -17406,6 +17312,7 @@ If you've got a promo code, enter it here.</string>
                         <viewControllerLayoutGuide type="bottom" id="gjJ-YQ-LOv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="07B-6A-Jcr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PayPal Braintree drop in UI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek3-XW-A3c">

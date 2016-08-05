@@ -12,24 +12,28 @@ class SignUpNameInfoViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var continueButton: UIButton!
     
     var firstNameToSave = String()
     var lastNameToSave = String()
+    
+    var firstNameHasBeenEntered = Bool()
+    var lastNameHasBeenEntered = Bool()
+    var allTextFieldsArePopulated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
-        
+        firstNameTextField.becomeFirstResponder()
+
         navigationItem.title = "Who Are You?"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        continueButtonDisabledState()
-        
-        firstNameTextField.becomeFirstResponder()
+        let nextButton = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: "advanceToNextSignUpStep")
+        nextButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!], forState: UIControlState.Normal)
+        self.navigationItem.rightBarButtonItem = nextButton
         
         firstNameTextField.tag = 1
         lastNameTextField.tag = 2
@@ -44,19 +48,12 @@ class SignUpNameInfoViewController: UITableViewController, UITextFieldDelegate {
 
 extension SignUpNameInfoViewController {
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        continueButtonDisabledState()
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch (textField.tag) {
         case 1:
-            firstNameToSave = firstNameTextField.text!
             lastNameTextField.becomeFirstResponder()
         case 2:
-            lastNameToSave = lastNameTextField.text!
-            continueButtonEnabledState()
-            lastNameTextField.resignFirstResponder()
+            advanceToNextSignUpStep()
         default:
             break
         }
@@ -64,13 +61,62 @@ extension SignUpNameInfoViewController {
         return true
     }
     
-    func continueButtonEnabledState() {
-        self.continueButton.enabled = true
-        self.continueButton.setTitleColor(UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), forState: .Normal)
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        switch (textField.tag) {
+        case 1:
+            firstNameToSave = ""
+        case 2:
+            lastNameToSave = ""
+        default:
+            break
+        }
+        return true
     }
     
-    func continueButtonDisabledState() {
-        self.continueButton.enabled = false
-        self.continueButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+    @IBAction func firstNameTextFieldEditingDidChange(sender: AnyObject) {
+        firstNameToSave = firstNameTextField.text!
+    }
+    
+    @IBAction func lastNameTextFieldEditingDidChange(sender: AnyObject) {
+        lastNameToSave = lastNameTextField.text!
+        
+    }
+    
+    func validateFirstName(firstNameToSave: String) -> Bool {
+        if (firstNameToSave != "") {
+            firstNameHasBeenEntered = true
+        } else {
+            firstNameHasBeenEntered = false
+        }
+        return firstNameHasBeenEntered
+    }
+    
+    func validateLastName(lastNameToSave: String) -> Bool {
+        if (lastNameToSave != "") {
+            lastNameHasBeenEntered = true
+        } else {
+            lastNameHasBeenEntered = false
+        }
+        return lastNameHasBeenEntered
+    }
+    
+    func advanceToNextSignUpStep() {
+        validateFirstName(firstNameToSave)
+        validateLastName(lastNameToSave)
+        
+        if (firstNameHasBeenEntered == true && lastNameHasBeenEntered == true) {
+            performSegueWithIdentifier("toEmailSignUpSegue", sender: self)
+        } else {
+            let alertController = UIAlertController(title: "You must include both first and last name in order to continue.", message:  "", preferredStyle: .Alert)
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            }
+            alertController.addAction(doneAction)
+            
+            self.presentViewController(alertController, animated: true) {
+                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+        }
     }
 }
