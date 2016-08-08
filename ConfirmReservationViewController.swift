@@ -81,7 +81,7 @@ class ConfirmReservationViewController: UIViewController {
     
 extension ConfirmReservationViewController {
     @IBAction func confirmReservationButtonPressed(sender: AnyObject) {
-        let alertController = UIAlertController(title: "See you on the course!", message:  "\n Your reservation has been received. You can now find it listed in the Reservations section of your profile, where you can also view its details or delete it. \n \n We'll send you future reminders as the date and time of your reservation approaches.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "See you on the course!", message:  "\n Reservation number: 123456789 \n \n Your reservation has been received. You can now find it listed in the Reservations section of your profile, where you can also view its details or delete it. \n \n We'll send you future reminders as the date and time of your reservation approaches.", preferredStyle: .Alert)
         alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             self.closeAllReservationProcesses()

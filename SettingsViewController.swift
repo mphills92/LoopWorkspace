@@ -40,13 +40,14 @@ extension SettingsViewController {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
+    /*
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 0) {
             return 32
         } else {
             return 12
         }
-    }
+    }*/
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if (section == 3) {

@@ -11,7 +11,8 @@ import UIKit
 class SignUpProfilePictureViewController: UITableViewController {
    
     @IBOutlet weak var userProfileImageView: UIImageView!
-    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var skipStepTableViewCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,6 @@ class SignUpProfilePictureViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         userProfileImageView.layer.cornerRadius = 8
-        
-        continueButtonDisabledState()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,15 +33,19 @@ class SignUpProfilePictureViewController: UITableViewController {
 }
 
 extension SignUpProfilePictureViewController {
-    
-    func continueButtonEnabledState() {
-        self.continueButton.enabled = true
-        self.continueButton.setTitleColor(UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0), forState: .Normal)
+
+    @IBAction func addPhotoButtonPressed(sender: AnyObject) {
     }
     
-    func continueButtonDisabledState() {
-        self.continueButton.enabled = false
-        self.continueButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if cellClicked == skipStepTableViewCell {
+            
+        }
     }
 }
 

@@ -10,6 +10,8 @@ import UIKit
 
 class GolferCheckInViewController: UIViewController {
 
+    
+    @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var checkInButton: UIButton!
     @IBOutlet weak var bottomButtonHolderView: UIView!
     
@@ -31,6 +33,10 @@ class GolferCheckInViewController: UIViewController {
         bottomButtonHolderView.layer.shadowColor = UIColor.blackColor().CGColor
         bottomButtonHolderView.layer.shadowOpacity = 0.25
         bottomButtonHolderView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        
+        reservationSnapshotView.layer.shadowColor = UIColor.blackColor().CGColor
+        reservationSnapshotView.layer.shadowOpacity = 0.25
+        reservationSnapshotView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
 
         checkInButton.layer.cornerRadius = 20
     }

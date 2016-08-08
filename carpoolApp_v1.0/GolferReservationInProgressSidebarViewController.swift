@@ -10,11 +10,21 @@ import UIKit
 
 class GolferReservationInProgressSidebarViewController: UIViewController {
     
+    @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var reservationCompleteButton: UIButton!
+    @IBOutlet weak var bottomButtonHolderView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = UIRectEdge.None
+        
+        bottomButtonHolderView.layer.shadowColor = UIColor.blackColor().CGColor
+        bottomButtonHolderView.layer.shadowOpacity = 0.25
+        bottomButtonHolderView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        
+        reservationSnapshotView.layer.shadowColor = UIColor.blackColor().CGColor
+        reservationSnapshotView.layer.shadowOpacity = 0.25
+        reservationSnapshotView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
         reservationCompleteButton.layer.cornerRadius = 20
         
