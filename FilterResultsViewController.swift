@@ -173,24 +173,27 @@ extension FilterResultsViewController {
             cell.accessoryType = .None
         }
     }
-    
-    /*
-    func evaluateButtonState() {
-        if (noCellIsSelected == false || selectedDistance != 20) {
-            saveFiltersButton.enabled = true
-            saveFiltersButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            saveFiltersButton.backgroundColor = UIColor(red: 0/255, green: 51/255, blue: 0/155, alpha: 1.0)
-        } else {
-            saveFiltersButton.enabled = false
-            saveFiltersButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
-            saveFiltersButton.backgroundColor = UIColor.groupTableViewBackgroundColor()
-        }
-    }*/
 
     @IBAction func distanceSliderValueChanged(sender: UISlider) {
+        var increment: Float = 5
+        var newValue: Float = sender.value / increment
+        sender.value = floor(newValue) * increment
+
+        var formatted: String {
+            let formatter = NSNumberFormatter()
+            formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            formatter.minimumFractionDigits = 0
+            return formatter.stringFromNumber(sender.value) ?? ""
+        }
+        
+        distanceSliderLabel.text  = "\(formatted) mi"
+        
+        
+        /*
         var currentValue = Int(sender.value)
+        distanceSlider.setValue((Float((distanceSlider.value + 2.5) / 5) * 5), animated: false)
         distanceSliderLabel.text = "\(currentValue) mi"
         selectedDistance = currentValue
-        //evaluateButtonState()
+         */
     }
 }
