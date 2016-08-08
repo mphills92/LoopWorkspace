@@ -10,6 +10,13 @@ import UIKit
 
 class ChooseTimeViewController: UIViewController {
     
+    // Dummy data!!!!
+    var validStartTimeAsString = "23:59:00"
+    var validStartTimeAsNSDate = NSDate()
+    
+    var validEndTimeAsString = "12:00:00"
+    var validEndTimeAsNSDate = NSDate()
+    
     @IBOutlet weak var searchCaddiesButton: UIButton!
     @IBOutlet weak var chooseTimePicker: UIDatePicker!
     @IBOutlet weak var pickerBackgroundView: UIView!
@@ -62,6 +69,7 @@ class ChooseTimeViewController: UIViewController {
         searchCaddiesButton.layer.cornerRadius = 20
         
         timestampOnLoad()
+        validHours()
         
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
         
@@ -89,7 +97,23 @@ extension ChooseTimeViewController {
         dateFormatter.timeStyle = .ShortStyle
         let convertedTime = dateFormatter.stringFromDate(selectedDate)
         selectedTimeToSend = convertedTime
+        
+        
     }
+    
+    func validHours() {
+        dateFormatter.dateFormat = "HH:mm:ss"
+        validStartTimeAsNSDate = dateFormatter.dateFromString(validStartTimeAsString)!
+        validEndTimeAsNSDate = dateFormatter.dateFromString(validEndTimeAsString)!
+    }
+    
+    func evaluateSelectedTime(selectedTime: NSDate, validStartTime: NSDate, validEndTime: NSDate) -> Bool {
+        if ((selectedTime.earlierDate(validEndTime) == selectedTime) && (selectedTime.laterDate(validStartTime) == selectedTime)) {
+            return true
+        }
+        return false
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toChooseCaddieSegue") {

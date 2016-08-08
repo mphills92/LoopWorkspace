@@ -42,7 +42,7 @@ class ContainerConfirmReservationViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, 0, 0)
+        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
 
         caddieProfileImageView.layer.cornerRadius = 8
 

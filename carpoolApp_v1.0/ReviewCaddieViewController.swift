@@ -11,6 +11,7 @@ import UIKit
 class ReviewCaddieViewController: UIViewController {
     
 
+    @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var submitReviewButton: UIButton!
     @IBOutlet weak var bottomButtonHolderView: UIView!
     
@@ -21,6 +22,10 @@ class ReviewCaddieViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        reservationSnapshotView.layer.shadowColor = UIColor.blackColor().CGColor
+        reservationSnapshotView.layer.shadowOpacity = 0.25
+        reservationSnapshotView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
         bottomButtonHolderView.layer.shadowColor = UIColor.blackColor().CGColor
         bottomButtonHolderView.layer.shadowOpacity = 0.25
