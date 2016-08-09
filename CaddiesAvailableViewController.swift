@@ -18,7 +18,6 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
 
     var caddiesFound = true
     
-    
     let caddiesAvailable = Caddies.caddiesAvailable()
 
     // Pass data via segue.
@@ -86,6 +85,7 @@ extension CaddiesAvailableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ChooseAvailableCaddiesCell
         
         cell.caddiesAvailable = caddiesAvailable[indexPath.item]
+        cell.profileImageView.layer.masksToBounds = true
         
         return cell
     }

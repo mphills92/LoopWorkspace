@@ -11,19 +11,14 @@ import UIKit
 
 class SessionForCaddies {
  
-    /*
-  var title: String
-  var speaker: String
-  var room: String
-  var time: String
-  var backgroundImage: UIImage
- */
-    
     var name: String
     var rounds: Int
     var membership: String
     var handicap: Float
-    //var backgroundImage: UIImage
+    var golfKnowledge: Float
+    var greenReading: Float
+    var customerSatisfaction: Float
+    var profileImage: UIImage
   
     /*
   var roomAndTime: String {
@@ -33,12 +28,15 @@ class SessionForCaddies {
   }
  */
   
-    init(name: String, rounds: Int, membership: String, handicap: Float) {
+    init(name: String, rounds: Int, membership: String, handicap: Float, golfKnowledge: Float, greenReading: Float, customerSatisfaction: Float, profileImage: UIImage) {
         self.name = name
         self.rounds = rounds
         self.membership = membership
         self.handicap = handicap
-        //self.backgroundImage = backgroundImage
+        self.golfKnowledge = golfKnowledge
+        self.greenReading = greenReading
+        self.customerSatisfaction = customerSatisfaction
+        self.profileImage = profileImage
     }
     
     convenience init(dictionary: NSDictionary) {
@@ -46,9 +44,12 @@ class SessionForCaddies {
         let rounds = dictionary["Rounds"] as? Int
         let membership = dictionary["Membership"] as? String
         let handicap = dictionary["Handicap"] as? Float
-        //let backgroundName = dictionary["Background"] as? String
-        //let backgroundImage = UIImage(named: backgroundName!)
-        self.init(name: name!, rounds: rounds!, membership: membership!, handicap: handicap!)
+        let golfKnowledge = dictionary["Golf Knowledge"] as? Float
+        let greenReading = dictionary["Green Reading"] as? Float
+        let customerSatisfaction = dictionary["Customer Satisfaction"] as? Float
+        let profileImageName = dictionary["Caddie Placeholder Image"] as? String
+        let profileImage = UIImage(named: profileImageName!)
+        self.init(name: name!, rounds: rounds!, membership: membership!, handicap: handicap!, golfKnowledge: golfKnowledge!, greenReading: greenReading!, customerSatisfaction: customerSatisfaction!, profileImage: profileImage!)
     }
 
 }

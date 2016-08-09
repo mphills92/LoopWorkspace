@@ -11,8 +11,14 @@
 		<real>3.5</real>
 		<key>Membership</key>
 		<string>July 2016</string>
-		<key>Background</key>
-		<string>Inspiration-01</string>
+		<key>Caddie Placeholder Image</key>
+		<string>CaddiePlaceholderImage1</string>
+		<key>Golf Knowledge</key>
+		<real>3.45</real>
+		<key>Green Reading</key>
+		<real>2.87</real>
+		<key>Customer Satisfaction</key>
+		<real>4.3</real>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -23,8 +29,14 @@
 		<integer>2</integer>
 		<key>Membership</key>
 		<string>September 2016</string>
-		<key>Background</key>
-		<string>Inspiration-02</string>
+		<key>Caddie Placeholder Image</key>
+		<string>CaddiePlaceholderImage2</string>
+		<key>Golf Knowledge</key>
+		<real>4.3</real>
+		<key>Green Reading</key>
+		<real>4.1</real>
+		<key>Customer Satisfaction</key>
+		<real>3.9</real>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -35,8 +47,14 @@
 		<integer>6</integer>
 		<key>Membership</key>
 		<string>July 2016</string>
-		<key>Background</key>
-		<string>Inspiration-03</string>
+		<key>Caddie Placeholder Image</key>
+		<string>CaddiePlaceholderImage3</string>
+		<key>Golf Knowledge</key>
+		<real>3.54</real>
+		<key>Green Reading</key>
+		<real>2.87</real>
+		<key>Customer Satisfaction</key>
+		<real>4.78</real>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -47,32 +65,14 @@
 		<real>2.4</real>
 		<key>Membership</key>
 		<string>July 2016</string>
-		<key>Background</key>
-		<string>Inspiration-04</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>Matt Hills</string>
-		<key>Rounds</key>
-		<integer>16</integer>
-		<key>Handicap</key>
-		<real>12.8</real>
-		<key>Membership</key>
-		<string>August 2016</string>
-		<key>Background</key>
-		<string>Inspiration-05</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>Doug Wright</string>
-		<key>Rounds</key>
-		<integer>1</integer>
-		<key>Handicap</key>
-		<real>7.9</real>
-		<key>Membership</key>
-		<string>July 2016</string>
-		<key>Background</key>
-		<string>Inspriation-06</string>
+		<key>Caddie Placeholder Image</key>
+		<string>CaddiePlaceholderImage4</string>
+		<key>Golf Knowledge</key>
+		<real>4.76</real>
+		<key>Green Reading</key>
+		<real>2.3</real>
+		<key>Customer Satisfaction</key>
+		<real>3.67</real>
 	</dict>
 </array>
 </plist>
