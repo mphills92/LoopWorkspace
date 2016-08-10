@@ -71,7 +71,7 @@ extension AboutUsPageViewController: UIPageViewControllerDataSource {
         let previousIndex = viewControllerIndex - 1
         
         guard previousIndex >= 0 else {
-            return orderedViewControllers.last
+            return nil //orderedViewControllers.last
         }
         
         guard orderedViewControllers.count > previousIndex else {
@@ -90,7 +90,7 @@ extension AboutUsPageViewController: UIPageViewControllerDataSource {
         let orderedViewControllersCount = orderedViewControllers.count
         
         guard orderedViewControllersCount != nextIndex else {
-            return orderedViewControllers.first
+            return nil //orderedViewControllers.first
         }
         
         guard orderedViewControllersCount > nextIndex else {
