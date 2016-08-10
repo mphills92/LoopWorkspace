@@ -115,8 +115,8 @@ extension AboutUsPageViewController: UIPageViewControllerDataSource {
     private func stylePageControl() {
         let pageControl = UIPageControl.appearanceWhenContainedInInstancesOfClasses([self.dynamicType])
         
-        pageControl.currentPageIndicatorTintColor = UIColor.darkGrayColor() //(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-        pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
+        pageControl.currentPageIndicatorTintColor = UIColor.lightGrayColor()
+        pageControl.pageIndicatorTintColor = UIColor.groupTableViewBackgroundColor()
         pageControl.backgroundColor = UIColor.clearColor()
     }
 }

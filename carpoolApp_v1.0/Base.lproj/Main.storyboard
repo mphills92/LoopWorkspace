@@ -3928,7 +3928,7 @@ deserves a caddie.</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AboutUsBackgroundPage2" translatesAutoresizingMaskIntoConstraints="NO" id="mUk-6L-9F2">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="But then we realized something..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrx-CS-KVt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="But then, one day, we realized something..." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrx-CS-KVt">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Xrz-zS-pMD">
@@ -3948,12 +3948,25 @@ deserves a caddie.</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjE-So-drr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We've played golf: just for fun, competitively, and everything in between." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjE-So-drr">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <string key="text">We've played golf 
-- tons of it.</string>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="IQk-Bs-nOI">
+                                        <variation key="widthClass=compact" constant="200"/>
+                                    </constraint>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IQk-Bs-nOI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="IQk-Bs-nOI"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -3961,10 +3974,10 @@ deserves a caddie.</string>
                             <constraint firstItem="mUk-6L-9F2" firstAttribute="centerX" secondItem="ZMf-lv-EYB" secondAttribute="centerX" id="0P6-eZ-meg"/>
                             <constraint firstItem="yrx-CS-KVt" firstAttribute="centerX" secondItem="ZMf-lv-EYB" secondAttribute="centerX" id="1Ql-K6-cUV"/>
                             <constraint firstItem="zjE-So-drr" firstAttribute="top" secondItem="mUk-6L-9F2" secondAttribute="top" id="3v8-9B-sVa">
-                                <variation key="widthClass=compact" constant="30"/>
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="zjE-So-drr" firstAttribute="leading" secondItem="ZMf-lv-EYB" secondAttribute="leadingMargin" constant="-40" id="5SS-pU-pqs">
-                                <variation key="widthClass=compact" constant="20"/>
+                                <variation key="widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="zjE-So-drr" secondAttribute="trailing" constant="152" id="FoV-ch-Esi">
                                 <variation key="widthClass=compact" constant="140"/>
@@ -3987,7 +4000,7 @@ deserves a caddie.</string>
                                 <variation key="widthClass=compact" constant="100"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="yrx-CS-KVt" secondAttribute="trailing" constant="30" id="ufH-va-aUK">
-                                <variation key="widthClass=compact" constant="10"/>
+                                <variation key="widthClass=compact" constant="20"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -4025,7 +4038,7 @@ deserves a caddie.</string>
                                 <include reference="bOf-dG-XO9"/>
                                 <include reference="3v8-9B-sVa"/>
                                 <include reference="5SS-pU-pqs"/>
-                                <include reference="FoV-ch-Esi"/>
+                                <exclude reference="FoV-ch-Esi"/>
                                 <exclude reference="m3e-MI-Mud"/>
                                 <exclude reference="1Ql-K6-cUV"/>
                                 <include reference="axF-cr-8Fn"/>
@@ -4067,10 +4080,10 @@ deserves a caddie.</string>
                                 <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="tDu-JM-Sga" firstAttribute="leading" secondItem="hty-dE-7w4" secondAttribute="leadingMargin" constant="-171" id="jGc-RS-Nct">
-                                <variation key="widthClass=compact" constant="10"/>
+                                <variation key="widthClass=compact" constant="15"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="tDu-JM-Sga" secondAttribute="trailing" constant="-172" id="kIy-kq-w29">
-                                <variation key="widthClass=compact" constant="10"/>
+                                <variation key="widthClass=compact" constant="15"/>
                             </constraint>
                             <constraint firstItem="IPe-QV-Rgr" firstAttribute="centerX" secondItem="hty-dE-7w4" secondAttribute="centerX" id="kRP-h3-VeA"/>
                             <constraint firstItem="IPe-QV-Rgr" firstAttribute="height" secondItem="hty-dE-7w4" secondAttribute="height" id="lOE-dz-TbH"/>
@@ -4157,7 +4170,7 @@ for the game of golf.</string>
                                 <variation key="widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="DI3-oo-Ctn" firstAttribute="top" secondItem="Ych-i0-83E" secondAttribute="top" id="aOc-vD-VGu">
-                                <variation key="widthClass=compact" constant="70"/>
+                                <variation key="widthClass=compact" constant="60"/>
                             </constraint>
                             <constraint firstItem="DI3-oo-Ctn" firstAttribute="centerY" secondItem="vTY-0y-I9p" secondAttribute="centerY" id="byj-eD-EG3">
                                 <variation key="widthClass=compact" constant="-80"/>
@@ -16601,10 +16614,10 @@ for the game of golf.</string>
                                 <variation key="widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="QUk-Bd-BIB" firstAttribute="leading" secondItem="Unj-OF-wtt" secondAttribute="leadingMargin" constant="20" id="J3h-kf-7zR">
-                                <variation key="widthClass=compact" constant="10"/>
+                                <variation key="widthClass=compact" constant="15"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="QUk-Bd-BIB" secondAttribute="trailing" constant="20" id="UaA-U7-Qiq">
-                                <variation key="widthClass=compact" constant="10"/>
+                                <variation key="widthClass=compact" constant="15"/>
                             </constraint>
                             <constraint firstItem="n6X-xE-be0" firstAttribute="width" secondItem="Unj-OF-wtt" secondAttribute="width" id="Y60-0k-EBg"/>
                             <constraint firstItem="n6X-xE-be0" firstAttribute="centerX" secondItem="Unj-OF-wtt" secondAttribute="centerX" id="hcR-11-hRd"/>
@@ -17591,8 +17604,8 @@ If you've got a promo code, enter it here.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="AboutUsBackgroundPage1" width="414" height="736"/>
-        <image name="AboutUsBackgroundPage2" width="414" height="736"/>
+        <image name="AboutUsBackgroundPage1" width="634" height="1125"/>
+        <image name="AboutUsBackgroundPage2" width="634" height="1125"/>
         <image name="AboutUsBackgroundPage3" width="414" height="736"/>
         <image name="AboutUsBackgroundPage4" width="414" height="736"/>
         <image name="AboutUsBackgroundPage5" width="414" height="736"/>

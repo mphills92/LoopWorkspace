@@ -24,7 +24,7 @@ extension ContainerAboutUsViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 3) {
-           UIApplication.sharedApplication().openURL(NSURL(string:"http://images.wildammo.com/wp-content/uploads/2012/08/9.gif")!)
+           UIApplication.sharedApplication().openURL(NSURL(string:"http://looptechnologies.github.io")!)
         }
     }
     
