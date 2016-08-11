@@ -31,10 +31,12 @@ class EditProfileViewController: UITableViewController, UITextFieldDelegate {
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         
-        navigationItem.title = "Edit Account"
+        navigationItem.title = "Edit Profile"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, 0, 0)
         
         userProfileImageView.layer.cornerRadius = 8
         

@@ -25,14 +25,3 @@ class NotificationsSettingsViewController: UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 }
-
-extension NotificationsSettingsViewController {
-    
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0) {
-            return 32
-        } else {
-            return 12
-        }
-    }
-}

@@ -1,5 +1,5 @@
 //
-//  AvailableCities.swift
+//  AvailableCities&Courses.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 8/1/16.
@@ -37,4 +37,19 @@ class CitiesAvailable {
                     "Balcones Heights, Texas",
                     "Lackland Heights, Texas",
                     "Castle Hills, Texas"]
+}
+
+class PrivateCourses {
+    
+    var courses = ["The Woodlands Country Club",
+                   "The Club at Carlton Woods Creekside",
+                   "Hearthstone Country Club",
+                   "Augusta Country Club",
+                   "Oakhurst Country Club"]
+    
+    var locations = ["The Woodlands, Texas",
+                   "The Woodlands, Texas",
+                   "Cypress, Texas",
+                   "Spring, Texas",
+                   "Kingwood, Texas"]
 }

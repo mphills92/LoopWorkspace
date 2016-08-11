@@ -64,6 +64,11 @@
 		C95A00E21CB5CBEB008237B1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95A00E11CB5CBEB008237B1 /* SWRevealViewController.m */; };
 		C95A00E81CB5F9D6008237B1 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A00E71CB5F9D5008237B1 /* LandingPageViewController.swift */; };
 		C98784881D15CE6600EED776 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98784871D15CE6600EED776 /* ChangePasswordViewController.swift */; };
+		C9899EB91D5BA6930020CB89 /* ChooseCourseSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9899EB81D5BA6930020CB89 /* ChooseCourseSegmentedControl.swift */; };
+		C9899EBB1D5BAE370020CB89 /* MyPrivateCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9899EBA1D5BAE370020CB89 /* MyPrivateCoursesViewController.swift */; };
+		C9899EBE1D5BB6720020CB89 /* PrivateCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9899EBD1D5BB6720020CB89 /* PrivateCourseCell.swift */; };
+		C9899EC01D5BBB1D0020CB89 /* AddPrivateCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9899EBF1D5BBB1D0020CB89 /* AddPrivateCourseViewController.swift */; };
+		C9899EC21D5BF1130020CB89 /* SignUpChoosePrivateCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9899EC11D5BF1130020CB89 /* SignUpChoosePrivateCoursesViewController.swift */; };
 		C990CF961D1B8F56005E05F2 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990CF951D1B8F56005E05F2 /* HelpViewController.swift */; };
 		C990CF991D1F3FBA005E05F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990CF981D1F3FBA005E05F2 /* LoginViewController.swift */; };
 		C990CF9C1D207615005E05F2 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C990CF9B1D207615005E05F2 /* ForgotPasswordViewController.swift */; };
@@ -81,7 +86,7 @@
 		C994B4CD1D145E23009848F2 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4CC1D145E23009848F2 /* NotificationsViewController.swift */; };
 		C994B4CF1D15A67F009848F2 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4CE1D15A67F009848F2 /* ChangeEmailViewController.swift */; };
 		C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4D21D15A83E009848F2 /* UserInformation.swift */; };
-		C99AD9191D4FA962001ABA09 /* AvailableCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD9181D4FA962001ABA09 /* AvailableCities.swift */; };
+		C99AD9191D4FA962001ABA09 /* AvailableCities&Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD9181D4FA962001ABA09 /* AvailableCities&Courses.swift */; };
 		C99AD91B1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD91A1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift */; };
 		C99AD91D1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD91C1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift */; };
 		C99AD91F1D52C41B001ABA09 /* ConfirmPaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD91E1D52C41B001ABA09 /* ConfirmPaymentsViewController.swift */; };
@@ -180,6 +185,11 @@
 		C95A00E11CB5CBEB008237B1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		C95A00E71CB5F9D5008237B1 /* LandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		C98784871D15CE6600EED776 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		C9899EB81D5BA6930020CB89 /* ChooseCourseSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseCourseSegmentedControl.swift; sourceTree = "<group>"; };
+		C9899EBA1D5BAE370020CB89 /* MyPrivateCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPrivateCoursesViewController.swift; sourceTree = "<group>"; };
+		C9899EBD1D5BB6720020CB89 /* PrivateCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateCourseCell.swift; sourceTree = "<group>"; };
+		C9899EBF1D5BBB1D0020CB89 /* AddPrivateCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrivateCourseViewController.swift; sourceTree = "<group>"; };
+		C9899EC11D5BF1130020CB89 /* SignUpChoosePrivateCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpChoosePrivateCoursesViewController.swift; sourceTree = "<group>"; };
 		C990CF951D1B8F56005E05F2 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = ../HelpViewController.swift; sourceTree = "<group>"; };
 		C990CF981D1F3FBA005E05F2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C990CF9B1D207615005E05F2 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = ../ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +207,7 @@
 		C994B4CC1D145E23009848F2 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsViewController.swift; path = ../NotificationsViewController.swift; sourceTree = "<group>"; };
 		C994B4CE1D15A67F009848F2 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		C994B4D21D15A83E009848F2 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
-		C99AD9181D4FA962001ABA09 /* AvailableCities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableCities.swift; sourceTree = "<group>"; };
+		C99AD9181D4FA962001ABA09 /* AvailableCities&Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AvailableCities&Courses.swift"; sourceTree = "<group>"; };
 		C99AD91A1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationFeeInformationViewController.swift; sourceTree = "<group>"; };
 		C99AD91C1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyPromoCodeViewController.swift; sourceTree = "<group>"; };
 		C99AD91E1D52C41B001ABA09 /* ConfirmPaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentsViewController.swift; sourceTree = "<group>"; };
@@ -296,13 +306,13 @@
 			name = Upcoming;
 			sourceTree = "<group>";
 		};
-		C944F1C41D408E27008E2B4C /* Edit Account Settings */ = {
+		C944F1C41D408E27008E2B4C /* Edit Profile Settings */ = {
 			isa = PBXGroup;
 			children = (
 				C956C1161D3D4E940057B776 /* EditProfileViewController.swift */,
 				C994B4D01D15A6C5009848F2 /* Edit Profile Subviews */,
 			);
-			name = "Edit Account Settings";
+			name = "Edit Profile Settings";
 			sourceTree = "<group>";
 		};
 		C944F1C51D408E50008E2B4C /* Notifications Settings */ = {
@@ -381,6 +391,7 @@
 				C956FD331D256D8B00E7143B /* CalendarCell.swift */,
 				C990CFA81D21D2F2005E05F2 /* ReservationRecapCell.swift */,
 				C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */,
+				C9899EBD1D5BB6720020CB89 /* PrivateCourseCell.swift */,
 			);
 			name = Views;
 			path = ..;
@@ -402,7 +413,8 @@
 			isa = PBXGroup;
 			children = (
 				C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */,
-				C944F1C41D408E27008E2B4C /* Edit Account Settings */,
+				C944F1C41D408E27008E2B4C /* Edit Profile Settings */,
+				C9899EBC1D5BAE3C0020CB89 /* My Private Courses Settings */,
 				C944F1CA1D408EB8008E2B4C /* Payments Settings */,
 				C944F1C51D408E50008E2B4C /* Notifications Settings */,
 				C944F1C61D408E65008E2B4C /* Privacy Settings */,
@@ -480,6 +492,7 @@
 				C956FD261D242E0B00E7143B /* ReservationChooseCourseViewController.swift */,
 				C956FD281D2430AB00E7143B /* ContainerReservationChooseCourseViewController.swift */,
 				C9359E101D4D28A20027D40D /* FilterResultsViewController.swift */,
+				C9899EB81D5BA6930020CB89 /* ChooseCourseSegmentedControl.swift */,
 			);
 			name = "Choose Course";
 			path = ..;
@@ -560,6 +573,15 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		C9899EBC1D5BAE3C0020CB89 /* My Private Courses Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C9899EBA1D5BAE370020CB89 /* MyPrivateCoursesViewController.swift */,
+				C9899EBF1D5BBB1D0020CB89 /* AddPrivateCourseViewController.swift */,
+			);
+			name = "My Private Courses Settings";
+			sourceTree = "<group>";
+		};
 		C990CF971D1B8F64005E05F2 /* Help Center */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +611,7 @@
 				C990CF9D1D209512005E05F2 /* SignUpNameInfoViewController.swift */,
 				C990CFA01D209AFE005E05F2 /* SignUpContactInfoViewController.swift */,
 				C990CFA21D20A175005E05F2 /* SignUpProfilePictureViewController.swift */,
+				C9899EC11D5BF1130020CB89 /* SignUpChoosePrivateCoursesViewController.swift */,
 				C990CFA61D219D93005E05F2 /* SignUpPasswordViewController.swift */,
 			);
 			name = "Sign Up Subviews";
@@ -617,7 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				C95385C91D0F5B93007BCA15 /* CoursesAndCaddies.swift */,
-				C99AD9181D4FA962001ABA09 /* AvailableCities.swift */,
+				C99AD9181D4FA962001ABA09 /* AvailableCities&Courses.swift */,
 				C95385CB1D0F5B98007BCA15 /* SessionForCaddies.swift */,
 				C956FD2E1D24356600E7143B /* SessionForCourses.swift */,
 			);
@@ -869,7 +892,9 @@
 			files = (
 				C956C1171D3D4E940057B776 /* EditProfileViewController.swift in Sources */,
 				C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */,
+				C9899EC21D5BF1130020CB89 /* SignUpChoosePrivateCoursesViewController.swift in Sources */,
 				C99AD91D1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift in Sources */,
+				C9899EBE1D5BB6720020CB89 /* PrivateCourseCell.swift in Sources */,
 				C990CF991D1F3FBA005E05F2 /* LoginViewController.swift in Sources */,
 				C956FD2F1D24356600E7143B /* SessionForCourses.swift in Sources */,
 				C95385D01D10B8EE007BCA15 /* ConfirmReservationViewController.swift in Sources */,
@@ -885,6 +910,7 @@
 				C956FD221D2420BE00E7143B /* Login.swift in Sources */,
 				C990CFA11D209AFE005E05F2 /* SignUpContactInfoViewController.swift in Sources */,
 				C955272A1D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift in Sources */,
+				C9899EBB1D5BAE370020CB89 /* MyPrivateCoursesViewController.swift in Sources */,
 				C95527301D3EA8850069554C /* ReviewCaddieViewController.swift in Sources */,
 				C990CFA91D21D2F2005E05F2 /* ReservationRecapCell.swift in Sources */,
 				C990CF9C1D207615005E05F2 /* ForgotPasswordViewController.swift in Sources */,
@@ -911,6 +937,7 @@
 				C99AD91B1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift in Sources */,
 				C95385D51D120CC5007BCA15 /* ProfileSegmentedControl.swift in Sources */,
 				C9359E111D4D28A30027D40D /* FilterResultsViewController.swift in Sources */,
+				C9899EB91D5BA6930020CB89 /* ChooseCourseSegmentedControl.swift in Sources */,
 				C994B4CB1D145D24009848F2 /* CaddyHistoryViewController.swift in Sources */,
 				C95385C21D0F5A41007BCA15 /* UltravisualLayout.swift in Sources */,
 				C956C1111D3756300057B776 /* ChooseTimeViewController.swift in Sources */,
@@ -939,10 +966,11 @@
 				C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */,
 				C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */,
 				C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */,
+				C9899EC01D5BBB1D0020CB89 /* AddPrivateCourseViewController.swift in Sources */,
 				C944F1BA1D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift in Sources */,
 				C994B4CD1D145E23009848F2 /* NotificationsViewController.swift in Sources */,
 				C990CFA71D219D93005E05F2 /* SignUpPasswordViewController.swift in Sources */,
-				C99AD9191D4FA962001ABA09 /* AvailableCities.swift in Sources */,
+				C99AD9191D4FA962001ABA09 /* AvailableCities&Courses.swift in Sources */,
 				C944F1D91D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift in Sources */,
 				C95A00E81CB5F9D6008237B1 /* LandingPageViewController.swift in Sources */,
 				C9EE3F201D090A5900F86EF2 /* CaddiesAvailableViewController.swift in Sources */,

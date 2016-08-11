@@ -187,6 +187,7 @@ extension FilterResultsViewController {
         }
         
         distanceSliderLabel.text  = "\(formatted) mi"
+        selectedDistance = Int(formatted)!
         
         
         /*

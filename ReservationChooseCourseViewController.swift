@@ -12,6 +12,7 @@ class ReservationChooseCourseViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var resultsFilterButton: UIButton!
+    @IBOutlet weak var segmentedControlBackgroundView: UIView!
     @IBOutlet weak var resultsFilterButtonTopConstraint: NSLayoutConstraint!
     
     let gradientLayer = CAGradientLayer()
@@ -37,6 +38,10 @@ class ReservationChooseCourseViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        segmentedControlBackgroundView.layer.shadowColor = UIColor.blackColor().CGColor
+        segmentedControlBackgroundView.layer.shadowOpacity = 0.25
+        segmentedControlBackgroundView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
         resultsFilterButton.layer.cornerRadius = 15
         resultsFilterButton.layer.shadowColor = UIColor.blackColor().CGColor
@@ -93,12 +98,12 @@ extension ReservationChooseCourseViewController {
         
         if (upwardScroll == true) {
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.resultsFilterButtonTopConstraint.constant = -80
+                self.resultsFilterButtonTopConstraint.constant = 0
                 self.view.layoutIfNeeded()
                 }, completion: nil)
         } else {
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.resultsFilterButtonTopConstraint.constant = 20
+                self.resultsFilterButtonTopConstraint.constant = 64
                 self.view.layoutIfNeeded()
                 }, completion: nil)
         }

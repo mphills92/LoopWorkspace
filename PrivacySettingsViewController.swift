@@ -28,14 +28,6 @@ class PrivacySettingsViewController: UITableViewController {
 
 extension PrivacySettingsViewController {
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0) {
-            return 32
-        } else {
-            return 42
-        }
-    }
-    
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if (section == 0) {
             return 65

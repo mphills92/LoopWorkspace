@@ -41,6 +41,11 @@ class UserAccount {
     var userHasCaddieAccount: Bool = true
 }
 
+class UserPrivateCourses {
+    var privateCourseNames = ["Augusta Pines Country Club"]
+    var privateCourseLocations = ["Spring, Texas"]
+}
+
 class UserReferralCode {
     var referralCode: String = "ABC123"
 }
