@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContainerReservationChooseCourseViewController: UICollectionViewController {
+class ContainerReservationChooseCourseViewController: UICollectionViewController, UIGestureRecognizerDelegate {
     
     let coursesAvailable = Courses.coursesAvailable()
     
@@ -20,9 +20,16 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionView!.backgroundColor = UIColor.blackColor()
         collectionView!.layoutIfNeeded()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        longPressRecognizer.minimumPressDuration = 0.35
+        longPressRecognizer.delaysTouchesBegan = true
+        longPressRecognizer.delegate = self
+        self.collectionView?.addGestureRecognizer(longPressRecognizer)
     }
 }
 
@@ -60,7 +67,7 @@ extension ContainerReservationChooseCourseViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! CoursesCollectionCell
-
+        
         selectedCourseNameToSend = (cell.courseNameLabel.text)!
         selectedLocationToSend = (cell.courseLocationLabel.text)!
         
@@ -68,11 +75,26 @@ extension ContainerReservationChooseCourseViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+
         if (segue.identifier == "courseHasBeenSelectedSegue") {
             let destinationVC = segue.destinationViewController as! ChooseDateViewController
             
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
             destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
+        } else if (segue.identifier == "toCourseDetailsSegue") {
+            var indexPath: NSIndexPath = (sender as! NSIndexPath)
+            let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! CoursesCollectionCell
+            
+            selectedCourseNameToSend = (cell.courseNameLabel.text)!
+            
+            let navigationController = segue.destinationViewController as? UINavigationController
+            
+            let destinationVC = navigationController!.topViewController as! CourseDetailsViewController
+            
+            destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
+            
         }
     }
     
@@ -91,5 +113,27 @@ extension ContainerReservationChooseCourseViewController {
             
         }
         NSNotificationCenter.defaultCenter().postNotificationName("userHasSwipedContainerNotification", object: upwardScroll)
+    }
+    
+    func handleLongPress(gestureRecognizer: UIGestureRecognizer) {
+        if (gestureRecognizer.state != .Began) {
+            return
+        }
+        
+        let touchPoint = gestureRecognizer.locationInView(self.collectionView)
+        let indexPath = self.collectionView?.indexPathForItemAtPoint(touchPoint)
+        
+        if let index = indexPath {
+            //var cell = self.collectionView?.cellForItemAtIndexPath(index)
+            
+            var cell = self.collectionView?.cellForItemAtIndexPath(index) as! CoursesCollectionCell
+            
+            //cell.courseNameLabel.textColor = UIColor.blackColor()
+            
+            performSegueWithIdentifier("toCourseDetailsSegue", sender: indexPath)
+            //print("long press in cell \(coursesAvailable[indexPath!.item])")
+        } else {
+            //print("no long press")
+        }
     }
 }

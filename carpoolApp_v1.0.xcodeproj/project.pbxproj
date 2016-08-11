@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90EFBA51D5D03EC00707373 /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EFBA41D5D03EC00707373 /* CourseDetailsViewController.swift */; };
+		C90EFBA81D5D1C3800707373 /* CourseDetailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EFBA71D5D1C3800707373 /* CourseDetailsPageViewController.swift */; };
 		C92042C41D2DB05A003654CB /* CaddieModeLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */; };
 		C92042C71D2DB9E4003654CB /* CaddieModeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */; };
 		C9359E091D479F370027D40D /* AboutUsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E081D479F370027D40D /* AboutUsPageViewController.swift */; };
@@ -120,6 +122,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C90EFBA41D5D03EC00707373 /* CourseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewController.swift; sourceTree = "<group>"; };
+		C90EFBA71D5D1C3800707373 /* CourseDetailsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailsPageViewController.swift; sourceTree = "<group>"; };
 		C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeLandingPageViewController.swift; sourceTree = "<group>"; };
 		C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeSegmentedControl.swift; sourceTree = "<group>"; };
 		C9359E081D479F370027D40D /* AboutUsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsPageViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C90EFBA61D5D1C1000707373 /* Course Details */ = {
+			isa = PBXGroup;
+			children = (
+				C90EFBA41D5D03EC00707373 /* CourseDetailsViewController.swift */,
+				C90EFBA71D5D1C3800707373 /* CourseDetailsPageViewController.swift */,
+			);
+			name = "Course Details";
+			sourceTree = "<group>";
+		};
 		C91D13DC1D0E7DAE00D177B4 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,6 +506,7 @@
 				C956FD281D2430AB00E7143B /* ContainerReservationChooseCourseViewController.swift */,
 				C9359E101D4D28A20027D40D /* FilterResultsViewController.swift */,
 				C9899EB81D5BA6930020CB89 /* ChooseCourseSegmentedControl.swift */,
+				C90EFBA61D5D1C1000707373 /* Course Details */,
 			);
 			name = "Choose Course";
 			path = ..;
@@ -911,6 +925,7 @@
 				C990CFA11D209AFE005E05F2 /* SignUpContactInfoViewController.swift in Sources */,
 				C955272A1D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift in Sources */,
 				C9899EBB1D5BAE370020CB89 /* MyPrivateCoursesViewController.swift in Sources */,
+				C90EFBA51D5D03EC00707373 /* CourseDetailsViewController.swift in Sources */,
 				C95527301D3EA8850069554C /* ReviewCaddieViewController.swift in Sources */,
 				C990CFA91D21D2F2005E05F2 /* ReservationRecapCell.swift in Sources */,
 				C990CF9C1D207615005E05F2 /* ForgotPasswordViewController.swift in Sources */,
@@ -964,6 +979,7 @@
 				C95385CA1D0F5B93007BCA15 /* CoursesAndCaddies.swift in Sources */,
 				C956FD291D2430AB00E7143B /* ContainerReservationChooseCourseViewController.swift in Sources */,
 				C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */,
+				C90EFBA81D5D1C3800707373 /* CourseDetailsPageViewController.swift in Sources */,
 				C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */,
 				C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */,
 				C9899EC01D5BBB1D0020CB89 /* AddPrivateCourseViewController.swift in Sources */,

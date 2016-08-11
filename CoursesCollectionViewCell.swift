@@ -13,6 +13,8 @@ class CoursesCollectionCell: UICollectionViewCell {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var imageCoverView: UIView!
+    @IBOutlet weak var holdForDetailsLabel: UILabel!
+    @IBOutlet weak var tapToSelectLabel: UILabel!
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var courseLocationLabel: UILabel!
     @IBOutlet weak var membershipHistoryLabel: UILabel!
@@ -50,6 +52,7 @@ class CoursesCollectionCell: UICollectionViewCell {
         
         courseLocationLabel.alpha = delta
         membershipHistoryLabel.alpha = delta
+        holdForDetailsLabel.alpha = delta
+        tapToSelectLabel.alpha = delta
     }
-    
 }

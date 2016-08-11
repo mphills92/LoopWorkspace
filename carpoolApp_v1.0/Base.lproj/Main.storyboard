@@ -2066,7 +2066,8 @@ deserves a caddie.</string>
                                                     <exclude reference="naB-IV-51B"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="139" y="10" width="60" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="kIi-oo-eSn"/>
                                                     <include reference="naB-IV-51B"/>
@@ -2090,7 +2091,8 @@ deserves a caddie.</string>
                                                     <exclude reference="wJH-1N-JWf"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="139" y="43" width="60" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="Yr8-X1-qzx"/>
                                                     <include reference="wJH-1N-JWf"/>
@@ -2114,7 +2116,8 @@ deserves a caddie.</string>
                                                     <exclude reference="kz3-qc-uB5"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="129" y="72" width="80" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="SMf-kf-q4z"/>
                                                     <include reference="kz3-qc-uB5"/>
@@ -2387,7 +2390,8 @@ deserves a caddie.</string>
                                                     <exclude reference="FGM-t8-uBW"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="162" y="10" width="60" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="8HY-O1-7ur"/>
                                                     <include reference="FGM-t8-uBW"/>
@@ -2411,7 +2415,8 @@ deserves a caddie.</string>
                                                     <exclude reference="jRo-Uw-rTK"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="162" y="43" width="60" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="XJ4-7V-p7h"/>
                                                     <include reference="jRo-Uw-rTK"/>
@@ -2435,7 +2440,8 @@ deserves a caddie.</string>
                                                     <exclude reference="jvb-zL-zEK"/>
                                                 </mask>
                                             </variation>
-                                            <variation key="widthClass=compact">
+                                            <variation key="widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="152" y="72" width="80" height="40"/>
                                                 <mask key="constraints">
                                                     <include reference="OTg-Cc-7c5"/>
                                                     <include reference="jvb-zL-zEK"/>
@@ -3910,7 +3916,7 @@ deserves a caddie.</string>
         <!--View Controller-->
         <scene sceneID="9Sj-l9-Y2p">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qdA-cf-d62" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUsSecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qdA-cf-d62" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mze-rZ-rmn"/>
                         <viewControllerLayoutGuide type="bottom" id="tGS-EL-MDr"/>
@@ -3963,7 +3969,7 @@ deserves a caddie.</string>
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mUk-6L-9F2" firstAttribute="centerX" secondItem="ZMf-lv-EYB" secondAttribute="centerX" id="0P6-eZ-meg"/>
                             <constraint firstItem="yrx-CS-KVt" firstAttribute="centerX" secondItem="ZMf-lv-EYB" secondAttribute="centerX" id="1Ql-K6-cUV"/>
@@ -4004,19 +4010,19 @@ deserves a caddie.</string>
                                 <exclude reference="zjE-So-drr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0P6-eZ-meg"/>
-                                <exclude reference="Kpk-Mz-gOz"/>
-                                <exclude reference="Qs6-gh-Mjb"/>
-                                <exclude reference="bOf-dG-XO9"/>
-                                <exclude reference="3v8-9B-sVa"/>
-                                <exclude reference="5SS-pU-pqs"/>
-                                <exclude reference="FoV-ch-Esi"/>
-                                <exclude reference="m3e-MI-Mud"/>
                                 <exclude reference="1Ql-K6-cUV"/>
                                 <exclude reference="axF-cr-8Fn"/>
                                 <exclude reference="iX1-x1-Jxf"/>
                                 <exclude reference="oiM-dl-sNA"/>
                                 <exclude reference="ufH-va-aUK"/>
+                                <exclude reference="3v8-9B-sVa"/>
+                                <exclude reference="5SS-pU-pqs"/>
+                                <exclude reference="FoV-ch-Esi"/>
+                                <exclude reference="m3e-MI-Mud"/>
+                                <exclude reference="0P6-eZ-meg"/>
+                                <exclude reference="Kpk-Mz-gOz"/>
+                                <exclude reference="Qs6-gh-Mjb"/>
+                                <exclude reference="bOf-dG-XO9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -4026,19 +4032,19 @@ deserves a caddie.</string>
                                 <include reference="zjE-So-drr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0P6-eZ-meg"/>
-                                <include reference="Kpk-Mz-gOz"/>
-                                <include reference="Qs6-gh-Mjb"/>
-                                <include reference="bOf-dG-XO9"/>
-                                <include reference="3v8-9B-sVa"/>
-                                <include reference="5SS-pU-pqs"/>
-                                <exclude reference="FoV-ch-Esi"/>
-                                <exclude reference="m3e-MI-Mud"/>
                                 <exclude reference="1Ql-K6-cUV"/>
                                 <include reference="axF-cr-8Fn"/>
                                 <exclude reference="iX1-x1-Jxf"/>
                                 <exclude reference="oiM-dl-sNA"/>
                                 <include reference="ufH-va-aUK"/>
+                                <include reference="3v8-9B-sVa"/>
+                                <include reference="5SS-pU-pqs"/>
+                                <exclude reference="FoV-ch-Esi"/>
+                                <exclude reference="m3e-MI-Mud"/>
+                                <include reference="0P6-eZ-meg"/>
+                                <include reference="Kpk-Mz-gOz"/>
+                                <include reference="Qs6-gh-Mjb"/>
+                                <include reference="bOf-dG-XO9"/>
                             </mask>
                         </variation>
                     </view>
@@ -4050,7 +4056,7 @@ deserves a caddie.</string>
         <!--View Controller-->
         <scene sceneID="3xy-2e-Fu4">
             <objects>
-                <viewController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qhp-Fe-oXF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUsThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qhp-Fe-oXF" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gkA-7t-JUa"/>
                         <viewControllerLayoutGuide type="bottom" id="wRn-0G-pEL"/>
@@ -4068,7 +4074,7 @@ deserves a caddie.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IPe-QV-Rgr" firstAttribute="centerY" secondItem="hty-dE-7w4" secondAttribute="centerY" id="E1j-nb-DRz">
                                 <variation key="widthClass=compact" constant="40"/>
@@ -4095,14 +4101,14 @@ deserves a caddie.</string>
                                 <exclude reference="tDu-JM-Sga"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="E1j-nb-DRz"/>
-                                <exclude reference="kRP-h3-VeA"/>
-                                <exclude reference="lOE-dz-TbH"/>
-                                <exclude reference="xct-yx-nmk"/>
                                 <exclude reference="jGc-RS-Nct"/>
                                 <exclude reference="kIy-kq-w29"/>
                                 <exclude reference="qkj-WB-2uw"/>
                                 <exclude reference="vNm-ZC-BTp"/>
+                                <exclude reference="E1j-nb-DRz"/>
+                                <exclude reference="kRP-h3-VeA"/>
+                                <exclude reference="lOE-dz-TbH"/>
+                                <exclude reference="xct-yx-nmk"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -4111,14 +4117,14 @@ deserves a caddie.</string>
                                 <include reference="tDu-JM-Sga"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="E1j-nb-DRz"/>
-                                <include reference="kRP-h3-VeA"/>
-                                <include reference="lOE-dz-TbH"/>
-                                <include reference="xct-yx-nmk"/>
                                 <include reference="jGc-RS-Nct"/>
                                 <include reference="kIy-kq-w29"/>
                                 <exclude reference="qkj-WB-2uw"/>
                                 <include reference="vNm-ZC-BTp"/>
+                                <include reference="E1j-nb-DRz"/>
+                                <include reference="kRP-h3-VeA"/>
+                                <include reference="lOE-dz-TbH"/>
+                                <include reference="xct-yx-nmk"/>
                             </mask>
                         </variation>
                     </view>
@@ -4130,7 +4136,7 @@ deserves a caddie.</string>
         <!--View Controller-->
         <scene sceneID="odA-73-Ee7">
             <objects>
-                <viewController storyboardIdentifier="FirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qM2-Ai-5iw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUsFirstViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qM2-Ai-5iw" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lOz-QS-LLE"/>
                         <viewControllerLayoutGuide type="bottom" id="HWw-IJ-VWQ"/>
@@ -4150,7 +4156,7 @@ for the game of golf.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ych-i0-83E" firstAttribute="width" secondItem="vTY-0y-I9p" secondAttribute="width" id="4rV-eI-6Tq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DI3-oo-Ctn" secondAttribute="trailing" constant="37" id="FFS-Ed-SBh">
@@ -4180,15 +4186,15 @@ for the game of golf.</string>
                                 <exclude reference="DI3-oo-Ctn"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="4rV-eI-6Tq"/>
-                                <exclude reference="IEO-Up-EAD"/>
-                                <exclude reference="XIZ-xp-qzO"/>
-                                <exclude reference="kfY-BC-dqe"/>
                                 <exclude reference="FFS-Ed-SBh"/>
                                 <exclude reference="YjV-nU-D1c"/>
                                 <exclude reference="aOc-vD-VGu"/>
                                 <exclude reference="byj-eD-EG3"/>
                                 <exclude reference="x1T-iJ-l3b"/>
+                                <exclude reference="4rV-eI-6Tq"/>
+                                <exclude reference="IEO-Up-EAD"/>
+                                <exclude reference="XIZ-xp-qzO"/>
+                                <exclude reference="kfY-BC-dqe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -4197,15 +4203,15 @@ for the game of golf.</string>
                                 <include reference="DI3-oo-Ctn"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="4rV-eI-6Tq"/>
-                                <include reference="IEO-Up-EAD"/>
-                                <include reference="XIZ-xp-qzO"/>
-                                <include reference="kfY-BC-dqe"/>
                                 <include reference="FFS-Ed-SBh"/>
                                 <include reference="YjV-nU-D1c"/>
                                 <include reference="aOc-vD-VGu"/>
                                 <exclude reference="byj-eD-EG3"/>
                                 <include reference="x1T-iJ-l3b"/>
+                                <include reference="4rV-eI-6Tq"/>
+                                <include reference="IEO-Up-EAD"/>
+                                <include reference="XIZ-xp-qzO"/>
+                                <include reference="kfY-BC-dqe"/>
                             </mask>
                         </variation>
                     </view>
@@ -7923,7 +7929,7 @@ for the game of golf.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rvk-uJ-nWE">
-                                        <rect key="frame" x="0.0" y="114" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="158" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rvk-uJ-nWE" id="1yc-SG-cZL">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -7966,7 +7972,7 @@ for the game of golf.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="o3V-C8-xhM">
-                                        <rect key="frame" x="0.0" y="158" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="202" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o3V-C8-xhM" id="Grc-5t-PUx">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -8009,7 +8015,7 @@ for the game of golf.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="6fv-h7-VeW">
-                                        <rect key="frame" x="0.0" y="202" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="246" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6fv-h7-VeW" id="WUA-RP-uOE">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -8052,7 +8058,7 @@ for the game of golf.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="1TY-jR-K83">
-                                        <rect key="frame" x="0.0" y="246" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="290" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1TY-jR-K83" id="Z5b-gJ-id3">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -8099,7 +8105,7 @@ for the game of golf.</string>
                             <tableViewSection headerTitle="Support" id="Vag-33-HmZ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="4N5-zE-sMH">
-                                        <rect key="frame" x="0.0" y="341" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="385" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4N5-zE-sMH" id="a4T-Fw-gi7">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -8142,7 +8148,7 @@ for the game of golf.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="ydY-Nq-yxy">
-                                        <rect key="frame" x="0.0" y="385" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="429" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ydY-Nq-yxy" id="klJ-HW-Ddm">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -8186,7 +8192,7 @@ for the game of golf.</string>
                             <tableViewSection headerTitle="Information" id="358-SM-D26">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="th1-qS-OS6">
-                                        <rect key="frame" x="0.0" y="480" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="524" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th1-qS-OS6" id="wXH-tU-XZO">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -8229,7 +8235,7 @@ for the game of golf.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="r95-bb-kxp">
-                                        <rect key="frame" x="0.0" y="524" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="568" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r95-bb-kxp" id="etH-cN-Ewm">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -8272,7 +8278,7 @@ for the game of golf.</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="6kr-7d-q4X">
-                                        <rect key="frame" x="0.0" y="568" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="612" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6kr-7d-q4X" id="Prs-Ry-rMG">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="43"/>
@@ -8319,7 +8325,7 @@ for the game of golf.</string>
                             <tableViewSection footerTitle="Loop Golf (Version 0.2) - The ball is rolling" id="1My-2M-hIh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="signOutCell" id="FvT-Gz-O0V">
-                                        <rect key="frame" x="0.0" y="648" width="400" height="44"/>
+                                        <rect key="frame" x="0.0" y="692" width="400" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FvT-Gz-O0V" id="T6h-xv-eCa">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="43"/>
@@ -9412,11 +9418,12 @@ for the game of golf.</string>
             <objects>
                 <tableViewController id="oK3-TN-uza" customClass="MyPrivateCoursesViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Wvf-1r-nLa">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="720"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="M45-d2-nPn" customClass="PrivateCourseCell" customModule="carpoolApp_v1_0" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="230" width="400" height="85"/>
+                                <rect key="frame" x="0.0" y="114" width="400" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M45-d2-nPn" id="Dej-J0-jQP">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="84"/>
@@ -9478,10 +9485,10 @@ for the game of golf.</string>
                                             <exclude reference="N39-PN-uAf"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="qbR-0n-tBY"/>
-                                            <exclude reference="5lJ-XE-iAr"/>
                                             <exclude reference="0mI-Nw-jdz"/>
                                             <exclude reference="SSL-aC-Ouy"/>
+                                            <exclude reference="5lJ-XE-iAr"/>
+                                            <exclude reference="qbR-0n-tBY"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -9490,10 +9497,10 @@ for the game of golf.</string>
                                             <include reference="N39-PN-uAf"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="qbR-0n-tBY"/>
-                                            <include reference="5lJ-XE-iAr"/>
                                             <include reference="0mI-Nw-jdz"/>
                                             <include reference="SSL-aC-Ouy"/>
+                                            <include reference="5lJ-XE-iAr"/>
+                                            <include reference="qbR-0n-tBY"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -9522,12 +9529,15 @@ for the game of golf.</string>
             <objects>
                 <tableViewController id="UZQ-JB-VZY" customClass="AddPrivateCourseViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="i6A-M8-KNj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="eJF-GT-Xtq">
+                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJF-GT-Xtq" id="WDB-Yf-TOv">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -10936,7 +10946,7 @@ for the game of golf.</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="AFR-9k-S7F" firstAttribute="centerX" secondItem="4rA-SL-88X" secondAttribute="centerX" id="EGR-He-Ot7"/>
                                     <constraint firstItem="QZB-DQ-X8H" firstAttribute="leading" secondItem="4rA-SL-88X" secondAttribute="leading" constant="27" id="Eil-31-dYr">
@@ -11475,7 +11485,7 @@ for the game of golf.</string>
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="iVp-h5-J2y" secondAttribute="bottom" id="3BC-UA-DLh">
                                         <variation key="widthClass=compact" constant="10"/>
@@ -12759,112 +12769,18 @@ for the game of golf.</string>
                         <viewControllerLayoutGuide type="bottom" id="OtF-ID-6D9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WVf-Ba-i9G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcL-3B-8vM">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you a member at any private courses or country clubs? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zo-85-hhj">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="358" id="DiD-ve-5vP">
-                                                <variation key="widthClass=compact" constant="300"/>
-                                            </constraint>
-                                            <constraint firstAttribute="height" constant="30" id="Gx8-0v-RUo">
-                                                <variation key="widthClass=compact" constant="80"/>
-                                            </constraint>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
-                                        <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="DiD-ve-5vP"/>
-                                                <exclude reference="Gx8-0v-RUo"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <exclude reference="DiD-ve-5vP"/>
-                                                <exclude reference="Gx8-0v-RUo"/>
-                                            </mask>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-AG-bJ6">
-                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                        <string key="text">These courses are those designated as fully private (not semi-private) and will show up as available during the caddie reservation process. Your list of private courses can also be edited in your Settings after signing up. </string>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="8zo-85-hhj" firstAttribute="leading" secondItem="mcL-3B-8vM" secondAttribute="leading" constant="-96" id="5WQ-Ea-9y7">
-                                        <variation key="widthClass=compact" constant="20"/>
-                                    </constraint>
-                                    <constraint firstAttribute="bottom" secondItem="gsc-AG-bJ6" secondAttribute="bottom" constant="22" id="6GL-zA-nRd">
-                                        <variation key="widthClass=compact" constant="20"/>
-                                    </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="gsc-AG-bJ6" secondAttribute="trailing" constant="40" id="J91-5T-CeR">
-                                        <variation key="widthClass=compact" constant="20"/>
-                                    </constraint>
-                                    <constraint firstItem="gsc-AG-bJ6" firstAttribute="top" secondItem="8zo-85-hhj" secondAttribute="bottom" constant="23" id="Lmi-hQ-0ru">
-                                        <variation key="widthClass=compact" constant="20"/>
-                                    </constraint>
-                                    <constraint firstItem="gsc-AG-bJ6" firstAttribute="leading" secondItem="mcL-3B-8vM" secondAttribute="leading" constant="40" id="TS0-yv-3JU">
-                                        <variation key="widthClass=compact" constant="20"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="200" id="a1D-yV-YRR"/>
-                                    <constraint firstAttribute="trailing" secondItem="8zo-85-hhj" secondAttribute="trailing" constant="-96" id="iNq-A7-fHb">
-                                        <variation key="widthClass=compact" constant="20"/>
-                                    </constraint>
-                                    <constraint firstItem="8zo-85-hhj" firstAttribute="top" secondItem="mcL-3B-8vM" secondAttribute="top" constant="4" id="mPf-O6-csD">
-                                        <variation key="widthClass=compact" constant="20"/>
-                                    </constraint>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="8zo-85-hhj"/>
-                                        <exclude reference="gsc-AG-bJ6"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="a1D-yV-YRR"/>
-                                        <exclude reference="5WQ-Ea-9y7"/>
-                                        <exclude reference="iNq-A7-fHb"/>
-                                        <exclude reference="mPf-O6-csD"/>
-                                        <exclude reference="6GL-zA-nRd"/>
-                                        <exclude reference="J91-5T-CeR"/>
-                                        <exclude reference="Lmi-hQ-0ru"/>
-                                        <exclude reference="TS0-yv-3JU"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="8zo-85-hhj"/>
-                                        <include reference="gsc-AG-bJ6"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="a1D-yV-YRR"/>
-                                        <include reference="5WQ-Ea-9y7"/>
-                                        <include reference="iNq-A7-fHb"/>
-                                        <include reference="mPf-O6-csD"/>
-                                        <include reference="6GL-zA-nRd"/>
-                                        <include reference="J91-5T-CeR"/>
-                                        <include reference="Lmi-hQ-0ru"/>
-                                        <include reference="TS0-yv-3JU"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EWy-Bg-097">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="85" id="71s-gR-yyG" customClass="PrivateCourseCell" customModule="carpoolApp_v1_0" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="230" width="400" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="71s-gR-yyG" id="dsD-FL-XH6">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golf Course Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txk-xj-pCH">
@@ -12929,12 +12845,12 @@ for the game of golf.</string>
                                                     <exclude reference="sZ9-qr-m83"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="QZq-SX-IWY"/>
-                                                    <exclude reference="h2W-Xk-WOB"/>
-                                                    <exclude reference="tzx-tf-ZZb"/>
                                                     <exclude reference="Y1c-is-ZOU"/>
                                                     <exclude reference="jwy-eI-Vy3"/>
                                                     <exclude reference="u7z-tk-ZS4"/>
+                                                    <exclude reference="QZq-SX-IWY"/>
+                                                    <exclude reference="h2W-Xk-WOB"/>
+                                                    <exclude reference="tzx-tf-ZZb"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -12943,12 +12859,12 @@ for the game of golf.</string>
                                                     <include reference="sZ9-qr-m83"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="QZq-SX-IWY"/>
-                                                    <include reference="h2W-Xk-WOB"/>
-                                                    <exclude reference="tzx-tf-ZZb"/>
                                                     <include reference="Y1c-is-ZOU"/>
                                                     <exclude reference="jwy-eI-Vy3"/>
                                                     <include reference="u7z-tk-ZS4"/>
+                                                    <include reference="QZq-SX-IWY"/>
+                                                    <include reference="h2W-Xk-WOB"/>
+                                                    <exclude reference="tzx-tf-ZZb"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -12964,6 +12880,101 @@ for the game of golf.</string>
                                     <outlet property="delegate" destination="fOI-Fp-Gbg" id="Y7M-I6-QgL"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcL-3B-8vM">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you a member at any of these private courses? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zo-85-hhj">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="358" id="DiD-ve-5vP">
+                                                <variation key="widthClass=compact" constant="300"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="30" id="Gx8-0v-RUo">
+                                                <variation key="widthClass=compact" constant="80"/>
+                                            </constraint>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                        <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="DiD-ve-5vP"/>
+                                                <exclude reference="Gx8-0v-RUo"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <exclude reference="DiD-ve-5vP"/>
+                                                <exclude reference="Gx8-0v-RUo"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-AG-bJ6">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <string key="text">Any of these fully private courses (excluding semi-private) at which you indicate you are a member will be shown as available during the caddie reservation process. Your list of private courses can also be edited in your Settings after signing up. </string>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8zo-85-hhj" firstAttribute="leading" secondItem="mcL-3B-8vM" secondAttribute="leading" constant="-96" id="5WQ-Ea-9y7">
+                                        <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="gsc-AG-bJ6" secondAttribute="bottom" constant="22" id="6GL-zA-nRd">
+                                        <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="gsc-AG-bJ6" secondAttribute="trailing" constant="40" id="J91-5T-CeR">
+                                        <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="gsc-AG-bJ6" firstAttribute="top" secondItem="8zo-85-hhj" secondAttribute="bottom" constant="23" id="Lmi-hQ-0ru">
+                                        <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="gsc-AG-bJ6" firstAttribute="leading" secondItem="mcL-3B-8vM" secondAttribute="leading" constant="40" id="TS0-yv-3JU">
+                                        <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="200" id="a1D-yV-YRR"/>
+                                    <constraint firstAttribute="trailing" secondItem="8zo-85-hhj" secondAttribute="trailing" constant="-96" id="iNq-A7-fHb">
+                                        <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="8zo-85-hhj" firstAttribute="top" secondItem="mcL-3B-8vM" secondAttribute="top" constant="4" id="mPf-O6-csD">
+                                        <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="8zo-85-hhj"/>
+                                        <exclude reference="gsc-AG-bJ6"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="a1D-yV-YRR"/>
+                                        <exclude reference="5WQ-Ea-9y7"/>
+                                        <exclude reference="iNq-A7-fHb"/>
+                                        <exclude reference="mPf-O6-csD"/>
+                                        <exclude reference="6GL-zA-nRd"/>
+                                        <exclude reference="J91-5T-CeR"/>
+                                        <exclude reference="Lmi-hQ-0ru"/>
+                                        <exclude reference="TS0-yv-3JU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="8zo-85-hhj"/>
+                                        <include reference="gsc-AG-bJ6"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="a1D-yV-YRR"/>
+                                        <include reference="5WQ-Ea-9y7"/>
+                                        <include reference="iNq-A7-fHb"/>
+                                        <include reference="mPf-O6-csD"/>
+                                        <include reference="6GL-zA-nRd"/>
+                                        <include reference="J91-5T-CeR"/>
+                                        <include reference="Lmi-hQ-0ru"/>
+                                        <include reference="TS0-yv-3JU"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -12981,36 +12992,37 @@ for the game of golf.</string>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="mcL-3B-8vM"/>
                                 <exclude reference="EWy-Bg-097"/>
+                                <exclude reference="mcL-3B-8vM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Il0-V3-xXm"/>
-                                <exclude reference="aw5-s8-Zj6"/>
-                                <exclude reference="kFI-21-v1b"/>
+                                <exclude reference="zUy-oz-WS0"/>
                                 <exclude reference="ht2-Zm-Gnx"/>
                                 <exclude reference="j8J-6S-Jlk"/>
                                 <exclude reference="xN3-4T-qQc"/>
-                                <exclude reference="zUy-oz-WS0"/>
+                                <exclude reference="Il0-V3-xXm"/>
+                                <exclude reference="aw5-s8-Zj6"/>
+                                <exclude reference="kFI-21-v1b"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="mcL-3B-8vM"/>
                                 <include reference="EWy-Bg-097"/>
+                                <include reference="mcL-3B-8vM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Il0-V3-xXm"/>
-                                <include reference="aw5-s8-Zj6"/>
-                                <include reference="kFI-21-v1b"/>
+                                <include reference="zUy-oz-WS0"/>
                                 <include reference="ht2-Zm-Gnx"/>
                                 <include reference="j8J-6S-Jlk"/>
                                 <include reference="xN3-4T-qQc"/>
-                                <include reference="zUy-oz-WS0"/>
+                                <include reference="Il0-V3-xXm"/>
+                                <include reference="aw5-s8-Zj6"/>
+                                <include reference="kFI-21-v1b"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="infoBannerBackgroundView" destination="mcL-3B-8vM" id="UTl-uu-G1f"/>
                         <outlet property="tableView" destination="EWy-Bg-097" id="nwp-EB-30o"/>
                         <segue destination="2DZ-nu-9uq" kind="show" identifier="toPasswordSignUpSegue" id="FxY-fW-gag"/>
                     </connections>
@@ -13279,7 +13291,7 @@ for the game of golf.</string>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ow1-Qk-gi4">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" editingAccessoryType="checkmark" id="pZa-xZ-CHN">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -13484,7 +13496,7 @@ for the game of golf.</string>
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="S2q-YZ-8aw" firstAttribute="top" secondItem="REb-DZ-jS5" secondAttribute="bottom" constant="8" id="9kY-o9-xdH">
                                 <variation key="widthClass=compact" constant="5"/>
@@ -13708,6 +13720,13 @@ for the game of golf.</string>
                                 <exclude reference="VDB-P4-ZBY"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4jp-ax-dFE"/>
+                                <exclude reference="NLo-rP-1Fe"/>
+                                <exclude reference="NoI-bp-51P"/>
+                                <exclude reference="bhi-rg-crT"/>
+                                <exclude reference="cyE-Y1-4fe"/>
+                                <exclude reference="tWs-mU-1NM"/>
+                                <exclude reference="y5Z-t8-yWy"/>
                                 <exclude reference="5U4-f5-q3Z"/>
                                 <exclude reference="97z-IV-jI1"/>
                                 <exclude reference="QRy-An-FEa"/>
@@ -13716,13 +13735,6 @@ for the game of golf.</string>
                                 <exclude reference="Fqz-ME-fUz"/>
                                 <exclude reference="PCT-oz-EKt"/>
                                 <exclude reference="pNf-p1-tmB"/>
-                                <exclude reference="cyE-Y1-4fe"/>
-                                <exclude reference="tWs-mU-1NM"/>
-                                <exclude reference="y5Z-t8-yWy"/>
-                                <exclude reference="4jp-ax-dFE"/>
-                                <exclude reference="NLo-rP-1Fe"/>
-                                <exclude reference="NoI-bp-51P"/>
-                                <exclude reference="bhi-rg-crT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -13732,6 +13744,13 @@ for the game of golf.</string>
                                 <include reference="VDB-P4-ZBY"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4jp-ax-dFE"/>
+                                <exclude reference="NLo-rP-1Fe"/>
+                                <include reference="NoI-bp-51P"/>
+                                <exclude reference="bhi-rg-crT"/>
+                                <include reference="cyE-Y1-4fe"/>
+                                <include reference="tWs-mU-1NM"/>
+                                <exclude reference="y5Z-t8-yWy"/>
                                 <include reference="5U4-f5-q3Z"/>
                                 <include reference="97z-IV-jI1"/>
                                 <exclude reference="QRy-An-FEa"/>
@@ -13740,13 +13759,6 @@ for the game of golf.</string>
                                 <include reference="Fqz-ME-fUz"/>
                                 <include reference="PCT-oz-EKt"/>
                                 <exclude reference="pNf-p1-tmB"/>
-                                <include reference="cyE-Y1-4fe"/>
-                                <include reference="tWs-mU-1NM"/>
-                                <exclude reference="y5Z-t8-yWy"/>
-                                <exclude reference="4jp-ax-dFE"/>
-                                <exclude reference="NLo-rP-1Fe"/>
-                                <include reference="NoI-bp-51P"/>
-                                <exclude reference="bhi-rg-crT"/>
                             </mask>
                         </variation>
                     </view>
@@ -13898,6 +13910,18 @@ for the game of golf.</string>
                                                 </mask>
                                             </variation>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hold for Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WR-ff-PJO">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Select" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="En4-yb-aja">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -13907,10 +13931,22 @@ for the game of golf.</string>
                                         <variation key="widthClass=compact" constant="20"/>
                                     </constraint>
                                     <constraint firstItem="MWu-Tv-Sh6" firstAttribute="leading" secondItem="HsQ-dr-kkd" secondAttribute="leadingMargin" constant="-8" id="1dh-9q-K27"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="En4-yb-aja" secondAttribute="trailing" constant="117" id="2EG-Nl-SGu">
+                                        <variation key="widthClass=compact" constant="10"/>
+                                    </constraint>
                                     <constraint firstItem="qbb-OQ-po3" firstAttribute="leading" secondItem="HsQ-dr-kkd" secondAttribute="leading" id="77F-ri-MKm"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="9WR-ff-PJO" secondAttribute="bottom" constant="71" id="9E1-y1-aYm">
+                                        <variation key="widthClass=compact" constant="2"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="TqO-o2-4n2" secondAttribute="trailing" id="CRb-Dj-KlY"/>
                                     <constraint firstItem="qbb-OQ-po3" firstAttribute="centerY" secondItem="HsQ-dr-kkd" secondAttribute="centerY" id="DAt-8Q-Ck3"/>
+                                    <constraint firstItem="9WR-ff-PJO" firstAttribute="leading" secondItem="HsQ-dr-kkd" secondAttribute="leadingMargin" constant="2" id="EHH-8R-e64">
+                                        <variation key="widthClass=compact" constant="10"/>
+                                    </constraint>
                                     <constraint firstItem="NPb-LS-0lM" firstAttribute="leading" secondItem="HsQ-dr-kkd" secondAttribute="leadingMargin" constant="-8" id="Frt-XR-AfB"/>
+                                    <constraint firstItem="9WR-ff-PJO" firstAttribute="centerY" secondItem="HsQ-dr-kkd" secondAttribute="centerY" id="Ky3-ER-62v">
+                                        <variation key="widthClass=compact" constant="131"/>
+                                    </constraint>
                                     <constraint firstItem="WNf-KD-Aye" firstAttribute="centerY" secondItem="HsQ-dr-kkd" secondAttribute="centerY" id="Sk4-fp-tFV">
                                         <variation key="widthClass=compact" constant="117"/>
                                     </constraint>
@@ -13936,8 +13972,14 @@ for the game of golf.</string>
                                     <constraint firstItem="NPb-LS-0lM" firstAttribute="top" secondItem="XIN-Qc-8cA" secondAttribute="bottom" constant="-1" id="uOO-PK-LUh">
                                         <variation key="widthClass=compact" constant="3"/>
                                     </constraint>
+                                    <constraint firstAttribute="bottomMargin" secondItem="En4-yb-aja" secondAttribute="bottom" constant="132" id="w2M-Yh-ULp">
+                                        <variation key="widthClass=compact" constant="2"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="qbb-OQ-po3" secondAttribute="trailing" constant="35" id="yPm-mb-v1t">
                                         <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                    <constraint firstItem="En4-yb-aja" firstAttribute="centerY" secondItem="HsQ-dr-kkd" secondAttribute="centerY" id="yZz-4j-eEY">
+                                        <variation key="widthClass=compact" constant="131"/>
                                     </constraint>
                                     <constraint firstItem="MWu-Tv-Sh6" firstAttribute="top" secondItem="NPb-LS-0lM" secondAttribute="bottom" constant="4" id="zkI-sK-j5y">
                                         <variation key="widthClass=compact" constant="0.0"/>
@@ -13955,28 +13997,36 @@ for the game of golf.</string>
                                         <exclude reference="NPb-LS-0lM"/>
                                         <exclude reference="MWu-Tv-Sh6"/>
                                         <exclude reference="WNf-KD-Aye"/>
+                                        <exclude reference="9WR-ff-PJO"/>
+                                        <exclude reference="En4-yb-aja"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="0Ks-s9-4dn"/>
-                                        <exclude reference="Sk4-fp-tFV"/>
-                                        <exclude reference="d80-KY-DzA"/>
-                                        <exclude reference="1dh-9q-K27"/>
-                                        <exclude reference="Smn-cy-qHu"/>
-                                        <exclude reference="zkI-sK-j5y"/>
-                                        <exclude reference="Frt-XR-AfB"/>
-                                        <exclude reference="WX3-tj-wMV"/>
-                                        <exclude reference="mua-28-xoe"/>
-                                        <exclude reference="uOO-PK-LUh"/>
-                                        <exclude reference="YfZ-TG-RLi"/>
-                                        <exclude reference="ZRS-2h-EZ8"/>
-                                        <exclude reference="zs1-Tz-uez"/>
+                                        <exclude reference="77F-ri-MKm"/>
+                                        <exclude reference="DAt-8Q-Ck3"/>
+                                        <exclude reference="yPm-mb-v1t"/>
                                         <exclude reference="CRb-Dj-KlY"/>
                                         <exclude reference="YtC-ro-QY5"/>
                                         <exclude reference="aZ7-iY-rDY"/>
                                         <exclude reference="mRR-Rr-XRJ"/>
-                                        <exclude reference="77F-ri-MKm"/>
-                                        <exclude reference="DAt-8Q-Ck3"/>
-                                        <exclude reference="yPm-mb-v1t"/>
+                                        <exclude reference="YfZ-TG-RLi"/>
+                                        <exclude reference="ZRS-2h-EZ8"/>
+                                        <exclude reference="zs1-Tz-uez"/>
+                                        <exclude reference="Frt-XR-AfB"/>
+                                        <exclude reference="WX3-tj-wMV"/>
+                                        <exclude reference="mua-28-xoe"/>
+                                        <exclude reference="uOO-PK-LUh"/>
+                                        <exclude reference="1dh-9q-K27"/>
+                                        <exclude reference="Smn-cy-qHu"/>
+                                        <exclude reference="zkI-sK-j5y"/>
+                                        <exclude reference="9E1-y1-aYm"/>
+                                        <exclude reference="EHH-8R-e64"/>
+                                        <exclude reference="Ky3-ER-62v"/>
+                                        <exclude reference="0Ks-s9-4dn"/>
+                                        <exclude reference="Sk4-fp-tFV"/>
+                                        <exclude reference="d80-KY-DzA"/>
+                                        <exclude reference="2EG-Nl-SGu"/>
+                                        <exclude reference="w2M-Yh-ULp"/>
+                                        <exclude reference="yZz-4j-eEY"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -13987,37 +14037,47 @@ for the game of golf.</string>
                                         <include reference="NPb-LS-0lM"/>
                                         <include reference="MWu-Tv-Sh6"/>
                                         <include reference="WNf-KD-Aye"/>
+                                        <include reference="9WR-ff-PJO"/>
+                                        <include reference="En4-yb-aja"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="0Ks-s9-4dn"/>
-                                        <include reference="Sk4-fp-tFV"/>
-                                        <include reference="d80-KY-DzA"/>
-                                        <include reference="1dh-9q-K27"/>
-                                        <include reference="Smn-cy-qHu"/>
-                                        <include reference="zkI-sK-j5y"/>
-                                        <include reference="Frt-XR-AfB"/>
-                                        <include reference="WX3-tj-wMV"/>
-                                        <exclude reference="mua-28-xoe"/>
-                                        <include reference="uOO-PK-LUh"/>
-                                        <include reference="YfZ-TG-RLi"/>
-                                        <include reference="ZRS-2h-EZ8"/>
-                                        <include reference="zs1-Tz-uez"/>
+                                        <include reference="77F-ri-MKm"/>
+                                        <include reference="DAt-8Q-Ck3"/>
+                                        <include reference="yPm-mb-v1t"/>
                                         <include reference="CRb-Dj-KlY"/>
                                         <include reference="YtC-ro-QY5"/>
                                         <include reference="aZ7-iY-rDY"/>
                                         <include reference="mRR-Rr-XRJ"/>
-                                        <include reference="77F-ri-MKm"/>
-                                        <include reference="DAt-8Q-Ck3"/>
-                                        <include reference="yPm-mb-v1t"/>
+                                        <include reference="YfZ-TG-RLi"/>
+                                        <include reference="ZRS-2h-EZ8"/>
+                                        <include reference="zs1-Tz-uez"/>
+                                        <include reference="Frt-XR-AfB"/>
+                                        <include reference="WX3-tj-wMV"/>
+                                        <exclude reference="mua-28-xoe"/>
+                                        <include reference="uOO-PK-LUh"/>
+                                        <include reference="1dh-9q-K27"/>
+                                        <include reference="Smn-cy-qHu"/>
+                                        <include reference="zkI-sK-j5y"/>
+                                        <exclude reference="9E1-y1-aYm"/>
+                                        <include reference="EHH-8R-e64"/>
+                                        <include reference="Ky3-ER-62v"/>
+                                        <exclude reference="0Ks-s9-4dn"/>
+                                        <include reference="Sk4-fp-tFV"/>
+                                        <include reference="d80-KY-DzA"/>
+                                        <include reference="2EG-Nl-SGu"/>
+                                        <exclude reference="w2M-Yh-ULp"/>
+                                        <include reference="yZz-4j-eEY"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <outlet property="chooseCourseButton" destination="WNf-KD-Aye" id="zAJ-t9-o85"/>
                                     <outlet property="courseLocationLabel" destination="NPb-LS-0lM" id="ahH-Ft-2pS"/>
                                     <outlet property="courseNameLabel" destination="XIN-Qc-8cA" id="bqJ-ou-67y"/>
+                                    <outlet property="holdForDetailsLabel" destination="9WR-ff-PJO" id="DSe-zA-MVe"/>
                                     <outlet property="imageCoverView" destination="TqO-o2-4n2" id="qZd-lW-fbe"/>
                                     <outlet property="imageView" destination="qbb-OQ-po3" id="Z9x-hw-TfZ"/>
                                     <outlet property="membershipHistoryLabel" destination="MWu-Tv-Sh6" id="cKE-xT-asg"/>
+                                    <outlet property="tapToSelectLabel" destination="En4-yb-aja" id="Vuz-G3-ISP"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -14028,11 +14088,202 @@ for the game of golf.</string>
                     </collectionView>
                     <connections>
                         <segue destination="7vV-75-0qt" kind="show" identifier="courseHasBeenSelectedSegue" id="qz4-Ic-B3O"/>
+                        <segue destination="etd-9Q-8oT" kind="presentation" identifier="toCourseDetailsSegue" id="IjO-OS-w3q"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqm-Vd-bA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="pnH-z6-sqp">
+                    <connections>
+                        <outlet property="delegate" destination="8D1-L0-ksa" id="81k-YI-9mG"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="5329.5" y="331"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wmg-R8-U97">
+            <objects>
+                <navigationController id="etd-9Q-8oT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hG9-1h-xeo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8tI-Bo-O8N" kind="relationship" relationship="rootViewController" id="fWI-tm-7C6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8oK-vD-oMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6066" y="385"/>
+        </scene>
+        <!--Course Details View Controller-->
+        <scene sceneID="n0w-6Y-w7P">
+            <objects>
+                <viewController id="8tI-Bo-O8N" customClass="CourseDetailsViewController" customModule="carpoolApp_v1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lcQ-2Y-gNR"/>
+                        <viewControllerLayoutGuide type="bottom" id="bpi-el-FFW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o8v-SV-emm">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A little more about" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLp-Qh-MZB">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhs-HS-Oop">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="9ZK-RN-Fwx"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9ZK-RN-Fwx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9ZK-RN-Fwx"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golf Course Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCK-t0-ePC">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qts-oe-EGN">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <connections>
+                                    <segue destination="d00-Ay-KwQ" kind="embed" id="FQM-uV-QgX"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dhs-HS-Oop" firstAttribute="leading" secondItem="o8v-SV-emm" secondAttribute="leadingMargin" constant="12" id="47y-wD-uVr">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="tCK-t0-ePC" firstAttribute="top" secondItem="QLp-Qh-MZB" secondAttribute="bottom" constant="1" id="4JW-hu-XAs">
+                                <variation key="widthClass=compact" constant="5"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="QLp-Qh-MZB" secondAttribute="trailing" constant="47" id="6gf-bt-HAZ">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="tCK-t0-ePC" firstAttribute="leading" secondItem="o8v-SV-emm" secondAttribute="leadingMargin" constant="110" id="7rB-b8-mnz">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="QLp-Qh-MZB" firstAttribute="centerX" secondItem="o8v-SV-emm" secondAttribute="centerX" id="8Wc-l3-9Cp"/>
+                            <constraint firstItem="tCK-t0-ePC" firstAttribute="top" secondItem="dhs-HS-Oop" secondAttribute="bottom" constant="4" id="9JZ-GC-Try">
+                                <variation key="widthClass=compact" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="Qts-oe-EGN" firstAttribute="top" secondItem="tCK-t0-ePC" secondAttribute="bottom" constant="24" id="AN2-sl-cGl">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Qts-oe-EGN" firstAttribute="centerX" secondItem="o8v-SV-emm" secondAttribute="centerX" id="Ebn-Ia-2Rp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dhs-HS-Oop" secondAttribute="trailing" constant="108" id="Mo3-5k-hdc">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="tCK-t0-ePC" firstAttribute="top" secondItem="lcQ-2Y-gNR" secondAttribute="bottom" constant="8" id="YY1-es-SJv">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="Qts-oe-EGN" firstAttribute="width" secondItem="o8v-SV-emm" secondAttribute="width" id="cv9-tx-UPn"/>
+                            <constraint firstItem="QLp-Qh-MZB" firstAttribute="leading" secondItem="o8v-SV-emm" secondAttribute="leadingMargin" constant="33" id="eN1-2i-js1">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="bpi-el-FFW" firstAttribute="top" secondItem="Qts-oe-EGN" secondAttribute="bottom" constant="318" id="fA2-SY-u3z">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="tCK-t0-ePC" secondAttribute="trailing" constant="109" id="l9o-bY-AS3">
+                                <variation key="widthClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="dhs-HS-Oop" firstAttribute="top" secondItem="QLp-Qh-MZB" secondAttribute="bottom" constant="87" id="lNy-cA-qBJ">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="QLp-Qh-MZB" firstAttribute="top" secondItem="lcQ-2Y-gNR" secondAttribute="bottom" constant="4" id="mad-e0-Gdn">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="QLp-Qh-MZB"/>
+                                <exclude reference="dhs-HS-Oop"/>
+                                <exclude reference="tCK-t0-ePC"/>
+                                <exclude reference="Qts-oe-EGN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="47y-wD-uVr"/>
+                                <exclude reference="Mo3-5k-hdc"/>
+                                <exclude reference="lNy-cA-qBJ"/>
+                                <exclude reference="4JW-hu-XAs"/>
+                                <exclude reference="7rB-b8-mnz"/>
+                                <exclude reference="9JZ-GC-Try"/>
+                                <exclude reference="YY1-es-SJv"/>
+                                <exclude reference="l9o-bY-AS3"/>
+                                <exclude reference="6gf-bt-HAZ"/>
+                                <exclude reference="8Wc-l3-9Cp"/>
+                                <exclude reference="eN1-2i-js1"/>
+                                <exclude reference="mad-e0-Gdn"/>
+                                <exclude reference="AN2-sl-cGl"/>
+                                <exclude reference="Ebn-Ia-2Rp"/>
+                                <exclude reference="cv9-tx-UPn"/>
+                                <exclude reference="fA2-SY-u3z"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="QLp-Qh-MZB"/>
+                                <include reference="dhs-HS-Oop"/>
+                                <include reference="tCK-t0-ePC"/>
+                                <include reference="Qts-oe-EGN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="47y-wD-uVr"/>
+                                <include reference="Mo3-5k-hdc"/>
+                                <include reference="lNy-cA-qBJ"/>
+                                <exclude reference="4JW-hu-XAs"/>
+                                <include reference="7rB-b8-mnz"/>
+                                <include reference="9JZ-GC-Try"/>
+                                <exclude reference="YY1-es-SJv"/>
+                                <include reference="l9o-bY-AS3"/>
+                                <exclude reference="6gf-bt-HAZ"/>
+                                <include reference="8Wc-l3-9Cp"/>
+                                <exclude reference="eN1-2i-js1"/>
+                                <include reference="mad-e0-Gdn"/>
+                                <include reference="AN2-sl-cGl"/>
+                                <include reference="Ebn-Ia-2Rp"/>
+                                <include reference="cv9-tx-UPn"/>
+                                <include reference="fA2-SY-u3z"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="R20-LR-1Xn">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="hG4-oc-lrq">
+                            <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="closeViewButtonPressed:" destination="8tI-Bo-O8N" id="NKU-2G-gaA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="courseNameLabel" destination="tCK-t0-ePC" id="CWL-Jb-CWa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQM-1E-1ZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6771" y="385"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="qLL-zh-F0M">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="d00-Ay-KwQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qk6-ho-fDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7543.5" y="385"/>
         </scene>
         <!--Caddies Available View Controller-->
         <scene sceneID="Cdt-Lp-Gam">
@@ -14076,8 +14327,7 @@ for the game of golf.</string>
                                                                     <exclude reference="f0C-M6-Ayh"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="-40" y="1" width="80" height="40"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="f0C-M6-Ayh"/>
                                                                 </mask>
@@ -14102,8 +14352,7 @@ for the game of golf.</string>
                                                                     <exclude reference="sis-tZ-XH0"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="80" y="1" width="80" height="40"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="3yU-HU-P1r"/>
                                                                     <include reference="sis-tZ-XH0"/>
@@ -14125,8 +14374,7 @@ for the game of golf.</string>
                                                                     <exclude reference="Dwb-qz-azO"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="200" y="1" width="80" height="40"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="Dwb-qz-azO"/>
                                                                 </mask>
@@ -14134,7 +14382,7 @@ for the game of golf.</string>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxR-az-0Wo">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="hv7-PY-qoL">
                                                                     <variation key="widthClass=compact" constant="1"/>
@@ -14145,8 +14393,7 @@ for the game of golf.</string>
                                                                     <exclude reference="hv7-PY-qoL"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="15" y="43" width="210" height="1"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="hv7-PY-qoL"/>
                                                                 </mask>
@@ -14164,8 +14411,7 @@ for the game of golf.</string>
                                                                     <exclude reference="yFg-hT-5WO"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="203" y="51" width="75" height="15"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="pxX-du-EfI"/>
                                                                     <include reference="yFg-hT-5WO"/>
@@ -14184,8 +14430,7 @@ for the game of golf.</string>
                                                                     <exclude reference="acb-Ro-zMg"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="-38" y="51" width="76" height="15"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="W8c-Xq-xu0"/>
                                                                     <include reference="acb-Ro-zMg"/>
@@ -14204,8 +14449,7 @@ for the game of golf.</string>
                                                                     <exclude reference="gnO-nG-hVn"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="83" y="51" width="75" height="15"/>
+                                                            <variation key="widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="gbH-pK-9eE"/>
                                                                     <include reference="gnO-nG-hVn"/>
@@ -14281,8 +14525,7 @@ for the game of golf.</string>
                                                             <exclude reference="vbT-4N-bMU"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="118" width="240" height="86"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="vKK-Lk-3se"/>
                                                             <include reference="h8P-pb-qK2"/>
@@ -14328,8 +14571,7 @@ for the game of golf.</string>
                                                             <exclude reference="eYv-Zr-7AX"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="194" width="240" height="5"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="eYv-Zr-7AX"/>
                                                         </mask>
@@ -14437,8 +14679,7 @@ for the game of golf.</string>
                                                             <exclude reference="ccm-gf-W80"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="204" y="46" width="18" height="25"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="Ems-wr-MQ6"/>
                                                             <include reference="ccm-gf-W80"/>
@@ -14562,9 +14803,6 @@ for the game of golf.</string>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="Atd-Z6-gBB" id="eh3-Oa-ytV"/>
                                     <outlet property="delegate" destination="Atd-Z6-gBB" id="3Sl-7K-Sda"/>
@@ -14611,8 +14849,7 @@ for the game of golf.</string>
                                         <exclude reference="sga-go-Je7"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="blG-ke-hra"/>
                                         <include reference="v45-Ts-Mg7"/>
@@ -14634,9 +14871,6 @@ for the game of golf.</string>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="20" y="-12" width="275" height="24"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-t8-BWv">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -14651,8 +14885,7 @@ for the game of golf.</string>
                                                 <exclude reference="dCu-np-gYh"/>
                                             </mask>
                                         </variation>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="300" y="-15" width="80" height="31"/>
+                                        <variation key="widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="dCu-np-gYh"/>
                                             </mask>
@@ -14688,8 +14921,7 @@ for the game of golf.</string>
                                         <exclude reference="pGE-r7-lU9"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="0.0"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="efm-6h-eQR"/>
                                         <include reference="0Ph-t8-BWv"/>
@@ -15229,9 +15461,6 @@ for the game of golf.</string>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anX-yh-NPp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
-                                </variation>
                                 <connections>
                                     <segue destination="5Y0-dh-JlS" kind="embed" id="bIP-wT-CrM"/>
                                 </connections>
@@ -15297,8 +15526,7 @@ for the game of golf.</string>
                                         <exclude reference="rlh-Ia-XZ0"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="128"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="qfV-iI-guC"/>
                                     </mask>
@@ -17135,7 +17363,7 @@ for the game of golf.</string>
         <!--View Controller-->
         <scene sceneID="SIt-5k-x2o">
             <objects>
-                <viewController storyboardIdentifier="FourthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JL9-wv-OFT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUsFourthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JL9-wv-OFT" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J1u-2L-KIi"/>
                         <viewControllerLayoutGuide type="bottom" id="tVo-C5-rWC"/>
@@ -17154,7 +17382,7 @@ for the game of golf.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="n6X-xE-be0" firstAttribute="centerY" secondItem="Unj-OF-wtt" secondAttribute="centerY" id="9ir-dp-8o5">
                                 <variation key="widthClass=compact" constant="40"/>
@@ -17178,13 +17406,13 @@ for the game of golf.</string>
                                 <exclude reference="QUk-Bd-BIB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="J3h-kf-7zR"/>
+                                <exclude reference="UaA-U7-Qiq"/>
+                                <exclude reference="qD3-UA-Z6u"/>
                                 <exclude reference="9ir-dp-8o5"/>
                                 <exclude reference="Y60-0k-EBg"/>
                                 <exclude reference="hcR-11-hRd"/>
                                 <exclude reference="hyh-8M-WB8"/>
-                                <exclude reference="J3h-kf-7zR"/>
-                                <exclude reference="UaA-U7-Qiq"/>
-                                <exclude reference="qD3-UA-Z6u"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -17193,13 +17421,13 @@ for the game of golf.</string>
                                 <include reference="QUk-Bd-BIB"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="J3h-kf-7zR"/>
+                                <include reference="UaA-U7-Qiq"/>
+                                <include reference="qD3-UA-Z6u"/>
                                 <include reference="9ir-dp-8o5"/>
                                 <include reference="Y60-0k-EBg"/>
                                 <include reference="hcR-11-hRd"/>
                                 <include reference="hyh-8M-WB8"/>
-                                <include reference="J3h-kf-7zR"/>
-                                <include reference="UaA-U7-Qiq"/>
-                                <include reference="qD3-UA-Z6u"/>
                             </mask>
                         </variation>
                     </view>
@@ -17211,7 +17439,7 @@ for the game of golf.</string>
         <!--View Controller-->
         <scene sceneID="AXJ-Sh-FfE">
             <objects>
-                <viewController storyboardIdentifier="FifthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fkt-HD-VN7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUsFifthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fkt-HD-VN7" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nAN-sA-54R"/>
                         <viewControllerLayoutGuide type="bottom" id="gEe-CX-OvI"/>
@@ -17236,7 +17464,7 @@ deserves a caddie.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kW0-Tl-8hv" firstAttribute="width" secondItem="slY-vS-1TS" secondAttribute="width" id="0AK-eE-tLk"/>
                             <constraint firstItem="kW0-Tl-8hv" firstAttribute="top" secondItem="Ppz-FQ-r3j" secondAttribute="top" constant="-252" id="3bM-99-5Ht">
@@ -17277,12 +17505,6 @@ deserves a caddie.</string>
                                 <exclude reference="Ppz-FQ-r3j"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0AK-eE-tLk"/>
-                                <exclude reference="3bM-99-5Ht"/>
-                                <exclude reference="UMs-Vb-bOz"/>
-                                <exclude reference="b5c-k0-g3j"/>
-                                <exclude reference="eua-9j-Gn0"/>
-                                <exclude reference="nNQ-OQ-2HC"/>
                                 <exclude reference="KMx-x0-S9U"/>
                                 <exclude reference="kl5-ST-v39"/>
                                 <exclude reference="smJ-JK-KDF"/>
@@ -17292,6 +17514,12 @@ deserves a caddie.</string>
                                 <exclude reference="sTT-eV-7GB"/>
                                 <exclude reference="stT-IH-Ri0"/>
                                 <exclude reference="t9y-6f-737"/>
+                                <exclude reference="0AK-eE-tLk"/>
+                                <exclude reference="3bM-99-5Ht"/>
+                                <exclude reference="UMs-Vb-bOz"/>
+                                <exclude reference="b5c-k0-g3j"/>
+                                <exclude reference="eua-9j-Gn0"/>
+                                <exclude reference="nNQ-OQ-2HC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -17301,12 +17529,6 @@ deserves a caddie.</string>
                                 <include reference="Ppz-FQ-r3j"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0AK-eE-tLk"/>
-                                <include reference="3bM-99-5Ht"/>
-                                <include reference="UMs-Vb-bOz"/>
-                                <include reference="b5c-k0-g3j"/>
-                                <exclude reference="eua-9j-Gn0"/>
-                                <include reference="nNQ-OQ-2HC"/>
                                 <exclude reference="KMx-x0-S9U"/>
                                 <include reference="kl5-ST-v39"/>
                                 <include reference="smJ-JK-KDF"/>
@@ -17316,6 +17538,12 @@ deserves a caddie.</string>
                                 <include reference="sTT-eV-7GB"/>
                                 <include reference="stT-IH-Ri0"/>
                                 <exclude reference="t9y-6f-737"/>
+                                <include reference="0AK-eE-tLk"/>
+                                <include reference="3bM-99-5Ht"/>
+                                <include reference="UMs-Vb-bOz"/>
+                                <include reference="b5c-k0-g3j"/>
+                                <exclude reference="eua-9j-Gn0"/>
+                                <include reference="nNQ-OQ-2HC"/>
                             </mask>
                         </variation>
                     </view>
@@ -18097,7 +18325,7 @@ If you've got a promo code, enter it here.</string>
                                     <constraint firstAttribute="width" constant="203" id="IeB-oX-LCd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">

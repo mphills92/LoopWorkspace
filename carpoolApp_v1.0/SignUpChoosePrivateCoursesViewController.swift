@@ -11,7 +11,7 @@ import UIKit
 class SignUpChoosePrivateCoursesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var infoBannerBackgroundView: UIView!
     
     
     let currentLocation = ["Use current location"]
@@ -33,6 +33,10 @@ class SignUpChoosePrivateCoursesViewController: UIViewController, UITableViewDel
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        infoBannerBackgroundView.layer.shadowColor = UIColor.blackColor().CGColor
+        infoBannerBackgroundView.layer.shadowOpacity = 0.25
+        infoBannerBackgroundView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
         let nextButton = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: "advanceToNextSignUpStep")
         nextButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!], forState: UIControlState.Normal)

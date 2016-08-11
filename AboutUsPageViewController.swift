@@ -11,11 +11,11 @@ import UIKit
 class AboutUsPageViewController: UIPageViewController {
         
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newPageViewController("First"),
-                self.newPageViewController("Second"),
-                self.newPageViewController("Third"),
-                self.newPageViewController("Fourth"),
-                self.newPageViewController("Fifth")]
+        return [self.newPageViewController("AboutUsFirst"),
+                self.newPageViewController("AboutUsSecond"),
+                self.newPageViewController("AboutUsThird"),
+                self.newPageViewController("AboutUsFourth"),
+                self.newPageViewController("AboutUsFifth")]
     }()
     
     private func newPageViewController(page: String) -> UIViewController {
