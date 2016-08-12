@@ -57,6 +57,7 @@
 		C956FD2F1D24356600E7143B /* SessionForCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD2E1D24356600E7143B /* SessionForCourses.swift */; };
 		C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */; };
 		C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD331D256D8B00E7143B /* CalendarCell.swift */; };
+		C9597FD31D5E371100DD1B5B /* CourseBasicInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9597FD21D5E371100DD1B5B /* CourseBasicInformationViewController.swift */; };
 		C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A00B01CB5CB38008237B1 /* AppDelegate.swift */; };
 		C95A00B61CB5CB38008237B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B41CB5CB38008237B1 /* Main.storyboard */; };
 		C95A00B81CB5CB38008237B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B71CB5CB38008237B1 /* Assets.xcassets */; };
@@ -172,6 +173,7 @@
 		C956FD2E1D24356600E7143B /* SessionForCourses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionForCourses.swift; sourceTree = "<group>"; };
 		C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerChooseDateViewController.swift; path = ../ContainerChooseDateViewController.swift; sourceTree = "<group>"; };
 		C956FD331D256D8B00E7143B /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarCell.swift; path = carpoolApp_v1.0/CalendarCell.swift; sourceTree = "<group>"; };
+		C9597FD21D5E371100DD1B5B /* CourseBasicInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseBasicInformationViewController.swift; sourceTree = "<group>"; };
 		C95A00AD1CB5CB38008237B1 /* carpoolApp_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpoolApp_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95A00B01CB5CB38008237B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95A00B51CB5CB38008237B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			children = (
 				C90EFBA41D5D03EC00707373 /* CourseDetailsViewController.swift */,
 				C90EFBA71D5D1C3800707373 /* CourseDetailsPageViewController.swift */,
+				C9597FD21D5E371100DD1B5B /* CourseBasicInformationViewController.swift */,
 			);
 			name = "Course Details";
 			sourceTree = "<group>";
@@ -942,6 +945,7 @@
 				C944F1C91D408E8C008E2B4C /* PaymentsViewController.swift in Sources */,
 				C9EE3F2D1D0A1C5900F86EF2 /* AboutUsViewController.swift in Sources */,
 				C95527331D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift in Sources */,
+				C9597FD31D5E371100DD1B5B /* CourseBasicInformationViewController.swift in Sources */,
 				C990CF961D1B8F56005E05F2 /* HelpViewController.swift in Sources */,
 				C994B4C41D144417009848F2 /* PrivacySettingsViewController.swift in Sources */,
 				C95385CE1D0F5B9F007BCA15 /* ChooseAvailableCaddiesCell.swift in Sources */,

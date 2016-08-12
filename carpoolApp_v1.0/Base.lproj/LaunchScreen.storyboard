@@ -17,26 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoopLogoLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4pK-8u-UYL">
-                                <rect key="frame" x="233" y="173" width="135" height="135"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="FHd-H2-cse"/>
-                                    <constraint firstAttribute="width" constant="135" id="RoG-Ts-GUn"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="L O O P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8r-rb-aKD">
                                 <rect key="frame" x="217" y="322" width="167" height="58"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoopLogoLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4xL-d0-b2S">
+                                <rect key="frame" x="233" y="176" width="135" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9Vc-EG-2kH"/>
+                                    <constraint firstAttribute="width" constant="135" id="TRd-zm-02c"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4xL-d0-b2S" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-60" id="EBz-CV-kDo"/>
+                            <constraint firstItem="4xL-d0-b2S" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Nno-1u-5bl"/>
                             <constraint firstItem="R8r-rb-aKD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Nvr-pb-WMi"/>
-                            <constraint firstItem="4pK-8u-UYL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-60" id="hTW-3N-WOX"/>
                             <constraint firstItem="R8r-rb-aKD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="50" id="urh-qS-fhh"/>
-                            <constraint firstItem="4pK-8u-UYL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yqH-bI-eg0"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LoopLogoLarge" width="135" height="135"/>
+        <image name="LoopLogoLarge" width="453" height="453"/>
     </resources>
 </document>

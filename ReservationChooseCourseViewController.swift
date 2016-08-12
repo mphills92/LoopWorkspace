@@ -88,7 +88,6 @@ class ReservationChooseCourseViewController: UIViewController {
         
         updateResultsFilterButtonTitle()
     }
-
 }
 
 extension ReservationChooseCourseViewController {
