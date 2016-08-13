@@ -11,9 +11,8 @@ import UIKit
 class CourseDetailsPageViewController: UIPageViewController {
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newPageViewController("BasicInformation"),
-                self.newPageViewController("Facilities"),
-                self.newPageViewController("Scorecard"),
-                self.newPageViewController("Offers")]
+                self.newPageViewController("Facilities&Amenities"),
+                self.newPageViewController("Location&Offers")]
     }()
     
     private func newPageViewController(page: String) -> UIViewController {

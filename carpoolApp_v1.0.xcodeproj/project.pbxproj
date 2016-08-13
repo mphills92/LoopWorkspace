@@ -58,6 +58,8 @@
 		C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */; };
 		C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956FD331D256D8B00E7143B /* CalendarCell.swift */; };
 		C9597FD31D5E371100DD1B5B /* CourseBasicInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9597FD21D5E371100DD1B5B /* CourseBasicInformationViewController.swift */; };
+		C9597FD51D5FACBD00DD1B5B /* CourseFacilitiesInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9597FD41D5FACBD00DD1B5B /* CourseFacilitiesInformationViewController.swift */; };
+		C9597FD71D5FBBFA00DD1B5B /* CourseOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9597FD61D5FBBFA00DD1B5B /* CourseOffersViewController.swift */; };
 		C95A00B11CB5CB38008237B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95A00B01CB5CB38008237B1 /* AppDelegate.swift */; };
 		C95A00B61CB5CB38008237B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B41CB5CB38008237B1 /* Main.storyboard */; };
 		C95A00B81CB5CB38008237B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95A00B71CB5CB38008237B1 /* Assets.xcassets */; };
@@ -174,6 +176,8 @@
 		C956FD311D256C4F00E7143B /* ContainerChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerChooseDateViewController.swift; path = ../ContainerChooseDateViewController.swift; sourceTree = "<group>"; };
 		C956FD331D256D8B00E7143B /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarCell.swift; path = carpoolApp_v1.0/CalendarCell.swift; sourceTree = "<group>"; };
 		C9597FD21D5E371100DD1B5B /* CourseBasicInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseBasicInformationViewController.swift; sourceTree = "<group>"; };
+		C9597FD41D5FACBD00DD1B5B /* CourseFacilitiesInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseFacilitiesInformationViewController.swift; sourceTree = "<group>"; };
+		C9597FD61D5FBBFA00DD1B5B /* CourseOffersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseOffersViewController.swift; sourceTree = "<group>"; };
 		C95A00AD1CB5CB38008237B1 /* carpoolApp_v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpoolApp_v1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95A00B01CB5CB38008237B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95A00B51CB5CB38008237B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 				C90EFBA41D5D03EC00707373 /* CourseDetailsViewController.swift */,
 				C90EFBA71D5D1C3800707373 /* CourseDetailsPageViewController.swift */,
 				C9597FD21D5E371100DD1B5B /* CourseBasicInformationViewController.swift */,
+				C9597FD41D5FACBD00DD1B5B /* CourseFacilitiesInformationViewController.swift */,
+				C9597FD61D5FBBFA00DD1B5B /* CourseOffersViewController.swift */,
 			);
 			name = "Course Details";
 			sourceTree = "<group>";
@@ -926,6 +932,7 @@
 				C994B4C81D145BDB009848F2 /* UpcomingReservationsViewController.swift in Sources */,
 				C956FD221D2420BE00E7143B /* Login.swift in Sources */,
 				C990CFA11D209AFE005E05F2 /* SignUpContactInfoViewController.swift in Sources */,
+				C9597FD51D5FACBD00DD1B5B /* CourseFacilitiesInformationViewController.swift in Sources */,
 				C955272A1D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift in Sources */,
 				C9899EBB1D5BAE370020CB89 /* MyPrivateCoursesViewController.swift in Sources */,
 				C90EFBA51D5D03EC00707373 /* CourseDetailsViewController.swift in Sources */,
@@ -972,6 +979,7 @@
 				C956FD341D256D8B00E7143B /* CalendarCell.swift in Sources */,
 				C9359E091D479F370027D40D /* AboutUsPageViewController.swift in Sources */,
 				C944F1D71D4177CA008E2B4C /* CustomInteractionController.swift in Sources */,
+				C9597FD71D5FBBFA00DD1B5B /* CourseOffersViewController.swift in Sources */,
 				C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */,
 				C944F1D21D40910F008E2B4C /* AcknowledgmentsViewController.swift in Sources */,
 				C994B4C61D144A90009848F2 /* HelpAndSupportViewController.swift in Sources */,
