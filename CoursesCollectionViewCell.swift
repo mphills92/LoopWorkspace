@@ -17,8 +17,9 @@ class CoursesCollectionCell: UICollectionViewCell {
     @IBOutlet weak var tapToSelectLabel: UILabel!
     @IBOutlet weak var courseNameLabel: UILabel!
     @IBOutlet weak var courseLocationLabel: UILabel!
-    @IBOutlet weak var membershipHistoryLabel: UILabel!
     @IBOutlet weak var chooseCourseButton: UIButton!
+    @IBOutlet weak var revealUpDisclosureIndicator: UIImageView!
+    @IBOutlet weak var revealRightDisclosureIndicator: UIImageView!
     
     var coursesAvailable: Courses? {
         didSet {
@@ -26,7 +27,7 @@ class CoursesCollectionCell: UICollectionViewCell {
                 imageView.image = UIImage(named: "GolfCourseBackgroundImage")
                 courseNameLabel.text = coursesAvailable.name
                 courseLocationLabel.text = coursesAvailable.courseLocation
-                membershipHistoryLabel.text = "Member since \(coursesAvailable.membershipHistory)"
+                //membershipHistoryLabel.text = "Member since \(coursesAvailable.membershipHistory)"
                 //imageView.image = caddiesAvailable.backgroundImage
             }
         }
@@ -48,11 +49,15 @@ class CoursesCollectionCell: UICollectionViewCell {
         //titleLabel.transform = CGAffineTransformMakeScale(scale, scale)
         courseNameLabel.transform = CGAffineTransformMakeScale(scale, scale)
         courseLocationLabel.transform = CGAffineTransformMakeScale(scale, scale)
-        membershipHistoryLabel.transform = CGAffineTransformMakeScale(scale, scale)
-        
+        holdForDetailsLabel.transform = CGAffineTransformMakeScale(scale, scale)
+        revealUpDisclosureIndicator.transform = CGAffineTransformMakeScale(scale, scale)
+        tapToSelectLabel.transform = CGAffineTransformMakeScale(scale, scale)
+        revealRightDisclosureIndicator.transform = CGAffineTransformMakeScale(scale, scale)
+            
         courseLocationLabel.alpha = delta
-        membershipHistoryLabel.alpha = delta
         holdForDetailsLabel.alpha = delta
+        revealUpDisclosureIndicator.alpha = delta
         tapToSelectLabel.alpha = delta
+        revealRightDisclosureIndicator.alpha = delta
     }
 }
