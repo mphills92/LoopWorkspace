@@ -52,6 +52,10 @@ extension MonthThreeViewController: UICollectionViewDelegateFlowLayout {
         cell.selectedDateView.layer.cornerRadius = 8
         cell.selectedDateView.hidden = true
         
+        if (cell.numericDate.text == "") {
+            cell.userInteractionEnabled = false
+        }
+        
         return cell
     }
     

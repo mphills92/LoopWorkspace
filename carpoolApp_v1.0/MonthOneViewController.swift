@@ -17,6 +17,21 @@ class MonthOneViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var calendarMonthOne = CalendarMonthOne()
     
+    let date = NSDate()
+    let userCalendar = NSCalendar.currentCalendar()
+    var dateFormatter: NSDateFormatter = NSDateFormatter()
+    var currentDate = Int()
+    
+    // choose which date and time components are needed
+    let requestedComponents: NSCalendarUnit = [
+        NSCalendarUnit.Year,
+        NSCalendarUnit.Month,
+        NSCalendarUnit.Day,
+        NSCalendarUnit.Hour,
+        NSCalendarUnit.Minute,
+        NSCalendarUnit.Second
+    ]
+    
     var cellToAdjustHighlight = NSIndexPath()
     var highlightedCell = NSIndexPath()
     
@@ -24,6 +39,10 @@ class MonthOneViewController: UIViewController, UICollectionViewDelegate, UIColl
         super.viewDidLoad()
         backgroundView.layer.cornerRadius = 8
         backgroundView.alpha = 0.5
+        
+        dateFormatter.dateFormat = "dd"
+        _ = userCalendar.components(requestedComponents, fromDate: date)
+        currentDate = Int(dateFormatter.stringFromDate(date))!
         
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView.delaysContentTouches = false
@@ -48,6 +67,17 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
         cell.backgroundColor = UIColor.clearColor()
         cell.numericDate.text = calendarMonthOne.monthDates[indexPath.item]
         
+        if (cell.numericDate.text == "") {
+            cell.userInteractionEnabled = false
+        }
+        
+        if (cell.numericDate.text != "") {
+            if (Int(cell.numericDate.text!)! < Int(currentDate)) {
+                cell.numericDate.textColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.75)
+                cell.userInteractionEnabled = false
+            }
+        }
+        
         cell.selectedDateView.transform = CGAffineTransformMakeScale(0.5, 0.5)
         cell.selectedDateView.layer.cornerRadius = 8
         cell.selectedDateView.hidden = true
@@ -62,7 +92,7 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CalendarCollectionViewCell
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CalendarCollectionViewCell
-                
+        
         cellToAdjustHighlight = indexPath
         
         if (cellToAdjustHighlight != highlightedCell) {
@@ -73,7 +103,7 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CalendarCollectionViewCell
+
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CalendarCollectionViewCell
         
         if (cellToAdjustHighlight == highlightedCell) {
