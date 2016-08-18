@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ChooseDateViewController: UIViewController {
+class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var chooseDateButton: UIButton!
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var bottomButtonHolderView: UIView!
     @IBOutlet weak var selectedCourseNameLabel: UILabel!
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var datePickerBackgroundView: UIView!
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var chooseTimeSlideUpView: UIView!
+    @IBOutlet weak var bottomConstraintChooseTimeSlideUpView: NSLayoutConstraint!
+    @IBOutlet weak var coverSubviewsButton: UIButton!
     
     // Pass data via segue.
     var selectedCourseNameToSend = String()
@@ -30,6 +37,7 @@ class ChooseDateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Choose Date"
         navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         navigationController?.navigationBar.barStyle = UIBarStyle.Default
@@ -37,6 +45,11 @@ class ChooseDateViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        bottomConstraintChooseTimeSlideUpView.constant = -360
+        datePickerBackgroundView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        datePickerBackgroundView.layer.borderWidth = 1
+        coverSubviewsButton.alpha = 0
+        coverSubviewsButton.hidden = true
         chooseDateButton.layer.cornerRadius = 20
         
         reservationSnapshotView.layer.shadowColor = UIColor.blackColor().CGColor
@@ -47,6 +60,14 @@ class ChooseDateViewController: UIViewController {
         bottomButtonHolderView.layer.shadowOpacity = 0.25
         bottomButtonHolderView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
+        chooseTimeSlideUpView.layer.shadowColor = UIColor.blackColor().CGColor
+        chooseTimeSlideUpView.layer.shadowOpacity = 0.25
+        chooseTimeSlideUpView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        navigationBar.barTintColor = UIColor.whiteColor()
+        navigationBar.barStyle = UIBarStyle.Default
+        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationBar.shadowImage = UIImage()
+        
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
     }
     
@@ -54,10 +75,50 @@ class ChooseDateViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedADate:", name: "userHasSelectedADateNotification", object: nil)
     }
 }
 
 extension ChooseDateViewController {
+    
+    func userHasSelectedADate(notification: NSNotification) {
+        displayChooseTimeSlideUpView()
+    }
+    
+    @IBAction func cancelTimeSelectionButtonPressed(sender: AnyObject) {
+        closeChooseTimeSlideUpView()
+    }
+    
+    @IBAction func coverSubviewsButtonPressed(sender: AnyObject) {
+        closeChooseTimeSlideUpView()
+    }
+    
+    func displayChooseTimeSlideUpView() {
+        UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.8, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.bottomConstraintChooseTimeSlideUpView.constant = -60
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.2, delay: 0.2, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.coverSubviewsButton.alpha = 0.5
+            self.coverSubviewsButton.hidden = false
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
+    
+    func closeChooseTimeSlideUpView() {
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.bottomConstraintChooseTimeSlideUpView.constant = -360
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
+        UIView.animateWithDuration(0.1, delay: 0.3, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.coverSubviewsButton.alpha = 0
+            self.coverSubviewsButton.hidden = true
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toChooseTimeSegue") {

@@ -124,6 +124,7 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
             }, completion: nil)
 
         highlightedCell = cellToAdjustHighlight
+        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedADateNotification", object: nil)
         return highlightedCell
     }
     
