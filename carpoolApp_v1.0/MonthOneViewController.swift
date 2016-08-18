@@ -12,7 +12,7 @@ class MonthOneViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var calendarMonthOneLabel: UILabel!
+    @IBOutlet weak var calendarMonthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var calendarMonthOne = CalendarMonthOne()
@@ -28,7 +28,7 @@ class MonthOneViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView.delaysContentTouches = false
         
-        calendarMonthOneLabel.text = calendarMonthOne.monthOneTitle
+        calendarMonthLabel.text = calendarMonthOne.monthTitle
     }
 }
 
@@ -39,14 +39,14 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return calendarMonthOne.monthOneDates.count
+        return calendarMonthOne.monthDates.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CalendarCollectionViewCell
         
         cell.backgroundColor = UIColor.clearColor()
-        cell.numericDate.text = calendarMonthOne.monthOneDates[indexPath.item]
+        cell.numericDate.text = calendarMonthOne.monthDates[indexPath.item]
         
         cell.selectedDateView.transform = CGAffineTransformMakeScale(0.5, 0.5)
         cell.selectedDateView.layer.cornerRadius = 8
@@ -79,9 +79,6 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
         if (cellToAdjustHighlight == highlightedCell) {
             unhighlightCell(cellToAdjustHighlight)
         }
-
-        
-        
     }
     
     func highlightCell(cellToHighlight: NSIndexPath) -> NSIndexPath {
@@ -111,9 +108,6 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
             cell.selectedDateView.transform = CGAffineTransformMakeScale(0.5, 0.5)
             cell.selectedDateView.hidden = true
         }, completion: nil)
-        
-        
-        //cell.selectedDateView.hidden = true
         
         highlightedCell = NSIndexPath()
         return highlightedCell
