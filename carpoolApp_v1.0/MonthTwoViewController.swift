@@ -29,6 +29,12 @@ class MonthTwoViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.delaysContentTouches = false
         
         calendarMonthLabel.text = calendarMonthTwo.monthTitle
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasCanceledTimeSelection:", name: "userCanceledTimeSelectionNotificationMonthTwo", object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "userCanceledTimeSelectionNotificationMonthTwo", object: self.view.window)
     }
 }
 
@@ -64,29 +70,15 @@ extension MonthTwoViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CalendarCollectionViewCell
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CalendarCollectionViewCell
         
         cellToAdjustHighlight = indexPath
-        
-        if (cellToAdjustHighlight != highlightedCell) {
+        highlightedCell = NSIndexPath()
         highlightCell(cellToAdjustHighlight)
-        } else {
-            unhighlightCell(cellToAdjustHighlight)
-        }
     }
     
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CalendarCollectionViewCell
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CalendarCollectionViewCell
-        
-        if (cellToAdjustHighlight == highlightedCell) {
-            unhighlightCell(cellToAdjustHighlight)
-        }
-    }
-    
-    func highlightCell(cellToHighlight: NSIndexPath) -> NSIndexPath {
-        let cell = collectionView.cellForItemAtIndexPath(cellToHighlight) as! CalendarCollectionViewCell
+    func highlightCell(cellToAdjustHighlight: NSIndexPath) -> NSIndexPath {
+        let cell = collectionView.cellForItemAtIndexPath(cellToAdjustHighlight) as! CalendarCollectionViewCell
         
         cell.selectedDateView.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5).CGColor
         cell.selectedDateView.layer.borderColor = UIColor.whiteColor().CGColor
@@ -98,11 +90,13 @@ extension MonthTwoViewController: UICollectionViewDelegateFlowLayout {
             }, completion: nil)
         
         highlightedCell = cellToAdjustHighlight
+        let senderPageViewID = 2
+        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedADateNotification", object: senderPageViewID)
         return highlightedCell
     }
     
-    func unhighlightCell(cellToHighlight: NSIndexPath) -> NSIndexPath {
-        let cell = collectionView.cellForItemAtIndexPath(cellToHighlight) as! CalendarCollectionViewCell
+    func unhighlightCell(highlightedCell: NSIndexPath) -> NSIndexPath {
+        let cell = collectionView.cellForItemAtIndexPath(highlightedCell) as! CalendarCollectionViewCell
         
         cell.selectedDateView.layer.backgroundColor = UIColor.clearColor().colorWithAlphaComponent(1.0).CGColor
         cell.selectedDateView.layer.borderColor = UIColor.clearColor().CGColor
@@ -112,9 +106,14 @@ extension MonthTwoViewController: UICollectionViewDelegateFlowLayout {
             cell.selectedDateView.transform = CGAffineTransformMakeScale(0.5, 0.5)
             cell.selectedDateView.hidden = true
             }, completion: nil)
-
-        highlightedCell = NSIndexPath()
+        
+        cellToAdjustHighlight = NSIndexPath()
         return highlightedCell
     }
+    
+    func userHasCanceledTimeSelection(notification: NSNotification) {
+        unhighlightCell(highlightedCell)
+    }
+
 }
 

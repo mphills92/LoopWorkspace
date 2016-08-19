@@ -31,6 +31,8 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     var selectedCourseNameHasBeenSent: String?
     var selectedLocationHasBeenSent: String?
     
+    var senderPageViewID = Int()
+    
     @IBAction func chooseDateButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("toChooseTimeSegue", sender: self)
     }
@@ -78,11 +80,19 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedADate:", name: "userHasSelectedADateNotification", object: nil)
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "userHasSelectedADateNotification", object: self.view.window)
+
+    }
 }
 
 extension ChooseDateViewController {
     
     func userHasSelectedADate(notification: NSNotification) {
+        senderPageViewID = notification.object! as! Int
         displayChooseTimeSlideUpView()
     }
     
@@ -108,6 +118,18 @@ extension ChooseDateViewController {
     }
     
     func closeChooseTimeSlideUpView() {
+        
+        switch (senderPageViewID) {
+        case 1:
+            NSNotificationCenter.defaultCenter().postNotificationName("userCanceledTimeSelectionNotificationMonthOne", object: nil)
+        case 2:
+            NSNotificationCenter.defaultCenter().postNotificationName("userCanceledTimeSelectionNotificationMonthTwo", object: nil)
+        case 3:
+            NSNotificationCenter.defaultCenter().postNotificationName("userCanceledTimeSelectionNotificationMonthThree", object: nil)
+        default:
+            break
+        }
+        
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.bottomConstraintChooseTimeSlideUpView.constant = -360
             self.view.layoutIfNeeded()
