@@ -10,6 +10,13 @@ import UIKit
 
 class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     
+    // Dummy data!!!!
+    var validStartTimeAsString = "23:59:00"
+    var validStartTimeAsNSDate = NSDate()
+    var validEndTimeAsString = "12:00:00"
+    var validEndTimeAsNSDate = NSDate()
+    ////////////////////
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var chooseDateButton: UIButton!
     @IBOutlet weak var reservationSnapshotView: UIView!
@@ -23,18 +30,27 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var bottomConstraintChooseTimeSlideUpView: NSLayoutConstraint!
     @IBOutlet weak var coverSubviewsButton: UIButton!
     
+    // Necessary for NSNotificationCenter with multiple page views sending information.
+    var senderPageViewID = Int()
+
     // Pass data via segue.
-    var selectedCourseNameToSend = String()
-    var selectedLocationToSend = String()
+    var selectedCourseNameToSendAgain = String()
+    var selectedLocationToSendAgain = String()
+    var selectedTimeToSend = String()
     
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
     var selectedLocationHasBeenSent: String?
     
-    var senderPageViewID = Int()
+    
+    var selectedDate = NSDate()
+    var dateFormatter = NSDateFormatter()
+    let timeComponents = NSCalendar.currentCalendar().componentsInTimeZone(NSTimeZone.localTimeZone(), fromDate: NSDate())
+ 
+    
     
     @IBAction func chooseDateButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("toChooseTimeSegue", sender: self)
+        performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
     }
     
     override func viewDidLoad() {
@@ -71,6 +87,12 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
         navigationBar.shadowImage = UIImage()
         
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
+        
+        timestampOnLoad()
+        validHours()
+        datePicker.addTarget(self, action: "timeChangedValue:", forControlEvents: UIControlEvents.ValueChanged)
+ 
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -142,14 +164,44 @@ extension ChooseDateViewController {
             }, completion: nil)
     }
     
+    
+    func timestampOnLoad() {
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .ShortStyle)
+        selectedTimeToSend = timestamp
+    }
+    
+    func timeChangedValue(date: NSDate) {
+        selectedDate = datePicker.date
+        //dateFormatter.dateFormat = "HH:mm a"
+        dateFormatter.timeStyle = .ShortStyle
+        let convertedTime = dateFormatter.stringFromDate(selectedDate)
+        selectedTimeToSend = convertedTime
+        
+        
+    }
+    
+    func validHours() {
+        dateFormatter.dateFormat = "HH:mm:ss"
+        validStartTimeAsNSDate = dateFormatter.dateFromString(validStartTimeAsString)!
+        validEndTimeAsNSDate = dateFormatter.dateFromString(validEndTimeAsString)!
+    }
+    
+    func evaluateSelectedTime(selectedTime: NSDate, validStartTime: NSDate, validEndTime: NSDate) -> Bool {
+        if ((selectedTime.earlierDate(validEndTime) == selectedTime) && (selectedTime.laterDate(validStartTime) == selectedTime)) {
+            return true
+        }
+        return false
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "toChooseTimeSegue") {
-            let destinationVC = segue.destinationViewController as! ChooseTimeViewController
-            selectedCourseNameToSend = selectedCourseNameHasBeenSent!
-            selectedLocationToSend = selectedLocationHasBeenSent!
+        if (segue.identifier == "toChooseCaddieSegue") {
+            let destinationVC = segue.destinationViewController as! CaddiesAvailableViewController
+            selectedCourseNameToSendAgain = selectedCourseNameHasBeenSent!
+            selectedLocationToSendAgain = selectedLocationHasBeenSent!
             
-            destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
-            destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
+            destinationVC.selectedCourseNameHasBeenSentAgain = selectedCourseNameToSendAgain
+            destinationVC.selectedLocationHasBeenSentAgain = selectedLocationToSendAgain
+            destinationVC.selectedTimeHasBeenSent = selectedTimeToSend
         }
     }
 }
