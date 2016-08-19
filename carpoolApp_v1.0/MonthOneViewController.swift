@@ -15,39 +15,42 @@ class MonthOneViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var calendarMonthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var generalCalendarData = GeneralCalendarData()
     var calendarMonthOne = CalendarMonthOne()
     
-    let date = NSDate()
-    let userCalendar = NSCalendar.currentCalendar()
-    var dateFormatter: NSDateFormatter = NSDateFormatter()
-    var currentDate = Int()
-    
-    // choose which date and time components are needed
-    let requestedComponents: NSCalendarUnit = [
-        NSCalendarUnit.Year,
-        NSCalendarUnit.Month,
-        NSCalendarUnit.Day,
-        NSCalendarUnit.Hour,
-        NSCalendarUnit.Minute,
-        NSCalendarUnit.Second
-    ]
+    var currentDay = Int()
+    var currentMonth = Int()
+    var currentYear = Int()
+    var thisMonth = Int()
+    var daysInThisMonth = [Int()]
     
     var cellToAdjustHighlight = NSIndexPath()
     var highlightedCell = NSIndexPath()
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundView.layer.cornerRadius = 8
         backgroundView.alpha = 0.5
         
-        dateFormatter.dateFormat = "dd"
-        _ = userCalendar.components(requestedComponents, fromDate: date)
-        currentDate = Int(dateFormatter.stringFromDate(date))!
-        
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView.delaysContentTouches = false
         
-        calendarMonthLabel.text = calendarMonthOne.monthTitle
+        currentDay = generalCalendarData.getCurrentDateInfo().currentDay
+        currentMonth = generalCalendarData.getCurrentDateInfo().currentMonth
+        currentYear = generalCalendarData.getCurrentDateInfo().currentYear
+        
+        //// Change for various Page View Controllers.
+        thisMonth = currentMonth - 1
+        //////////////////////////////////////////////
+        
+        //daysInThisMonth = generalCalendarData.setDaysOfMonth(thisMonth)
+        
+        calendarMonthLabel.text = "\(generalCalendarData.calendarMonths[thisMonth])" + " \(currentYear)"
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasCanceledTimeSelection:", name: "userCanceledTimeSelectionNotificationMonthOne", object: nil)
     }
@@ -64,6 +67,7 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //return generalCalendarData.daysPerCalendarMonth[thisMonth]
         return calendarMonthOne.monthDates.count
     }
     
@@ -78,7 +82,7 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
         }
         
         if (cell.numericDate.text != "") {
-            if (Int(cell.numericDate.text!)! < Int(currentDate)) {
+            if (Int(cell.numericDate.text!)! < Int(currentDay)) {
                 cell.numericDate.textColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.75)
                 cell.userInteractionEnabled = false
             }
@@ -116,8 +120,12 @@ extension MonthOneViewController: UICollectionViewDelegateFlowLayout {
             }, completion: nil)
      
         highlightedCell = cellToAdjustHighlight
+        
         let senderPageViewID = 1
-        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedADateNotification", object: senderPageViewID)
+        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedAMonthNotification", object: senderPageViewID)
+        
+        let senderDayID = Int(cell.numericDate.text!)
+        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedADayNotification", object: senderDayID)
         return highlightedCell
     }
 

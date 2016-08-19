@@ -14,6 +14,7 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var selectedCourseNameLabel: UILabel!
+    @IBOutlet weak var selectedDateLabel: UILabel!
     @IBOutlet weak var selectedTimeLabel: UILabel!
 
     var caddiesFound = true
@@ -23,12 +24,14 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
     // Pass data via segue.
     var selectedCourseNameToSend = String()
     var selectedLocationToSend = String()
+    var selectedDateToSendAgain = String()
     var selectedTimeToSendAgain = String()
     var selectedCaddieNameToSend = String()    
     
     // Receive data from segue.
     var selectedCourseNameHasBeenSentAgain: String?
     var selectedLocationHasBeenSentAgain: String?
+    var selectedDateHasBeenSent: NSDate?
     var selectedTimeHasBeenSent: String?
     
     override func viewDidLoad() {
@@ -46,7 +49,13 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
         reservationSnapshotView.layer.shadowOpacity = 0.25
         reservationSnapshotView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
 
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+        var convertedDate = dateFormatter.stringFromDate(selectedDateHasBeenSent!)
+        selectedDateToSendAgain = convertedDate
+        
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSentAgain
+        selectedDateLabel.text = convertedDate
         selectedTimeLabel.text = selectedTimeHasBeenSent
     }
     
@@ -114,6 +123,7 @@ extension CaddiesAvailableViewController {
             
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
             destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
+            destinationVC.selectedDateHasBeenSentAgain = selectedDateToSendAgain
             destinationVC.selectedTimeHasBeenSentAgain = selectedTimeToSendAgain
             destinationVC.selectedCaddieNameHasBeenSent = selectedCaddieNameToSend
         }

@@ -15639,6 +15639,7 @@ for the game of golf.</string>
                     <connections>
                         <outlet property="reservationSnapshotView" destination="SOA-yo-Hvy" id="WZ3-eW-Iem"/>
                         <outlet property="selectedCourseNameLabel" destination="efm-6h-eQR" id="ULH-O9-D3i"/>
+                        <outlet property="selectedDateLabel" destination="blG-ke-hra" id="zp2-b2-siz"/>
                         <outlet property="selectedTimeLabel" destination="v45-Ts-Mg7" id="Oc1-Xw-it0"/>
                         <outlet property="tableView" destination="fOr-pK-x5L" id="krM-3y-PYQ"/>
                         <segue destination="zgf-cb-m1j" kind="show" identifier="caddieSelectedSegue" id="xym-Ih-tds"/>

@@ -30,25 +30,30 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var bottomConstraintChooseTimeSlideUpView: NSLayoutConstraint!
     @IBOutlet weak var coverSubviewsButton: UIButton!
     
-    // Necessary for NSNotificationCenter with multiple page views sending information.
+    // Necessary for NSNotificationCenter with multiple calendar page views sending information.
     var senderPageViewID = Int()
+    var senderDayID = Int()
+    var generalCalendarData = GeneralCalendarData()
+    var currentDay = Int()
+    var currentMonth = Int()
+    var currentYear = Int()
+    var selectedMonth = Int()
+    var selectedDay = Int()
 
     // Pass data via segue.
     var selectedCourseNameToSendAgain = String()
     var selectedLocationToSendAgain = String()
+    var selectedDateToSend = NSDate()
     var selectedTimeToSend = String()
     
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
     var selectedLocationHasBeenSent: String?
     
-    
-    var selectedDate = NSDate()
+    var selectedTime = NSDate()
     var dateFormatter = NSDateFormatter()
     let timeComponents = NSCalendar.currentCalendar().componentsInTimeZone(NSTimeZone.localTimeZone(), fromDate: NSDate())
  
-    
-    
     @IBAction func chooseDateButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
     }
@@ -88,6 +93,10 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
         
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
         
+        currentDay = generalCalendarData.getCurrentDateInfo().currentDay
+        currentMonth = generalCalendarData.getCurrentDateInfo().currentMonth
+        currentYear = generalCalendarData.getCurrentDateInfo().currentYear
+        
         timestampOnLoad()
         validHours()
         datePicker.addTarget(self, action: "timeChangedValue:", forControlEvents: UIControlEvents.ValueChanged)
@@ -100,22 +109,42 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedADate:", name: "userHasSelectedADateNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedAMonth:", name: "userHasSelectedAMonthNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedADay:", name: "userHasSelectedADayNotification", object: nil)
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "userHasSelectedADateNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "userHasSelectedAMonthNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "userHasSelectedADayNotification", object: self.view.window)
 
     }
 }
 
 extension ChooseDateViewController {
     
-    func userHasSelectedADate(notification: NSNotification) {
+    func userHasSelectedAMonth(notification: NSNotification) {
         senderPageViewID = notification.object! as! Int
+        
+        switch (senderPageViewID) {
+        case 1:
+            selectedMonth = currentMonth
+        case 2:
+            selectedMonth = currentMonth + 1
+        case 3:
+            selectedMonth = currentMonth + 2
+        default:
+            break
+        }
+        
         displayChooseTimeSlideUpView()
+    }
+    
+    func userHasSelectedADay(notification: NSNotification) {
+        senderDayID = notification.object! as! Int
+        selectedDay = senderDayID
     }
     
     @IBAction func cancelTimeSelectionButtonPressed(sender: AnyObject) {
@@ -171,13 +200,11 @@ extension ChooseDateViewController {
     }
     
     func timeChangedValue(date: NSDate) {
-        selectedDate = datePicker.date
+        selectedTime = datePicker.date
         //dateFormatter.dateFormat = "HH:mm a"
         dateFormatter.timeStyle = .ShortStyle
-        let convertedTime = dateFormatter.stringFromDate(selectedDate)
+        let convertedTime = dateFormatter.stringFromDate(selectedTime)
         selectedTimeToSend = convertedTime
-        
-        
     }
     
     func validHours() {
@@ -193,14 +220,33 @@ extension ChooseDateViewController {
         return false
     }
     
+    func createSelectedDateString(selectedDay: Int, selectedMonth: Int) -> NSDate {
+        let stringYear = String(currentYear)
+        let stringMonth = String(selectedMonth)
+        let stringDay = String(selectedDay)
+        
+        let dateString = "\(currentYear)" + "-\(selectedMonth)" + "-\(selectedDay)"
+
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        //dateFormatter.timeZone = NSTimeZone(name: "UTC") //Messes up the dateString conversion somehow...makes it think it's a day earlier than it is when selectedDateToSend is passed to the next view controller
+        
+        selectedDateToSend = dateFormatter.dateFromString(dateString)!
+        
+        return selectedDateToSend
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toChooseCaddieSegue") {
             let destinationVC = segue.destinationViewController as! CaddiesAvailableViewController
             selectedCourseNameToSendAgain = selectedCourseNameHasBeenSent!
             selectedLocationToSendAgain = selectedLocationHasBeenSent!
             
+            createSelectedDateString(selectedDay, selectedMonth: selectedMonth)
+            
             destinationVC.selectedCourseNameHasBeenSentAgain = selectedCourseNameToSendAgain
             destinationVC.selectedLocationHasBeenSentAgain = selectedLocationToSendAgain
+            destinationVC.selectedDateHasBeenSent = selectedDateToSend
             destinationVC.selectedTimeHasBeenSent = selectedTimeToSend
         }
     }

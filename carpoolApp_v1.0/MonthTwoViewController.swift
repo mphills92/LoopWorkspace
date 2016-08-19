@@ -15,7 +15,14 @@ class MonthTwoViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var calendarMonthLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var generalCalendarData = GeneralCalendarData()
     var calendarMonthTwo = CalendarMonthTwo()
+    
+    var currentDay = Int()
+    var currentMonth = Int()
+    var currentYear = Int()
+    var thisMonth = Int()
+    var daysInThisMonth = [Int()]
     
     var cellToAdjustHighlight = NSIndexPath()
     var highlightedCell = NSIndexPath()
@@ -28,7 +35,17 @@ class MonthTwoViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView.delaysContentTouches = false
         
-        calendarMonthLabel.text = calendarMonthTwo.monthTitle
+        currentDay = generalCalendarData.getCurrentDateInfo().currentDay
+        currentMonth = generalCalendarData.getCurrentDateInfo().currentMonth
+        currentYear = generalCalendarData.getCurrentDateInfo().currentYear
+        
+        //// Change for various Page View Controllers.
+        thisMonth = currentMonth
+        //////////////////////////////////////////////
+        
+        //daysInThisMonth = generalCalendarData.setDaysOfMonth(thisMonth)
+        
+        calendarMonthLabel.text = "\(generalCalendarData.calendarMonths[thisMonth])" + " \(currentYear)"
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasCanceledTimeSelection:", name: "userCanceledTimeSelectionNotificationMonthTwo", object: nil)
     }
@@ -45,6 +62,7 @@ extension MonthTwoViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //return generalCalendarData.daysPerCalendarMonth[thisMonth]
         return calendarMonthTwo.monthDates.count
     }
     
@@ -90,8 +108,12 @@ extension MonthTwoViewController: UICollectionViewDelegateFlowLayout {
             }, completion: nil)
         
         highlightedCell = cellToAdjustHighlight
+        
         let senderPageViewID = 2
-        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedADateNotification", object: senderPageViewID)
+        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedAMonthNotification", object: senderPageViewID)
+        
+        let senderDayID = Int(cell.numericDate.text!)
+        NSNotificationCenter.defaultCenter().postNotificationName("userHasSelectedADayNotification", object: senderDayID)
         return highlightedCell
     }
     

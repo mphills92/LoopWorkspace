@@ -30,6 +30,7 @@ class ContainerConfirmReservationViewController: UITableViewController {
     var selectedCaddieNameHasBeenSent = String()
     var selectedCourseNameHasBeenSent = String()
     var selectedLocationHasBeenSent = String()
+    var selectedDateHasBeenSentAgain = String()
     var selectedTimeHasBeenSentAgain = String()
     
     var acceptedPromoCode = String()
@@ -50,6 +51,7 @@ class ContainerConfirmReservationViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCaddieNameToDisplay:", name: "selectedCaddieNameNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCourseNameToDisplay:", name: "selectedCourseNameNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCourseLocationToDisplay:", name: "selectedCourseLocationNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpDateToDisplay:", name: "selectedDateNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpTimeToDisplay:", name: "selectedTimeNotification", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayAcceptedPromoCode:", name: "acceptedPromoCodeNotification", object: nil)
@@ -82,10 +84,14 @@ extension ContainerConfirmReservationViewController {
         golfCourseNameLabel.text = "\(selectedCourseNameHasBeenSent)"
     }
     
+    func setUpDateToDisplay(notification: NSNotification) {
+        selectedDateHasBeenSentAgain = notification.object! as! String
+        dateLabel.text = "\(selectedDateHasBeenSentAgain)"
+    }
+    
     func setUpTimeToDisplay(notification: NSNotification) {
         selectedTimeHasBeenSentAgain = notification.object! as! String
         timeLabel.text = "\(selectedTimeHasBeenSentAgain)"
-
     }
     
     func setUpCourseLocationToDisplay(notification: NSNotification) {

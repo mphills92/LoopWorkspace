@@ -20,6 +20,7 @@ class ConfirmReservationViewController: UIViewController {
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
     var selectedLocationHasBeenSent: String?
+    var selectedDateHasBeenSentAgain: String?
     var selectedTimeHasBeenSentAgain: String?
     var selectedCaddieNameHasBeenSent: String?
     
@@ -53,6 +54,7 @@ class ConfirmReservationViewController: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("selectedCaddieNameNotification", object: selectedCaddieNameHasBeenSent!)
         NSNotificationCenter.defaultCenter().postNotificationName("selectedCourseNameNotification", object: selectedCourseNameHasBeenSent!)
         NSNotificationCenter.defaultCenter().postNotificationName("selectedCourseLocationNotification", object: selectedLocationHasBeenSent!)
+        NSNotificationCenter.defaultCenter().postNotificationName("selectedDateNotification", object: selectedDateHasBeenSentAgain!)
         NSNotificationCenter.defaultCenter().postNotificationName("selectedTimeNotification", object: selectedTimeHasBeenSentAgain!)
     }
     
@@ -74,6 +76,7 @@ class ConfirmReservationViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedCaddieNameNotification", object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedCourseNameNotification", object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedCourseLocationNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedDateNotification", object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedTimeNotification", object: self.view.window)
         
     }
