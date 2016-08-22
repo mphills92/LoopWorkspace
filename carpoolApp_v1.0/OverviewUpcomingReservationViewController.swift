@@ -11,7 +11,6 @@ import MessageUI
 
 class OverviewUpcomingReservationViewController: UITableViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
-    @IBOutlet weak var checkInButton: UIButton!
     @IBOutlet weak var checkInCell: UITableViewCell!
     @IBOutlet weak var textCaddieCell: UITableViewCell!
     @IBOutlet weak var emailCaddieCell: UITableViewCell!
@@ -29,23 +28,11 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-        checkInButton.layer.cornerRadius = 20
-        checkInButton.layer.borderColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0).CGColor
-        checkInButton.layer.borderWidth = 1
-        
         setNumberOfTableViewSections()
     }
 }
 
 extension OverviewUpcomingReservationViewController {
-    
-    @IBAction func checkInButtonPressed(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let golferCheckInViewController = storyboard.instantiateViewControllerWithIdentifier("GolferCheckInNavigationController") as! UIViewController
-        self.presentViewController(golferCheckInViewController, animated: true, completion: nil)
-
-    }
-    
     
     func setNumberOfTableViewSections() {
         if (nextReservation.reservationIsWithinOneHour == true) {

@@ -26,8 +26,6 @@
 		C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */; };
 		C944F1BA1D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */; };
 		C944F1BC1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */; };
-		C944F1BF1D40655C008E2B4C /* GolferCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1BE1D40655C008E2B4C /* GolferCheckInViewController.swift */; };
-		C944F1C21D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1C11D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift */; };
 		C944F1C91D408E8C008E2B4C /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1C81D408E8C008E2B4C /* PaymentsViewController.swift */; };
 		C944F1CC1D408FBD008E2B4C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1CB1D408FBD008E2B4C /* TermsOfServiceViewController.swift */; };
 		C944F1CF1D40903F008E2B4C /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944F1CE1D40903F008E2B4C /* PrivacyPolicyViewController.swift */; };
@@ -149,8 +147,6 @@
 		C94259E81D1771CC00EEE328 /* ContainerAboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerAboutUsViewController.swift; sourceTree = "<group>"; };
 		C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGolferRoundInProgressViewController.swift; sourceTree = "<group>"; };
 		C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerReviewCaddieViewController.swift; sourceTree = "<group>"; };
-		C944F1BE1D40655C008E2B4C /* GolferCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GolferCheckInViewController.swift; sourceTree = "<group>"; };
-		C944F1C11D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerGolferCheckInViewController.swift; sourceTree = "<group>"; };
 		C944F1C81D408E8C008E2B4C /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
 		C944F1CB1D408FBD008E2B4C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		C944F1CE1D40903F008E2B4C /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
@@ -313,16 +309,6 @@
 			name = "Page View Controllers";
 			sourceTree = "<group>";
 		};
-		C944F1B81D3FF0C6008E2B4C /* Golfer Reservation In Progress */ = {
-			isa = PBXGroup;
-			children = (
-				C944F1D81D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift */,
-				C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */,
-				C944F1BD1D4018E5008E2B4C /* Review Caddie */,
-			);
-			name = "Golfer Reservation In Progress";
-			sourceTree = "<group>";
-		};
 		C944F1BD1D4018E5008E2B4C /* Review Caddie */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,15 +316,6 @@
 				C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */,
 			);
 			name = "Review Caddie";
-			sourceTree = "<group>";
-		};
-		C944F1C01D406DB9008E2B4C /* Golfer Check In */ = {
-			isa = PBXGroup;
-			children = (
-				C944F1BE1D40655C008E2B4C /* GolferCheckInViewController.swift */,
-				C944F1C11D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift */,
-			);
-			name = "Golfer Check In";
 			sourceTree = "<group>";
 		};
 		C944F1C31D408C4F008E2B4C /* Upcoming */ = {
@@ -507,8 +484,9 @@
 		C955273E1D3FCCDD0069554C /* Active Reservation */ = {
 			isa = PBXGroup;
 			children = (
-				C944F1C01D406DB9008E2B4C /* Golfer Check In */,
-				C944F1B81D3FF0C6008E2B4C /* Golfer Reservation In Progress */,
+				C944F1D81D42B54D008E2B4C /* GolferReservationInProgressSidebarViewController.swift */,
+				C944F1B91D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift */,
+				C944F1BD1D4018E5008E2B4C /* Review Caddie */,
 			);
 			name = "Active Reservation";
 			sourceTree = "<group>";
@@ -936,7 +914,6 @@
 				C990CF991D1F3FBA005E05F2 /* LoginViewController.swift in Sources */,
 				C956FD2F1D24356600E7143B /* SessionForCourses.swift in Sources */,
 				C95385D01D10B8EE007BCA15 /* ConfirmReservationViewController.swift in Sources */,
-				C944F1BF1D40655C008E2B4C /* GolferCheckInViewController.swift in Sources */,
 				C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */,
 				C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */,
 				C9EE3F1A1D07383200F86EF2 /* ChooseDateViewController.swift in Sources */,
@@ -959,7 +936,6 @@
 				C9EE3ED81D06643800F86EF2 /* SidebarMenuViewController.swift in Sources */,
 				C93B4E9F1D653B0A00EC3F56 /* Calendar.swift in Sources */,
 				C994B4CF1D15A67F009848F2 /* ChangeEmailViewController.swift in Sources */,
-				C944F1C21D406DDA008E2B4C /* ContainerGolferCheckInViewController.swift in Sources */,
 				C9EE3F301D0A1EBC00F86EF2 /* InviteViewController.swift in Sources */,
 				C95385D31D11D96D007BCA15 /* ContainerConfirmReservationViewController.swift in Sources */,
 				C98784881D15CE6600EED776 /* ChangePasswordViewController.swift in Sources */,

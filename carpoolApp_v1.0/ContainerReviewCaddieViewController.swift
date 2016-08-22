@@ -16,6 +16,8 @@ class ContainerReviewCaddieViewController: UITableViewController {
     
         self.tableView.contentInset = UIEdgeInsetsMake(-100, 0, -40, 0)
         
+        caddieProfileImage.layer.cornerRadius = 8
+        
         
     }
     
