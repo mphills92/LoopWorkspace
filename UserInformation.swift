@@ -57,7 +57,6 @@ class UpcomingReservations {
 
 class NextReservation {
     var reservationIsWithinOneHour: Bool = true
-    var userHasCheckedInForNextReservation: Bool = true
 }
 
 class PreviousReservation {

@@ -15,7 +15,6 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     @IBOutlet weak var reservationInProgressBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var startReservationButton: UIButton!
-    @IBOutlet weak var checkInButton: UIButton!
     
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
@@ -43,14 +42,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
         self.view.addSubview(imageViewBackground)
         self.view.sendSubviewToBack(imageViewBackground)
-        
-        checkInButton.layer.borderColor = UIColor.yellowColor().CGColor
-        checkInButton.layer.borderWidth = 1
-        checkInButton.layer.cornerRadius = 20
-        checkInButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
 
-
-        
         // SWRevealViewController targets and actions.
         self.revealViewController().tapGestureRecognizer()
         if self.revealViewController() != nil {
@@ -77,7 +69,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         
         positionAndDisplayViewButtons()
         
-        if (nextReservation.reservationIsWithinOneHour == true && nextReservation.userHasCheckedInForNextReservation == true) {
+        if (nextReservation.reservationIsWithinOneHour == true) {
             self.revealViewController().rightViewRevealWidth = 280
         } else {
             self.revealViewController().rightViewRevealWidth = 0
@@ -112,82 +104,29 @@ extension LandingPageViewController {
     func revealController(revealController: SWRevealViewController!, didMoveToPosition position: FrontViewPosition) {
         if (position == FrontViewPosition.Left || position == FrontViewPosition.RightMost) {
             self.startReservationButton.enabled = true
-            self.checkInButton.enabled = true
         } else {
             self.startReservationButton.enabled = false
-            self.checkInButton.enabled = false
         }
     }
     
     @IBAction func startReservationButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("toChooseCourseSegue", sender: self)
     }
-    
-    @IBAction func checkInButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("toCheckInSegue", sender: self)
-    }
-    
-    @IBAction func reservationInProgressButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("toRoundInProgressSegue", sender: self)
-    }
-    
-    @IBAction func reservationInProgressButtonSwipedUp(sender: AnyObject) {
-        performSegueWithIdentifier("toRoundInProgressSegue", sender: self)
-    }
-    
-    
-    /*
-    @IBAction func activeReservationButtonPressed(sender: AnyObject) {
-        if (nextReservation.userHasCheckedInForNextReservation == false) {
-            performSegueWithIdentifier("toCheckInSegue", sender: self)
-        } else {
-            performSegueWithIdentifier("toRoundInProgressSegue", sender: self)
-        }
-    }
 
-    func showOrHideActiveLoopButton() {
-        if (nextReservation.reservationIsWithinOneHour == true) {
-            
-            if (nextReservation.userHasCheckedInForNextReservation == false) {
-                activeLoopButton.setTitle("Check in for reservation", forState: .Normal)
-            } else {
-                activeLoopButton.setTitle("Reservation in progress ...", forState: .Normal)
-            }
-            
-        } else {
-            activeLoopButton.hidden = true
-        }
-    }
- */
- 
     func positionAndDisplayViewButtons() {
         if (nextReservation.reservationIsWithinOneHour == false) {
             // Hide Check In and In Progress Buttons
-            checkInButton.hidden = true
             reservationInProgressBarButtonItem.enabled = false
             reservationInProgressBarButtonItem.tintColor = UIColor.clearColor()
 
         } else if (nextReservation.reservationIsWithinOneHour == true) {
-            if (nextReservation.userHasCheckedInForNextReservation == false) {
-                // Display Check In button
-                checkInButton.hidden = false
-                
-                // Hide In Progress button
-                reservationInProgressBarButtonItem.enabled = false
-                reservationInProgressBarButtonItem.tintColor = UIColor.clearColor()
-                
-            } else if (nextReservation.userHasCheckedInForNextReservation == true) {
-                // Display In Progress button
-                reservationInProgressBarButtonItem.enabled = true
-                reservationInProgressBarButtonItem.tintColor = UIColor.whiteColor()
-                // Hide Check In button
-                checkInButton.hidden = true
-            }
+            // Display In Progress button
+            reservationInProgressBarButtonItem.enabled = true
+            reservationInProgressBarButtonItem.tintColor = UIColor.whiteColor()
         }
     }
     
     func reservationHasCompleted(notification: NSNotification) {
-        
             self.revealViewController().rightRevealToggleAnimated(true)
     }
 }

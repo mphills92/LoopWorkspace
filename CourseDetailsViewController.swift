@@ -12,8 +12,11 @@ class CourseDetailsViewController: UIViewController {
     
     @IBOutlet weak var courseNameLabel: UILabel!
     
+    let coursesAvailable = Courses.coursesAvailable()
+        
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
+    var selectedCourseIDHasBeenSent: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -53,3 +53,16 @@ class PrivateCourses {
                    "Spring, Texas",
                    "Kingwood, Texas"]
 }
+
+/*
+class availableCourses {
+    
+    var publicCourses: [String : [String : String]] = ["The Woodlands Country Club" :
+                                                                ["Membership History" : "July 2016",
+                                                                "Street" : "2311 N Millbend Dr",
+                                                                "City" : "The Woodlands, Texas",
+                                                                "Zip" : "77380",
+                                                                "Operating Hours Open" : "7:00",
+                                                                "Operating Hours Closed" : "7:00"]
+    ]
+}*/

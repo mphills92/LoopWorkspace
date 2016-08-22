@@ -14,7 +14,8 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     
     var selectedCourseNameToSend = String()
     var selectedLocationToSend = String()
-    var selectedCourseIDToPass = Int()
+    var selectedCourseIDToSend = Int()
+    
     var selectedCourseCollectionCellIndexPath = NSIndexPath()
     var lastContentOffset = CGFloat()
     
@@ -30,6 +31,8 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
         longPressRecognizer.delaysTouchesBegan = true
         longPressRecognizer.delegate = self
         self.collectionView?.addGestureRecognizer(longPressRecognizer)
+        
+        
     }
 }
 
@@ -85,13 +88,13 @@ extension ContainerReservationChooseCourseViewController {
             var indexPath: NSIndexPath = (sender as! NSIndexPath)
             let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! CoursesCollectionCell
             
-            selectedCourseNameToSend = (cell.courseNameLabel.text)!
+            selectedCourseIDToSend = cell.tag
+            //selectedCourseNameToSend = (cell.courseNameLabel.text)!
             
             let navigationController = segue.destinationViewController as? UINavigationController
-            
             let destinationVC = navigationController!.topViewController as! CourseDetailsViewController
-            
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
+            destinationVC.selectedCourseIDHasBeenSent = selectedCourseIDToSend
             
         }
     }
@@ -122,12 +125,7 @@ extension ContainerReservationChooseCourseViewController {
         let indexPath = self.collectionView?.indexPathForItemAtPoint(touchPoint)
         
         if let index = indexPath {
-            //var cell = self.collectionView?.cellForItemAtIndexPath(index)
-            
             var cell = self.collectionView?.cellForItemAtIndexPath(index) as! CoursesCollectionCell
-            
-            //cell.courseNameLabel.textColor = UIColor.blackColor()
-            
             performSegueWithIdentifier("toCourseDetailsSegue", sender: indexPath)
             //print("long press in cell \(coursesAvailable[indexPath!.item])")
         } else {

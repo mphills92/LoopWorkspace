@@ -26,7 +26,7 @@ class CoursesCollectionCell: UICollectionViewCell {
             if let coursesAvailable = coursesAvailable {
                 imageView.image = UIImage(named: "GolfCourseBackgroundImage")
                 courseNameLabel.text = coursesAvailable.name
-                courseLocationLabel.text = coursesAvailable.courseLocation
+                courseLocationLabel.text = coursesAvailable.city
                 //membershipHistoryLabel.text = "Member since \(coursesAvailable.membershipHistory)"
                 //imageView.image = caddiesAvailable.backgroundImage
             }

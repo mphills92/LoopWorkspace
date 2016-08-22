@@ -24,10 +24,15 @@ class Caddies: SessionForCaddies {
 }
 
 class Courses: SessionForCourses {
+    
     class func coursesAvailable()  -> [Courses] {
+        
         var coursesList = [Courses]()
+        
         if let URL = NSBundle.mainBundle().URLForResource("GolfCourseList", withExtension: "plist") {
+            
             if let tutorialsFromPlist = NSArray(contentsOfURL: URL) {
+                
                 for dictionary in tutorialsFromPlist {
                     let coursesListed = Courses(dictionary: dictionary as! NSDictionary)
                     coursesList.append(coursesListed)
@@ -36,5 +41,6 @@ class Courses: SessionForCourses {
         }
         return coursesList
     }
+    
 }
 

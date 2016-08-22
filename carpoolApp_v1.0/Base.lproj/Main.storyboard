@@ -609,7 +609,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2I-dt-anD">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed check in:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWZ-rf-9eG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your round began at:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWZ-rf-9eG">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" identifier="1" id="iyi-4z-2Gh"/>
@@ -920,29 +920,6 @@ deserves a caddie.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoN-pv-Yom">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="4TZ-8Q-H1E"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="Check in for reservation">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="4TZ-8Q-H1E"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="4TZ-8Q-H1E"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="checkInButtonPressed:" destination="zKG-Ol-Fil" eventType="touchUpInside" id="wgE-Rs-iL0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -956,12 +933,7 @@ deserves a caddie.</string>
                             <constraint firstAttribute="trailingMargin" secondItem="lWw-ek-YPY" secondAttribute="trailing" constant="49" id="NWZ-47-xtm">
                                 <variation key="widthClass=compact" constant="30"/>
                             </constraint>
-                            <constraint firstItem="FoN-pv-Yom" firstAttribute="width" secondItem="S6d-dO-dyG" secondAttribute="width" id="ZkT-PW-m4F"/>
-                            <constraint firstItem="S6d-dO-dyG" firstAttribute="top" secondItem="FoN-pv-Yom" secondAttribute="bottom" constant="-4" id="btq-oh-vpL">
-                                <variation key="widthClass=compact" constant="20"/>
-                            </constraint>
                             <constraint firstItem="lWw-ek-YPY" firstAttribute="centerX" secondItem="IX8-h3-AiC" secondAttribute="centerX" id="hbv-wg-jRc"/>
-                            <constraint firstItem="FoN-pv-Yom" firstAttribute="centerX" secondItem="S6d-dO-dyG" secondAttribute="centerX" id="iRC-FW-bkY"/>
                             <constraint firstItem="ddk-9v-fz2" firstAttribute="top" secondItem="S6d-dO-dyG" secondAttribute="bottom" constant="83" id="itu-WW-CaC">
                                 <variation key="widthClass=compact" constant="40"/>
                             </constraint>
@@ -976,14 +948,10 @@ deserves a caddie.</string>
                             <mask key="subviews">
                                 <exclude reference="S6d-dO-dyG"/>
                                 <exclude reference="lWw-ek-YPY"/>
-                                <exclude reference="FoN-pv-Yom"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="itu-WW-CaC"/>
-                                <exclude reference="ZkT-PW-m4F"/>
-                                <exclude reference="iRC-FW-bkY"/>
                                 <exclude reference="24b-tP-ZWO"/>
-                                <exclude reference="btq-oh-vpL"/>
                                 <exclude reference="u2q-6S-p37"/>
                                 <exclude reference="Bld-Dt-wg3"/>
                                 <exclude reference="NWZ-47-xtm"/>
@@ -995,14 +963,10 @@ deserves a caddie.</string>
                             <mask key="subviews">
                                 <include reference="S6d-dO-dyG"/>
                                 <include reference="lWw-ek-YPY"/>
-                                <include reference="FoN-pv-Yom"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="itu-WW-CaC"/>
-                                <include reference="ZkT-PW-m4F"/>
-                                <include reference="iRC-FW-bkY"/>
                                 <include reference="24b-tP-ZWO"/>
-                                <include reference="btq-oh-vpL"/>
                                 <include reference="u2q-6S-p37"/>
                                 <include reference="Bld-Dt-wg3"/>
                                 <include reference="NWZ-47-xtm"/>
@@ -1022,7 +986,6 @@ deserves a caddie.</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="600"/>
                     <connections>
-                        <outlet property="checkInButton" destination="FoN-pv-Yom" id="eOc-hM-tDR"/>
                         <outlet property="menuButton" destination="tFz-49-qhw" id="bd6-2j-cRT"/>
                         <outlet property="reservationInProgressBarButtonItem" destination="Mdr-F0-Xh5" id="vmD-Uu-OE6"/>
                         <outlet property="sloganLabel" destination="lWw-ek-YPY" id="9ym-Zl-xSM"/>
@@ -14943,7 +14906,7 @@ for the game of golf.</string>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-pK-x5L">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="200" id="hod-xq-uiL" customClass="ChooseAvailableCaddiesCell" customModule="carpoolApp_v1_0" customModuleProvider="target">
