@@ -53,7 +53,7 @@ extension UpcomingReservationsViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reservationRecapCell", forIndexPath: indexPath) as! ReservationRecapCell
         
-        cell.userProfileImage.layer.cornerRadius = 8
+        cell.userProfileImage.layer.cornerRadius = 50
         cell.userProfileImage.layer.borderColor = UIColor.whiteColor().CGColor
         cell.userProfileImage.layer.borderWidth = 1
         

@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         
-        self.userProfileImage.layer.cornerRadius = 8
+        self.userProfileImage.layer.cornerRadius = 50
         userNameLabel.text = "\(userName.firstName)" + " " + "\(userName.lastName)"
         membershipHistoryLabel.text = "Member since \(userAccount.membershipHistory)"
         lifetimeRoundsLabel.text = "\(userAccount.lifetimeRounds)"

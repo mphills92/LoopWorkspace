@@ -45,7 +45,7 @@ class ContainerConfirmReservationViewController: UITableViewController {
         
         self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
 
-        caddieProfileImageView.layer.cornerRadius = 8
+        caddieProfileImageView.layer.cornerRadius = 50
 
         // Set up NSNotifications to receive data from container's parent view controller.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "setUpCaddieNameToDisplay:", name: "selectedCaddieNameNotification", object: nil)

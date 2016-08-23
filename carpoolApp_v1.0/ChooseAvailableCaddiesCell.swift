@@ -34,7 +34,7 @@ class ChooseAvailableCaddiesCell: UITableViewCell {
                 
                 profileImageView.image = caddiesAvailable.profileImage
                 
-                profileImageView.layer.cornerRadius = 8
+                profileImageView.layer.cornerRadius = 50
                 profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
                 profileImageView.layer.borderWidth = 1
                 

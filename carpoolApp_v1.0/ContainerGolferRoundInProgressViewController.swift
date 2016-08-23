@@ -12,8 +12,6 @@ import MessageUI
 class ContainerGolferRoundInProgressViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
     
     @IBOutlet weak var caddieProfileImageView: UIImageView!
-    @IBOutlet weak var textCaddieCell: UITableViewCell!
-    @IBOutlet weak var callCaddieCell: UITableViewCell!
     @IBOutlet weak var lateCaddieCell: UITableViewCell!
     @IBOutlet weak var caddieProfessionalComplaintCell: UITableViewCell!
     @IBOutlet weak var loopContactRequestCell: UITableViewCell!
@@ -24,52 +22,29 @@ class ContainerGolferRoundInProgressViewController: UITableViewController, MFMes
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.contentInset = UIEdgeInsetsMake(-33, 0, -38, 0)
+        tableView.contentInset = UIEdgeInsetsMake(-36, 0, -38, 0)
         
-        caddieProfileImageView.layer.cornerRadius = 8
+        caddieProfileImageView.layer.cornerRadius = 50
         
     }
 }
 
 extension ContainerGolferRoundInProgressViewController {
     
+    /*
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 0) {
             return 32
         } else {
             return 12
         }
-    }
+    }*/
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if (cellClicked == textCaddieCell) {
-            let textAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "It looks like you can't send a text message right now. Please try again later.", preferredStyle: .Alert)
-            textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            
-            if (MFMessageComposeViewController.canSendText()) {
-                let controller = MFMessageComposeViewController()
-                controller.body = "Hi, this is \(userName.firstName) " + "\(userName.lastName) and I've recently checked in for my Loop reservation with you."
-                controller.recipients = ["caddiePhoneNumber"]
-                
-// TODO: Set caddie phone information as recipient.
-                
-                controller.messageComposeDelegate = self
-                self.presentViewController(controller, animated: true, completion: {})
-            } else {
-                let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
-                textAlertController.addAction(closeAction)
-                
-                presentViewController(textAlertController, animated: true) {
-                    textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                }
-            }
-        } else if (cellClicked == callCaddieCell) {
-            print("call caddie initiated")
-// TODO: Launch phone call to caddie phone number.
-        } else if (cellClicked == lateCaddieCell) {
+        if (cellClicked == lateCaddieCell) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let lateCaddieViewController = storyboard.instantiateViewControllerWithIdentifier("LateCaddieNavigationController") as! UIViewController
             self.presentViewController(lateCaddieViewController, animated: true, completion: nil)
@@ -83,6 +58,36 @@ extension ContainerGolferRoundInProgressViewController {
             self.presentViewController(loopContactRequestViewController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func callCaddieButtonPressed(sender: AnyObject) {
+        print("call caddie initiated")
+        // TODO: Launch phone call to caddie phone number.
+    }
+    
+    @IBAction func textCaddieButtonPressed(sender: AnyObject) {
+        let textAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "It looks like you can't send a text message right now. Please try again later.", preferredStyle: .Alert)
+        textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+        
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "Hi, this is \(userName.firstName) " + "\(userName.lastName) and I've recently checked in for my Loop reservation with you."
+            controller.recipients = ["caddiePhoneNumber"]
+            
+            // TODO: Set caddie phone information as recipient.
+            
+            controller.messageComposeDelegate = self
+            self.presentViewController(controller, animated: true, completion: {})
+        } else {
+            let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+            textAlertController.addAction(closeAction)
+            
+            presentViewController(textAlertController, animated: true) {
+                textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+        }
+
+    }
+    
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
         switch (result.rawValue) {

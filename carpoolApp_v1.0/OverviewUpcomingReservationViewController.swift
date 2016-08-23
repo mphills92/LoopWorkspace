@@ -11,9 +11,8 @@ import MessageUI
 
 class OverviewUpcomingReservationViewController: UITableViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
+    @IBOutlet weak var caddieProfileImageView: UIImageView!
     @IBOutlet weak var checkInCell: UITableViewCell!
-    @IBOutlet weak var textCaddieCell: UITableViewCell!
-    @IBOutlet weak var emailCaddieCell: UITableViewCell!
     @IBOutlet weak var cancelReservationCell: UITableViewCell!
     
     var userName = UserName()
@@ -27,6 +26,8 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        caddieProfileImageView.layer.cornerRadius = 50
         
         setNumberOfTableViewSections()
     }
@@ -61,50 +62,7 @@ extension OverviewUpcomingReservationViewController {
         let cellClicked: UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
-        if (cellClicked == textCaddieCell) {
-            let textAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "It looks like you can't send a text message right now. Please try again later.", preferredStyle: .Alert)
-            textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            
-            if (MFMessageComposeViewController.canSendText()) {
-                let controller = MFMessageComposeViewController()
-                controller.body = "Hi, this is \(userName.firstName) " + "\(userName.lastName) and I'll be golfing with you on July 1, 2016 at 12:00 PM through Loop. I wanted to let you know that..."
-                controller.recipients = ["caddiePhoneNumber"]
-                
-// TODO: Set caddie phone information as recipient.
-                
-                controller.messageComposeDelegate = self
-                self.presentViewController(controller, animated: true, completion: {})
-            } else {
-                let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
-                textAlertController.addAction(closeAction)
-                
-                presentViewController(textAlertController, animated: true) {
-                    textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                }
-            }
-
-            
-        } else if (cellClicked == emailCaddieCell) {
-            let emailAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "We cannot find an email account for us to use to contact your caddie. Please make sure your email settings are correct or try again later.", preferredStyle: .Alert)
-            emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            
-            if (MFMailComposeViewController.canSendMail()) {
-                let controller = MFMailComposeViewController()
-                controller.setSubject("Loop Upcoming Reservation Contact Request")
-                controller.setMessageBody("Hi, this is \(userName.firstName) " + "\(userName.lastName) and I'll be golfing with you on July 1, 2016 at 12:00 PM through Loop. I wanted to let you know that...", isHTML: true)
-                controller.mailComposeDelegate = self
-                self.presentViewController(controller, animated: true, completion: {})
-            } else {
-                let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
-                emailAlertController.addAction(closeAction)
-                
-                presentViewController(emailAlertController, animated: true) {
-                    emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-                }
-            }
-
-            
-        } else if (cellClicked == cancelReservationCell) {
+        if (cellClicked == cancelReservationCell) {
             let actionSheetController = UIAlertController(title: "Are you sure you want to delete this reservation?", message: "Deleted reservations are final and subject to Loop's Terms of Service cancellation policy.", preferredStyle: .ActionSheet)
             actionSheetController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             
@@ -123,6 +81,52 @@ extension OverviewUpcomingReservationViewController {
             }
         }
     }
+    
+    @IBAction func textCaddieButtonPressed(sender: AnyObject) {
+        let textAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "It looks like you can't send a text message right now. Please try again later.", preferredStyle: .Alert)
+        textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+        
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "Hi, this is \(userName.firstName) " + "\(userName.lastName) and I'll be golfing with you on July 1, 2016 at 12:00 PM through Loop. I wanted to let you know that..."
+            controller.recipients = ["caddiePhoneNumber"]
+            
+            // TODO: Set caddie phone information as recipient.
+            
+            controller.messageComposeDelegate = self
+            self.presentViewController(controller, animated: true, completion: {})
+        } else {
+            let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+            textAlertController.addAction(closeAction)
+            
+            presentViewController(textAlertController, animated: true) {
+                textAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+        }
+
+    }
+    
+    
+    @IBAction func emailCaddieButtonPressed(sender: AnyObject) {
+        let emailAlertController = UIAlertController(title: "Sorry, something's wrong.", message: "We cannot find an email account for us to use to contact your caddie. Please make sure your email settings are correct or try again later.", preferredStyle: .Alert)
+        emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+        
+        if (MFMailComposeViewController.canSendMail()) {
+            let controller = MFMailComposeViewController()
+            controller.setSubject("Loop Upcoming Reservation Contact Request")
+            controller.setMessageBody("Hi, this is \(userName.firstName) " + "\(userName.lastName) and I'll be golfing with you on July 1, 2016 at 12:00 PM through Loop. I wanted to let you know that...", isHTML: true)
+            controller.mailComposeDelegate = self
+            self.presentViewController(controller, animated: true, completion: {})
+        } else {
+            let closeAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in }
+            emailAlertController.addAction(closeAction)
+            
+            presentViewController(emailAlertController, animated: true) {
+                emailAlertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            }
+        }
+    }
+    
     
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
         switch (result.rawValue) {

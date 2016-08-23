@@ -38,7 +38,7 @@ class EditProfileViewController: UITableViewController, UITextFieldDelegate {
         
         self.tableView.contentInset = UIEdgeInsetsMake(-32, 0, 0, 0)
         
-        userProfileImageView.layer.cornerRadius = 8
+        userProfileImageView.layer.cornerRadius = 50
         
         userInformationToLoad()
         
