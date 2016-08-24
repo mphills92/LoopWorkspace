@@ -50,19 +50,19 @@ class UserReferralCode {
     var referralCode: String = "ABC123"
 }
 
-class UpcomingReservations {
-    var reservationDataExists: Bool = true
-    var numberOfUpcomingReservationsCells: Int = 5
-}
-
 class NextReservation {
-    var reservationIsWithinOneHour: Bool = true
+    var reservationIsWithinOneHour: Bool = false
 }
 
 class PreviousReservation {
     var previousReservationID: Int = 123456789
-    var reviewHasBeenSubmittedForPreviousReservation: Bool = false
+    var reviewHasBeenSubmitted: Bool = true
 
+}
+
+class UpcomingReservations {
+    var reservationDataExists: Bool = true
+    var numberOfUpcomingReservationsCells: Int = 5
 }
 
 class CaddieHistory {
@@ -72,10 +72,10 @@ class CaddieHistory {
 }
 
 class Notifications {
-    var notificationsDataExists: Bool = false
-    var numberOfNotificationsCells: Int = 0
+    var notificationsDataExists: Bool = true
+    var notificationsToDisplay = ["Notification 1 goes here.",
+                                  "Notification 2 goes here. Maybe it's a longer notification that will require the label to wrap to the next line.",
+                                  "Notification 3 goes here."]
+    var numberOfNotificationsCells: Int = 5
 }
 
-class CaddieAccount {
-    
-}

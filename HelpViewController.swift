@@ -51,9 +51,9 @@ extension HelpViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         if cellClicked == reviewCaddieCell {
-            if (previousReservation.reviewHasBeenSubmittedForPreviousReservation == false) {
+            if (previousReservation.reviewHasBeenSubmitted == false) {
                 performSegueWithIdentifier("toReviewCaddieSegue", sender: self)
-            } else if (previousReservation.reviewHasBeenSubmittedForPreviousReservation == true) {
+            } else if (previousReservation.reviewHasBeenSubmitted == true) {
                 let alertController = UIAlertController(title: "Review already submitted.", message: "It looks like you've already reviewed the caddie from your previous round. We appreciate your enthusiasm, but you'll just have to play another round of golf to have another caddie to review!", preferredStyle: .Alert)
                 alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
                 

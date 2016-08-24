@@ -24,7 +24,6 @@ extension CaddyHistoryViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numOfSections: Int = 0
-        
         if (caddieHistory.caddieHistoryDataExists == true) {
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
             numOfSections = 1
@@ -52,9 +51,12 @@ extension CaddyHistoryViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("caddieHistoryRecapCell", forIndexPath: indexPath) as! CaddieHistoryCell
-        
         cell.userProfileImage.layer.cornerRadius = 50
-        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    self.performSegueWithIdentifier("toPastCaddieOverviewSegue", sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

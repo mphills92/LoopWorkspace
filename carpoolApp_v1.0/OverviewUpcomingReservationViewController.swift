@@ -20,7 +20,7 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Reservation Details"
+        navigationItem.title = "Upcoming Reservation"
         navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
@@ -41,13 +41,14 @@ extension OverviewUpcomingReservationViewController {
             tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         } else {
             checkInCell.hidden = true
-            tableView.contentInset = UIEdgeInsetsMake(-220, 0, -220, 0)
+            tableView.contentInset = UIEdgeInsetsMake(-200, 0, 0, 0)
         }
     }
     
+    /*
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return 32
-    }
+    }*/
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if (section == 3) {

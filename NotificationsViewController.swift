@@ -10,15 +10,16 @@ import UIKit
 
 class NotificationsViewController: UITableViewController {
     
-    var dataExistsForTableView = false
+    var notifications = Notifications()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = "Notifications"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
 
     }
 }
@@ -26,10 +27,8 @@ class NotificationsViewController: UITableViewController {
 extension NotificationsViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
         var numOfSections: Int = 0
-        
-        if (dataExistsForTableView == true) {
+        if (notifications.notificationsDataExists == true) {
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
             numOfSections = 1
             tableView.backgroundView = nil
@@ -44,8 +43,26 @@ extension NotificationsViewController {
             tableView.backgroundColor = UIColor.groupTableViewBackgroundColor()
             tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         }
-        
         return numOfSections
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notifications.notificationsToDisplay.count
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 120
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("notificationsCell", forIndexPath: indexPath) as UITableViewCell
         
+        cell.textLabel?.text = notifications.notificationsToDisplay[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "AvenirNext-Regular", size: 17)
+        cell.textLabel?.lineBreakMode = .ByWordWrapping
+        cell.textLabel?.numberOfLines = 0
+        
+
+        return cell
     }
 }
