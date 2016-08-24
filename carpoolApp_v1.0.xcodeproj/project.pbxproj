@@ -434,7 +434,7 @@
 			children = (
 				C9EE3F371D0A217F00F86EF2 /* SettingsViewController.swift */,
 				C944F1C41D408E27008E2B4C /* Edit Profile Settings */,
-				C9899EBC1D5BAE3C0020CB89 /* My Private Courses Settings */,
+				C9899EBC1D5BAE3C0020CB89 /* My Private Clubs Settings */,
 				C944F1CA1D408EB8008E2B4C /* Payments Settings */,
 				C944F1C51D408E50008E2B4C /* Notifications Settings */,
 				C944F1C61D408E65008E2B4C /* Privacy Settings */,
@@ -578,13 +578,13 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
-		C9899EBC1D5BAE3C0020CB89 /* My Private Courses Settings */ = {
+		C9899EBC1D5BAE3C0020CB89 /* My Private Clubs Settings */ = {
 			isa = PBXGroup;
 			children = (
 				C9899EBA1D5BAE370020CB89 /* MyPrivateCoursesViewController.swift */,
 				C9899EBF1D5BBB1D0020CB89 /* AddPrivateCourseViewController.swift */,
 			);
-			name = "My Private Courses Settings";
+			name = "My Private Clubs Settings";
 			sourceTree = "<group>";
 		};
 		C98ED5191D6E08A300F3965D /* Calendar */ = {

@@ -14,7 +14,7 @@ class MyPrivateCoursesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "My Private Courses"
+        navigationItem.title = "My Private Clubs"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -30,11 +30,11 @@ class MyPrivateCoursesViewController: UITableViewController {
 extension MyPrivateCoursesViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 85
+        return 62
     }
     
     override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Select a course if you wish to remove it from your My Private Courses list."
+        return "Select a course if you wish to remove it from your My Private Clubs list."
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -62,10 +62,10 @@ extension MyPrivateCoursesViewController {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let actionSheetController = UIAlertController(title: "Remove \(userPrivateCourses.privateCourseNames[indexPath.row])?", message: "This course will no longer show up as an available option when reserving caddies.", preferredStyle: .ActionSheet)
+        let actionSheetController = UIAlertController(title: "Remove \(userPrivateCourses.privateCourseNames[indexPath.row])?", message: "This course will no longer show up as an available option when beginning the caddie reservation process.", preferredStyle: .ActionSheet)
         actionSheetController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         
-        let removeAction = UIAlertAction(title: "Remove from My Private Courses", style: .Destructive) { (action) in
+        let removeAction = UIAlertAction(title: "Remove from My Private Clubs", style: .Destructive) { (action) in
             print("TO DO: Remove course from private course list.")
         }
         actionSheetController.addAction(removeAction)

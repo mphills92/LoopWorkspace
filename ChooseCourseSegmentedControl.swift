@@ -15,7 +15,7 @@ import UIKit
     var lineView = UIView()
     var pillView = UIView()
     
-    var items: [String] = ["All", "Public", "Private"] {
+    var items: [String] = ["All Golf Courses", "My Private Clubs"] {
         didSet {
             setupLabels()
         }
