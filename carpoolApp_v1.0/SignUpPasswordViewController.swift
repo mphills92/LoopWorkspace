@@ -48,31 +48,12 @@ extension SignUpPasswordViewController {
         confirmedPasswordString = confirmPasswordTextField.text!
     }
     
-    
-    func validateConfirmedPassword(confirmedPasswordString: String) -> Bool {
-        if (confirmedPasswordString == newPasswordString) {
-            confirmedPasswordIsValid = true
-        }
-        return confirmedPasswordIsValid
-    }
-    
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        switch (textField.tag) {
-        case 2:
-            validateConfirmedPassword(confirmedPasswordString)
-            
-        default:
-            break
-        }
-        return true
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch (textField.tag) {
         case 1:
             confirmPasswordTextField.becomeFirstResponder()
         case 2:
-            createAccount(confirmedPasswordIsValid)
+            validateConfirmedPassword(confirmedPasswordString)
         default:
             break
         }
@@ -85,8 +66,20 @@ extension SignUpPasswordViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if cellClicked == createAccountTableViewCell {
+            validateConfirmedPassword(confirmedPasswordString)
+        }
+    }
+    
+    func validateConfirmedPassword(confirmedPasswordString: String) {
+
+        if (confirmedPasswordString == newPasswordString) {
+            confirmedPasswordIsValid = true
+            createAccount(confirmedPasswordIsValid)
+        } else {
+            confirmedPasswordIsValid = false
             createAccount(confirmedPasswordIsValid)
         }
+
     }
     
     func createAccount(confirmedPasswordInValid: Bool) {
