@@ -16,11 +16,18 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var startReservationButton: UIButton!
     
+    // Reference to database class which communicates with Firebase.
+    let usersDB = UsersDatabase()
+    
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
             
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initialize get request with database to populate variables in UsersDatabase class to be utilized by all other views.
+        usersDB.getUserInformation()
+        
         revealViewController().delegate = self
         definesPresentationContext = true
         

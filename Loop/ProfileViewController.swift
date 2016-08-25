@@ -10,6 +10,13 @@ import UIKit
 
 class ProfileViewController: UIViewController, UIScrollViewDelegate {
     
+    // Reference to database class which communicates with Firebase.
+    let usersDB = UsersDatabase()
+    
+    // Local variables to be populated by database class.
+    var firstName = String()
+    var lastName = String()
+
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     var selectedIndex = Int()
     
@@ -43,7 +50,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         
         self.userProfileImage.layer.cornerRadius = 50
-        userNameLabel.text = "\(userName.firstName)" + " " + "\(userName.lastName)"
+        //userNameLabel.text = "\(userName.firstName)" + " " + "\(userName.lastName)"
         membershipHistoryLabel.text = "Member since \(userAccount.membershipHistory)"
         lifetimeRoundsLabel.text = "\(userAccount.lifetimeRounds)"
         currentCreditLabel.text = "$\(userAccount.currentCredit)"
@@ -64,8 +71,11 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+        // Populate the view labels.
+        userNameLabel.text = "\(usersDB.firstName)" + " \(usersDB.lastName)"
+
     }
     
     func notifyWithSelectedIndex (notification: NSNotification) {

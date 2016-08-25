@@ -20,7 +20,7 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
     var caddiesFound = true
     
     let caddiesAvailable = Caddies.caddiesAvailable()
-
+    
     // Pass data via segue.
     var selectedCourseNameToSend = String()
     var selectedLocationToSend = String()
@@ -63,6 +63,10 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
         super.viewWillAppear(animated)
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
 }
 
