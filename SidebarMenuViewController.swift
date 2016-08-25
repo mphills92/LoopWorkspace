@@ -32,19 +32,14 @@ extension SidebarMenuViewController {
         if (userAccount.userHasCaddieAccount == false) {
             caddieMenuOptionButton.setTitle("Become a Caddie", forState: .Normal)
         } else {
-            caddieMenuOptionButton.setTitle("Go To Caddie Mode", forState: .Normal)
-            caddieMenuOptionButton.titleLabel!.font = UIFont(name: "AvenirNext-Regular", size: 20)
-            caddieMenuOptionButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-            caddieMenuOptionButton.backgroundColor = UIColor(red: 31/255, green: 33/255, blue: 36/255, alpha: 1.0)
-            caddieMenuOptionButton.layer.cornerRadius = 20
+            caddieMenuOptionButton.setTitleColor(UIColor.clearColor(), forState: .Normal)
+            caddieMenuOptionButton.userInteractionEnabled = false
         }
     }
     
     @IBAction func caddieMenuOptionButtonPressed(sender: AnyObject) {
         if (userAccount.userHasCaddieAccount == false) {
             performSegueWithIdentifier("toBecomeCaddieSegue", sender: self)
-        } else {
-            performSegueWithIdentifier("toCaddieModeSegue", sender: self)
         }
     }
     

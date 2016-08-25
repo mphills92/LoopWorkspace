@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C90EFBA51D5D03EC00707373 /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EFBA41D5D03EC00707373 /* CourseDetailsViewController.swift */; };
 		C90EFBA81D5D1C3800707373 /* CourseDetailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90EFBA71D5D1C3800707373 /* CourseDetailsPageViewController.swift */; };
-		C92042C41D2DB05A003654CB /* CaddieModeLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */; };
-		C92042C71D2DB9E4003654CB /* CaddieModeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */; };
 		C9359E091D479F370027D40D /* AboutUsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E081D479F370027D40D /* AboutUsPageViewController.swift */; };
 		C9359E0B1D48496E0027D40D /* LateCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E0A1D48496E0027D40D /* LateCaddieViewController.swift */; };
 		C9359E0D1D48553F0027D40D /* LoopContactRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9359E0C1D48553F0027D40D /* LoopContactRequestViewController.swift */; };
@@ -44,9 +42,6 @@
 		C955272A1D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527291D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift */; };
 		C95527301D3EA8850069554C /* ReviewCaddieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955272F1D3EA8850069554C /* ReviewCaddieViewController.swift */; };
 		C95527331D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */; };
-		C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527341D3EEA690069554C /* DashboardViewController.swift */; };
-		C95527381D3F30760069554C /* CaddieNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95527371D3F30760069554C /* CaddieNotificationsViewController.swift */; };
-		C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */; };
 		C956C10D1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */; };
 		C956C10F1D35CE910057B776 /* CaddieHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */; };
 		C956C1171D3D4E940057B776 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C956C1161D3D4E940057B776 /* EditProfileViewController.swift */; };
@@ -130,8 +125,6 @@
 /* Begin PBXFileReference section */
 		C90EFBA41D5D03EC00707373 /* CourseDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewController.swift; sourceTree = "<group>"; };
 		C90EFBA71D5D1C3800707373 /* CourseDetailsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailsPageViewController.swift; sourceTree = "<group>"; };
-		C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeLandingPageViewController.swift; sourceTree = "<group>"; };
-		C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieModeSegmentedControl.swift; sourceTree = "<group>"; };
 		C9359E081D479F370027D40D /* AboutUsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsPageViewController.swift; sourceTree = "<group>"; };
 		C9359E0A1D48496E0027D40D /* LateCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateCaddieViewController.swift; sourceTree = "<group>"; };
 		C9359E0C1D48553F0027D40D /* LoopContactRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopContactRequestViewController.swift; sourceTree = "<group>"; };
@@ -165,9 +158,6 @@
 		C95527291D3E75AD0069554C /* OverviewUpcomingReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewUpcomingReservationViewController.swift; sourceTree = "<group>"; };
 		C955272F1D3EA8850069554C /* ReviewCaddieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCaddieViewController.swift; sourceTree = "<group>"; };
 		C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCaddieSegmentedControl.swift; sourceTree = "<group>"; };
-		C95527341D3EEA690069554C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		C95527371D3F30760069554C /* CaddieNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieNotificationsViewController.swift; sourceTree = "<group>"; };
-		C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerDashboardViewController.swift; sourceTree = "<group>"; };
 		C956C10C1D3469D80057B776 /* ChooseNumberOfPlayersSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNumberOfPlayersSegmentedControl.swift; sourceTree = "<group>"; };
 		C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaddieHistoryCell.swift; sourceTree = "<group>"; };
 		C956C1161D3D4E940057B776 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -286,19 +276,6 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
-		C92042C51D2DB18E003654CB /* Caddie Mode */ = {
-			isa = PBXGroup;
-			children = (
-				C92042C31D2DB05A003654CB /* CaddieModeLandingPageViewController.swift */,
-				C92042C61D2DB9E4003654CB /* CaddieModeSegmentedControl.swift */,
-				C95527361D3EEC1B0069554C /* Dashboard */,
-				C944F1C31D408C4F008E2B4C /* Upcoming */,
-				C95527391D3F349B0069554C /* Notifications */,
-			);
-			name = "Caddie Mode";
-			path = ..;
-			sourceTree = "<group>";
-		};
 		C93B4E9D1D653AB200EC3F56 /* Page View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,13 +293,6 @@
 				C944F1BB1D4018B7008E2B4C /* ContainerReviewCaddieViewController.swift */,
 			);
 			name = "Review Caddie";
-			sourceTree = "<group>";
-		};
-		C944F1C31D408C4F008E2B4C /* Upcoming */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Upcoming;
 			sourceTree = "<group>";
 		};
 		C944F1C41D408E27008E2B4C /* Edit Profile Settings */ = {
@@ -453,23 +423,6 @@
 				C95527321D3EB0D80069554C /* ReviewCaddieSegmentedControl.swift */,
 			);
 			name = "Help Subviews";
-			sourceTree = "<group>";
-		};
-		C95527361D3EEC1B0069554C /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				C95527341D3EEA690069554C /* DashboardViewController.swift */,
-				C955273A1D3F34E40069554C /* ContainerDashboardViewController.swift */,
-			);
-			name = Dashboard;
-			sourceTree = "<group>";
-		};
-		C95527391D3F349B0069554C /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				C95527371D3F30760069554C /* CaddieNotificationsViewController.swift */,
-			);
-			name = Notifications;
 			sourceTree = "<group>";
 		};
 		C955273E1D3FCCDD0069554C /* Active Reservation */ = {
@@ -723,7 +676,6 @@
 				C9EE3F311D0A1F1E00F86EF2 /* Invite Others */,
 				C95385DC1D133EAD007BCA15 /* Settings */,
 				C9EE3F361D0A20EC00F86EF2 /* Become Caddie */,
-				C92042C51D2DB18E003654CB /* Caddie Mode */,
 				C990CF971D1B8F64005E05F2 /* Help Center */,
 				C91D13DC1D0E7DAE00D177B4 /* Other */,
 			);
@@ -906,7 +858,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C956C1171D3D4E940057B776 /* EditProfileViewController.swift in Sources */,
-				C95527351D3EEA690069554C /* DashboardViewController.swift in Sources */,
 				C9899EC21D5BF1130020CB89 /* SignUpChoosePrivateCoursesViewController.swift in Sources */,
 				C99AD91D1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift in Sources */,
 				C9899EBE1D5BB6720020CB89 /* PrivateCourseCell.swift in Sources */,
@@ -920,7 +871,6 @@
 				C944F1CF1D40903F008E2B4C /* PrivacyPolicyViewController.swift in Sources */,
 				C99AD91F1D52C41B001ABA09 /* ConfirmPaymentsViewController.swift in Sources */,
 				C9EE3F331D0A1FBC00F86EF2 /* BecomeCaddieViewController.swift in Sources */,
-				C92042C71D2DB9E4003654CB /* CaddieModeSegmentedControl.swift in Sources */,
 				C994B4C81D145BDB009848F2 /* UpcomingReservationsViewController.swift in Sources */,
 				C956FD221D2420BE00E7143B /* Login.swift in Sources */,
 				C990CFA11D209AFE005E05F2 /* SignUpContactInfoViewController.swift in Sources */,
@@ -951,7 +901,6 @@
 				C990CF961D1B8F56005E05F2 /* HelpViewController.swift in Sources */,
 				C994B4C41D144417009848F2 /* PrivacySettingsViewController.swift in Sources */,
 				C95385CE1D0F5B9F007BCA15 /* ChooseAvailableCaddiesCell.swift in Sources */,
-				C95527381D3F30760069554C /* CaddieNotificationsViewController.swift in Sources */,
 				C94259E71D174E4600EEE328 /* ChangePhoneViewController.swift in Sources */,
 				C93B4E9C1D653AAF00EC3F56 /* MonthOneViewController.swift in Sources */,
 				C990CFA31D20A175005E05F2 /* SignUpProfilePictureViewController.swift in Sources */,
@@ -974,14 +923,12 @@
 				C9359E091D479F370027D40D /* AboutUsPageViewController.swift in Sources */,
 				C944F1D71D4177CA008E2B4C /* CustomInteractionController.swift in Sources */,
 				C9597FD71D5FBBFA00DD1B5B /* CourseOffersViewController.swift in Sources */,
-				C955273B1D3F34E40069554C /* ContainerDashboardViewController.swift in Sources */,
 				C944F1D21D40910F008E2B4C /* AcknowledgmentsViewController.swift in Sources */,
 				C994B4C61D144A90009848F2 /* HelpAndSupportViewController.swift in Sources */,
 				C9EE3F2A1D0A196C00F86EF2 /* ProfileViewController.swift in Sources */,
 				C95385CC1D0F5B98007BCA15 /* SessionForCaddies.swift in Sources */,
 				C9EE3F1C1D075F0B00F86EF2 /* StartReservationContainerViewController.swift in Sources */,
 				C95A00E21CB5CBEB008237B1 /* SWRevealViewController.m in Sources */,
-				C92042C41D2DB05A003654CB /* CaddieModeLandingPageViewController.swift in Sources */,
 				C95385CA1D0F5B93007BCA15 /* CoursesAndCaddies.swift in Sources */,
 				C956FD291D2430AB00E7143B /* ContainerReservationChooseCourseViewController.swift in Sources */,
 				C956FD321D256C4F00E7143B /* ContainerChooseDateViewController.swift in Sources */,
