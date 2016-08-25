@@ -92,6 +92,8 @@
 		C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4D21D15A83E009848F2 /* UserInformation.swift */; };
 		C998B6691D6EA0740087B037 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C998B6681D6EA0740087B037 /* GoogleService-Info.plist */; };
 		C998B66B1D6EA39C0087B037 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998B66A1D6EA39C0087B037 /* Database.swift */; };
+		C998B66E1D6F547F0087B037 /* CustomActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998B66C1D6F547F0087B037 /* CustomActivityIndicatorViewController.swift */; };
+		C998B66F1D6F547F0087B037 /* CustomActivityIndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C998B66D1D6F547F0087B037 /* CustomActivityIndicatorViewController.xib */; };
 		C99AD9191D4FA962001ABA09 /* AvailableCities&Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD9181D4FA962001ABA09 /* AvailableCities&Courses.swift */; };
 		C99AD91B1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD91A1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift */; };
 		C99AD91D1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD91C1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift */; };
@@ -221,6 +223,8 @@
 		C994B4D21D15A83E009848F2 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInformation.swift; path = Loop/UserInformation.swift; sourceTree = "<group>"; };
 		C998B6681D6EA0740087B037 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C998B66A1D6EA39C0087B037 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = Loop/Database.swift; sourceTree = "<group>"; };
+		C998B66C1D6F547F0087B037 /* CustomActivityIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomActivityIndicatorViewController.swift; path = Loop/CustomActivityIndicatorViewController.swift; sourceTree = "<group>"; };
+		C998B66D1D6F547F0087B037 /* CustomActivityIndicatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomActivityIndicatorViewController.xib; path = Loop/CustomActivityIndicatorViewController.xib; sourceTree = "<group>"; };
 		C99AD9181D4FA962001ABA09 /* AvailableCities&Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AvailableCities&Courses.swift"; path = "Loop/AvailableCities&Courses.swift"; sourceTree = "<group>"; };
 		C99AD91A1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationFeeInformationViewController.swift; sourceTree = "<group>"; };
 		C99AD91C1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyPromoCodeViewController.swift; sourceTree = "<group>"; };
@@ -407,6 +411,8 @@
 				C956C10E1D35CE910057B776 /* CaddieHistoryCell.swift */,
 				C9899EBD1D5BB6720020CB89 /* PrivateCourseCell.swift */,
 				C93B4EA41D654B5200EC3F56 /* CalendarCollectionViewCell.swift */,
+				C998B66C1D6F547F0087B037 /* CustomActivityIndicatorViewController.swift */,
+				C998B66D1D6F547F0087B037 /* CustomActivityIndicatorViewController.xib */,
 			);
 			name = Views;
 			path = ..;
@@ -604,9 +610,9 @@
 				C990CFA41D2168BF005E05F2 /* SignUpChooseAuthenticationViewController.swift */,
 				C990CF9D1D209512005E05F2 /* SignUpNameInfoViewController.swift */,
 				C990CFA01D209AFE005E05F2 /* SignUpContactInfoViewController.swift */,
-				C990CFA21D20A175005E05F2 /* SignUpProfilePictureViewController.swift */,
 				C9899EC11D5BF1130020CB89 /* SignUpChoosePrivateCoursesViewController.swift */,
 				C990CFA61D219D93005E05F2 /* SignUpPasswordViewController.swift */,
+				C990CFA21D20A175005E05F2 /* SignUpProfilePictureViewController.swift */,
 			);
 			name = "Sign Up Subviews";
 			sourceTree = "<group>";
@@ -874,6 +880,7 @@
 				C95A00BB1CB5CB38008237B1 /* LaunchScreen.storyboard in Resources */,
 				C956FD2B1D2431A000E7143B /* GolfCourseList.plist in Resources */,
 				C95A00B81CB5CB38008237B1 /* Assets.xcassets in Resources */,
+				C998B66F1D6F547F0087B037 /* CustomActivityIndicatorViewController.xib in Resources */,
 				C95A00B61CB5CB38008237B1 /* Main.storyboard in Resources */,
 				C998B6691D6EA0740087B037 /* GoogleService-Info.plist in Resources */,
 			);
@@ -1033,6 +1040,7 @@
 				C95385D01D10B8EE007BCA15 /* ConfirmReservationViewController.swift in Sources */,
 				C94259E91D1771CC00EEE328 /* ContainerAboutUsViewController.swift in Sources */,
 				C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */,
+				C998B66E1D6F547F0087B037 /* CustomActivityIndicatorViewController.swift in Sources */,
 				C9EE3F1A1D07383200F86EF2 /* ChooseDateViewController.swift in Sources */,
 				C944F1CF1D40903F008E2B4C /* PrivacyPolicyViewController.swift in Sources */,
 				C99AD91F1D52C41B001ABA09 /* ConfirmPaymentsViewController.swift in Sources */,

@@ -10,9 +10,14 @@ import UIKit
 
 class EditProfileViewController: UITableViewController, UITextFieldDelegate {
 
+    // Reference to database class which communicates with Firebase.
+    let usersDB = UsersDatabase()
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var userProfileImageView: UIImageView!
+    
+
     
     var firstNameAtLoad = String()
     var lastNameAtLoad = String()
@@ -40,8 +45,6 @@ class EditProfileViewController: UITableViewController, UITextFieldDelegate {
         
         userProfileImageView.layer.cornerRadius = 50
         
-        userInformationToLoad()
-        
         firstNameTextField.tag = 1
         lastNameTextField.tag = 2
         
@@ -55,6 +58,11 @@ class EditProfileViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+        usersDB.getUserInformation()
+        
+        firstNameTextField.text = usersDB.firstName
+        lastNameTextField.text = "Test"
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -65,12 +73,13 @@ class EditProfileViewController: UITableViewController, UITextFieldDelegate {
 
 extension EditProfileViewController {
     
+    /*
     func userInformationToLoad() {
-        firstNameTextField.text = userName.firstName
-        firstNameAtLoad = userName.firstName
-        lastNameTextField.text = userName.lastName
-        lastNameAtLoad = userName.lastName
-    }
+        firstNameTextField.text = usersDB.firstName
+        firstNameAtLoad = usersDB.firstName
+        lastNameTextField.text = usersDB.lastName
+        lastNameAtLoad = usersDB.lastName
+    }*/
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (section == 0) {

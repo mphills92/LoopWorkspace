@@ -13,9 +13,14 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
     
+    /*
     // Local variables to be populated by database class.
     var firstName = String()
     var lastName = String()
+    var membershipHistory = String()
+    var lifetimeRounds = Int()
+    var credit = Int()
+    */
 
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     var selectedIndex = Int()
@@ -27,9 +32,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var upcomingReservationsContainer: UIView!
     @IBOutlet weak var pastCaddiesContainer: UIView!
     @IBOutlet weak var userNameLabel: UILabel!
-    
     @IBOutlet weak var membershipHistoryLabel: UILabel!
-    
     @IBOutlet weak var lifetimeRoundsLabel: UILabel!
     @IBOutlet weak var currentCreditLabel: UILabel!
     
@@ -50,12 +53,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         
         self.userProfileImage.layer.cornerRadius = 50
-        //userNameLabel.text = "\(userName.firstName)" + " " + "\(userName.lastName)"
-        membershipHistoryLabel.text = "Member since \(userAccount.membershipHistory)"
-        lifetimeRoundsLabel.text = "\(userAccount.lifetimeRounds)"
-        currentCreditLabel.text = "$\(userAccount.currentCredit)"
-        
-        
+
         self.stickySegmentedTab.layer.shadowOpacity = 0.25
         self.stickySegmentedTab.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
@@ -73,9 +71,11 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillAppear(animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
-        // Populate the view labels.
+        // Populate the view labels with user information from 'Database.swift'.
         userNameLabel.text = "\(usersDB.firstName)" + " \(usersDB.lastName)"
-
+        membershipHistoryLabel.text = "Member since \(usersDB.membershipHistory)"
+        lifetimeRoundsLabel.text = "\(usersDB.lifetimeRounds)"
+        currentCreditLabel.text = "$\(usersDB.credit)"
     }
     
     func notifyWithSelectedIndex (notification: NSNotification) {

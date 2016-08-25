@@ -8,6 +8,8 @@
 
 import UIKit
 import MessageUI
+import Firebase
+import FirebaseAuth
 
 class SettingsViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
@@ -39,16 +41,7 @@ extension SettingsViewController {
     @IBAction func closeViewButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
-    
-    /*
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0) {
-            return 32
-        } else {
-            return 12
-        }
-    }*/
-    
+
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if (section == 3) {
             return 65
@@ -87,11 +80,18 @@ extension SettingsViewController {
             actionSheetController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             
             let signOutAction = UIAlertAction(title: "Sign Out", style: .Destructive) { (action) in
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! UIViewController
-                    self.presentViewController(loginViewController, animated: true, completion: nil)
-                    print("TO DO: Sign out user from Loop and release credentials to require new login.")
-// TO DO: Sign out user from Loop and release credentials. Pop view back to login page.
+                
+                if FIRAuth.auth()?.currentUser != nil {
+                    do {
+                        try FIRAuth.auth()?.signOut()
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                    }
+                }
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") 
+                self.presentViewController(loginViewController, animated: true, completion: nil)
             }
             actionSheetController.addAction(signOutAction)
             
@@ -102,19 +102,10 @@ extension SettingsViewController {
             presentViewController(actionSheetController, animated: true) {
                 actionSheetController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             }
-
-            
-            
-            
-            
-            
-            
-
         }
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         dismissViewControllerAnimated(true, completion: {})
     }
-    
 }

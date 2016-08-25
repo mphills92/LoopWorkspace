@@ -25,7 +25,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Initialize get request with database to populate variables in UsersDatabase class to be utilized by all other views.
+        // Initialize get request with database to populate empty variables in UsersDatabase class to be utilized by all other view controllers.
         usersDB.getUserInformation()
         
         revealViewController().delegate = self

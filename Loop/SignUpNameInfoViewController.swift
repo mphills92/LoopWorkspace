@@ -20,6 +20,10 @@ class SignUpNameInfoViewController: UITableViewController, UITextFieldDelegate {
     var lastNameHasBeenEntered = Bool()
     var allTextFieldsArePopulated = false
     
+    // Pass data via segue.
+    var firstNameToSend1 = String()
+    var lastNameToSend1 = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         firstNameTextField.delegate = self
@@ -105,6 +109,10 @@ extension SignUpNameInfoViewController {
         validateLastName(lastNameToSave)
         
         if (firstNameHasBeenEntered == true && lastNameHasBeenEntered == true) {
+            
+            firstNameToSend1 = firstNameTextField.text!
+            lastNameToSend1 = lastNameTextField.text!
+            
             performSegueWithIdentifier("toEmailSignUpSegue", sender: self)
         } else {
             let alertController = UIAlertController(title: "You must include both first and last name in order to continue.", message:  "", preferredStyle: .Alert)
@@ -118,5 +126,15 @@ extension SignUpNameInfoViewController {
                 alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             }
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toEmailSignUpSegue") {
+            let destinationVC = segue.destinationViewController as! SignUpContactInfoViewController
+            
+            destinationVC.firstNameHasBeenSent1 = firstNameToSend1
+            destinationVC.lastNameHasBeenSent1 = lastNameToSend1
+        }
+
     }
 }

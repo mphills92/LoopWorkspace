@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -32,9 +34,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginButtonCenterConstraint: NSLayoutConstraint!
     
-    
-    
-    
     var screenSize = UIScreen.mainScreen().bounds
     
     var userWantsToCancel = Bool()
@@ -45,6 +44,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var logoImageViewTransformHeight = CGFloat()
     
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+    let activityIndicatorBackground = UIView()
+    
     let userEmail = UserEmail()
     let userPassword = UserPassword()
     let emailAuthentication = EmailAuthentication()
@@ -54,6 +56,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        activityIndicator.center = self.view.center
+        activityIndicatorBackground.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.25)
+        activityIndicatorBackground.frame = CGRectMake(0, 0, self.screenSize.width, self.screenSize.height)
+        activityIndicatorBackground.hidden = true
         
         backgroundView.layer.cornerRadius = 8
         
@@ -99,8 +106,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailTextField.attributedPlaceholder = NSAttributedString(string:"Email", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         passwordTextField.attributedPlaceholder = NSAttributedString(string:"Password", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         
-        //self.loginButtonCenterConstraint.constant = screenSize.width
-        //self.cancelButtonCenterConstraint.constant = screenSize.width
         self.backgroundView.alpha = 0
         self.emailTextField.alpha = 0
         self.lineInBackgroundView.alpha = 0
@@ -197,8 +202,8 @@ extension LoginViewController {
     
     // Evaluate credentials upon pressing Login button.
     @IBAction func loginButtonPressed(sender: AnyObject) {
-        validatedEmail()
-        validatedPassword()
+        //validatedEmail()
+        //validatedPassword()
         loginEvaluation()
     }
     
@@ -297,6 +302,7 @@ extension LoginViewController {
             }, completion: nil)
     }
     
+    /*
     func validatedEmail() -> Bool {
         if (emailAuthentication.emailExistsInDatabase == true) {
             return true
@@ -311,9 +317,31 @@ extension LoginViewController {
         } else {
             return false
         }
-    }
+    }*/
     
+    
+    // Firebase authentication takes place within this method.
     func loginEvaluation() {
+        if let email = self.emailTextField.text, password = self.passwordTextField.text {
+            self.view!.addSubview(activityIndicatorBackground)
+            self.view!.addSubview(activityIndicator)
+            
+            startActivityIndicator()
+            
+            FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+                
+                self.stopActivityIndicator()
+                
+                if error != nil {
+                    print(error?.localizedDescription)
+                } else {
+                    self.performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
+                }
+            })
+        }
+        
+        
+        /*
         if (emailTextField.text! == "" || passwordTextField.text! == "") {
             let alertController = UIAlertController(title: "You forgot to enter either an email or password.", message:  "\n Please enter your full email and password before attempting to login.", preferredStyle: .Alert)
             
@@ -333,7 +361,20 @@ extension LoginViewController {
                 alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             }
             
-        } else if (validatedEmail() == false || validatedPassword() == false) {
+        } else {
+            FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+                
+                if error != nil {
+                    print(error?.localizedDescription)
+                } else {
+                    
+                    self.performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
+                }
+            })
+            
+        }
+        
+            if (validatedEmail() == false || validatedPassword() == false) {
             let alertController = UIAlertController(title: "Trouble logging you in.", message:  "\n We can't find an account with the email and password combination that you entered. Please try again.", preferredStyle: .Alert)
             alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             let forgotPasswordAction = UIAlertAction(title: "Forgot your password?", style: .Default) { (action) in
@@ -357,7 +398,7 @@ extension LoginViewController {
             }
         } else {
             performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
-        }
+        }*/
 
     }
     
@@ -366,12 +407,22 @@ extension LoginViewController {
         passwordTextField.text = ""
     }
     
+    func startActivityIndicator() {
+        activityIndicator.startAnimating()
+        activityIndicatorBackground.hidden = false
+    }
+    
+    func stopActivityIndicator() {
+        self.activityIndicator.stopAnimating()
+        self.activityIndicatorBackground.hidden = true
+    }
+    
     func rotateLayerInfinite(layer: CALayer) {
         var rotation: CABasicAnimation
         rotation = CABasicAnimation(keyPath: "transform.rotation")
         rotation.fromValue = Int(0)
         rotation.toValue = Int((2 * M_PI))
-        rotation.duration = 1.0
+        rotation.duration = 0.75
         rotation.repeatCount = HUGE
         layer.removeAllAnimations()
         layer.addAnimation(rotation, forKey: "Spin")

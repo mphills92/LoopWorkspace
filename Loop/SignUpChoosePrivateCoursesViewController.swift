@@ -13,6 +13,18 @@ class SignUpChoosePrivateCoursesViewController: UIViewController, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var infoBannerBackgroundView: UIView!
     
+    // Pass data via segue.
+    var firstNameToSend3 = String()
+    var lastNameToSend3 = String()
+    var emailToSend2 = String()
+    var phoneToSend2 = String()
+    //var privateCourseToSend1 = String()
+    
+    // Receive data from segue.
+    var firstNameHasBeenSent2: String?
+    var lastNameHasBeenSent2: String?
+    var emailHasBeenSent1: String?
+    var phoneHasBeenSent1: String?
     
     let currentLocation = ["Use current location"]
     
@@ -87,6 +99,7 @@ extension SignUpChoosePrivateCoursesViewController {
         }
         
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath)!
+        
         //selectedCity = (selectedCell.textLabel?.text)!
         configure(selectedCell, forRowAtIndexPath: indexPath)
         noCellIsSelected = false
@@ -107,6 +120,21 @@ extension SignUpChoosePrivateCoursesViewController {
     
     func advanceToNextSignUpStep() {
         performSegueWithIdentifier("toPasswordSignUpSegue", sender: self)
-
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toPasswordSignUpSegue") {
+            let destinationVC = segue.destinationViewController as! SignUpPasswordViewController
+            firstNameToSend3 = firstNameHasBeenSent2!
+            lastNameToSend3 = lastNameHasBeenSent2!
+            emailToSend2 = emailHasBeenSent1!
+            phoneToSend2 = phoneHasBeenSent1!
+            
+            destinationVC.firstNameHasBeenSent3 = firstNameToSend3
+            destinationVC.lastNameHasBeenSent3 = lastNameToSend3
+            destinationVC.emailHasBeenSent2 = emailToSend2
+            destinationVC.phoneHasBeenSent2 = phoneToSend2
+            //destinationVC.privateCourseToSend1 = privateCourseHasBeenSent1
+        }
     }
 }

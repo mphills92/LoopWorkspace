@@ -14,12 +14,20 @@ class SignUpContactInfoViewController: UITableViewController, UITextFieldDelegat
     @IBOutlet weak var confirmEmailTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    // Pass data via segue.
+    var firstNameToSend2 = String()
+    var lastNameToSend2 = String()
+    var emailToSend1 = String()
+    var phoneToSend1 = String()
+    
+    // Receive data from segue.
+    var firstNameHasBeenSent1: String?
+    var lastNameHasBeenSent1: String?
+    
     var newEmailString = String()
     var newEmailIsValid = false
-    
     var confirmedEmailString = String()
     var confirmedEmailIsValid = false
-    
     var phoneString = String()
     var phoneIsValid = false
     
@@ -34,6 +42,9 @@ class SignUpContactInfoViewController: UITableViewController, UITextFieldDelegat
         confirmEmailTextField.userInteractionEnabled = false
         phoneTextField.userInteractionEnabled = false
         
+        //print(firstNameHasBeenSent)
+        //print(lastNameHasBeenSent)
+                
         //self.tableView.contentInset = UIEdgeInsetsMake(-22, 0, -22, 0)
         
         navigationItem.title = "Contact Information"
@@ -161,7 +172,11 @@ extension SignUpContactInfoViewController {
         validateConfirmedEmail(confirmedEmailString)
         
         if (confirmedEmailIsValid == true && phoneIsValid == true) {
-            performSegueWithIdentifier("toProfilePictureSignUpSegue", sender: self)
+            
+            emailToSend1 = confirmedEmailString
+            phoneToSend1 = phoneString
+        
+            performSegueWithIdentifier("toSignUpPrivateCoursesSegue", sender: self)
         } else if (confirmedEmailIsValid == true && phoneIsValid == false) {
             let alertController = UIAlertController(title: "Not a valid phone number.", message:  "\n Please enter a valid phone number in order to continue. Phone numbers should be enter without any characters other than numbers.", preferredStyle: .Alert)
             alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
@@ -191,5 +206,19 @@ extension SignUpContactInfoViewController {
             
 
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toSignUpPrivateCoursesSegue") {
+            let destinationVC = segue.destinationViewController as! SignUpChoosePrivateCoursesViewController
+            firstNameToSend2 = firstNameHasBeenSent1!
+            lastNameToSend2 = lastNameHasBeenSent1!
+            
+            destinationVC.firstNameHasBeenSent2 = firstNameToSend2
+            destinationVC.lastNameHasBeenSent2 = lastNameToSend2
+            destinationVC.emailHasBeenSent1 = emailToSend1
+            destinationVC.phoneHasBeenSent1 = phoneToSend1
+        }
+        
     }
 }
