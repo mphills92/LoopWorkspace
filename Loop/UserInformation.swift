@@ -51,12 +51,12 @@ class UserReferralCode {
 }
 
 class NextReservation {
-    var reservationIsWithinOneHour: Bool = false
+    var reservationIsWithinOneHour: Bool = true
 }
 
 class PreviousReservation {
     var previousReservationID: Int = 123456789
-    var reviewHasBeenSubmitted: Bool = true
+    var reviewHasBeenSubmitted: Bool = false
 
 }
 
