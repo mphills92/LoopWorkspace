@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>The Woodlands Country Club: Panther Trail</string>
+		<key>Membership_History</key>
+		<string>July 2016</string>
+		<key>Street</key>
+		<string>2311 N Millbend Dr</string>
+		<key>City</key>
+		<string>The Woodlands, Texas</string>
+		<key>Zip</key>
+		<string>77380</string>
+		<key>Operating_Hours_Open</key>
+		<string>7:00</string>
+		<key>Operating_Hours_Close</key>
+		<string>7:00</string>
+		<key>Price</key>
+		<string>68.75</string>
+		<key>Description</key>
+		<string>Originally designed by Joe Lee and Robert Van Hagge, Panther Trail was completely renovated in 2002 by Roy Case. The sleek course presents innovative new contours, stunning water features and lush fairways framed with native grasses and over 20 acres of Texas wildflowers. With four tee placements on each hole, it&apos;s a sensational experience for golfers of all skill levels.</string>
+		<key>Facilities_Highlight_1</key>
+		<string>Home to the &quot;Best Par 4 in Houston&quot; - signature hole 18</string>
+		<key>Facilities_Highlight_2</key>
+		<string>TifEagle and Bermuda green surfaces</string>
+		<key>Facilities_Highlight_3</key>
+		<string>Full turf driving range and practice green</string>
+		<key>Amenities_Highlight_1</key>
+		<string>Food and beverages available at the clubhouse</string>
+		<key>Amenities_Highlight_2</key>
+		<string>Full resort amenities available</string>
+		<key>Amenities_Highlight_3</key>
+		<string>Rental clubs for additional fees</string>
+		<key>Map_View_Image</key>
+		<string>GolfCourseMapViewImage</string>
+		<key>Offer_1</key>
+		<string>Mention you&apos;re playing with a Loop caddie at the clubhouse to receive 25% off Panther Trail mechandise.</string>
+		<key>Offer_2</key>
+		<string></string>
+		<key>Offer_3</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
