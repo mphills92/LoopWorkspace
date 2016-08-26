@@ -10,7 +10,6 @@ import UIKit
 
 class LandingPageViewController: UIViewController, SWRevealViewControllerDelegate {
     
-    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var reservationInProgressBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var sloganLabel: UILabel!
@@ -18,6 +17,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
+    let golfCoursesDB = GolfCoursesDatabase()
     
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
@@ -27,6 +27,18 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         
         // Initialize get request with database to populate empty variables in UsersDatabase class to be utilized by all other view controllers.
         usersDB.getUserInformation()
+        
+        /*golfCoursesDB.getGolfCourseInformation {
+            (results) -> () in
+            
+        }*/
+        
+        golfCoursesDB.getGolfCourseInformation {
+            (arrayOfGolfCourseNames) -> () in
+            print("initialized from landing page \(self.golfCoursesDB.golfCourseNamesArray)")
+        }
+        
+        
         
         revealViewController().delegate = self
         definesPresentationContext = true

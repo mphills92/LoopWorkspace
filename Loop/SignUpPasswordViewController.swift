@@ -141,7 +141,7 @@ extension SignUpPasswordViewController {
                     print(error?.localizedDescription)
                 } else {
                     // Set up new user in Firebase database.
-                    dbRef.child("users").child(user!.uid).setValue(["first_name": self.firstName, "last_name" : self.lastName, "email" : self.newEmail, "credit" : self.credit, "lifetime_rounds" : self.lifetimeRounds, "membership_history" : self.membershipHistory])
+                    dbRef.child("users").child(user!.uid).setValue(["first_name": self.firstName, "last_name" : self.lastName, "email" : self.newEmail, "credit" : self.credit, "lifetime_rounds" : self.lifetimeRounds, "membership_history" : self.membershipHistory, "phone" : self.newPhone])
                     
                     self.stopActivityIndicator()
                     
