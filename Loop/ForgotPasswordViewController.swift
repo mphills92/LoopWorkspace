@@ -31,6 +31,11 @@ class ForgotPasswordViewController: UITableViewController, UITextFieldDelegate {
         emailTextField.becomeFirstResponder()
         
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        emailTextField.resignFirstResponder()
+    }
 }
 
 extension ForgotPasswordViewController{

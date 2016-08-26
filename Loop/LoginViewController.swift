@@ -95,8 +95,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginButton.layer.shadowOpacity = 0.5
         loginButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
-
-        
         let imageViewBackground = UIImageView(frame: CGRectMake(0, 0, screenSize.width, screenSize.height))
         imageViewBackground.image = UIImage(named: "LandingPageBackground")
         imageViewBackground.contentMode = UIViewContentMode.ScaleAspectFill
@@ -114,18 +112,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.loginButton.alpha = 0
         self.cancelButton.alpha = 0
         
-        userHasStartedLoginProcess = false
-        
-        emailFieldHasEditedPrior = false
-        
         emailTextField.tag = 1
         passwordTextField.tag = 2
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
+        userHasStartedLoginProcess = false
+        emailFieldHasEditedPrior = false
     
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -134,14 +133,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidDisappear(animated: Bool) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
-        
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
 }
 
 extension LoginViewController {
-    
     
     @IBAction func emailLoginButtonPressed(sender: AnyObject) {
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
@@ -153,7 +150,6 @@ extension LoginViewController {
             self.emailLoginButton.alpha = 0
             self.facebookLoginButton.alpha = 0
             }, completion: nil)
-        
         emailTextField.becomeFirstResponder()
     }
     
@@ -202,8 +198,6 @@ extension LoginViewController {
     
     // Evaluate credentials upon pressing Login button.
     @IBAction func loginButtonPressed(sender: AnyObject) {
-        //validatedEmail()
-        //validatedPassword()
         loginEvaluation()
     }
     
@@ -246,7 +240,6 @@ extension LoginViewController {
             self.mainTitle.alpha = 0
             self.view.layoutIfNeeded()
             }, completion: nil)
-        
             view.layoutIfNeeded()
         }
     }
@@ -261,14 +254,11 @@ extension LoginViewController {
         view.layoutIfNeeded()
     }
     
-    
     // Cancel button slides into view from right to left.
     func cancelButtonEnters() {
         userWantsToCancel = false
-        //self.cancelButtonCenterConstraint.constant = self.screenSize.width
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.cancelButton.alpha = 1.0
-            //self.cancelButtonCenterConstraint.constant -= self.screenSize.width
             self.view.layoutIfNeeded()
             }, completion: nil)
     }
@@ -278,17 +268,14 @@ extension LoginViewController {
         userWantsToCancel = false
         UIView.animateWithDuration(0.1, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.cancelButton.alpha = 0
-            //self.cancelButtonCenterConstraint.constant = self.screenSize.width
             self.view.layoutIfNeeded()
             }, completion: nil)
     }
 
     // Login button slides into view from right to left.
     func loginButtonEnters() {
-        //self.loginButtonCenterConstraint.constant = self.screenSize.width
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
             self.loginButton.alpha = 1.0
-            //self.loginButtonCenterConstraint.constant -= self.screenSize.width
             self.view.layoutIfNeeded()
             }, completion: nil)
     }
@@ -297,109 +284,8 @@ extension LoginViewController {
     func loginButtonExits() {
         UIView.animateWithDuration(0.1, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.loginButton.alpha = 0
-            //self.loginButtonCenterConstraint.constant = self.screenSize.width
             self.view.layoutIfNeeded()
             }, completion: nil)
-    }
-    
-    /*
-    func validatedEmail() -> Bool {
-        if (emailAuthentication.emailExistsInDatabase == true) {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func validatedPassword() -> Bool {
-        if (passwordAuthentication.passwordExistsInDatabase  == true && passwordAuthentication.passwordMatchesEmailAccount == true) {
-            return true
-        } else {
-            return false
-        }
-    }*/
-    
-    
-    // Firebase authentication takes place within this method.
-    func loginEvaluation() {
-        if let email = self.emailTextField.text, password = self.passwordTextField.text {
-            self.view!.addSubview(activityIndicatorBackground)
-            self.view!.addSubview(activityIndicator)
-            
-            startActivityIndicator()
-            
-            FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-                
-                self.stopActivityIndicator()
-                
-                if error != nil {
-                    print(error?.localizedDescription)
-                } else {
-                    self.performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
-                }
-            })
-        }
-        
-        
-        /*
-        if (emailTextField.text! == "" || passwordTextField.text! == "") {
-            let alertController = UIAlertController(title: "You forgot to enter either an email or password.", message:  "\n Please enter your full email and password before attempting to login.", preferredStyle: .Alert)
-            
-            
-            self.emailTextField.resignFirstResponder()
-            self.passwordTextField.resignFirstResponder()
-            self.clearTextFields()
-            self.cancelButtonExits()
-            self.loginButtonExits()
-            
-            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                self.userHasStartedLoginProcess = false
-            }
-            alertController.addAction(doneAction)
-            
-            self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            }
-            
-        } else {
-            FIRAuth.auth()?.signInWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
-                
-                if error != nil {
-                    print(error?.localizedDescription)
-                } else {
-                    
-                    self.performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
-                }
-            })
-            
-        }
-        
-            if (validatedEmail() == false || validatedPassword() == false) {
-            let alertController = UIAlertController(title: "Trouble logging you in.", message:  "\n We can't find an account with the email and password combination that you entered. Please try again.", preferredStyle: .Alert)
-            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            let forgotPasswordAction = UIAlertAction(title: "Forgot your password?", style: .Default) { (action) in
-                self.performSegueWithIdentifier("toForgotPasswordSegue", sender: self)
-            }
-            alertController.addAction(forgotPasswordAction)
-            
-            self.emailTextField.resignFirstResponder()
-            self.passwordTextField.resignFirstResponder()
-            self.clearTextFields()
-            self.cancelButtonExits()
-            self.loginButtonExits()
-            
-            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                self.userHasStartedLoginProcess = false
-            }
-            alertController.addAction(doneAction)
-            
-            self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            }
-        } else {
-            performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
-        }*/
-
     }
     
     func clearTextFields() {
@@ -415,6 +301,94 @@ extension LoginViewController {
     func stopActivityIndicator() {
         self.activityIndicator.stopAnimating()
         self.activityIndicatorBackground.hidden = true
+    }
+
+    // Firebase authentication takes place within this method.
+    func loginEvaluation() {
+        if let email = self.emailTextField.text, password = self.passwordTextField.text {
+            self.view!.addSubview(activityIndicatorBackground)
+            self.view!.addSubview(activityIndicator)
+            
+            // Alert user if either emailTextField or passwordTextField is blank.
+            if (email == "" || password == "") {
+                let alertController = UIAlertController(title: "You forgot to enter either an email or password.", message:  "\n Please enter your full email and password before attempting to login.", preferredStyle: .Alert)
+                self.emailTextField.resignFirstResponder()
+                self.passwordTextField.resignFirstResponder()
+                self.clearTextFields()
+                self.cancelButtonExits()
+                self.loginButtonExits()
+                let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                    self.userHasStartedLoginProcess = false
+                }
+                alertController.addAction(doneAction)
+                self.presentViewController(alertController, animated: true) {
+                    alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                }
+            }
+            // If neither emailTextField or passwordTextField is blank, evaluate input using Firebase authentication.
+            else {
+                startActivityIndicator()
+                FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (user, error) in
+                    self.stopActivityIndicator()
+                
+                    // If an error is found, evaluate the error to display the appropriate alert for the user.
+                    if error != nil {
+                        
+                        // If the error is due to a network error, alert the user.
+                        if (error!.localizedDescription == "Network error (such as timeout, interrupted connection or unreachable host) has occurred.") {
+                            
+                            let alertController = UIAlertController(title: "Network connection error.", message:  "\n We can't connect to the network to verify your login information. Please try again.", preferredStyle: .Alert)
+                            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+       
+                            self.emailTextField.resignFirstResponder()
+                            self.passwordTextField.resignFirstResponder()
+                            self.clearTextFields()
+                            self.cancelButtonExits()
+                            self.loginButtonExits()
+                            
+                            let doneAction = UIAlertAction(title: "Try Again", style: .Cancel) { (action) in
+                                self.userHasStartedLoginProcess = false
+                            }
+                            alertController.addAction(doneAction)
+                            
+                            self.presentViewController(alertController, animated: true) {
+                                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                            }
+                        }
+                            
+                        // If the error is any other type of error, attribute the error to incorrect email/password combination and alert the user.
+                        else {
+                            let alertController = UIAlertController(title: "Trouble logging you in.", message:  "\n We can't find an account with that email and password combination. Please try again.", preferredStyle: .Alert)
+                            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                            let forgotPasswordAction = UIAlertAction(title: "Forgot your password?", style: .Default) { (action) in
+                                self.performSegueWithIdentifier("toForgotPasswordSegue", sender: self)
+                            }
+                            alertController.addAction(forgotPasswordAction)
+                        
+                            self.emailTextField.resignFirstResponder()
+                            self.passwordTextField.resignFirstResponder()
+                            self.clearTextFields()
+                            self.cancelButtonExits()
+                            self.loginButtonExits()
+                        
+                            let doneAction = UIAlertAction(title: "Try Again", style: .Cancel) { (action) in
+                                self.userHasStartedLoginProcess = false
+                            }
+                            alertController.addAction(doneAction)
+                        
+                            self.presentViewController(alertController, animated: true) {
+                            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+                            }
+                        }
+                    }
+                        
+                    // If no error is found, complete the login process and segue to the application landing page.
+                    else {
+                        self.performSegueWithIdentifier("loginSuccessfulSegue", sender: self)
+                    }
+                })
+            }
+        }
     }
     
     func rotateLayerInfinite(layer: CALayer) {

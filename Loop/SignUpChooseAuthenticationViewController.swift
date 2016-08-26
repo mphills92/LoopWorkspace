@@ -27,8 +27,6 @@ class SignUpChooseAuthenticationViewController: UIViewController {
         
         signUpFacebookButton.layer.cornerRadius = 20
         signUpEmailButton.layer.cornerRadius = 20
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
