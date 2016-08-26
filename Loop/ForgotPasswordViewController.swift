@@ -12,6 +12,9 @@ class ForgotPasswordViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    // Reference to database class which communicates with Firebase.
+    let usersDB = UsersDatabase()
+    
     var newEmailToValidate = String()
     var newEmailIsValid = Bool()
     
@@ -36,58 +39,32 @@ class ForgotPasswordViewController: UITableViewController, UITextFieldDelegate {
         super.viewDidDisappear(animated)
         emailTextField.resignFirstResponder()
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        emailTextField.resignFirstResponder()
+    }
 }
 
-extension ForgotPasswordViewController{
+extension ForgotPasswordViewController {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        newEmailToValidate = emailTextField.text!
-        validateNewEmail(newEmailToValidate)
-        
-        if (newEmailIsValid == true) {
-            // TO DO: Send message to server to send password reset instructions to the input email.
-            print("TO DO: Send message to server to send password reset instructions to the input email.")
-            emailTextField.resignFirstResponder()
-            let alertController = UIAlertController(title: "Instructions sent!", message:  "\n We've sent instructions about how to reset your password to the email that you just provided.", preferredStyle: .Alert)
-            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            
-            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                self.dismissViewControllerAnimated(true, completion: {})
-            }
-            alertController.addAction(doneAction)
-            
-            self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            }
-            
-        } else {
-            invalidEmailMessage()
-        }
-        return true
+    func validateNewEmail(newEmailToValidate: String) -> Bool {
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        newEmailIsValid = emailPredicate.evaluateWithObject(newEmailToValidate)
+        return newEmailIsValid
     }
     
-    @IBAction func submitButtonPressed(sender: AnyObject) {
-        newEmailToValidate = emailTextField.text!
-        validateNewEmail(newEmailToValidate)
-        
-        if (newEmailIsValid == true) {
-            // TO DO: Send message to server to send password reset instructions to the input email.
-            print("TO DO: Send message to server to send password reset instructions to the input email.")
-            emailTextField.resignFirstResponder()
-            let alertController = UIAlertController(title: "Instructions sent!", message:  "\n We've sent instructions about how to reset your password to the email that you just provided.", preferredStyle: .Alert)
+    func successfulEmailSubmission() {
+        let alertController = UIAlertController(title: "Instructions sent!", message:  "\n We've sent instructions about how to reset your password to the email that you just provided.", preferredStyle: .Alert)
+        alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+            
+        let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            self.dismissViewControllerAnimated(true, completion: {})
+        }
+        alertController.addAction(doneAction)
+            
+        self.presentViewController(alertController, animated: true) {
             alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            
-            let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                self.dismissViewControllerAnimated(true, completion: {})
-            }
-            alertController.addAction(doneAction)
-            
-            self.presentViewController(alertController, animated: true) {
-                alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
-            }
-            
-        } else {
-            invalidEmailMessage()
         }
     }
     
@@ -102,15 +79,31 @@ extension ForgotPasswordViewController{
         }
     }
     
-    func validateNewEmail(newEmailToValidate: String) -> Bool {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        newEmailToValidate = emailTextField.text!
+        validateNewEmail(newEmailToValidate)
         
-        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
-        newEmailIsValid = emailPredicate.evaluateWithObject(newEmailToValidate)
-        return newEmailIsValid
+        
+        if (newEmailIsValid == true) {
+            usersDB.resetPassword(newEmailToValidate)
+            emailTextField.resignFirstResponder()
+            successfulEmailSubmission()
+        } else {
+            invalidEmailMessage()
+        }
+        return true
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        emailTextField.resignFirstResponder()
+    @IBAction func submitButtonPressed(sender: AnyObject) {
+        newEmailToValidate = emailTextField.text!
+        validateNewEmail(newEmailToValidate)
+        
+        if (newEmailIsValid == true) {
+            usersDB.resetPassword(newEmailToValidate)
+            emailTextField.resignFirstResponder()
+            successfulEmailSubmission()
+        } else {
+            invalidEmailMessage()
+        }
     }
 }

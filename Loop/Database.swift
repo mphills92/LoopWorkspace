@@ -57,4 +57,12 @@ class UsersDatabase {
             self.credit = credit
         }
     }
+    
+    func resetPassword(email: String) {
+        FIRAuth.auth()?.sendPasswordResetWithEmail(email, completion: { (error) in
+            if error == nil {
+                
+            }
+        })
+    }
 }
