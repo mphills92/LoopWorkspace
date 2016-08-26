@@ -12,6 +12,10 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     
     let coursesAvailable = Courses.coursesAvailable()
     
+    // Reference to database class which communicates with Firebase.
+    let usersDB = UsersDatabase()
+    let golfCoursesDB = GolfCoursesDatabase()
+    
     var selectedCourseNameToSend = String()
     var selectedLocationToSend = String()
     var selectedCourseIDToSend = Int()
@@ -31,7 +35,6 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
         longPressRecognizer.delaysTouchesBegan = true
         longPressRecognizer.delegate = self
         self.collectionView?.addGestureRecognizer(longPressRecognizer)
-        
         
     }
 }

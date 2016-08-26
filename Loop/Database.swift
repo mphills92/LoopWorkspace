@@ -80,8 +80,11 @@ class GolfCoursesDatabase {
     // Where all golf courses will be stored.
     private var golfCourseRef : FIRDatabaseReference
     
-    // Empty variables to be populated by the database and referenced by other view controllers.
-    //var name = String()
+    // Empty arrays to be populated by the database.
+    var courseNames = [String]()
+    var courseIDs = [String]()
+    var courseLocations = [String]()
+    
     var region = String()
     var city = String()
     var state = String()
@@ -98,41 +101,48 @@ class GolfCoursesDatabase {
     var amenitiesHighlight2 = String()
     var amenitiesHighlight3 = String()
     var currentOffer = String()
-    
-    
-    
-    // Array of all golfCourses.
-    var golfCourseNamesArray = [String]()
-    
+
     init() {
         self.dbRef = FIRDatabase.database().reference()
-        
-        // Sets the reference to the course datbase to set a path to the correct database node.
         self.golfCourseRef = self.dbRef.child("golf_courses")
-        
-        /*getGolfCourseInformation {
-            (arrayOfGolfCourseNames) -> () in
-            print("initialized from Database.swift  \(self.golfCoursesDB.golfCourseNamesArray)")
-        }*/
     }
 
     func getGolfCourseInformation(completion: (([String] -> Void))) {
-        var arrayOfGolfCourseNames = [String]()
+        
+        var courseNamesArray = [String]()
+        var courseIDsArray = [String]()
+        var courseLocationsArray = [String]()
         
         self.golfCourseRef.observeEventType(FIRDataEventType.Value) {
             (snapshot: FIRDataSnapshot) in
             
             for child in snapshot.children {
                 let golfCourseSnapshot = snapshot.childSnapshotForPath(child.key)
-                let names = golfCourseSnapshot.value!["name"] as! String
+                let courseID = golfCourseSnapshot.key
+                courseIDsArray.append(courseID)
+                print("courseID: \(courseID)")
                 
-                arrayOfGolfCourseNames.append(names)
+                if let name = snapshot.childSnapshotForPath("\(courseID)").value?.objectForKey("name") as? String {
+                    courseNamesArray.append(name)
+                    print("name: \(name)")
+                }
+                
+                if let location = snapshot.childSnapshotForPath("\(courseID)").value?.objectForKey("city_state") as? String {
+                    courseLocationsArray.append(location)
+                    print("location: \(location)")
+                }
+                
+                print("-------------------------")
+
             }
             
-            self.golfCourseNamesArray = arrayOfGolfCourseNames
+            self.courseNames = courseNamesArray
+            self.courseIDs = courseIDsArray
+            self.courseLocations = courseLocationsArray
             
-            if arrayOfGolfCourseNames.count == Int(snapshot.childrenCount) {
-                completion(arrayOfGolfCourseNames)
+            
+            if courseNamesArray.count == Int(snapshot.childrenCount) {
+                completion(courseNamesArray)
             }
         }
     }

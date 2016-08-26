@@ -21,6 +21,10 @@ class CoursesCollectionCell: UICollectionViewCell {
     @IBOutlet weak var revealUpDisclosureIndicator: UIImageView!
     @IBOutlet weak var revealRightDisclosureIndicator: UIImageView!
     
+    // Reference to database class which communicates with Firebase.
+    let usersDB = UsersDatabase()
+    let golfCoursesDB = GolfCoursesDatabase()
+    
     var coursesAvailable: Courses? {
         didSet {
             if let coursesAvailable = coursesAvailable {
@@ -32,7 +36,7 @@ class CoursesCollectionCell: UICollectionViewCell {
             }
         }
     }
-    
+
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes!) {
         super.applyLayoutAttributes(layoutAttributes)
         

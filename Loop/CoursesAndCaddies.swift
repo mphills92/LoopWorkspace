@@ -23,8 +23,8 @@ class Caddies: SessionForCaddies {
     }
 }
 
+
 class Courses: SessionForCourses {
-    
     class func coursesAvailable()  -> [Courses] {
         
         var coursesList = [Courses]()
@@ -43,4 +43,6 @@ class Courses: SessionForCourses {
     }
     
 }
+
+
 
