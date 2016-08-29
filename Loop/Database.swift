@@ -38,6 +38,7 @@ class UsersDatabase {
         
         // Sets the reference to the user by utilizing the Firebase 'uid' associated with the account to set a path to the correct database node.
         self.userIDRef = self.dbRef.child("users").child("\(userID)")
+        print(self.dbRef.child("users").child("\(userID)"))
         getUserInformation()
     }
     
