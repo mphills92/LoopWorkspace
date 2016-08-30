@@ -14,7 +14,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
-    let golfCoursesDB = GolfCoursesDatabase()
+    let golfCoursesDB = CoursesBasicInfoDatabase()
     
     var selectedCourseNameToSend = String()
     var selectedLocationToSend = String()
@@ -25,6 +25,17 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //-----------------------------------------------------------------------------------------
+        // Call database class methods to populate data to be utilized by other view controllers.
+        
+         golfCoursesDB.getBasicInfoForGolfCoursesInRadius {
+         (courseNames) -> () in
+
+            print("golfCoursesDB called")
+         }
+        
+        //-----------------------------------------------------------------------------------------
         
         collectionView!.backgroundColor = UIColor.blackColor()
         collectionView!.layoutIfNeeded()

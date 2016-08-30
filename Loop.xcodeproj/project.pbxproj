@@ -91,13 +91,14 @@
 		C994B4CF1D15A67F009848F2 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4CE1D15A67F009848F2 /* ChangeEmailViewController.swift */; };
 		C994B4D31D15A83E009848F2 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C994B4D21D15A83E009848F2 /* UserInformation.swift */; };
 		C998B6691D6EA0740087B037 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C998B6681D6EA0740087B037 /* GoogleService-Info.plist */; };
-		C998B66B1D6EA39C0087B037 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998B66A1D6EA39C0087B037 /* Database.swift */; };
+		C998B66B1D6EA39C0087B037 /* UsersDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998B66A1D6EA39C0087B037 /* UsersDatabase.swift */; };
 		C998B66E1D6F547F0087B037 /* CustomActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998B66C1D6F547F0087B037 /* CustomActivityIndicatorViewController.swift */; };
 		C998B66F1D6F547F0087B037 /* CustomActivityIndicatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C998B66D1D6F547F0087B037 /* CustomActivityIndicatorViewController.xib */; };
 		C99AD9191D4FA962001ABA09 /* AvailableCities&Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD9181D4FA962001ABA09 /* AvailableCities&Courses.swift */; };
 		C99AD91B1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD91A1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift */; };
 		C99AD91D1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD91C1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift */; };
 		C99AD91F1D52C41B001ABA09 /* ConfirmPaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99AD91E1D52C41B001ABA09 /* ConfirmPaymentsViewController.swift */; };
+		C9C079031D760A44007AB6E1 /* GolfCoursesDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C079021D760A44007AB6E1 /* GolfCoursesDatabase.swift */; };
 		C9EE3ED81D06643800F86EF2 /* SidebarMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3ED71D06643800F86EF2 /* SidebarMenuViewController.swift */; };
 		C9EE3F1A1D07383200F86EF2 /* ChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F191D07383200F86EF2 /* ChooseDateViewController.swift */; };
 		C9EE3F201D090A5900F86EF2 /* CaddiesAvailableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EE3F1F1D090A5900F86EF2 /* CaddiesAvailableViewController.swift */; };
@@ -222,13 +223,14 @@
 		C994B4CE1D15A67F009848F2 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeEmailViewController.swift; path = Loop/ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		C994B4D21D15A83E009848F2 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInformation.swift; path = Loop/UserInformation.swift; sourceTree = "<group>"; };
 		C998B6681D6EA0740087B037 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C998B66A1D6EA39C0087B037 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = Loop/Database.swift; sourceTree = "<group>"; };
+		C998B66A1D6EA39C0087B037 /* UsersDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersDatabase.swift; path = Loop/UsersDatabase.swift; sourceTree = "<group>"; };
 		C998B66C1D6F547F0087B037 /* CustomActivityIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomActivityIndicatorViewController.swift; path = Loop/CustomActivityIndicatorViewController.swift; sourceTree = "<group>"; };
 		C998B66D1D6F547F0087B037 /* CustomActivityIndicatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomActivityIndicatorViewController.xib; path = Loop/CustomActivityIndicatorViewController.xib; sourceTree = "<group>"; };
 		C99AD9181D4FA962001ABA09 /* AvailableCities&Courses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AvailableCities&Courses.swift"; path = "Loop/AvailableCities&Courses.swift"; sourceTree = "<group>"; };
 		C99AD91A1D52AB37001ABA09 /* ReservationFeeInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationFeeInformationViewController.swift; sourceTree = "<group>"; };
 		C99AD91C1D52B7C6001ABA09 /* ApplyPromoCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyPromoCodeViewController.swift; sourceTree = "<group>"; };
 		C99AD91E1D52C41B001ABA09 /* ConfirmPaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentsViewController.swift; sourceTree = "<group>"; };
+		C9C079021D760A44007AB6E1 /* GolfCoursesDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GolfCoursesDatabase.swift; path = Loop/GolfCoursesDatabase.swift; sourceTree = "<group>"; };
 		C9EE3ED71D06643800F86EF2 /* SidebarMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarMenuViewController.swift; sourceTree = "<group>"; };
 		C9EE3F191D07383200F86EF2 /* ChooseDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseDateViewController.swift; sourceTree = "<group>"; };
 		C9EE3F1F1D090A5900F86EF2 /* CaddiesAvailableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaddiesAvailableViewController.swift; path = Loop/CaddiesAvailableViewController.swift; sourceTree = "<group>"; };
@@ -395,7 +397,8 @@
 				C956FD231D2420C300E7143B /* Authentication */,
 				C994B4D41D15A853009848F2 /* User Information */,
 				C98ED5191D6E08A300F3965D /* Calendar */,
-				C998B66A1D6EA39C0087B037 /* Database.swift */,
+				C998B66A1D6EA39C0087B037 /* UsersDatabase.swift */,
+				C9C079021D760A44007AB6E1 /* GolfCoursesDatabase.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -1099,7 +1102,7 @@
 				C944F1D21D40910F008E2B4C /* AcknowledgmentsViewController.swift in Sources */,
 				C994B4C61D144A90009848F2 /* HelpAndSupportViewController.swift in Sources */,
 				C9EE3F2A1D0A196C00F86EF2 /* ProfileViewController.swift in Sources */,
-				C998B66B1D6EA39C0087B037 /* Database.swift in Sources */,
+				C998B66B1D6EA39C0087B037 /* UsersDatabase.swift in Sources */,
 				C95385CC1D0F5B98007BCA15 /* SessionForCaddies.swift in Sources */,
 				C95A00E21CB5CBEB008237B1 /* SWRevealViewController.m in Sources */,
 				C95385CA1D0F5B93007BCA15 /* CoursesAndCaddies.swift in Sources */,
@@ -1107,6 +1110,7 @@
 				C90EFBA81D5D1C3800707373 /* CourseDetailsPageViewController.swift in Sources */,
 				C95385C81D0F5B8C007BCA15 /* UIImage+Decompression.swift in Sources */,
 				C9899EC01D5BBB1D0020CB89 /* AddPrivateCourseViewController.swift in Sources */,
+				C9C079031D760A44007AB6E1 /* GolfCoursesDatabase.swift in Sources */,
 				C944F1BA1D3FF0F1008E2B4C /* ContainerGolferRoundInProgressViewController.swift in Sources */,
 				C994B4CD1D145E23009848F2 /* NotificationsViewController.swift in Sources */,
 				C93B4E9A1D6539F000EC3F56 /* ChooseDatePageViewController.swift in Sources */,

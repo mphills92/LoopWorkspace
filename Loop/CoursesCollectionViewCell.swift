@@ -23,7 +23,7 @@ class CoursesCollectionCell: UICollectionViewCell {
     
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
-    let golfCoursesDB = GolfCoursesDatabase()
+    let golfCoursesDB = CoursesBasicInfoDatabase()
     
     var coursesAvailable: Courses? {
         didSet {

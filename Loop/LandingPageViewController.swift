@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Foundation
+import CoreLocation
 
-class LandingPageViewController: UIViewController, SWRevealViewControllerDelegate {
+class LandingPageViewController: UIViewController, SWRevealViewControllerDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var reservationInProgressBarButtonItem: UIBarButtonItem!
@@ -17,11 +19,19 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
-    let golfCoursesDB = GolfCoursesDatabase()
+    let golfCoursesDB = CoursesBasicInfoDatabase()
+    
+    // Variables for location services.
+    var locationManager: CLLocationManager!
     
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
-            
+    
+    // Passed data via segue.
+    var userLatitudeToSend = Double()
+    var userLongitudeToSend = Double()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,11 +39,12 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         // Call database class methods to populate data to be utilized by other view controllers.
         usersDB.getUserInformation()
 
-        golfCoursesDB.getGolfCourseInformation {
+        /*
+        golfCoursesDB.getBasicInfoForGolfCoursesInRadius {
             (courseNames) -> () in
-            //print(self.golfCoursesDB.courseNames)
-            //print(self.golfCoursesDB.courseIDs)
-        }
+    
+        }*/
+        
         //-----------------------------------------------------------------------------------------
 
         revealViewController().delegate = self
@@ -82,6 +93,15 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        // Register the user's current location upon appearance of the landing page.
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        
         positionAndDisplayViewButtons()
         
         if (nextReservation.reservationIsWithinOneHour == true) {
@@ -124,6 +144,36 @@ extension LandingPageViewController {
         }
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations.last! as CLLocation
+    
+        /*let geoCoder = CLGeocoder()
+        
+         geoCoder.reverseGeocodeLocation(location) {
+         (placemarks, error) -> Void in
+         let placeArray = placemarks as [CLPlacemark]!
+         var placeMark: CLPlacemark!
+         placeMark = placeArray?[0]
+         
+         if let city = placeMark.addressDictionary?["City"] as? NSString {
+         print(city)
+         }
+         }*/
+        
+        var userLat = location.coordinate.latitude
+        userLatitudeToSend = userLat
+        
+        var userLon = location.coordinate.longitude
+        userLongitudeToSend = userLon
+        
+        
+        usersDB.setUserLocation(userLat, userLon: userLon)
+
+        self.locationManager.stopUpdatingLocation()
+    }
+    
+    
     @IBAction func startReservationButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("toChooseCourseSegue", sender: self)
     }
@@ -143,6 +193,16 @@ extension LandingPageViewController {
     
     func reservationHasCompleted(notification: NSNotification) {
             self.revealViewController().rightRevealToggleAnimated(true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toChooseCourseSegue") {
+            let navigationController = segue.destinationViewController as? UINavigationController
+            let destinationVC = navigationController!.topViewController as! ReservationChooseCourseViewController   
+            
+            destinationVC.userLatitudeHasBeenSent = userLatitudeToSend
+            destinationVC.userLongitudeHasBeenSent = userLongitudeToSend
+        }
     }
 }
 

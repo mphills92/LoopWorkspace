@@ -15,6 +15,10 @@ class ReservationChooseCourseViewController: UIViewController {
     @IBOutlet weak var segmentedControlBackgroundView: UIView!
     @IBOutlet weak var resultsFilterButtonTopConstraint: NSLayoutConstraint!
     
+    // Receive data from segue.
+    var userLatitudeHasBeenSent: Double?
+    var userLongitudeHasBeenSent: Double?
+    
     let gradientLayer = CAGradientLayer()
     
     var upwardScroll = Bool()
@@ -32,6 +36,9 @@ class ReservationChooseCourseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(userLatitudeHasBeenSent)
+        print(userLongitudeHasBeenSent)
         
         navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         navigationController?.navigationBar.barStyle = UIBarStyle.Default
