@@ -8,9 +8,10 @@
 
 import Foundation
 import Firebase
+import CoreLocation
 
 // Class reference to golf courses basic information in Firebase database.
-class CoursesBasicInfoDatabase {
+class CoursesBasicInfoDatabase: NSObject, CLLocationManagerDelegate {
     private var dbRef : FIRDatabaseReference
     private var courseBasicInfoRef : FIRDatabaseReference
     
@@ -27,7 +28,7 @@ class CoursesBasicInfoDatabase {
     var operatingHoursOpen = String()
     var operatingHoursClose = String()
     var price = String()
-    var description = String()
+    //var description = String()
     var facilitiesHighlight1 = String()
     var facilitiesHighlight2 = String()
     var facilitiesHighlight3 = String()
@@ -36,16 +37,17 @@ class CoursesBasicInfoDatabase {
     var amenitiesHighlight3 = String()
     var currentOffer = String()
     
-    init() {
+    override init() {
         self.dbRef = FIRDatabase.database().reference()
         self.courseBasicInfoRef = self.dbRef.child("courses_basic_info")
     }
     
-    func getBasicInfoForGolfCoursesInRadius(completion: (([String] -> Void))) {
-
-        var courseNamesArray = [String]()
+    func getGolfCourseIDsInRadius(setPointLat: Double, setPointLon: Double, searchRadiusFromSetPoint: Double, completion: (([String] -> Void))) {
+        
         var courseIDsArray = [String]()
         var courseLocationsArray = [String]()
+        
+        let setPointLocation = CLLocation(latitude: setPointLat, longitude: setPointLon)
         
         self.courseBasicInfoRef.observeEventType(FIRDataEventType.Value) {
             (snapshot: FIRDataSnapshot) in
@@ -53,27 +55,53 @@ class CoursesBasicInfoDatabase {
             for child in snapshot.children {
                 let golfCourseSnapshot = snapshot.childSnapshotForPath(child.key)
                 let courseID = golfCourseSnapshot.key
-                courseIDsArray.append(courseID)
                 
                 if let latitude = snapshot.childSnapshotForPath("\(courseID)").value?.objectForKey("lat") as? Double {
                     if let longitude = snapshot.childSnapshotForPath("\(courseID)").value?.objectForKey("lon") as? Double {
                         
+                        var courseLocation = CLLocation(latitude: latitude, longitude: longitude)
+                        
+                        var distance = (setPointLocation.distanceFromLocation(courseLocation))*0.000621371    // Conversion from meters to miles.
+                        
+                        if (distance <= searchRadiusFromSetPoint) {
+                            courseIDsArray.append(courseID)
+                            
+                            /*
+                            if let name = snapshot.childSnapshotForPath("\(courseID)").value?.objectForKey("name") as? String {
+                                courseNamesArray.append(name)
+                            }
+                            
+                            if let location = snapshot.childSnapshotForPath("\(courseID)").value?.objectForKey("city_state") as? String {
+                             courseLocationsArray.append(location)
+                            }*/
+                        }
                     }
                 }
-                
-                if let name = snapshot.childSnapshotForPath("\(courseID)").value?.objectForKey("name") as? String {
+            }
+            
+            self.courseIDs = courseIDsArray
+            self.courseLocations = courseLocationsArray
+                        
+            if courseIDsArray.count == Int(snapshot.childrenCount) {
+                completion(courseIDsArray)
+            }
+        }
+    }
+    
+    func getGolfCourseBasicInfoForIDs(courseIDs: [String], completion: (([String] -> Void))) {
+        
+        var courseNamesArray = [String]()
+        
+        self.courseBasicInfoRef.observeEventType(FIRDataEventType.Value) {
+            (snapshot: FIRDataSnapshot) in
+        
+            for var i = 0; i < courseIDs.count; i++ {
+                if let name = snapshot.childSnapshotForPath("\(courseIDs[i])").value?.objectForKey("name") as? String {
                     courseNamesArray.append(name)
-                }
-                
-                if let location = snapshot.childSnapshotForPath("\(courseID)").value?.objectForKey("city_state") as? String {
-                    courseLocationsArray.append(location)
                 }
             }
             
             self.courseNames = courseNamesArray
-            self.courseIDs = courseIDsArray
-            self.courseLocations = courseLocationsArray
-            
             
             if courseNamesArray.count == Int(snapshot.childrenCount) {
                 completion(courseNamesArray)

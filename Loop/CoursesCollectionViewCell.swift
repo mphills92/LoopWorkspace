@@ -11,7 +11,7 @@ import UIKit
 class CoursesCollectionCell: UICollectionViewCell {
     
     
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet private weak var imageCoverView: UIView!
     @IBOutlet weak var holdForDetailsLabel: UILabel!
     @IBOutlet weak var tapToSelectLabel: UILabel!
@@ -25,6 +25,7 @@ class CoursesCollectionCell: UICollectionViewCell {
     let usersDB = UsersDatabase()
     let golfCoursesDB = CoursesBasicInfoDatabase()
     
+    /*
     var coursesAvailable: Courses? {
         didSet {
             if let coursesAvailable = coursesAvailable {
@@ -35,7 +36,7 @@ class CoursesCollectionCell: UICollectionViewCell {
                 //imageView.image = caddiesAvailable.backgroundImage
             }
         }
-    }
+    }*/
 
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes!) {
         super.applyLayoutAttributes(layoutAttributes)

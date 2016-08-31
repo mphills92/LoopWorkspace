@@ -16,6 +16,16 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     let usersDB = UsersDatabase()
     let golfCoursesDB = CoursesBasicInfoDatabase()
     
+    // Empty variables to be populated in order to execute getBasicInfoForGolfCoursesInRadius.
+    var setPointLat = Double()
+    var setPointLon = Double()
+    var searchRadiusFromSetPoint = 2000.00
+    
+    // Variables to be populated upon retrieving nearby courses.
+    var nearbyCoursesToDisplay = [String]()
+    var dataHasBeenLoaded = Bool()
+    
+    
     var selectedCourseNameToSend = String()
     var selectedLocationToSend = String()
     var selectedCourseIDToSend = Int()
@@ -23,20 +33,13 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     var selectedCourseCollectionCellIndexPath = NSIndexPath()
     var lastContentOffset = CGFloat()
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        dataHasBeenLoaded = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //-----------------------------------------------------------------------------------------
-        // Call database class methods to populate data to be utilized by other view controllers.
-        
-         golfCoursesDB.getBasicInfoForGolfCoursesInRadius {
-         (courseNames) -> () in
-
-            print("golfCoursesDB called")
-         }
-        
-        //-----------------------------------------------------------------------------------------
-        
         collectionView!.backgroundColor = UIColor.blackColor()
         collectionView!.layoutIfNeeded()
         collectionView!.decelerationRate = UIScrollViewDecelerationRateFast
@@ -47,11 +50,46 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
         longPressRecognizer.delegate = self
         self.collectionView?.addGestureRecognizer(longPressRecognizer)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustSetPointLat:", name: "setPointLatNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustSetPointLon:", name: "setPointLonNotification", object: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        golfCoursesDB.getGolfCourseIDsInRadius(setPointLat, setPointLon: setPointLon, searchRadiusFromSetPoint: searchRadiusFromSetPoint) {
+            (courseIDs) -> Void in
+            
+            self.golfCoursesDB.getGolfCourseBasicInfoForIDs(courseIDs) {
+                (courseNames) -> Void in
+                self.nearbyCoursesToDisplay = courseNames
+                self.collectionView?.reloadData()
+                self.dataHasBeenLoaded = true
+            }
+            
+            
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "setPointLatNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "setPointLonNotification", object: self.view.window)
     }
 }
 
 
 extension ContainerReservationChooseCourseViewController {
+    
+    func adjustSetPointLat(notification: NSNotification) {
+        setPointLat = notification.object! as! Double
+        
+    }
+    
+    func adjustSetPointLon(notification: NSNotification) {
+        setPointLon = notification.object! as! Double
+        
+    }
     
     @IBAction func chooseCourseButtonPressed(sender: AnyObject) {
         let chooseCourseButtonRow = sender.tag
@@ -62,14 +100,41 @@ extension ContainerReservationChooseCourseViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return coursesAvailable.count
+        
+        var numOfItems: Int = 0
+        
+        /*
+        if (dataHasBeenLoaded == false) {
+            print("loading")
+            numOfItems = 0
+        } else if (dataHasBeenLoaded == true) {
+            if (nearbyCoursesToDisplay.count == 0) {
+                print("no courses to show")
+                numOfItems = 1
+            } else if (nearbyCoursesToDisplay.count > 0) {
+                print("nearby courses")
+                numOfItems = nearbyCoursesToDisplay.count
+            }
+        }*/
+        
+        if (dataHasBeenLoaded == false) {
+            print("loading")
+            numOfItems = 0
+        } else {
+            print("loaded")
+            numOfItems = nearbyCoursesToDisplay.count
+        }
+        return  numOfItems
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CoursesCollectionCell
         
-        cell.coursesAvailable = coursesAvailable[indexPath.item]
+        //cell.coursesAvailable = coursesAvailable[indexPath.item]
+
+        cell.courseNameLabel.text = nearbyCoursesToDisplay[indexPath.item]
+        cell.imageView.image = UIImage(named: "GolfCourseBackgroundImage")
         
         cell.chooseCourseButton.tag = indexPath.row
         

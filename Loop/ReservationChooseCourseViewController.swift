@@ -19,6 +19,11 @@ class ReservationChooseCourseViewController: UIViewController {
     var userLatitudeHasBeenSent: Double?
     var userLongitudeHasBeenSent: Double?
     
+    // Empty variables to be populated in order to execute getBasicInfoForGolfCoursesInRadius.
+    var setPointLat = Double()
+    var setPointLon = Double()
+    var searchRadiusFromSetPoint = Double()
+    
     let gradientLayer = CAGradientLayer()
     
     var upwardScroll = Bool()
@@ -34,12 +39,21 @@ class ReservationChooseCourseViewController: UIViewController {
         
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSwipedContainer:", name: "userHasSwipedContainerNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectedCityHasChangedFromFilter:", name: "userHasSelectedCityFromFilterNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectedDistanceHasChangedFromFilter:", name: "userHasSelectedDistanceFromFilterNotification", object: nil)
+        
+
+        
+        updateResultsFilterButtonTitle()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(userLatitudeHasBeenSent)
-        print(userLongitudeHasBeenSent)
-        
         navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         navigationController?.navigationBar.barStyle = UIBarStyle.Default
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
@@ -55,6 +69,7 @@ class ReservationChooseCourseViewController: UIViewController {
         resultsFilterButton.layer.shadowOpacity = 0.5
         resultsFilterButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
+        
         if (previouslySelectedCity == "") {
             previouslySelectedCity = "Current Location"
             previouslySelectedDistance = 20
@@ -62,6 +77,18 @@ class ReservationChooseCourseViewController: UIViewController {
             previouslySelectedCity = selectedCity
             previouslySelectedDistance = selectedDistance
         }
+        
+        setPointLat = userLatitudeHasBeenSent!
+        setPointLon = userLongitudeHasBeenSent!
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("setPointLatNotification", object: setPointLat)
+        NSNotificationCenter.defaultCenter().postNotificationName("setPointLonNotification", object: setPointLon)
+        
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -82,20 +109,8 @@ class ReservationChooseCourseViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSwipedContainer:", name: "userHasSwipedContainerNotification", object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectedCityHasChangedFromFilter:", name: "userHasSelectedCityFromFilterNotification", object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectedDistanceHasChangedFromFilter:", name: "userHasSelectedDistanceFromFilterNotification", object: nil)
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        
-        updateResultsFilterButtonTitle()
-    }
 }
+
 
 extension ReservationChooseCourseViewController {
     
