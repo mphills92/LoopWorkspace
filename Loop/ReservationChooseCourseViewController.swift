@@ -24,6 +24,10 @@ class ReservationChooseCourseViewController: UIViewController {
     var setPointLon = Double()
     var searchRadiusFromSetPoint = Double()
     
+    var screenSize = UIScreen.mainScreen().bounds
+    let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+    let activityIndicatorBackground = UIView()
+    
     let gradientLayer = CAGradientLayer()
     
     var upwardScroll = Bool()
@@ -47,7 +51,15 @@ class ReservationChooseCourseViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectedCityHasChangedFromFilter:", name: "userHasSelectedCityFromFilterNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectedDistanceHasChangedFromFilter:", name: "userHasSelectedDistanceFromFilterNotification", object: nil)
         
-
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "startActivityIndicator:", name: "startActivityIndicatorNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "stopActivityIndicator:", name: "stopActivityIndicatorNotification", object: nil)
+        
+        activityIndicator.center = CGPointMake(self.screenSize.width / 2, self.screenSize.height / 2)
+        activityIndicatorBackground.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.25)
+        activityIndicatorBackground.frame = CGRectMake(0, 0, self.screenSize.width, self.screenSize.height)
+        activityIndicatorBackground.hidden = true
+        self.containerView!.addSubview(activityIndicatorBackground)
+        self.containerView!.addSubview(activityIndicator)
         
         updateResultsFilterButtonTitle()
     }
@@ -69,7 +81,6 @@ class ReservationChooseCourseViewController: UIViewController {
         resultsFilterButton.layer.shadowOpacity = 0.5
         resultsFilterButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
-        
         if (previouslySelectedCity == "") {
             previouslySelectedCity = "Current Location"
             previouslySelectedDistance = 20
@@ -85,14 +96,14 @@ class ReservationChooseCourseViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         NSNotificationCenter.defaultCenter().postNotificationName("setPointLatNotification", object: setPointLat)
         NSNotificationCenter.defaultCenter().postNotificationName("setPointLonNotification", object: setPointLon)
-        
     }
     
     override func viewDidDisappear(animated: Bool) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "userHasSwipedContainerNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "startActivityIndicatorNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "stopActivityIndicatorNotification", object: self.view.window)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -108,7 +119,6 @@ class ReservationChooseCourseViewController: UIViewController {
         }*/
         
     }
-    
 }
 
 
@@ -144,6 +154,16 @@ extension ReservationChooseCourseViewController {
         } else {
             resultsFilterButton.setTitle("   Filter by: \(previouslySelectedCity) (\(selectedDistance) mi)   ", forState: UIControlState.Normal)
         }
+    }
+    
+    func startActivityIndicator(notification: NSNotification) {
+        activityIndicator.startAnimating()
+        activityIndicatorBackground.hidden = false
+    }
+    
+    func stopActivityIndicator(notification: NSNotification) {
+        self.activityIndicator.stopAnimating()
+        self.activityIndicatorBackground.hidden = true
     }
 }
 

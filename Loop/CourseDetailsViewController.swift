@@ -16,7 +16,7 @@ class CourseDetailsViewController: UIViewController {
         
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
-    var selectedCourseIDHasBeenSent: Int?
+    var selectedCourseIDHasBeenSent: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
