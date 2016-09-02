@@ -14,6 +14,10 @@ class ReservationChooseCourseViewController: UIViewController {
     @IBOutlet weak var resultsFilterButton: UIButton!
     @IBOutlet weak var segmentedControlBackgroundView: UIView!
     @IBOutlet weak var resultsFilterButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sliderBackgroundView: UIView!
+    @IBOutlet weak var distanceSlider: UISlider!
+    @IBOutlet weak var distanceSliderLabel: UILabel!
+    @IBOutlet weak var sliderDisplayBlackButton: UIButton!
     
     // Receive data from segue.
     var userLatitudeHasBeenSent: Double?
@@ -77,6 +81,10 @@ class ReservationChooseCourseViewController: UIViewController {
         segmentedControlBackgroundView.layer.shadowOpacity = 0.25
         segmentedControlBackgroundView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
+        sliderBackgroundView.hidden = true
+        sliderDisplayBlackButton.hidden = true
+        navigationItem.rightBarButtonItem?.image = UIImage(named: "IconRadiusUnfilled")
+        
         resultsFilterButton.layer.cornerRadius = 15
         resultsFilterButton.layer.shadowColor = UIColor.blackColor().CGColor
         resultsFilterButton.layer.shadowOpacity = 0.5
@@ -109,20 +117,69 @@ class ReservationChooseCourseViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        /*
-        if (previouslySelectedCity == "") {
-            previouslySelectedCity = "Current Location"
-            previouslySelectedDistance = 20
-        } else {
-            previouslySelectedCity = selectedCity
-            previouslySelectedDistance = selectedDistance
-        }*/
-        
     }
 }
 
 
 extension ReservationChooseCourseViewController {
+    
+    @IBAction func changeDistanceValueButtonPressed(sender: UIBarButtonItem) {
+        if (sliderBackgroundView.hidden == true) {
+            displaySlider()
+        } else if (sliderBackgroundView.hidden == false) {
+            hideSlider()
+        }
+    }
+    
+    @IBAction func sliderDisplayBlackButtonPressed(sender: AnyObject) {
+        hideSlider()
+    }
+    
+    
+    @IBAction func saveNewDistanceButtonPressed(sender: AnyObject) {
+        sliderBackgroundView.hidden = true
+    }
+    
+    
+    @IBAction func distanceSliderValueChanged(sender: UISlider) {
+        var increment: Float = 5
+        var newValue: Float = sender.value / increment
+        sender.value = floor(newValue) * increment
+        
+        var formatted: String {
+            let formatter = NSNumberFormatter()
+            formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            formatter.minimumFractionDigits = 0
+            return formatter.stringFromNumber(sender.value) ?? ""
+        }
+        
+        distanceSliderLabel.text  = "\(formatted) mi"
+        selectedDistance = Int(formatted)!
+        
+
+    }
+    
+    func displaySlider() {
+        sliderBackgroundView.hidden = false
+        sliderDisplayBlackButton.hidden = false
+        navigationItem.title = "Change Distance"
+        
+        let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "hideSlider")
+        saveButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!], forState: UIControlState.Normal)
+        self.navigationItem.rightBarButtonItem = saveButton
+        self.navigationItem.rightBarButtonItem?.enabled = true
+    }
+    
+    func hideSlider() {
+        sliderBackgroundView.hidden = true
+        sliderDisplayBlackButton.hidden = true
+        navigationItem.title = "Choose Course"
+        
+        let showSliderButton = UIBarButtonItem(image: UIImage(named:"IconRadiusUnfilled"), style: .Plain, target: self, action: "displaySlider")
+        self.navigationItem.rightBarButtonItem = showSliderButton
+        self.navigationItem.rightBarButtonItem?.enabled = true
+    }
+    
     
     func userHasSwipedContainer(notification: NSNotification) {
         upwardScroll = notification.object! as! Bool
@@ -147,6 +204,7 @@ extension ReservationChooseCourseViewController {
     func selectedDistanceHasChangedFromFilter(notification: NSNotification) {
         selectedDistance = notification.object! as! Int
     }
+    
     
     func updateResultsFilterButtonTitle() {
         if (selectedCity != "") {

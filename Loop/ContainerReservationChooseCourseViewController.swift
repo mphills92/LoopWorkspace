@@ -24,7 +24,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     // Empty variables to be populated in order to execute getBasicInfoForGolfCoursesInRadius.
     var setPointLat = Double()
     var setPointLon = Double()
-    var searchRadiusFromSetPoint = 40.00
+    var searchRadiusFromSetPoint = 2000.00
     
     // Variables to be populated upon retrieving nearby courses.
     var nearbyCourseNamesToDisplay = [String]()

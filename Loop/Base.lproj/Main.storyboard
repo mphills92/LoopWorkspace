@@ -13003,9 +13003,6 @@ for the game of golf.</string>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVf-A5-ilD">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="8D1-L0-ksa" kind="embed" id="rFK-6a-f7h"/>
-                                </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ra-Gt-acr">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -13088,6 +13085,81 @@ for the game of golf.</string>
                                     </mask>
                                 </variation>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zy-gW-je7">
+                                <rect key="frame" x="0.0" y="44" width="600" height="492"/>
+                                <connections>
+                                    <segue destination="8D1-L0-ksa" kind="embed" id="rs6-3X-NvO"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upz-d7-fkw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-WW-56p" customClass="ChooseCourseSegmentedControl" customModule="Loop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="7" width="600" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="vR5-k2-uGK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gBb-WW-56p" firstAttribute="width" secondItem="Upz-d7-fkw" secondAttribute="width" id="82B-JA-ejF"/>
+                                    <constraint firstItem="gBb-WW-56p" firstAttribute="centerY" secondItem="Upz-d7-fkw" secondAttribute="centerY" id="Gw0-DU-IB0"/>
+                                    <constraint firstAttribute="height" constant="44" id="Hw8-1Q-ekl"/>
+                                    <constraint firstItem="gBb-WW-56p" firstAttribute="centerX" secondItem="Upz-d7-fkw" secondAttribute="centerX" id="pAp-WR-o2y"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2J-3a-1gt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="5" maxValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="mjR-gI-7SG">
+                                        <rect key="frame" x="78" y="7" width="504" height="31"/>
+                                        <color key="minimumTrackTintColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="distanceSliderValueChanged:" destination="PVF-jM-i61" eventType="valueChanged" id="zL6-ww-Hk6"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 mi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AW-FY-siu">
+                                        <rect key="frame" x="10" y="12" width="60" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="3JZ-cQ-nxW"/>
+                                            <constraint firstAttribute="width" constant="60" id="8ol-lE-Zh5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="7AW-FY-siu" firstAttribute="centerY" secondItem="o2J-3a-1gt" secondAttribute="centerY" id="6z4-RB-DR2"/>
+                                    <constraint firstItem="mjR-gI-7SG" firstAttribute="centerY" secondItem="o2J-3a-1gt" secondAttribute="centerY" id="AG0-5h-mPL"/>
+                                    <constraint firstItem="7AW-FY-siu" firstAttribute="centerY" secondItem="mjR-gI-7SG" secondAttribute="centerY" id="D1n-nI-Ez2"/>
+                                    <constraint firstItem="mjR-gI-7SG" firstAttribute="leading" secondItem="o2J-3a-1gt" secondAttribute="leading" constant="80" id="IeY-8c-K50"/>
+                                    <constraint firstItem="7AW-FY-siu" firstAttribute="leading" secondItem="o2J-3a-1gt" secondAttribute="leading" constant="10" id="LIr-xV-ze7"/>
+                                    <constraint firstItem="mjR-gI-7SG" firstAttribute="top" secondItem="o2J-3a-1gt" secondAttribute="top" constant="5" id="UWB-Kf-UdF"/>
+                                    <constraint firstItem="mjR-gI-7SG" firstAttribute="leading" secondItem="7AW-FY-siu" secondAttribute="trailing" constant="10" id="cTA-9X-VFD"/>
+                                    <constraint firstAttribute="height" constant="44" id="cUw-Oa-Dxw"/>
+                                    <constraint firstAttribute="trailing" secondItem="mjR-gI-7SG" secondAttribute="trailing" constant="20" id="l6S-u3-0ed"/>
+                                    <constraint firstItem="mjR-gI-7SG" firstAttribute="centerY" secondItem="o2J-3a-1gt" secondAttribute="centerY" id="qI9-Ba-asZ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6z4-RB-DR2"/>
+                                        <exclude reference="IeY-8c-K50"/>
+                                        <exclude reference="UWB-Kf-UdF"/>
+                                        <exclude reference="qI9-Ba-asZ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhQ-JS-cQv">
+                                <rect key="frame" x="0.0" y="44" width="600" height="492"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sliderDisplayBlackButtonPressed:" destination="PVF-jM-i61" eventType="touchUpInside" id="bwb-7f-jyZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -13095,30 +13167,47 @@ for the game of golf.</string>
                                 <variation key="widthClass=compact" constant="37"/>
                             </constraint>
                             <constraint firstItem="VDB-P4-ZBY" firstAttribute="top" secondItem="osZ-9M-ReA" secondAttribute="bottom" id="5U4-f5-q3Z"/>
+                            <constraint firstItem="o2J-3a-1gt" firstAttribute="top" secondItem="Upz-d7-fkw" secondAttribute="bottom" id="6hL-FR-jC2"/>
+                            <constraint firstItem="o2J-3a-1gt" firstAttribute="centerX" secondItem="Upz-d7-fkw" secondAttribute="centerX" id="8gK-qe-68z"/>
                             <constraint firstItem="VDB-P4-ZBY" firstAttribute="width" secondItem="jUJ-E2-Clv" secondAttribute="width" id="97z-IV-jI1"/>
+                            <constraint firstItem="Upz-d7-fkw" firstAttribute="top" secondItem="osZ-9M-ReA" secondAttribute="bottom" id="9Iz-Mm-uRR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xVf-A5-ilD" secondAttribute="trailing" constant="-20" id="AFc-hv-YbI"/>
+                            <constraint firstItem="5Zy-gW-je7" firstAttribute="top" secondItem="Upz-d7-fkw" secondAttribute="bottom" id="EHP-SD-aoX"/>
                             <constraint firstItem="xVf-A5-ilD" firstAttribute="leading" secondItem="jUJ-E2-Clv" secondAttribute="leadingMargin" constant="-20" id="Fqz-ME-fUz"/>
+                            <constraint firstItem="o2J-3a-1gt" firstAttribute="width" secondItem="Upz-d7-fkw" secondAttribute="width" id="LTg-co-Flp"/>
                             <constraint firstItem="gVr-iL-PuD" firstAttribute="top" secondItem="xVf-A5-ilD" secondAttribute="bottom" constant="59" id="NLo-rP-1Fe">
                                 <variation key="widthClass=compact" constant="80"/>
                             </constraint>
+                            <constraint firstItem="o2J-3a-1gt" firstAttribute="centerY" secondItem="Upz-d7-fkw" secondAttribute="centerY" id="NPe-SP-h1H"/>
                             <constraint firstItem="gVr-iL-PuD" firstAttribute="top" secondItem="xVf-A5-ilD" secondAttribute="bottom" constant="80" id="NoI-bp-51P">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="xVf-A5-ilD" firstAttribute="top" secondItem="VDB-P4-ZBY" secondAttribute="bottom" constant="20" id="PCT-oz-EKt">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="o2J-3a-1gt" firstAttribute="top" secondItem="Upz-d7-fkw" secondAttribute="top" id="PHC-U6-4A4"/>
+                            <constraint firstItem="PhQ-JS-cQv" firstAttribute="height" secondItem="5Zy-gW-je7" secondAttribute="height" id="PfP-uZ-hZz"/>
                             <constraint firstItem="VDB-P4-ZBY" firstAttribute="top" secondItem="xVf-A5-ilD" secondAttribute="bottom" constant="-1" id="QRy-An-FEa">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="gVr-iL-PuD" firstAttribute="top" secondItem="5Zy-gW-je7" secondAttribute="bottom" id="Rlu-Fq-CH6"/>
                             <constraint firstItem="gVr-iL-PuD" firstAttribute="top" secondItem="VDB-P4-ZBY" secondAttribute="bottom" id="bhi-rg-crT"/>
                             <constraint firstItem="0ra-Gt-acr" firstAttribute="top" secondItem="osZ-9M-ReA" secondAttribute="bottom" constant="465" id="cyE-Y1-4fe">
                                 <variation key="widthClass=compact" constant="64"/>
                             </constraint>
+                            <constraint firstItem="Upz-d7-fkw" firstAttribute="width" secondItem="jUJ-E2-Clv" secondAttribute="width" id="fL3-4L-riC"/>
                             <constraint firstItem="VDB-P4-ZBY" firstAttribute="centerX" secondItem="jUJ-E2-Clv" secondAttribute="centerX" id="jEi-5v-GzK"/>
+                            <constraint firstItem="5Zy-gW-je7" firstAttribute="centerX" secondItem="jUJ-E2-Clv" secondAttribute="centerX" id="je7-VO-913"/>
+                            <constraint firstItem="PhQ-JS-cQv" firstAttribute="centerY" secondItem="5Zy-gW-je7" secondAttribute="centerY" id="kKE-kQ-P8B"/>
+                            <constraint firstItem="o2J-3a-1gt" firstAttribute="height" secondItem="Upz-d7-fkw" secondAttribute="height" id="kbT-Af-kUK"/>
+                            <constraint firstItem="5Zy-gW-je7" firstAttribute="width" secondItem="jUJ-E2-Clv" secondAttribute="width" id="mvR-Ba-7b1"/>
                             <constraint firstItem="xVf-A5-ilD" firstAttribute="top" secondItem="osZ-9M-ReA" secondAttribute="bottom" constant="-5" id="pNf-p1-tmB">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="0ra-Gt-acr" firstAttribute="centerX" secondItem="jUJ-E2-Clv" secondAttribute="centerX" id="tWs-mU-1NM"/>
+                            <constraint firstItem="Upz-d7-fkw" firstAttribute="centerX" secondItem="jUJ-E2-Clv" secondAttribute="centerX" id="uqz-fw-hTK"/>
+                            <constraint firstItem="PhQ-JS-cQv" firstAttribute="width" secondItem="5Zy-gW-je7" secondAttribute="width" id="vp2-WD-CU4"/>
+                            <constraint firstItem="PhQ-JS-cQv" firstAttribute="centerX" secondItem="5Zy-gW-je7" secondAttribute="centerX" id="wCO-Av-R4M"/>
                             <constraint firstItem="0ra-Gt-acr" firstAttribute="top" secondItem="xVf-A5-ilD" secondAttribute="bottom" constant="-50" id="y5Z-t8-yWy"/>
                         </constraints>
                         <variation key="default">
@@ -13131,10 +13220,6 @@ for the game of golf.</string>
                                 <exclude reference="cyE-Y1-4fe"/>
                                 <exclude reference="tWs-mU-1NM"/>
                                 <exclude reference="y5Z-t8-yWy"/>
-                                <exclude reference="4jp-ax-dFE"/>
-                                <exclude reference="NLo-rP-1Fe"/>
-                                <exclude reference="NoI-bp-51P"/>
-                                <exclude reference="bhi-rg-crT"/>
                                 <exclude reference="5U4-f5-q3Z"/>
                                 <exclude reference="97z-IV-jI1"/>
                                 <exclude reference="QRy-An-FEa"/>
@@ -13143,6 +13228,13 @@ for the game of golf.</string>
                                 <exclude reference="Fqz-ME-fUz"/>
                                 <exclude reference="PCT-oz-EKt"/>
                                 <exclude reference="pNf-p1-tmB"/>
+                                <exclude reference="6hL-FR-jC2"/>
+                                <exclude reference="NPe-SP-h1H"/>
+                                <exclude reference="kbT-Af-kUK"/>
+                                <exclude reference="4jp-ax-dFE"/>
+                                <exclude reference="NLo-rP-1Fe"/>
+                                <exclude reference="NoI-bp-51P"/>
+                                <exclude reference="bhi-rg-crT"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -13155,10 +13247,6 @@ for the game of golf.</string>
                                 <include reference="cyE-Y1-4fe"/>
                                 <include reference="tWs-mU-1NM"/>
                                 <exclude reference="y5Z-t8-yWy"/>
-                                <exclude reference="4jp-ax-dFE"/>
-                                <exclude reference="NLo-rP-1Fe"/>
-                                <include reference="NoI-bp-51P"/>
-                                <exclude reference="bhi-rg-crT"/>
                                 <include reference="5U4-f5-q3Z"/>
                                 <include reference="97z-IV-jI1"/>
                                 <exclude reference="QRy-An-FEa"/>
@@ -13167,6 +13255,10 @@ for the game of golf.</string>
                                 <include reference="Fqz-ME-fUz"/>
                                 <include reference="PCT-oz-EKt"/>
                                 <exclude reference="pNf-p1-tmB"/>
+                                <exclude reference="4jp-ax-dFE"/>
+                                <exclude reference="NLo-rP-1Fe"/>
+                                <include reference="NoI-bp-51P"/>
+                                <exclude reference="bhi-rg-crT"/>
                             </mask>
                         </variation>
                     </view>
@@ -13177,12 +13269,21 @@ for the game of golf.</string>
                                 <action selector="cancelReservationButtonPressed:" destination="PVF-jM-i61" id="38J-cs-x6i"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="IconRadiusUnfilled" id="lqA-6U-WaI">
+                            <connections>
+                                <action selector="changeDistanceValueButtonPressed:" destination="PVF-jM-i61" id="tY7-4K-Wxy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="containerView" destination="xVf-A5-ilD" id="9dR-yJ-ass"/>
+                        <outlet property="containerView" destination="5Zy-gW-je7" id="Jaj-uD-Eab"/>
+                        <outlet property="distanceSlider" destination="mjR-gI-7SG" id="vT7-nr-tRp"/>
+                        <outlet property="distanceSliderLabel" destination="7AW-FY-siu" id="0eq-q2-54f"/>
                         <outlet property="resultsFilterButton" destination="0ra-Gt-acr" id="iMj-h9-brN"/>
                         <outlet property="resultsFilterButtonTopConstraint" destination="cyE-Y1-4fe" id="6b3-xV-E7e"/>
-                        <outlet property="segmentedControlBackgroundView" destination="VDB-P4-ZBY" id="qJQ-zn-IV9"/>
+                        <outlet property="segmentedControlBackgroundView" destination="Upz-d7-fkw" id="hF4-uE-ZDn"/>
+                        <outlet property="sliderBackgroundView" destination="o2J-3a-1gt" id="8Q7-r2-kS6"/>
+                        <outlet property="sliderDisplayBlackButton" destination="PhQ-JS-cQv" id="Sym-hJ-bKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBU-Pg-2k3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -13194,13 +13295,13 @@ for the game of golf.</string>
             <objects>
                 <collectionViewController id="8D1-L0-ksa" customClass="ContainerReservationChooseCourseViewController" customModule="Loop" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="XeU-IR-9mJ">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewLayout key="collectionViewLayout" id="oKD-dj-NDG" customClass="UltravisualLayout" customModule="Loop" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="HsQ-dr-kkd" customClass="CoursesCollectionCell" customModule="Loop" customModuleProvider="target">
-                                <rect key="frame" x="-55" y="0.0" width="350" height="300"/>
+                                <rect key="frame" x="125" y="0.0" width="350" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
@@ -14086,7 +14187,7 @@ for the game of golf.</string>
                         <viewControllerLayoutGuide type="bottom" id="1SV-bZ-pFi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UlG-3w-95D">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fOr-pK-x5L">
@@ -14829,7 +14930,7 @@ for the game of golf.</string>
                         <viewControllerLayoutGuide type="bottom" id="FNM-D3-Tal"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kXG-Ua-Ixl">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GolfCourseBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="575-jP-Tls">
@@ -19289,6 +19390,23 @@ If you've got a promo code, enter it here.</string>
             </objects>
             <point key="canvasLocation" x="3394.5" y="2627"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="miG-P6-BSr">
+            <objects>
+                <viewController id="hQW-6Z-0oq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sv9-WK-9aM"/>
+                        <viewControllerLayoutGuide type="bottom" id="c2l-RU-U3n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ho0-eq-SPZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VBW-eI-6hk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="AboutUsBackgroundPage1" width="414" height="736"/>
@@ -19304,6 +19422,7 @@ If you've got a promo code, enter it here.</string>
         <image name="GolferIcon" width="45" height="62"/>
         <image name="IconCallButton" width="222" height="221"/>
         <image name="IconEmailMessageButton" width="222" height="221"/>
+        <image name="IconRadiusUnfilled" width="29" height="29"/>
         <image name="IconTextMessageButton" width="222" height="221"/>
         <image name="LoopLogoLarge" width="453" height="453"/>
         <image name="MenuIcon" width="29" height="29"/>
