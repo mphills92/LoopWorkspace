@@ -16,6 +16,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
     let golfCoursesDB = CoursesBasicInfoDatabase()
+    let coursesDetailedInfoDB = CoursesDetailedInfoDatabase()
     
     var dbRef : FIRDatabaseReference!
     var courseBasicInfoRef : FIRDatabaseReference!
@@ -23,7 +24,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     // Empty variables to be populated in order to execute getBasicInfoForGolfCoursesInRadius.
     var setPointLat = Double()
     var setPointLon = Double()
-    var searchRadiusFromSetPoint = 2000.00
+    var searchRadiusFromSetPoint = 40.00
     
     // Variables to be populated upon retrieving nearby courses.
     var nearbyCourseNamesToDisplay = [String]()
@@ -43,7 +44,6 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         dataHasBeenLoaded = false
     }
     
@@ -101,7 +101,6 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
                 }
                 
                 self.collectionView?.reloadData()
-                print(self.nearbyCourseIDsToMonitor)
                 NSNotificationCenter.defaultCenter().postNotificationName("stopActivityIndicatorNotification", object: nil)
             }
             }
@@ -181,6 +180,7 @@ extension ContainerReservationChooseCourseViewController {
             selectedCourseNameToSend = nearbyCourseNamesToDisplay[index.row]
             selectedLocationToSend = nearbyCourseLocationsToDisplay[index.row]
             selectedCourseIDToSend = nearbyCourseIDsToMonitor[index.row]
+            
             performSegueWithIdentifier("toCourseDetailsSegue", sender: indexPath)
         }
     }
@@ -190,16 +190,16 @@ extension ContainerReservationChooseCourseViewController {
             let destinationVC = segue.destinationViewController as! ChooseDateViewController
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
             destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
-            print("selectedCourseIDToSend: \(selectedCourseIDToSend)")
         } else if (segue.identifier == "toCourseDetailsSegue") {
             var indexPath: NSIndexPath = (sender as! NSIndexPath)
             let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! CoursesCollectionCell
             
             let navigationController = segue.destinationViewController as? UINavigationController
             let destinationVC = navigationController!.topViewController as! CourseDetailsViewController
+            
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
+            destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
             destinationVC.selectedCourseIDHasBeenSent = selectedCourseIDToSend
-            print("selectedCourseIDToSend: \(selectedCourseIDToSend)")
         }
     }
     

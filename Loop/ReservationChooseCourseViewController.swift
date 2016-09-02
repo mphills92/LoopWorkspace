@@ -23,6 +23,7 @@ class ReservationChooseCourseViewController: UIViewController {
     var setPointLat = Double()
     var setPointLon = Double()
     var searchRadiusFromSetPoint = Double()
+
     
     var screenSize = UIScreen.mainScreen().bounds
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
@@ -91,7 +92,6 @@ class ReservationChooseCourseViewController: UIViewController {
         
         setPointLat = userLatitudeHasBeenSent!
         setPointLon = userLongitudeHasBeenSent!
-        
     }
     
     override func viewDidAppear(animated: Bool) {
