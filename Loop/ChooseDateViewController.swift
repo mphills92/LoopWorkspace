@@ -7,28 +7,42 @@
 //
 
 import UIKit
+import Firebase
 
 class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
-    
-    // Dummy data!!!!
-    var validStartTimeAsString = "23:59:00"
-    var validStartTimeAsNSDate = NSDate()
-    var validEndTimeAsString = "12:00:00"
-    var validEndTimeAsNSDate = NSDate()
-    ////////////////////
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var chooseDateButton: UIButton!
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var bottomButtonHolderView: UIView!
     @IBOutlet weak var selectedCourseNameLabel: UILabel!
-    
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var datePickerBackgroundView: UIView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var chooseTimeSlideUpView: UIView!
+    @IBOutlet weak var validHoursLabel: UILabel!
     @IBOutlet weak var bottomConstraintChooseTimeSlideUpView: NSLayoutConstraint!
     @IBOutlet weak var coverSubviewsButton: UIButton!
+    
+    // Reference to database class which communicates with Firebase.
+    let usersDB = UsersDatabase()
+    let golfCoursesDB = CoursesBasicInfoDatabase()
+    let coursesDetailedInfoDB = CoursesDetailedInfoDatabase()
+    
+    var dbRef : FIRDatabaseReference!
+    var courseBasicInfoRef : FIRDatabaseReference!
+    
+    var detailedInformation = [String]()
+    var cityState = String()
+    var courseIDForDetails = String()
+    var membershipHistory = String()
+    var coursePrice = String()
+    var operatingHoursOpen = String()
+    var operatingHoursClose = String()
+    
+    var validStartTimeAsNSDate = NSDate()
+    var validEndTimeAsNSDate = NSDate()
     
     // Necessary for NSNotificationCenter with multiple calendar page views sending information.
     var senderPageViewID = Int()
@@ -49,6 +63,7 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
     var selectedLocationHasBeenSent: String?
+    var selectedCourseIDHasBeenSent: String?
     
     var selectedTime = NSDate()
     var dateFormatter = NSDateFormatter()
@@ -58,9 +73,21 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
         performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedAMonth:", name: "userHasSelectedAMonthNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedADay:", name: "userHasSelectedADayNotification", object: nil)
+        
+        
+
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = "Choose Date"
         navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         navigationController?.navigationBar.barStyle = UIBarStyle.Default
@@ -92,26 +119,43 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
         navigationBar.shadowImage = UIImage()
         
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
+        //courseIDForDetails = selectedCourseIDHasBeenSent!
         
         currentDay = generalCalendarData.getCurrentDateInfo().currentDay
         currentMonth = generalCalendarData.getCurrentDateInfo().currentMonth
         currentYear = generalCalendarData.getCurrentDateInfo().currentYear
         
         timestampOnLoad()
-        validHours()
         datePicker.addTarget(self, action: "timeChangedValue:", forControlEvents: UIControlEvents.ValueChanged)
- 
+        
+        coursesDetailedInfoDB.getDetailedInformationForCourseID(selectedCourseIDHasBeenSent!) {
+         (detailedInformationArray) -> Void in
+         
+            self.detailedInformation = detailedInformationArray
+         
+         
+            self.coursePrice = self.detailedInformation[5]
+            self.operatingHoursOpen = self.detailedInformation[6]
+            self.operatingHoursClose = self.detailedInformation[7]
+            
+            self.priceLabel.text = "$\(self.coursePrice)"
+         }
 
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedAMonth:", name: "userHasSelectedAMonthNotification", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userHasSelectedADay:", name: "userHasSelectedADayNotification", object: nil)
-        
+        /*
+        coursesDetailedInfoDB.getDetailedInformationForCourseID(courseIDForDetails) {
+            (detailedInformationArray) -> Void in
+            self.detailedInformation = detailedInformationArray
+            
+            self.coursePrice = self.detailedInformation[4]
+            self.operatingHoursOpen = self.detailedInformation[5]
+            self.operatingHoursClose = self.detailedInformation[6]
+            
+        }*/
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -139,6 +183,7 @@ extension ChooseDateViewController {
             break
         }
         
+        validHours()
         displayChooseTimeSlideUpView()
     }
     
@@ -209,8 +254,11 @@ extension ChooseDateViewController {
     
     func validHours() {
         dateFormatter.dateFormat = "HH:mm:ss"
-        validStartTimeAsNSDate = dateFormatter.dateFromString(validStartTimeAsString)!
-        validEndTimeAsNSDate = dateFormatter.dateFromString(validEndTimeAsString)!
+        validHoursLabel.text = "\(operatingHoursOpen) AM - \(operatingHoursClose) PM"
+        //validStartTimeAsNSDate = dateFormatter.dateFromString(operatingHoursOpen)!
+        //validEndTimeAsNSDate = dateFormatter.dateFromString(operatingHoursClose)!
+        
+        //print(validStartTimeAsNSDate)
     }
     
     func evaluateSelectedTime(selectedTime: NSDate, validStartTime: NSDate, validEndTime: NSDate) -> Bool {

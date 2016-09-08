@@ -28,7 +28,6 @@ class ReservationChooseCourseViewController: UIViewController {
     var setPointLon = Double()
     var searchRadiusFromSetPoint = Double()
 
-    
     var screenSize = UIScreen.mainScreen().bounds
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     let activityIndicatorBackground = UIView()
@@ -38,15 +37,18 @@ class ReservationChooseCourseViewController: UIViewController {
     var upwardScroll = Bool()
     var selectedCity = String()
     var previouslySelectedCity = String()
-    var selectedDistance = 20
+    var currentSearchRadius = Double()
+    var newSearchRadius = Double()
     var previouslySelectedDistance = Int()
     
+    
+    /*
     @IBAction func cancelReservationButtonPressed(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "userHasSelectedCityFromFilterNotification", object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "userHasSelectedDistanceFromFilterNotification", object: self.view.window)
         self.dismissViewControllerAnimated(true, completion: {})
         
-    }
+    }*/
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -66,7 +68,10 @@ class ReservationChooseCourseViewController: UIViewController {
         self.containerView!.addSubview(activityIndicatorBackground)
         self.containerView!.addSubview(activityIndicator)
         
-        updateResultsFilterButtonTitle()
+        //updateResultsFilterButtonTitle()
+        let dismissViewButton = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "dismissView")
+        self.navigationItem.leftBarButtonItem = dismissViewButton
+        self.navigationItem.leftBarButtonItem?.enabled = true
     }
     
     override func viewDidLoad() {
@@ -90,16 +95,11 @@ class ReservationChooseCourseViewController: UIViewController {
         resultsFilterButton.layer.shadowOpacity = 0.5
         resultsFilterButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         
-        if (previouslySelectedCity == "") {
-            previouslySelectedCity = "Current Location"
-            previouslySelectedDistance = 20
-        } else {
-            previouslySelectedCity = selectedCity
-            previouslySelectedDistance = selectedDistance
-        }
-        
         setPointLat = userLatitudeHasBeenSent!
         setPointLon = userLongitudeHasBeenSent!
+        
+        currentSearchRadius = 20.0
+        formatSearchRadius()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -127,20 +127,14 @@ extension ReservationChooseCourseViewController {
         if (sliderBackgroundView.hidden == true) {
             displaySlider()
         } else if (sliderBackgroundView.hidden == false) {
-            hideSlider()
+            cancelSlider()
         }
     }
     
     @IBAction func sliderDisplayBlackButtonPressed(sender: AnyObject) {
-        hideSlider()
+        cancelSlider()
     }
-    
-    
-    @IBAction func saveNewDistanceButtonPressed(sender: AnyObject) {
-        sliderBackgroundView.hidden = true
-    }
-    
-    
+
     @IBAction func distanceSliderValueChanged(sender: UISlider) {
         var increment: Float = 5
         var newValue: Float = sender.value / increment
@@ -154,9 +148,24 @@ extension ReservationChooseCourseViewController {
         }
         
         distanceSliderLabel.text  = "\(formatted) mi"
-        selectedDistance = Int(formatted)!
+        newSearchRadius = Double(formatted)!
+    }
+    
+    func formatSearchRadius() {
+        var formatted: String {
+            let formatter = NSNumberFormatter()
+            formatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            formatter.minimumFractionDigits = 0
+            return formatter.stringFromNumber(currentSearchRadius) ?? ""
+        }
         
-
+        distanceSliderLabel.text  = "\(formatted) mi"
+        currentSearchRadius = Double(formatted)!
+        distanceSlider.value = Float(formatted)!
+    }
+    
+    func dismissView() {
+        self.dismissViewControllerAnimated(true, completion: {})
     }
     
     func displaySlider() {
@@ -164,22 +173,49 @@ extension ReservationChooseCourseViewController {
         sliderDisplayBlackButton.hidden = false
         navigationItem.title = "Change Distance"
         
-        let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "hideSlider")
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "cancelSlider")
+        cancelButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!], forState: UIControlState.Normal)
+        self.navigationItem.leftBarButtonItem = cancelButton
+        self.navigationItem.leftBarButtonItem?.enabled = true
+        
+        let saveButton = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "saveSlider")
         saveButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!], forState: UIControlState.Normal)
         self.navigationItem.rightBarButtonItem = saveButton
         self.navigationItem.rightBarButtonItem?.enabled = true
     }
     
-    func hideSlider() {
+    func cancelSlider() {
         sliderBackgroundView.hidden = true
         sliderDisplayBlackButton.hidden = true
         navigationItem.title = "Choose Course"
         
+        let dismissViewButton = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "dismissView")
+        self.navigationItem.leftBarButtonItem = dismissViewButton
+        self.navigationItem.leftBarButtonItem?.enabled = true
+        
         let showSliderButton = UIBarButtonItem(image: UIImage(named:"IconRadiusUnfilled"), style: .Plain, target: self, action: "displaySlider")
         self.navigationItem.rightBarButtonItem = showSliderButton
         self.navigationItem.rightBarButtonItem?.enabled = true
+        
+        formatSearchRadius()
     }
     
+    func saveSlider() {
+        sliderBackgroundView.hidden = true
+        sliderDisplayBlackButton.hidden = true
+        navigationItem.title = "Choose Course"
+        
+        let dismissViewButton = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "dismissView")
+        self.navigationItem.leftBarButtonItem = dismissViewButton
+        self.navigationItem.leftBarButtonItem?.enabled = true
+        
+        let showSliderButton = UIBarButtonItem(image: UIImage(named:"IconRadiusUnfilled"), style: .Plain, target: self, action: "displaySlider")
+        self.navigationItem.rightBarButtonItem = showSliderButton
+        self.navigationItem.rightBarButtonItem?.enabled = true
+        
+        currentSearchRadius = newSearchRadius
+        NSNotificationCenter.defaultCenter().postNotificationName("newSearchRadiusNotification", object: currentSearchRadius)
+    }
     
     func userHasSwipedContainer(notification: NSNotification) {
         upwardScroll = notification.object! as! Bool
@@ -197,6 +233,7 @@ extension ReservationChooseCourseViewController {
         }
     }
     
+    /*
     func selectedCityHasChangedFromFilter(notification: NSNotification) {
         selectedCity = notification.object! as! String
     }
@@ -212,7 +249,7 @@ extension ReservationChooseCourseViewController {
         } else {
             resultsFilterButton.setTitle("   Filter by: \(previouslySelectedCity) (\(selectedDistance) mi)   ", forState: UIControlState.Normal)
         }
-    }
+    }*/
     
     func startActivityIndicator(notification: NSNotification) {
         activityIndicator.startAnimating()

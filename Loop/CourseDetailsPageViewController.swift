@@ -109,8 +109,8 @@ extension CourseDetailsPageViewController: UIPageViewControllerDataSource {
     private func stylePageControl() {
         let pageControl = UIPageControl.appearanceWhenContainedInInstancesOfClasses([self.dynamicType])
         
-        pageControl.currentPageIndicatorTintColor = UIColor.lightGrayColor()
-        pageControl.pageIndicatorTintColor = UIColor.groupTableViewBackgroundColor()
+        pageControl.currentPageIndicatorTintColor = UIColor.whiteColor()
+        pageControl.pageIndicatorTintColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
         pageControl.backgroundColor = UIColor.clearColor()
     }
 }

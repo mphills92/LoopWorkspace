@@ -41,20 +41,27 @@ class CourseDetailsViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        coursesDetailedInfoDB.getDetailedInformationForCourseID(selectedCourseIDHasBeenSent!) {
+            (detailedInformationArray) -> Void in
+            self.detailedInformation = detailedInformationArray
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("passDetailedInfoPage1Notification", object: self.detailedInformation)
+        }
+        
         courseNameLabel.text = selectedCourseNameHasBeenSent
         cityState = selectedLocationHasBeenSent!
-        courseIDForDetails = selectedCourseIDHasBeenSent!
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        /*
         coursesDetailedInfoDB.getDetailedInformationForCourseID(courseIDForDetails) {
             (detailedInformationArray) -> Void in
             self.detailedInformation = detailedInformationArray
             
             NSNotificationCenter.defaultCenter().postNotificationName("passDetailedInfoPage1Notification", object: self.detailedInformation)
-        }        
+        }*/
     }
 }
 

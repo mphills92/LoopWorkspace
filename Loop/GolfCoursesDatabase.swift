@@ -123,9 +123,25 @@ class CoursesDetailedInfoDatabase {
                 detailedInformationArray.append(membership_history)
             }
             
+            if let description = snapshot.childSnapshotForPath("\(selectedCourseIDToSend)").value?.objectForKey("description") as? String {
+                detailedInformationArray.append(description)
+            }
+            
+            if let price = snapshot.childSnapshotForPath("\(selectedCourseIDToSend)").value?.objectForKey("price") as? Int {
+                detailedInformationArray.append("\(price)")
+            }
+            
+            if let op_hrs_open = snapshot.childSnapshotForPath("\(selectedCourseIDToSend)").value?.objectForKey("op_hrs_open") as? String {
+                detailedInformationArray.append(op_hrs_open)
+            }
+            
+            if let op_hrs_close = snapshot.childSnapshotForPath("\(selectedCourseIDToSend)").value?.objectForKey("op_hrs_close") as? String {
+                detailedInformationArray.append(op_hrs_close)
+            }
+            
             self.detailedInformation = detailedInformationArray
         
-            if (detailedInformationArray.count == 4) {
+            if (detailedInformationArray.count == 8) {
                 completion(detailedInformationArray)
             }
         }

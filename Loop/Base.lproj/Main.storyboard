@@ -13265,9 +13265,6 @@ for the game of golf.</string>
                     <navigationItem key="navigationItem" title="Choose Course" id="nvr-jg-DNz">
                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="stop" id="R0E-MZ-JiY">
                             <color key="tintColor" red="0.0" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="cancelReservationButtonPressed:" destination="PVF-jM-i61" id="38J-cs-x6i"/>
-                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="IconRadiusUnfilled" id="lqA-6U-WaI">
                             <connections>
@@ -15416,8 +15413,10 @@ for the game of golf.</string>
                         <outlet property="datePicker" destination="cFf-tL-Dqh" id="wPY-Qm-Cae"/>
                         <outlet property="datePickerBackgroundView" destination="PDT-0m-DRc" id="HHb-sY-fNL"/>
                         <outlet property="navigationBar" destination="l1b-gW-NdR" id="ntV-AF-3mE"/>
+                        <outlet property="priceLabel" destination="MaS-tZ-dtK" id="CPO-rv-MwW"/>
                         <outlet property="reservationSnapshotView" destination="5K9-2H-ti4" id="Vrf-rf-mrO"/>
                         <outlet property="selectedCourseNameLabel" destination="BMT-77-JLx" id="VUc-Mv-Xnv"/>
+                        <outlet property="validHoursLabel" destination="7N4-n8-58T" id="Nw8-8u-Ppw"/>
                         <segue destination="Atd-Z6-gBB" kind="show" identifier="toChooseCaddieSegue" id="4J7-Z6-hwr"/>
                     </connections>
                 </viewController>

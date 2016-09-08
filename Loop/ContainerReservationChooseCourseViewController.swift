@@ -24,7 +24,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     // Empty variables to be populated in order to execute getBasicInfoForGolfCoursesInRadius.
     var setPointLat = Double()
     var setPointLon = Double()
-    var searchRadiusFromSetPoint = 2000.00
+    var currentSearchRadius = Double()
     
     // Variables to be populated upon retrieving nearby courses.
     var nearbyCourseNamesToDisplay = [String]()
@@ -61,16 +61,19 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustSetPointLat:", name: "setPointLatNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustSetPointLon:", name: "setPointLonNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "adjustSearchRadius:", name: "newSearchRadiusNotification", object: nil)
         
         self.dbRef = FIRDatabase.database().reference()
         self.courseBasicInfoRef = self.dbRef.child("courses_basic_info")
         
+        currentSearchRadius = 20000.0
         collectionViewHasBeenCached = false
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        //reloadCollectionViewData(currentSearchRadius)
         
         if (collectionViewHasBeenCached == false) {
         NSNotificationCenter.defaultCenter().postNotificationName("startActivityIndicatorNotification", object: nil)
@@ -78,7 +81,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
         self.courseBasicInfoRef.observeEventType(FIRDataEventType.Value) {
             (snapshot: FIRDataSnapshot) in
             
-            self.golfCoursesDB.getGolfCourseIDsInRadius(self.setPointLat, setPointLon: self.setPointLon, searchRadiusFromSetPoint: self.searchRadiusFromSetPoint) {
+            self.golfCoursesDB.getGolfCourseIDsInRadius(self.setPointLat, setPointLon: self.setPointLon, searchRadiusFromSetPoint: self.currentSearchRadius) {
                 (courseIDs) -> Void in
                 
                 self.nearbyCourseIDsToMonitor = courseIDs
@@ -113,11 +116,52 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
         super.viewDidDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "setPointLatNotification", object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "setPointLonNotification", object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "newSearchRadiusNotification", object: self.view.window)
     }
 }
 
 
 extension ContainerReservationChooseCourseViewController {
+    
+    /*func reloadCollectionViewData(currentSearchRadius: Double) {
+        if (collectionViewHasBeenCached == false) {
+            NSNotificationCenter.defaultCenter().postNotificationName("startActivityIndicatorNotification", object: nil)
+            
+            self.courseBasicInfoRef.observeEventType(FIRDataEventType.Value) {
+                (snapshot: FIRDataSnapshot) in
+                
+                self.golfCoursesDB.getGolfCourseIDsInRadius(self.setPointLat, setPointLon: self.setPointLon, searchRadiusFromSetPoint: self.currentSearchRadius) {
+                    (courseIDs) -> Void in
+                    
+                    self.nearbyCourseIDsToMonitor = courseIDs
+                    
+                    var courseNamesArray = [String]()
+                    var courseLocationsArray = [String]()
+                    
+                    for var n = 0; n < courseIDs.count; n++ {
+                        if let name = snapshot.childSnapshotForPath("\(courseIDs[n])").value?.objectForKey("name") as? String {
+                            courseNamesArray.append(name)
+                        }
+                        self.nearbyCourseNamesToDisplay = courseNamesArray
+                    }
+                    
+                    for var l = 0; l < courseIDs.count; l++ {
+                        if let location = snapshot.childSnapshotForPath("\(courseIDs[l])").value?.objectForKey("city_state") as? String {
+                            courseLocationsArray.append(location)
+                        }
+                        self.nearbyCourseLocationsToDisplay = courseLocationsArray
+                    }
+                    
+                    self.collectionView?.reloadData()
+                    print(self.nearbyCourseLocationsToDisplay)
+                    NSNotificationCenter.defaultCenter().postNotificationName("stopActivityIndicatorNotification", object: nil)
+                }
+            }
+            print(currentSearchRadius)
+            collectionViewHasBeenCached = true
+        }
+
+    }*/
     
     func adjustSetPointLat(notification: NSNotification) {
         setPointLat = notification.object! as! Double
@@ -127,8 +171,10 @@ extension ContainerReservationChooseCourseViewController {
         setPointLon = notification.object! as! Double
     }
     
-    @IBAction func chooseCourseButtonPressed(sender: AnyObject) {
-        let chooseCourseButtonRow = sender.tag
+    func adjustSearchRadius(notification: NSNotification) {
+        currentSearchRadius = notification.object! as! Double
+        //collectionViewHasBeenCached = false
+        //reloadCollectionViewData(currentSearchRadius)
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -190,6 +236,7 @@ extension ContainerReservationChooseCourseViewController {
             let destinationVC = segue.destinationViewController as! ChooseDateViewController
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
             destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
+            destinationVC.selectedCourseIDHasBeenSent = selectedCourseIDToSend
         } else if (segue.identifier == "toCourseDetailsSegue") {
             var indexPath: NSIndexPath = (sender as! NSIndexPath)
             let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! CoursesCollectionCell

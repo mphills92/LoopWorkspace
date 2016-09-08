@@ -37,8 +37,6 @@ class CourseBasicInformationViewController: UIViewController {
         topBackgroundView.alpha = 0.5
         informationBackgroundView.layer.cornerRadius = 8
         informationBackgroundView.alpha = 0.5
-        
- 
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -60,7 +58,7 @@ extension CourseBasicInformationViewController {
         var membershipHistory = detailedInformation[3]
         membershipHistoryLabel.text = "Member since \(membershipHistory)"
         
-        //print("course basic info: \(detailedInformation)")
-
+        var courseDescription = detailedInformation[4]
+        descriptionLabel.text = courseDescription
     }
 }
