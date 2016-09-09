@@ -66,12 +66,11 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     var selectedCourseIDHasBeenSent: String?
     
     var selectedTime = NSDate()
+    var selectedTimeToEvaluate = String()
     var dateFormatter = NSDateFormatter()
     let timeComponents = NSCalendar.currentCalendar().componentsInTimeZone(NSTimeZone.localTimeZone(), fromDate: NSDate())
  
-    @IBAction func chooseDateButtonPressed(sender: AnyObject) {
-        performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
-    }
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -119,13 +118,13 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
         navigationBar.shadowImage = UIImage()
         
         selectedCourseNameLabel.text = selectedCourseNameHasBeenSent
-        //courseIDForDetails = selectedCourseIDHasBeenSent!
         
         currentDay = generalCalendarData.getCurrentDateInfo().currentDay
         currentMonth = generalCalendarData.getCurrentDateInfo().currentMonth
         currentYear = generalCalendarData.getCurrentDateInfo().currentYear
         
         timestampOnLoad()
+        
         datePicker.addTarget(self, action: "timeChangedValue:", forControlEvents: UIControlEvents.ValueChanged)
         
         coursesDetailedInfoDB.getDetailedInformationForCourseID(selectedCourseIDHasBeenSent!) {
@@ -145,17 +144,7 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        /*
-        coursesDetailedInfoDB.getDetailedInformationForCourseID(courseIDForDetails) {
-            (detailedInformationArray) -> Void in
-            self.detailedInformation = detailedInformationArray
-            
-            self.coursePrice = self.detailedInformation[4]
-            self.operatingHoursOpen = self.detailedInformation[5]
-            self.operatingHoursClose = self.detailedInformation[6]
-            
-        }*/
+        validHours()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -183,7 +172,6 @@ extension ChooseDateViewController {
             break
         }
         
-        validHours()
         displayChooseTimeSlideUpView()
     }
     
@@ -232,39 +220,105 @@ extension ChooseDateViewController {
             }, completion: nil)
         
         UIView.animateWithDuration(0.1, delay: 0.3, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+          
             self.coverSubviewsButton.alpha = 0
             self.coverSubviewsButton.hidden = true
             self.view.layoutIfNeeded()
             }, completion: nil)
     }
     
-    
-    func timestampOnLoad() {
-        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .ShortStyle)
-        selectedTimeToSend = timestamp
+    func validHours() {
+        // Format valid hours (from database) from strings to NSDates.
+        let validHoursDateFormatter = NSDateFormatter()
+        validHoursDateFormatter.dateFormat = "HH:mm"
+        let operatingHoursOpenNSDate = validHoursDateFormatter.dateFromString(operatingHoursOpen)
+        let operatingHoursCloseNSDate = validHoursDateFormatter.dateFromString(operatingHoursClose)
+        
+        // Format valid hours NSDates back to strings to achieve 12 hour format.
+        let validHoursStringFormatter = NSDateFormatter()
+        validHoursStringFormatter.dateFormat = "h:mm"
+        let operatingHoursOpenString = validHoursStringFormatter.stringFromDate(operatingHoursOpenNSDate!)
+        let operatingHoursCloseString = validHoursStringFormatter.stringFromDate(operatingHoursCloseNSDate!)
+        
+        validHoursLabel.text = "\(operatingHoursOpenString) AM - \(operatingHoursCloseString) PM"
     }
     
+    // Method called upon initial load in order to collect current time.
+    func timestampOnLoad() {
+        // Format timestamp to send as string via segue.
+        let timestampToDisplay = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .ShortStyle)
+        selectedTimeToSend = timestampToDisplay
+        
+        // Format timestamp to evaluate as string against valid hours.
+        let formatterToEvaluateTime = NSDateFormatter()
+        formatterToEvaluateTime.dateFormat = "HH:mm"
+        let timestampToEvaluate = formatterToEvaluateTime.stringFromDate(NSDate())
+        selectedTimeToEvaluate = timestampToEvaluate
+    }
+    
+    // Method called upon change of datePicker value.
     func timeChangedValue(date: NSDate) {
         selectedTime = datePicker.date
-        //dateFormatter.dateFormat = "HH:mm a"
-        dateFormatter.timeStyle = .ShortStyle
-        let convertedTime = dateFormatter.stringFromDate(selectedTime)
-        selectedTimeToSend = convertedTime
-    }
-    
-    func validHours() {
-        dateFormatter.dateFormat = "HH:mm:ss"
-        validHoursLabel.text = "\(operatingHoursOpen) AM - \(operatingHoursClose) PM"
-        //validStartTimeAsNSDate = dateFormatter.dateFromString(operatingHoursOpen)!
-        //validEndTimeAsNSDate = dateFormatter.dateFromString(operatingHoursClose)!
         
-        //print(validStartTimeAsNSDate)
+        // Format selected time to send as string via segue.
+        let formatterToDisplayString = NSDateFormatter()
+        formatterToDisplayString.dateFormat = "H:mm a"
+        formatterToDisplayString.dateStyle = .NoStyle
+        formatterToDisplayString.timeStyle = .ShortStyle
+        let convertedTimeToDisplay = formatterToDisplayString.stringFromDate(selectedTime)
+        selectedTimeToSend = convertedTimeToDisplay
+        
+        // Format selected time to evaluate as string against valid hours.
+        let formatterToEvaluateTime = NSDateFormatter()
+        formatterToEvaluateTime.dateFormat = "HH:mm"
+        let convertedTimeToEvaluate = formatterToEvaluateTime.stringFromDate(selectedTime)
+        selectedTimeToEvaluate = convertedTimeToEvaluate
     }
     
-    func evaluateSelectedTime(selectedTime: NSDate, validStartTime: NSDate, validEndTime: NSDate) -> Bool {
-        if ((selectedTime.earlierDate(validEndTime) == selectedTime) && (selectedTime.laterDate(validStartTime) == selectedTime)) {
+
+    
+    // User has pressed the button to select the time and date.
+    @IBAction func chooseDateButtonPressed(sender: AnyObject) {
+        // Calls method to evaluate string value for selected time against string values for valid operating hours.
+        evaluateSelectedTime(selectedTimeToEvaluate, operatingHoursOpen: operatingHoursOpen, operatingHoursClose: operatingHoursClose)
+        
+    }
+    
+    // Method to evaluate string value for selected time against string values for valid operating hours. Converts the string values to NSDates to evaluate against each other.
+    func evaluateSelectedTime(selectedTimeToEvaluate: String, operatingHoursOpen: String, operatingHoursClose: String) -> Bool {
+        
+        let formatterToNSDate = NSDateFormatter()
+        formatterToNSDate.dateFormat = "HH:mm"
+        formatterToNSDate.timeZone = NSTimeZone(name: "UTC")
+        
+        let selectedTimeConvertedToNSDate = formatterToNSDate.dateFromString(selectedTimeToEvaluate)
+        print("selectedTimeConvertedToNSDate \(selectedTimeConvertedToNSDate!)")
+        validStartTimeAsNSDate = formatterToNSDate.dateFromString(operatingHoursOpen)!
+        print("valid start \(validStartTimeAsNSDate)")
+        validEndTimeAsNSDate = formatterToNSDate.dateFromString(operatingHoursClose)!
+        print("valid end \(validEndTimeAsNSDate)")
+        
+        
+        if (selectedTimeConvertedToNSDate!.compare(validStartTimeAsNSDate) == NSComparisonResult.OrderedDescending) {
+            if (selectedTimeConvertedToNSDate!.compare(validEndTimeAsNSDate) == NSComparisonResult.OrderedAscending) {
+                
+                performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
+                return true
+            }
+        } else if (selectedTimeConvertedToNSDate!.compare(validStartTimeAsNSDate) == NSComparisonResult.OrderedSame) || (selectedTimeConvertedToNSDate!.compare(validEndTimeAsNSDate) == NSComparisonResult.OrderedSame) {
+            performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
             return true
         }
+        
+        let alertController = UIAlertController(title: "Please choose a valid time.", message:  "\n The start time for your caddie reservation must be within the operating hours of your selected course.", preferredStyle: .Alert)
+        alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+        let doneAction = UIAlertAction(title: "Try Again", style: .Cancel) { (action) in
+        }
+        alertController.addAction(doneAction)
+        self.presentViewController(alertController, animated: true) {
+            alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
+        }
+        
         return false
     }
     
@@ -299,3 +353,10 @@ extension ChooseDateViewController {
         }
     }
 }
+
+/*
+extension NSDate {
+    var localTime: String {
+        return descriptionWithLocale(NSLocale.currentLocale())
+    }
+}*/
