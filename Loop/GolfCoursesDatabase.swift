@@ -50,7 +50,6 @@ class CoursesBasicInfoDatabase: NSObject, CLLocationManagerDelegate {
         var courseIDsArray = [String]()
         var courseLocationsArray = [String]()
         var completionCounter = [Double]()
-
         
         let setPointLocation = CLLocation(latitude: setPointLat, longitude: setPointLon)
         

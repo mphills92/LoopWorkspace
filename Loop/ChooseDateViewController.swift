@@ -29,6 +29,7 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     let usersDB = UsersDatabase()
     let golfCoursesDB = CoursesBasicInfoDatabase()
     let coursesDetailedInfoDB = CoursesDetailedInfoDatabase()
+    let datesDB = DatesDatabase()
     
     var dbRef : FIRDatabaseReference!
     var courseBasicInfoRef : FIRDatabaseReference!
@@ -65,7 +66,7 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     var selectedLocationHasBeenSent: String?
     var selectedCourseIDHasBeenSent: String?
     
-    var selectedTime = NSDate()
+    var selectedTime = String()
     var selectedTimeToEvaluate = String()
     var dateFormatter = NSDateFormatter()
     let timeComponents = NSCalendar.currentCalendar().componentsInTimeZone(NSTimeZone.localTimeZone(), fromDate: NSDate())
@@ -258,20 +259,20 @@ extension ChooseDateViewController {
     
     // Method called upon change of datePicker value.
     func timeChangedValue(date: NSDate) {
-        selectedTime = datePicker.date
+        var pickerTime = datePicker.date
         
         // Format selected time to send as string via segue.
         let formatterToDisplayString = NSDateFormatter()
         formatterToDisplayString.dateFormat = "H:mm a"
         formatterToDisplayString.dateStyle = .NoStyle
         formatterToDisplayString.timeStyle = .ShortStyle
-        let convertedTimeToDisplay = formatterToDisplayString.stringFromDate(selectedTime)
+        let convertedTimeToDisplay = formatterToDisplayString.stringFromDate(pickerTime)
         selectedTimeToSend = convertedTimeToDisplay
         
         // Format selected time to evaluate as string against valid hours.
         let formatterToEvaluateTime = NSDateFormatter()
         formatterToEvaluateTime.dateFormat = "HH:mm"
-        let convertedTimeToEvaluate = formatterToEvaluateTime.stringFromDate(selectedTime)
+        let convertedTimeToEvaluate = formatterToEvaluateTime.stringFromDate(pickerTime)
         selectedTimeToEvaluate = convertedTimeToEvaluate
     }
     
@@ -286,30 +287,27 @@ extension ChooseDateViewController {
     
     // Method to evaluate string value for selected time against string values for valid operating hours. Converts the string values to NSDates to evaluate against each other.
     func evaluateSelectedTime(selectedTimeToEvaluate: String, operatingHoursOpen: String, operatingHoursClose: String) -> Bool {
-        
         let formatterToNSDate = NSDateFormatter()
         formatterToNSDate.dateFormat = "HH:mm"
         formatterToNSDate.timeZone = NSTimeZone(name: "UTC")
         
         let selectedTimeConvertedToNSDate = formatterToNSDate.dateFromString(selectedTimeToEvaluate)
-        print("selectedTimeConvertedToNSDate \(selectedTimeConvertedToNSDate!)")
         validStartTimeAsNSDate = formatterToNSDate.dateFromString(operatingHoursOpen)!
-        print("valid start \(validStartTimeAsNSDate)")
         validEndTimeAsNSDate = formatterToNSDate.dateFromString(operatingHoursClose)!
-        print("valid end \(validEndTimeAsNSDate)")
-        
         
         if (selectedTimeConvertedToNSDate!.compare(validStartTimeAsNSDate) == NSComparisonResult.OrderedDescending) {
             if (selectedTimeConvertedToNSDate!.compare(validEndTimeAsNSDate) == NSComparisonResult.OrderedAscending) {
-                
+                selectedTime = selectedTimeToEvaluate
+                createSelectedDateString(selectedDay, selectedMonth: selectedMonth, selectedTime: selectedTime)
                 performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
                 return true
             }
         } else if (selectedTimeConvertedToNSDate!.compare(validStartTimeAsNSDate) == NSComparisonResult.OrderedSame) || (selectedTimeConvertedToNSDate!.compare(validEndTimeAsNSDate) == NSComparisonResult.OrderedSame) {
+            selectedTime = selectedTimeToEvaluate
+            createSelectedDateString(selectedDay, selectedMonth: selectedMonth, selectedTime: selectedTime)
             performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
             return true
         }
-        
         let alertController = UIAlertController(title: "Please choose a valid time.", message:  "\n The start time for your caddie reservation must be within the operating hours of your selected course.", preferredStyle: .Alert)
         alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         let doneAction = UIAlertAction(title: "Try Again", style: .Cancel) { (action) in
@@ -318,23 +316,23 @@ extension ChooseDateViewController {
         self.presentViewController(alertController, animated: true) {
             alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         }
-        
         return false
     }
     
-    func createSelectedDateString(selectedDay: Int, selectedMonth: Int) -> NSDate {
+    func createSelectedDateString(selectedDay: Int, selectedMonth: Int, selectedTime: String) -> NSDate {
         let stringYear = String(currentYear)
         let stringMonth = String(selectedMonth)
         let stringDay = String(selectedDay)
+        let stringTime = selectedTime
         
-        let dateString = "\(currentYear)" + "-\(selectedMonth)" + "-\(selectedDay)"
+        let dateString = "\(currentYear)" + "-\(selectedMonth)" + "-\(selectedDay) \(stringTime):00"
 
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        //dateFormatter.timeZone = NSTimeZone(name: "UTC") //Messes up the dateString conversion somehow...makes it think it's a day earlier than it is when selectedDateToSend is passed to the next view controller
+        let dateStringFormatter = NSDateFormatter()
+        dateStringFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateStringFormatter.timeZone = NSTimeZone(name: "UTC")
         
-        selectedDateToSend = dateFormatter.dateFromString(dateString)!
-        
+        selectedDateToSend = dateStringFormatter.dateFromString(dateString)!
+
         return selectedDateToSend
     }
     
@@ -343,8 +341,8 @@ extension ChooseDateViewController {
             let destinationVC = segue.destinationViewController as! CaddiesAvailableViewController
             selectedCourseNameToSendAgain = selectedCourseNameHasBeenSent!
             selectedLocationToSendAgain = selectedLocationHasBeenSent!
-            
-            createSelectedDateString(selectedDay, selectedMonth: selectedMonth)
+
+            datesDB.getAvailableCaddieIDsForDate(selectedDateToSend)
             
             destinationVC.selectedCourseNameHasBeenSentAgain = selectedCourseNameToSendAgain
             destinationVC.selectedLocationHasBeenSentAgain = selectedLocationToSendAgain
@@ -353,10 +351,3 @@ extension ChooseDateViewController {
         }
     }
 }
-
-/*
-extension NSDate {
-    var localTime: String {
-        return descriptionWithLocale(NSLocale.currentLocale())
-    }
-}*/

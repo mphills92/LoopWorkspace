@@ -11,4 +11,8 @@ import UIKit
 class CaddieHistoryCell: UITableViewCell {
     
     @IBOutlet weak var userProfileImage: UIImageView!
+    @IBOutlet weak var caddieNameLabel: UILabel!
+    @IBOutlet weak var reservationTimeLabel: UILabel!
+    @IBOutlet weak var golfCourseNameLabel: UILabel!
+    @IBOutlet weak var reservationDateLabel: UILabel!
 }

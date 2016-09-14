@@ -27,26 +27,26 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
     
+    // Reservation information loaded everytime the view appears.
+    var reservationIDs = [String]()
+    
     // Passed data via segue.
     var userLatitudeToSend = Double()
     var userLongitudeToSend = Double()
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        usersDB.getUserReservationInformation() {
+            (reservationIDsSentFromDB) -> Void in
+            self.reservationIDs = reservationIDsSentFromDB
+            print(self.reservationIDs)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //-----------------------------------------------------------------------------------------
-        // Call database class methods to populate data to be utilized by other view controllers.
-        usersDB.getUserInformation()
-
-        /*
-        golfCoursesDB.getBasicInfoForGolfCoursesInRadius {
-            (courseNames) -> () in
-    
-        }*/
-        
-        //-----------------------------------------------------------------------------------------
-
         revealViewController().delegate = self
         definesPresentationContext = true
         
@@ -101,6 +101,8 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
             locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
+        
+        
         
         positionAndDisplayViewButtons()
         

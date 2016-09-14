@@ -9,7 +9,6 @@
 import Foundation
 import Firebase
 
-
 // Class reference to all users in Firebase database.
 class UsersDatabase {
     // Reference to the Firebase data store.
@@ -29,6 +28,7 @@ class UsersDatabase {
     var credit = Int()
     var userLatitude = Double()
     var userLongitude = Double()
+    var reservationIDs = [String]()
     
     init() {
         self.dbRef = FIRDatabase.database().reference()
@@ -40,29 +40,6 @@ class UsersDatabase {
         
         // Sets the reference to the user by utilizing the Firebase 'uid' associated with the account to set a path to the correct database node.
         self.userIDRef = self.dbRef.child("users").child("\(userID)")
-    }
-    
-    func getUserInformation() {
-        print("getUserInformation called")
-        self.userIDRef.observeEventType(FIRDataEventType.Value) {
-            (snapshot: FIRDataSnapshot) in
-            
-            let first_name = snapshot.value?.objectForKey("first_name") as! String
-            let last_name = snapshot.value?.objectForKey("last_name") as! String
-            //let currentEmail = snapshot.value?.objectForKey("email") as! String
-            let phone = snapshot.value?.objectForKey("phone") as! String
-            let membership_history = snapshot.value?.objectForKey("membership_history") as! String
-            let lifetime_rounds = snapshot.value?.objectForKey("lifetime_rounds") as! Int
-            let credit = snapshot.value?.objectForKey("credit") as! Int
-            
-            self.firstName = first_name
-            self.lastName = last_name
-            //self.email = email
-            self.currentPhone = phone
-            self.membershipHistory = membership_history
-            self.lifetimeRounds = lifetime_rounds
-            self.credit = credit
-        }
     }
     
     func setUserLocation(userLat: Double, userLon: Double) {
@@ -77,6 +54,80 @@ class UsersDatabase {
         userLongitude = userLon
     }
     
+    func getUserInformation(completion: ((Bool -> Void))) {
+        print("getUserInformation called")
+        
+        //var reservationIDsArray = [String]()
+        
+        self.userIDRef.observeEventType(FIRDataEventType.Value) {
+            (snapshot: FIRDataSnapshot) in
+            
+            let first_name = snapshot.value?.objectForKey("first_name") as! String
+            let last_name = snapshot.value?.objectForKey("last_name") as! String
+            let phone = snapshot.value?.objectForKey("phone") as! String
+            let membership_history = snapshot.value?.objectForKey("membership_history") as! String
+            let lifetime_rounds = snapshot.value?.objectForKey("lifetime_rounds") as! Int
+            let credit = snapshot.value?.objectForKey("credit") as! Int
+            /*
+            let reservationsSnapshot = snapshot.childSnapshotForPath("reservations")
+            
+            for child in reservationsSnapshot.children {
+                let reservationIDsSnapshot = reservationsSnapshot.childSnapshotForPath(child.key)
+                let reservationIDKey = reservationIDsSnapshot.key
+                
+                if let reservation = reservationsSnapshot.childSnapshotForPath("\(reservationIDKey)").value as? String {
+                    reservationIDsArray.append(reservation)
+                }
+            }*/
+            
+            self.firstName = first_name
+            self.lastName = last_name
+            self.currentPhone = phone
+            self.membershipHistory = membership_history
+            self.lifetimeRounds = lifetime_rounds
+            self.credit = credit
+            //self.reservationIDs = reservationIDsArray
+            
+            if (self.firstName != "" && self.lastName != "" && self.currentPhone != "" && self.membershipHistory != "" && "\(self.lifetimeRounds)" != "" && "\(self.credit)" != "") {
+                completion(true)
+            }
+        }
+    }
+    
+    
+    
+    
+    func getUserReservationInformation(completion: (([String] -> Void))) {
+        print("getUserReservationInformation")
+        
+        var reservationIDsArray = [String]()
+        
+        self.userIDRef.observeEventType(FIRDataEventType.Value) {
+            (snapshot: FIRDataSnapshot) in
+            
+            let reservationsSnapshot = snapshot.childSnapshotForPath("reservations")
+            
+            for child in reservationsSnapshot.children {
+                let reservationIDsSnapshot = reservationsSnapshot.childSnapshotForPath(child.key)
+                let reservationIDKey = reservationIDsSnapshot.key
+                
+                if let reservation = reservationsSnapshot.childSnapshotForPath("\(reservationIDKey)").value as? String {
+                    reservationIDsArray.append(reservation)
+                }
+            }
+            
+            self.reservationIDs = reservationIDsArray
+
+            if (reservationIDsArray.count == Int(reservationsSnapshot.childrenCount)) {
+                completion(self.reservationIDs)
+            }
+        }
+    }
+    
+        
+        
+        
+        
     func resetPassword(email: String) {
         
         FIRAuth.auth()?.sendPasswordResetWithEmail(email, completion: { (error) in

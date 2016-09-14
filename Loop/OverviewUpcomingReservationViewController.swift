@@ -12,11 +12,28 @@ import MessageUI
 class OverviewUpcomingReservationViewController: UITableViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var caddieProfileImageView: UIImageView!
+    @IBOutlet weak var caddieNameLabel: UILabel!
+    @IBOutlet weak var caddieMembershipHistoryLabel: UILabel!
+    @IBOutlet weak var golfCourseNameLabel: UILabel!
+    @IBOutlet weak var golfCourseLocationLabel: UILabel!
+    @IBOutlet weak var resDateLabel: UILabel!
+    @IBOutlet weak var resTimeLabel: UILabel!
+    @IBOutlet weak var resIDNumberLabel: UILabel!
+    
     @IBOutlet weak var checkInCell: UITableViewCell!
     @IBOutlet weak var cancelReservationCell: UITableViewCell!
     
     var userName = UserName()
     var nextReservation = NextReservation()
+    
+    // Receive data via segue.
+    var resIDHasBeenSent: String?
+    var caddieNameHasBeenSent: String?
+    var caddieMemHistHasBeenSent: String?
+    var courseNameHasBeenSent: String?
+    var courseLocationHasBeenSent: String?
+    var dateHasBeenSent: String?
+    var timeHasBeenSent: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +45,25 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         caddieProfileImageView.layer.cornerRadius = 50
+        caddieNameLabel.text = caddieNameHasBeenSent
         
+        if (caddieMemHistHasBeenSent != "") {
+            caddieMembershipHistoryLabel.text = "Member since \(caddieMemHistHasBeenSent!)"
+        }
+        
+        golfCourseNameLabel.text = courseNameHasBeenSent
+        
+        if (courseLocationHasBeenSent != "") {
+            golfCourseLocationLabel.text = courseLocationHasBeenSent!
+        }
+        
+        resDateLabel.text = dateHasBeenSent
+        resTimeLabel.text = timeHasBeenSent
+        
+        if (resIDHasBeenSent != "") {
+            resIDNumberLabel.text = resIDHasBeenSent!.substringFromIndex(resIDHasBeenSent!.endIndex.advancedBy(-8))
+        }
+            
         setNumberOfTableViewSections()
     }
 }

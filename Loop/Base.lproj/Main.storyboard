@@ -1397,7 +1397,7 @@ deserves a caddie.</string>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZv-Fj-nZn">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <connections>
-                                                    <segue destination="nWs-yA-e4z" kind="embed" id="Sqd-E3-X9i"/>
+                                                    <segue destination="nWs-yA-e4z" kind="embed" identifier="reservationsContainerSegue" id="Sqd-E3-X9i"/>
                                                 </connections>
                                             </containerView>
                                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngK-FP-ypp">
@@ -2197,6 +2197,10 @@ deserves a caddie.</string>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="caddieNameLabel" destination="ECQ-Jd-bVX" id="0TX-EK-89q"/>
+                                    <outlet property="golfCourseNameLabel" destination="5Xu-df-wxv" id="AJQ-xd-PF4"/>
+                                    <outlet property="reservationDateLabel" destination="uZ4-ey-PXl" id="g05-aU-tUK"/>
+                                    <outlet property="reservationTimeLabel" destination="zh6-ki-i1H" id="ydP-Rm-4pQ"/>
                                     <outlet property="userProfileImage" destination="P6P-xM-7or" id="lts-9G-R5a"/>
                                 </connections>
                             </tableViewCell>
@@ -2400,6 +2404,10 @@ deserves a caddie.</string>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="caddieNameLabel" destination="h3r-kg-g4U" id="0yT-u7-vvK"/>
+                                    <outlet property="golfCourseNameLabel" destination="JQy-Sy-AaB" id="e91-sb-Dbq"/>
+                                    <outlet property="reservationDateLabel" destination="chD-zi-oV8" id="jye-Op-4k9"/>
+                                    <outlet property="reservationTimeLabel" destination="LJK-A7-CXO" id="p5D-Lv-TCX"/>
                                     <outlet property="userProfileImage" destination="3Ps-WL-Evr" id="DTt-YF-chG"/>
                                 </connections>
                             </tableViewCell>
@@ -3812,7 +3820,7 @@ for the game of golf.</string>
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmation Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxy-4H-su3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confimation Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxy-4H-su3">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="8ib-ys-R6s">
@@ -4197,9 +4205,16 @@ for the game of golf.</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="700"/>
                     <connections>
+                        <outlet property="caddieMembershipHistoryLabel" destination="wHn-Vu-Lif" id="ahD-dj-TZx"/>
+                        <outlet property="caddieNameLabel" destination="0gG-SA-qeR" id="aCG-X6-zUY"/>
                         <outlet property="caddieProfileImageView" destination="t1z-GS-FEp" id="Zqd-x6-Ob9"/>
                         <outlet property="cancelReservationCell" destination="oz5-wN-2rw" id="5Vm-eO-jAc"/>
                         <outlet property="checkInCell" destination="hAf-8f-0e6" id="Wpg-3R-u4b"/>
+                        <outlet property="golfCourseLocationLabel" destination="zS1-CJ-2NV" id="4zM-d0-rRx"/>
+                        <outlet property="golfCourseNameLabel" destination="RGy-b9-YIw" id="Tje-hp-GCI"/>
+                        <outlet property="resDateLabel" destination="hXv-r8-bWc" id="5ZX-Le-A6d"/>
+                        <outlet property="resIDNumberLabel" destination="Zt7-qN-ub5" id="kF6-Rf-yLa"/>
+                        <outlet property="resTimeLabel" destination="AF5-MK-C8U" id="YZI-18-oPy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNc-xr-Pxu" userLabel="First Responder" sceneMemberID="firstResponder"/>

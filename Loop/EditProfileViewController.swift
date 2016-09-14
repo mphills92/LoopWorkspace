@@ -59,7 +59,7 @@ class EditProfileViewController: UITableViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
-        usersDB.getUserInformation()
+        //usersDB.getUserInformation()
         
         firstNameTextField.text = usersDB.firstName
         lastNameTextField.text = "Test"

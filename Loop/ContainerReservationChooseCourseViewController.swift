@@ -73,39 +73,40 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        //reloadCollectionViewData(currentSearchRadius)
-        
         if (collectionViewHasBeenCached == false) {
-        NSNotificationCenter.defaultCenter().postNotificationName("startActivityIndicatorNotification", object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("startActivityIndicatorNotification", object: nil)
         
-        self.courseBasicInfoRef.observeEventType(FIRDataEventType.Value) {
-            (snapshot: FIRDataSnapshot) in
+            self.courseBasicInfoRef.observeEventType(FIRDataEventType.Value) {
+                (snapshot: FIRDataSnapshot) in
             
-            self.golfCoursesDB.getGolfCourseIDsInRadius(self.setPointLat, setPointLon: self.setPointLon, searchRadiusFromSetPoint: self.currentSearchRadius) {
-                (courseIDs) -> Void in
+                self.golfCoursesDB.getGolfCourseIDsInRadius(self.setPointLat, setPointLon: self.setPointLon, searchRadiusFromSetPoint: self.currentSearchRadius) {
+                    (courseIDs) -> Void in
                 
-                self.nearbyCourseIDsToMonitor = courseIDs
+                    self.nearbyCourseIDsToMonitor = courseIDs
                 
-                var courseNamesArray = [String]()
-                var courseLocationsArray = [String]()
+                    var courseNamesArray = [String]()
+                    var courseLocationsArray = [String]()
                 
-                for var n = 0; n < courseIDs.count; n++ {
-                    if let name = snapshot.childSnapshotForPath("\(courseIDs[n])").value?.objectForKey("name") as? String {
-                        courseNamesArray.append(name)
+                    for var n = 0; n < courseIDs.count; n++ {
+                        if let name = snapshot.childSnapshotForPath("\(courseIDs[n])").value?.objectForKey("name") as? String {
+                            courseNamesArray.append(name)
+                        }
+                        self.nearbyCourseNamesToDisplay = courseNamesArray
                     }
-                    self.nearbyCourseNamesToDisplay = courseNamesArray
-                }
                 
-                for var l = 0; l < courseIDs.count; l++ {
-                    if let location = snapshot.childSnapshotForPath("\(courseIDs[l])").value?.objectForKey("city_state") as? String {
-                        courseLocationsArray.append(location)
+                    for var l = 0; l < courseIDs.count; l++ {
+                        if let location = snapshot.childSnapshotForPath("\(courseIDs[l])").value?.objectForKey("city_state") as? String {
+                            courseLocationsArray.append(location)
+                        }
+                        self.nearbyCourseLocationsToDisplay = courseLocationsArray
                     }
-                    self.nearbyCourseLocationsToDisplay = courseLocationsArray
-                }
                 
-                self.collectionView?.reloadData()
-                NSNotificationCenter.defaultCenter().postNotificationName("stopActivityIndicatorNotification", object: nil)
-            }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.collectionView?.reloadData()
+                    })
+                
+                    NSNotificationCenter.defaultCenter().postNotificationName("stopActivityIndicatorNotification", object: nil)
+                }
             }
             collectionViewHasBeenCached = true
         }
@@ -123,46 +124,6 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
 
 extension ContainerReservationChooseCourseViewController {
     
-    /*func reloadCollectionViewData(currentSearchRadius: Double) {
-        if (collectionViewHasBeenCached == false) {
-            NSNotificationCenter.defaultCenter().postNotificationName("startActivityIndicatorNotification", object: nil)
-            
-            self.courseBasicInfoRef.observeEventType(FIRDataEventType.Value) {
-                (snapshot: FIRDataSnapshot) in
-                
-                self.golfCoursesDB.getGolfCourseIDsInRadius(self.setPointLat, setPointLon: self.setPointLon, searchRadiusFromSetPoint: self.currentSearchRadius) {
-                    (courseIDs) -> Void in
-                    
-                    self.nearbyCourseIDsToMonitor = courseIDs
-                    
-                    var courseNamesArray = [String]()
-                    var courseLocationsArray = [String]()
-                    
-                    for var n = 0; n < courseIDs.count; n++ {
-                        if let name = snapshot.childSnapshotForPath("\(courseIDs[n])").value?.objectForKey("name") as? String {
-                            courseNamesArray.append(name)
-                        }
-                        self.nearbyCourseNamesToDisplay = courseNamesArray
-                    }
-                    
-                    for var l = 0; l < courseIDs.count; l++ {
-                        if let location = snapshot.childSnapshotForPath("\(courseIDs[l])").value?.objectForKey("city_state") as? String {
-                            courseLocationsArray.append(location)
-                        }
-                        self.nearbyCourseLocationsToDisplay = courseLocationsArray
-                    }
-                    
-                    self.collectionView?.reloadData()
-                    print(self.nearbyCourseLocationsToDisplay)
-                    NSNotificationCenter.defaultCenter().postNotificationName("stopActivityIndicatorNotification", object: nil)
-                }
-            }
-            print(currentSearchRadius)
-            collectionViewHasBeenCached = true
-        }
-
-    }*/
-    
     func adjustSetPointLat(notification: NSNotification) {
         setPointLat = notification.object! as! Double
     }
@@ -173,8 +134,6 @@ extension ContainerReservationChooseCourseViewController {
     
     func adjustSearchRadius(notification: NSNotification) {
         currentSearchRadius = notification.object! as! Double
-        //collectionViewHasBeenCached = false
-        //reloadCollectionViewData(currentSearchRadius)
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -190,6 +149,8 @@ extension ContainerReservationChooseCourseViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CoursesCollectionCell
         
         cell.tag = indexPath.row
+        
+        print(nearbyCourseNamesToDisplay.count)
         
         cell.courseNameLabel.text = nearbyCourseNamesToDisplay[indexPath.item]
         cell.courseLocationLabel.text = nearbyCourseLocationsToDisplay[indexPath.item]
