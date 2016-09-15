@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-
+import Firebase
 
 class ConfirmReservationViewController: UIViewController {
 
@@ -16,6 +15,12 @@ class ConfirmReservationViewController: UIViewController {
     @IBOutlet weak var reservationSnapshotView: UIView!
     @IBOutlet weak var bottomButtonHolderView: UIView!
     @IBOutlet weak var containerBottonConstraint: NSLayoutConstraint!
+    
+    private var dbRef : FIRDatabaseReference!
+    private var userReservationsRef : FIRDatabaseReference!
+    private var reservationsRef : FIRDatabaseReference!
+    
+    var currentUserID = String()
 
     // Receive data from segue.
     var selectedCourseNameHasBeenSent: String?
@@ -24,13 +29,25 @@ class ConfirmReservationViewController: UIViewController {
     var selectedTimeHasBeenSentAgain: String?
     var selectedCaddieNameHasBeenSent: String?
     
+    // Variables to be set to create new Firebase database entry for the reservation.
+    
+    
     let userReferralCode = UserReferralCode()
     let userPayment = UserPayment()
     
     var textFieldCharactersCount = Int()
     var enteredPromoCode = String()
     var promoCodeIsValid: Bool = true
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Review Reservation"
@@ -56,17 +73,15 @@ class ConfirmReservationViewController: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("selectedCourseLocationNotification", object: selectedLocationHasBeenSent!)
         NSNotificationCenter.defaultCenter().postNotificationName("selectedDateNotification", object: selectedDateHasBeenSentAgain!)
         NSNotificationCenter.defaultCenter().postNotificationName("selectedTimeNotification", object: selectedTimeHasBeenSentAgain!)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        self.dbRef = FIRDatabase.database().reference()
+        self.reservationsRef = dbRef.child("reservations_table")
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        if let user = FIRAuth.auth()?.currentUser {
+            currentUserID = user.uid
+            self.userReservationsRef = dbRef.child("users").child("\(currentUserID)").child("reservations")
+        }
     }
-    
     
     override func viewWillDisappear(animated: Bool) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
@@ -83,7 +98,46 @@ class ConfirmReservationViewController: UIViewController {
 }
     
 extension ConfirmReservationViewController {
+    
     @IBAction func confirmReservationButtonPressed(sender: AnyObject) {
+        
+        var numberOfReservations = Int()
+        var resIDsArray = [String]()
+        let uuid = NSUUID().UUIDString
+        
+        self.userReservationsRef.observeEventType(FIRDataEventType.Value) {
+            (snapshot: FIRDataSnapshot) in
+            
+            numberOfReservations = Int(snapshot.childrenCount)
+            
+            for child in snapshot.children {
+                let arrayIndexSnapshot = snapshot.childSnapshotForPath(child.key)
+                let reservationIDSnapshot = arrayIndexSnapshot.value
+                
+                if let resID = snapshot.childSnapshotForPath("\(arrayIndexSnapshot.key)").value as? String {
+                    resIDsArray.append(resID)
+                }
+            }
+            
+            resIDsArray.append(uuid)
+        }
+        
+        self.userReservationsRef.observeEventType(FIRDataEventType.ChildAdded) {
+            (snapshot: FIRDataSnapshot) in
+            self.userReservationsRef.updateChildValues(["\((numberOfReservations))": "\(resIDsArray[numberOfReservations] as String)" ])
+        }
+
+        let reservationDict = ["caddie": "Yf2wQFbsTnUWXNFHNYcOhLz7oCk1",
+                               "course": "tex_hou_2",
+                               "date": "2016-09-30",
+                               "time": "11:00",
+                               "user": "\(currentUserID)"]
+
+        reservationsRef.updateChildValues(["\(uuid)": {reservationDict}()])
+        reservationsRef.child("\(uuid)").updateChildValues(["time":"11:00"])
+        //updateChildValues(["\(uuid)":""])
+        
+    
         let alertController = UIAlertController(title: "See you on the course!", message:  "\n Reservation number: 123456789 \n \n Your reservation has been received. You can now find it listed in the Reservations section of your profile, where you can also view its details or delete it. \n \n We'll send you future reminders as the date and time of your reservation approaches.", preferredStyle: .Alert)
         alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
@@ -116,5 +170,4 @@ extension ConfirmReservationViewController {
         self.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
 
     }
-    
 }

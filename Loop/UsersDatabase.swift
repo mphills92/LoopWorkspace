@@ -115,18 +115,20 @@ class UsersDatabase {
                     reservationIDsArray.append(reservation)
                 }
             }
-            
-            self.reservationIDs = reservationIDsArray
 
             if (reservationIDsArray.count == Int(reservationsSnapshot.childrenCount)) {
-                completion(self.reservationIDs)
+                
+                if (reservationIDsArray[0] == "null_value") {
+                    reservationIDsArray.removeFirst()
+                    self.reservationIDs = reservationIDsArray
+                    completion(self.reservationIDs)
+                } else {
+                    self.reservationIDs = reservationIDsArray
+                    completion(self.reservationIDs)
+                }
             }
         }
     }
-    
-        
-        
-        
         
     func resetPassword(email: String) {
         
