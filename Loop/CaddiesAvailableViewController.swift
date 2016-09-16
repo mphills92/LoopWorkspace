@@ -22,13 +22,16 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
     let caddiesAvailable = Caddies.caddiesAvailable()
     
     // Pass data via segue.
+    var selectedCourseIDToSend = String()
     var selectedCourseNameToSend = String()
     var selectedLocationToSend = String()
     var selectedDateToSendAgain = String()
+    var dateDBFormatToSend = NSDate()
     var selectedTimeToSendAgain = String()
     var selectedCaddieNameToSend = String()    
     
     // Receive data from segue.
+    var selectedCourseIDHasBeenSentAgain: String?
     var selectedCourseNameHasBeenSentAgain: String?
     var selectedLocationHasBeenSentAgain: String?
     var selectedDateHasBeenSent: NSDate?
@@ -121,13 +124,17 @@ extension CaddiesAvailableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "caddieSelectedSegue") {
             let destinationVC = segue.destinationViewController as! ConfirmReservationViewController
+            selectedCourseIDToSend = selectedCourseIDHasBeenSentAgain!
             selectedCourseNameToSend = selectedCourseNameHasBeenSentAgain!
             selectedLocationToSend = selectedLocationHasBeenSentAgain!
             selectedTimeToSendAgain = selectedTimeHasBeenSent!
+            dateDBFormatToSend = selectedDateHasBeenSent!
             
+            destinationVC.selectedCourseIDHasBeenSent = selectedCourseIDToSend
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
             destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
             destinationVC.selectedDateHasBeenSentAgain = selectedDateToSendAgain
+            destinationVC.dateDBFormatHasBeenSent = dateDBFormatToSend
             destinationVC.selectedTimeHasBeenSentAgain = selectedTimeToSendAgain
             destinationVC.selectedCaddieNameHasBeenSent = selectedCaddieNameToSend
         }

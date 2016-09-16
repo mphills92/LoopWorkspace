@@ -20,17 +20,22 @@ class ConfirmReservationViewController: UIViewController {
     private var userReservationsRef : FIRDatabaseReference!
     private var reservationsRef : FIRDatabaseReference!
     
-    var currentUserID = String()
+    
 
     // Receive data from segue.
+    var selectedCourseIDHasBeenSent: String?
     var selectedCourseNameHasBeenSent: String?
     var selectedLocationHasBeenSent: String?
     var selectedDateHasBeenSentAgain: String?
+    var dateDBFormatHasBeenSent: NSDate?
     var selectedTimeHasBeenSentAgain: String?
     var selectedCaddieNameHasBeenSent: String?
     
     // Variables to be set to create new Firebase database entry for the reservation.
-    
+    var currentUserID = String()
+    var courseID = String()
+    var resDate = String()
+    var resTime = String()
     
     let userReferralCode = UserReferralCode()
     let userPayment = UserPayment()
@@ -81,6 +86,25 @@ class ConfirmReservationViewController: UIViewController {
             currentUserID = user.uid
             self.userReservationsRef = dbRef.child("users").child("\(currentUserID)").child("reservations")
         }
+        
+        if (selectedCourseIDHasBeenSent != "") {
+            courseID = selectedCourseIDHasBeenSent!
+        }
+        
+        if (dateDBFormatHasBeenSent != nil) {
+            
+            let formatterDateString = NSDateFormatter()
+            formatterDateString.dateFormat = "yyyy-MM-dd"
+            let convertedDate = formatterDateString.stringFromDate(dateDBFormatHasBeenSent!)
+            resDate = convertedDate
+            
+            let formatterTimeString = NSDateFormatter()
+            formatterTimeString.dateFormat = "HH:mm"
+            formatterTimeString.timeZone = NSTimeZone(name: "UTC")
+            let convertedTime = formatterTimeString.stringFromDate(dateDBFormatHasBeenSent!)
+            print(convertedTime)
+            resTime = convertedTime
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -128,17 +152,14 @@ extension ConfirmReservationViewController {
         }
 
         let reservationDict = ["caddie": "Yf2wQFbsTnUWXNFHNYcOhLz7oCk1",
-                               "course": "tex_hou_2",
-                               "date": "2016-09-30",
-                               "time": "11:00",
+                               "course": "\(courseID)",
+                               "date": "\(resDate)",
+                               "time": "\(resTime)",
                                "user": "\(currentUserID)"]
 
         reservationsRef.updateChildValues(["\(uuid)": {reservationDict}()])
-        reservationsRef.child("\(uuid)").updateChildValues(["time":"11:00"])
-        //updateChildValues(["\(uuid)":""])
-        
-    
-        let alertController = UIAlertController(title: "See you on the course!", message:  "\n Reservation number: 123456789 \n \n Your reservation has been received. You can now find it listed in the Reservations section of your profile, where you can also view its details or delete it. \n \n We'll send you future reminders as the date and time of your reservation approaches.", preferredStyle: .Alert)
+
+        let alertController = UIAlertController(title: "See you on the course!", message:  "\n Reservation number: \(uuid.substringFromIndex(uuid.endIndex.advancedBy(-8))) \n \n Your reservation has been received. You can now find it listed in the Reservations section of your profile, where you can also view its details or delete it. \n \n We'll send you future reminders as the date and time of your reservation approaches.", preferredStyle: .Alert)
         alertController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         let doneAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             self.closeAllReservationProcesses()

@@ -99,10 +99,19 @@ extension OverviewUpcomingReservationViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         if (cellClicked == cancelReservationCell) {
+            
             let actionSheetController = UIAlertController(title: "Are you sure you want to delete this reservation?", message: "Deleted reservations are final and subject to Loop's Terms of Service cancellation policy.", preferredStyle: .ActionSheet)
             actionSheetController.view.tintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
             
             let cancelReservationAction = UIAlertAction(title: "Delete Reservation", style: .Destructive) { (action) in
+                
+                
+                
+                
+                
+                
+                
+                
                 // TODO: Remove reservation from user's upcoming reservation list. Remove reservation within DB.
                 self.presentingViewController!.dismissViewControllerAnimated(true, completion: {})
             }

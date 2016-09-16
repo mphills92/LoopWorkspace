@@ -150,12 +150,9 @@ extension ContainerReservationChooseCourseViewController {
         
         cell.tag = indexPath.row
         
-        print(nearbyCourseNamesToDisplay.count)
-        
         cell.courseNameLabel.text = nearbyCourseNamesToDisplay[indexPath.item]
         cell.courseLocationLabel.text = nearbyCourseLocationsToDisplay[indexPath.item]
         cell.imageView.image = UIImage(named: "GolfCourseBackgroundImage")
-        
         
         selectedCourseCollectionCellIndexPath = indexPath
         

@@ -56,6 +56,7 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     var selectedDay = Int()
 
     // Pass data via segue.
+    var selectedCourseIDToSendAgain = String()
     var selectedCourseNameToSendAgain = String()
     var selectedLocationToSendAgain = String()
     var selectedDateToSend = NSDate()
@@ -339,11 +340,13 @@ extension ChooseDateViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toChooseCaddieSegue") {
             let destinationVC = segue.destinationViewController as! CaddiesAvailableViewController
+            selectedCourseIDToSendAgain = selectedCourseIDHasBeenSent!
             selectedCourseNameToSendAgain = selectedCourseNameHasBeenSent!
             selectedLocationToSendAgain = selectedLocationHasBeenSent!
 
             datesDB.getAvailableCaddieIDsForDate(selectedDateToSend)
             
+            destinationVC.selectedCourseIDHasBeenSentAgain = selectedCourseIDToSendAgain
             destinationVC.selectedCourseNameHasBeenSentAgain = selectedCourseNameToSendAgain
             destinationVC.selectedLocationHasBeenSentAgain = selectedLocationToSendAgain
             destinationVC.selectedDateHasBeenSent = selectedDateToSend
