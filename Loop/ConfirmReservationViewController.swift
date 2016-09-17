@@ -80,7 +80,7 @@ class ConfirmReservationViewController: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName("selectedTimeNotification", object: selectedTimeHasBeenSentAgain!)
         
         self.dbRef = FIRDatabase.database().reference()
-        self.reservationsRef = dbRef.child("reservations_table")
+        self.reservationsRef = dbRef.child("requests_reservations")
         
         if let user = FIRAuth.auth()?.currentUser {
             currentUserID = user.uid
@@ -155,7 +155,9 @@ extension ConfirmReservationViewController {
                                "course": "\(courseID)",
                                "date": "\(resDate)",
                                "time": "\(resTime)",
-                               "user": "\(currentUserID)"]
+                               "user": "\(currentUserID)",
+                               "pending": true,
+                               "declined": false]
 
         reservationsRef.updateChildValues(["\(uuid)": {reservationDict}()])
 

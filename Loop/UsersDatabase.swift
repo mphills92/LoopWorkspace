@@ -43,7 +43,6 @@ class UsersDatabase {
     }
     
     func setUserLocation(userLat: Double, userLon: Double) {
-        print("setUserLocation called")
         
         let latRef = userIDRef.child("lat")
         latRef.setValue("\(userLat)")
@@ -55,7 +54,6 @@ class UsersDatabase {
     }
     
     func getUserInformation(completion: ((Bool -> Void))) {
-        print("getUserInformation called")
         
         //var reservationIDsArray = [String]()
         
@@ -95,10 +93,7 @@ class UsersDatabase {
     }
     
     
-    
-    
     func getUserReservationInformation(completion: (([String] -> Void))) {
-        print("getUserReservationInformation")
         
         var reservationIDsArray = [String]()
         
