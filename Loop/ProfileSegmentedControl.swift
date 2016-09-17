@@ -15,7 +15,7 @@ import UIKit
     var lineView = UIView()
     var pillView = UIView()
     
-    var items: [String] = ["Reservations", "History"] {
+    var items: [String] = ["Requests", "Reservations"] {
         didSet {
             setupLabels()
         }

@@ -1,5 +1,5 @@
 //
-//  UpcomingReservationsViewController.swift
+//  RequestsContainerViewController.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 6/17/16.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UpcomingReservationsViewController: UITableViewController {
+class RequestsContainerViewController: UITableViewController {
     
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
@@ -161,7 +161,11 @@ class UpcomingReservationsViewController: UITableViewController {
     }
 }
 
-extension UpcomingReservationsViewController {
+extension RequestsContainerViewController {
+    
+    func setRequestStatusBadge() {
+        // Determine if request badge should display pending or declined.
+    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numOfSections: Int = 0
@@ -191,10 +195,12 @@ extension UpcomingReservationsViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reservationRecapCell", forIndexPath: indexPath) as! ReservationRecapCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("requestCell", forIndexPath: indexPath) as! RequestCell
         
-        cell.userProfileImage.layer.cornerRadius = 50
-        
+        cell.requestStatusBadge.layer.borderColor = UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1.0).CGColor
+        cell.requestStatusBadge.layer.borderWidth = 1
+        cell.requestStatusBadge.layer.cornerRadius = 8
+                
         if (caddieNamesToDisplay.count != 0) {
             cell.caddieNameLabel.text = caddieNamesToDisplay[indexPath.row]
             
@@ -224,14 +230,14 @@ extension UpcomingReservationsViewController {
         dateToSend = datesToDisplay[indexPath.row]
         timeToSend = timesToDisplay[indexPath.row]
         
-        self.performSegueWithIdentifier("toUpcomingReservationOverviewSegue", sender: self)
+        self.performSegueWithIdentifier("toRequestDetailsSegue", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if (segue.identifier == "toUpcomingReservationOverviewSegue") {
-            let destinationVC = segue.destinationViewController as! OverviewUpcomingReservationViewController
+        if (segue.identifier == "toRequestDetailsSegue") {
+            let destinationVC = segue.destinationViewController as! RequestDetailsViewController
             
             destinationVC.resIDHasBeenSent = resIDToSend
             destinationVC.caddieNameHasBeenSent = caddieNameToSend

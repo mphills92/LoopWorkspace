@@ -1,5 +1,5 @@
 //
-//  CaddyHistoryViewController.swift
+//  ReservationsContainerViewController.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 6/17/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CaddyHistoryViewController: UITableViewController {
+class ReservationsContainerViewController: UITableViewController {
     
     var dataExistsForTableView = false
     let caddieHistory = CaddieHistory()
@@ -20,7 +20,7 @@ class CaddyHistoryViewController: UITableViewController {
     }
 }
 
-extension CaddyHistoryViewController {
+extension ReservationsContainerViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numOfSections: Int = 0
@@ -50,13 +50,12 @@ extension CaddyHistoryViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("caddieHistoryRecapCell", forIndexPath: indexPath) as! CaddieHistoryCell
-        cell.userProfileImage.layer.cornerRadius = 50
+        let cell = tableView.dequeueReusableCellWithIdentifier("reservationCell", forIndexPath: indexPath) as! ReservationCell
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    self.performSegueWithIdentifier("toPastCaddieOverviewSegue", sender: self)
+    self.performSegueWithIdentifier("toReservationDetailsSegue", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

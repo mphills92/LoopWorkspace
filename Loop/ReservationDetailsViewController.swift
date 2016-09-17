@@ -1,5 +1,5 @@
 //
-//  OverviewPastCaddieViewController.swift
+//  ReservationDetailsViewController.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 8/24/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OverviewPastCaddieViewController: UITableViewController {
+class ReservationDetailsViewController: UITableViewController {
     
     @IBOutlet weak var caddieProfileImageView: UIImageView!
     @IBOutlet weak var reviewCaddieBannerCell: UITableViewCell!
@@ -18,7 +18,7 @@ class OverviewPastCaddieViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Past Reservation"
+        navigationItem.title = "Caddie Reservation"
         navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
@@ -38,7 +38,7 @@ class OverviewPastCaddieViewController: UITableViewController {
     
 }
 
-extension OverviewPastCaddieViewController {
+extension ReservationDetailsViewController {
     
     func setNumberOfTableViewSections() {
         if (previousReservation.reviewHasBeenSubmitted == false) {

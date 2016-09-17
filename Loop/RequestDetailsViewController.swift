@@ -1,5 +1,5 @@
 //
-//  OverviewUpcomingReservationViewController.swift
+//  RequestDetailsViewController.swift
 //  carpoolApp_v1.0
 //
 //  Created by Matt Hills on 7/19/16.
@@ -8,8 +8,9 @@
 
 import UIKit
 import MessageUI
+import Firebase
 
-class OverviewUpcomingReservationViewController: UITableViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
+class RequestDetailsViewController: UITableViewController, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var caddieProfileImageView: UIImageView!
     @IBOutlet weak var caddieNameLabel: UILabel!
@@ -22,6 +23,9 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
     
     @IBOutlet weak var checkInCell: UITableViewCell!
     @IBOutlet weak var cancelReservationCell: UITableViewCell!
+    
+    private var dbRef : FIRDatabaseReference!
+    private var resIDLocationRef : FIRDatabaseReference!
     
     var userName = UserName()
     var nextReservation = NextReservation()
@@ -37,7 +41,7 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Upcoming Reservation"
+        navigationItem.title = "Caddie Request"
         navigationController?.navigationBar.barTintColor = UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)
         navigationController?.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
@@ -46,6 +50,9 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
         
         caddieProfileImageView.layer.cornerRadius = 50
         caddieNameLabel.text = caddieNameHasBeenSent
+        
+        self.dbRef = FIRDatabase.database().reference()
+        self.resIDLocationRef = dbRef.child("reservations_table").child("\(resIDHasBeenSent)")
         
         if (caddieMemHistHasBeenSent != "") {
             caddieMembershipHistoryLabel.text = "Member since \(caddieMemHistHasBeenSent!)"
@@ -68,7 +75,7 @@ class OverviewUpcomingReservationViewController: UITableViewController, MFMessag
     }
 }
 
-extension OverviewUpcomingReservationViewController {
+extension RequestDetailsViewController {
     
     func setNumberOfTableViewSections() {
         if (nextReservation.reservationIsWithinOneHour == true) {
@@ -105,10 +112,11 @@ extension OverviewUpcomingReservationViewController {
             
             let cancelReservationAction = UIAlertAction(title: "Delete Reservation", style: .Destructive) { (action) in
                 
-                
-                
-                
-                
+                self.resIDLocationRef.observeEventType(FIRDataEventType.Value) {
+                    (snapshot: FIRDataSnapshot) in
+                }
+                    
+                //self.resIDLocationRef.child("\(self.resIDHasBeenSent)").removeValue()
                 
                 
                 
