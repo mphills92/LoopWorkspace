@@ -17,8 +17,11 @@ class RequestsContainerViewController: UITableViewController {
     
     private var dbRef : FIRDatabaseReference!
     private var reservationsRef : FIRDatabaseReference!
+    private var userRef : FIRDatabaseReference!
     private var caddiesRef : FIRDatabaseReference!
     private var coursesRef : FIRDatabaseReference!
+    
+    var userID = String()
     
     var resIDsCaddieIDs = [[String:String]]()
     var numberOfRequests = Int()
@@ -50,50 +53,66 @@ class RequestsContainerViewController: UITableViewController {
         self.caddiesRef = dbRef.child("caddies")
         self.coursesRef = dbRef.child("courses_basic_info")
         
-        
+        if let user = FIRAuth.auth()?.currentUser {
+            userID = user.uid
+            self.userRef = dbRef.child("users").child("\(userID)")
+        }
+    
         usersDB.getUserReservationInformation() {
             (resIDsCaddieIDsSentFromDB) -> Void in
             
             self.resIDsCaddieIDs = resIDsCaddieIDsSentFromDB
-            var resIDs = [String]()
-            var caddieIDs = [String]()
+            var requestResIDs = [String]()
+            var caddieRequestIDs = [String]()
             
             for var i=0; i < self.resIDsCaddieIDs.count; i++ {
                 var resIDCaddieIDDict = self.resIDsCaddieIDs[i]
-                resIDs.append(resIDCaddieIDDict["resID"]!)
-                caddieIDs.append(resIDCaddieIDDict["caddieID"]!)
+                requestResIDs.append(resIDCaddieIDDict["resID"]!)
+                caddieRequestIDs.append(resIDCaddieIDDict["caddieID"]!)
             }
             
-            self.reservationsDB.getRequestsIDs(resIDs) {
+            self.reservationsDB.getRequestsIDs(requestResIDs) {
                 (requestsIDs) -> Void in
                 
                 self.numberOfRequests = requestsIDs.count
                 self.requestIDsToStore = requestsIDs
-                
-                self.caddiesRef.observeEventType(FIRDataEventType.Value) {
+               
+                self.userRef.child("resID_caddieID").observeEventType(FIRDataEventType.Value) {
                     (snapshot: FIRDataSnapshot) in
                     
-                    var caddieNamesArray = [String]()
-                    var caddiesMemHistArray = [String]()
-                    
-                    for var i = 0; i < self.numberOfRequests; i++ {
+                    var caddieIDsArray = [String]()
+
+                    for var r=0; r < self.numberOfRequests; r++ {
+                        if let caddieID = snapshot.childSnapshotForPath("\(requestsIDs[r])").value as? String {
+                            caddieIDsArray.append(caddieID)
+                        }
+                    }
+                                        
+                    self.caddiesRef.observeEventType(FIRDataEventType.Value) {
+                        (snapshot: FIRDataSnapshot) in
                         
-                        // Receive names of reserved caddies. Create array of names.
-                        var caddieName = String()
-                        if let first_name = snapshot.childSnapshotForPath("\(caddieIDs[i])").value?.objectForKey("first_name") as? String {
-                            if let last_name = snapshot.childSnapshotForPath("\(caddieIDs[i])").value?.objectForKey("last_name") as? String {
-                                caddieName = "\(first_name) \(last_name)"
+                        var caddieNamesArray = [String]()
+                        var caddiesMemHistArray = [String]()
+                        
+                        for var i = 0; i < self.numberOfRequests; i++ {
+                            
+                            // Receive names of reserved caddies. Create array of names.
+                            var caddieName = String()
+                            if let first_name = snapshot.childSnapshotForPath("\(caddieIDsArray[i])").value?.objectForKey("first_name") as? String {
+                                if let last_name = snapshot.childSnapshotForPath("\(caddieIDsArray[i])").value?.objectForKey("last_name") as? String {
+                                    caddieName = "\(first_name) \(last_name)"
+                                }
+                                caddieNamesArray.append(caddieName)
                             }
-                            caddieNamesArray.append(caddieName)
+                            
+                            // Receive membership history of reserved caddies. Create an array of membership histories.
+                            if let membership_history = snapshot.childSnapshotForPath("\(caddieIDsArray[i])").value?.objectForKey("membership_history") as? String {
+                                caddiesMemHistArray.append(membership_history)
+                            }
+                            
+                            self.caddieNamesToDisplay = caddieNamesArray
+                            self.caddieMemHistToStore = caddiesMemHistArray
                         }
-                        
-                        // Receive membership history of reserved caddies. Create an array of membership histories.
-                        if let membership_history = snapshot.childSnapshotForPath("\(caddieIDs[i])").value?.objectForKey("membership_history") as? String {
-                            caddiesMemHistArray.append(membership_history)
-                        }
-                        
-                        self.caddieNamesToDisplay = caddieNamesArray
-                        self.caddieMemHistToStore = caddiesMemHistArray
                     }
                 }
                 
@@ -107,7 +126,7 @@ class RequestsContainerViewController: UITableViewController {
                     var requestStatusesArray = [String]()
                     
                     for var g = 0; g < self.numberOfRequests; g++ {
-                        if let courseID = snapshot.childSnapshotForPath("\(resIDs[g])").value?.objectForKey("course") as? String {
+                        if let courseID = snapshot.childSnapshotForPath("\(requestsIDs[g])").value?.objectForKey("course") as? String {
                             
                             self.coursesRef.observeEventType(FIRDataEventType.Value) {
                                 (snapshot: FIRDataSnapshot) in
@@ -129,7 +148,7 @@ class RequestsContainerViewController: UITableViewController {
                     }
                     
                     for var d = 0; d < self.numberOfRequests; d++ {
-                        if let date = snapshot.childSnapshotForPath("\(resIDs[d])").value?.objectForKey("date") as? String {
+                        if let date = snapshot.childSnapshotForPath("\(requestsIDs[d])").value?.objectForKey("date") as? String {
                             
                             let dateFormatter = NSDateFormatter()
                             dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -150,7 +169,7 @@ class RequestsContainerViewController: UITableViewController {
                     }
 
                     for var t = 0; t < self.numberOfRequests; t++ {
-                        if let time = snapshot.childSnapshotForPath("\(resIDs[t])").value?.objectForKey("time") as? String {
+                        if let time = snapshot.childSnapshotForPath("\(requestsIDs[t])").value?.objectForKey("time") as? String {
                             
                             let timeFormatter = NSDateFormatter()
                             timeFormatter.dateFormat = "HH:mm"
@@ -171,7 +190,7 @@ class RequestsContainerViewController: UITableViewController {
                     }
                     
                     for var x = 0; x < self.numberOfRequests; x++ {
-                        if let status = snapshot.childSnapshotForPath("\(resIDs[x])").value?.objectForKey("status") as? String {
+                        if let status = snapshot.childSnapshotForPath("\(requestsIDs[x])").value?.objectForKey("status") as? String {
                             
                             if (status == "pending") {
                                 requestStatusesArray.append("p")

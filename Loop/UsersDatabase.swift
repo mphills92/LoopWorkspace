@@ -56,8 +56,6 @@ class UsersDatabase {
     
     func getUserInformation(completion: ((Bool -> Void))) {
         
-        //var reservationIDsArray = [String]()
-        
         self.userIDRef.observeEventType(FIRDataEventType.Value) {
             (snapshot: FIRDataSnapshot) in
             
@@ -74,7 +72,6 @@ class UsersDatabase {
             self.membershipHistory = membership_history
             self.lifetimeRounds = lifetime_rounds
             self.credit = credit
-            //self.reservationIDs = reservationIDsArray
             
             if (self.firstName != "" && self.lastName != "" && self.currentPhone != "" && self.membershipHistory != "" && "\(self.lifetimeRounds)" != "" && "\(self.credit)" != "") {
                 completion(true)
@@ -85,7 +82,6 @@ class UsersDatabase {
     
     func getUserReservationInformation(completion: (([[String:String]] -> Void))) {
         
-        var reservationIDsArray = [String]()
         var reservationAndCaddieDict = [[String:String]]()
         var completionCounter = 0
         
@@ -101,55 +97,15 @@ class UsersDatabase {
                 let caddieID = resIDCaddieIDSnapshot.value?.objectForKey("\(reservationID)")
                 
                 if (reservationID != "0") {
-                    //reservationIDsArray.append(reservationID)
                     reservationAndCaddieDict.append(["resID": "\(reservationID)", "caddieID": "\(caddieID!)"])
-                    
                     completionCounter++
                 }
             }
             
             if (reservationAndCaddieDict.count == completionCounter) {
-                
-                /*
-                if (reservationIDsArray[0] == "null_value") {
-                    reservationIDsArray.removeFirst()
-                    self.reservationIDs = reservationIDsArray
-                    completion(self.reservationIDs)
-                } else {
-                    self.reservationIDs = reservationIDsArray
-                    completion(self.reservationIDs)
-                }*/
-                
-                //self.reservationIDs = reservationIDsArray
                 self.reservationsAndCaddies = reservationAndCaddieDict
                 completion(self.reservationsAndCaddies)
-                //completion(self.reservationIDs)
             }
-            
-            /*
-            let reservationsSnapshot = snapshot.childSnapshotForPath("reservations")
-            
-            for child in reservationsSnapshot.children {
-                let reservationIDsSnapshot = reservationsSnapshot.childSnapshotForPath(child.key)
-                print(reservationIDsSnapshot)
-                let reservationIDKey = reservationIDsSnapshot.key
-                
-                if let reservation = reservationsSnapshot.childSnapshotForPath("\(reservationIDKey)").value as? String {
-                    reservationIDsArray.append(reservation)
-                }
-            }
-
-            if (reservationIDsArray.count == Int(reservationsSnapshot.childrenCount)) {
-                
-                if (reservationIDsArray[0] == "null_value") {
-                    reservationIDsArray.removeFirst()
-                    self.reservationIDs = reservationIDsArray
-                    completion(self.reservationIDs)
-                } else {
-                    self.reservationIDs = reservationIDsArray
-                    completion(self.reservationIDs)
-                }
-            }*/
         }
     }
         

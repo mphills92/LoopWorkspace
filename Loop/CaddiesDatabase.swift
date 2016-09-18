@@ -11,17 +11,17 @@ import Firebase
 
 class CaddieDatabase {
     private var dbRef : FIRDatabaseReference
-    private var caddiesNodeRef : FIRDatabaseReference
+    private var caddiesRef : FIRDatabaseReference
     
     var firstName = String()
     var lastName = String()
     
     init() {
         self.dbRef = FIRDatabase.database().reference()
-        self.caddiesNodeRef = dbRef.child("caddies")
+        self.caddiesRef = dbRef.child("caddies")
     }
     
-    func getCaddieInformation(caddieID: String, completion: ((Bool -> Void))) {
+    /*func getCaddieInformation(caddieID: String, completion: ((Bool -> Void))) {
         
         self.caddiesNodeRef.child("\(caddieID)").observeEventType(FIRDataEventType.Value) {
             (snapshot: FIRDataSnapshot) in
@@ -30,5 +30,5 @@ class CaddieDatabase {
             
             self.firstName = first_name
         }
-    }
+    }*/
 }
