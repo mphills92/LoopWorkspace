@@ -28,7 +28,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     var nextReservation = NextReservation()
     
     // Reservation information loaded everytime the view appears.
-    var reservationIDs = [String]()
+    var resIDsCaddieIDs = [[String:String]]()
     
     // Passed data via segue.
     var userLatitudeToSend = Double()
@@ -38,9 +38,18 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         super.viewWillAppear(animated)
         
         usersDB.getUserReservationInformation() {
-            (reservationIDsSentFromDB) -> Void in
-            self.reservationIDs = reservationIDsSentFromDB
-            print(self.reservationIDs)
+            (resIDsCaddieIDsSentFromDB) -> Void in
+            
+            self.resIDsCaddieIDs = resIDsCaddieIDsSentFromDB
+            
+            var resIDsArray = [String]()
+            var caddieIDsArray = [String]()
+            
+            for var i=0; i < self.resIDsCaddieIDs.count; i++ {
+                var resIDCaddieIDDict = self.resIDsCaddieIDs[i]
+                resIDsArray.append(resIDCaddieIDDict["resID"]!)
+                caddieIDsArray.append(resIDCaddieIDDict["caddieID"]!)
+            }
         }
         
     }

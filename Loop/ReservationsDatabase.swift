@@ -20,9 +20,9 @@ class ReservationsDatabase {
         self.reservationsRef = dbRef.child("requests_reservations")
     }
     
-    func getRequestsIDs(reservationIDs: [String], completion: (([String] -> Void))) {
-        
-        var totalReservationEntries = reservationIDs.count
+    func getRequestsIDs(resIDs: [String], completion: (([String] -> Void))) {
+
+        var totalReservationEntries = resIDs.count
         var completionCounter = 0
         
         self.reservationsRef.observeEventType(FIRDataEventType.Value) {
@@ -31,10 +31,11 @@ class ReservationsDatabase {
             var requestsArray = [String]()
             
             for var x = 0; x < totalReservationEntries; x++ {
-                if let pendingStatus = snapshot.childSnapshotForPath("\(reservationIDs[x])").value?.objectForKey("pending") as? Bool {
+                
+                if let status = snapshot.childSnapshotForPath("\(resIDs[x])").value?.objectForKey("status") as? String {
                     
-                    if (pendingStatus == true) {
-                        requestsArray.append(reservationIDs[x])
+                    if (status == "pending" || status == "declined") {
+                        requestsArray.append(resIDs[x])
                     }
                 }
                 completionCounter++

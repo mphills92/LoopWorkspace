@@ -29,6 +29,7 @@ class UsersDatabase {
     var userLatitude = Double()
     var userLongitude = Double()
     var reservationIDs = [String]()
+    var reservationsAndCaddies = [[String:String]]()
     
     init() {
         self.dbRef = FIRDatabase.database().reference()
@@ -66,17 +67,6 @@ class UsersDatabase {
             let membership_history = snapshot.value?.objectForKey("membership_history") as! String
             let lifetime_rounds = snapshot.value?.objectForKey("lifetime_rounds") as! Int
             let credit = snapshot.value?.objectForKey("credit") as! Int
-            /*
-            let reservationsSnapshot = snapshot.childSnapshotForPath("reservations")
-            
-            for child in reservationsSnapshot.children {
-                let reservationIDsSnapshot = reservationsSnapshot.childSnapshotForPath(child.key)
-                let reservationIDKey = reservationIDsSnapshot.key
-                
-                if let reservation = reservationsSnapshot.childSnapshotForPath("\(reservationIDKey)").value as? String {
-                    reservationIDsArray.append(reservation)
-                }
-            }*/
             
             self.firstName = first_name
             self.lastName = last_name
@@ -93,17 +83,55 @@ class UsersDatabase {
     }
     
     
-    func getUserReservationInformation(completion: (([String] -> Void))) {
+    func getUserReservationInformation(completion: (([[String:String]] -> Void))) {
         
         var reservationIDsArray = [String]()
+        var reservationAndCaddieDict = [[String:String]]()
+        var completionCounter = 0
         
         self.userIDRef.observeEventType(FIRDataEventType.Value) {
             (snapshot: FIRDataSnapshot) in
             
+            let resIDCaddieIDSnapshot = snapshot.childSnapshotForPath("resID_caddieID")
+            
+            for child in resIDCaddieIDSnapshot.children {
+                let reservationIDSnapshot = resIDCaddieIDSnapshot.childSnapshotForPath(child.key)
+                let reservationID = reservationIDSnapshot.key
+                
+                let caddieID = resIDCaddieIDSnapshot.value?.objectForKey("\(reservationID)")
+                
+                if (reservationID != "0") {
+                    //reservationIDsArray.append(reservationID)
+                    reservationAndCaddieDict.append(["resID": "\(reservationID)", "caddieID": "\(caddieID!)"])
+                    
+                    completionCounter++
+                }
+            }
+            
+            if (reservationAndCaddieDict.count == completionCounter) {
+                
+                /*
+                if (reservationIDsArray[0] == "null_value") {
+                    reservationIDsArray.removeFirst()
+                    self.reservationIDs = reservationIDsArray
+                    completion(self.reservationIDs)
+                } else {
+                    self.reservationIDs = reservationIDsArray
+                    completion(self.reservationIDs)
+                }*/
+                
+                //self.reservationIDs = reservationIDsArray
+                self.reservationsAndCaddies = reservationAndCaddieDict
+                completion(self.reservationsAndCaddies)
+                //completion(self.reservationIDs)
+            }
+            
+            /*
             let reservationsSnapshot = snapshot.childSnapshotForPath("reservations")
             
             for child in reservationsSnapshot.children {
                 let reservationIDsSnapshot = reservationsSnapshot.childSnapshotForPath(child.key)
+                print(reservationIDsSnapshot)
                 let reservationIDKey = reservationIDsSnapshot.key
                 
                 if let reservation = reservationsSnapshot.childSnapshotForPath("\(reservationIDKey)").value as? String {
@@ -121,7 +149,7 @@ class UsersDatabase {
                     self.reservationIDs = reservationIDsArray
                     completion(self.reservationIDs)
                 }
-            }
+            }*/
         }
     }
         

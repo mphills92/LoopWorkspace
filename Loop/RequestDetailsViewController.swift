@@ -52,7 +52,9 @@ class RequestDetailsViewController: UITableViewController, MFMessageComposeViewC
         caddieNameLabel.text = caddieNameHasBeenSent
         
         self.dbRef = FIRDatabase.database().reference()
-        self.resIDLocationRef = dbRef.child("reservations_table").child("\(resIDHasBeenSent)")
+        if (resIDHasBeenSent != nil) {
+            self.resIDLocationRef = dbRef.child("requests_reservations").child("\(resIDHasBeenSent!)")
+        }
         
         if (caddieMemHistHasBeenSent != "") {
             caddieMembershipHistoryLabel.text = "Member since \(caddieMemHistHasBeenSent!)"
@@ -114,10 +116,10 @@ extension RequestDetailsViewController {
                 
                 self.resIDLocationRef.observeEventType(FIRDataEventType.Value) {
                     (snapshot: FIRDataSnapshot) in
+                    print(snapshot)
                 }
-                    
-                //self.resIDLocationRef.child("\(self.resIDHasBeenSent)").removeValue()
                 
+                self.resIDLocationRef.setValue(nil)
                 
                 
                 // TODO: Remove reservation from user's upcoming reservation list. Remove reservation within DB.

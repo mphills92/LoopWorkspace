@@ -84,7 +84,7 @@ class ConfirmReservationViewController: UIViewController {
         
         if let user = FIRAuth.auth()?.currentUser {
             currentUserID = user.uid
-            self.userReservationsRef = dbRef.child("users").child("\(currentUserID)").child("reservations")
+            self.userReservationsRef = dbRef.child("users").child("\(currentUserID)").child("resID_caddieID")
         }
         
         if (selectedCourseIDHasBeenSent != "") {
@@ -125,10 +125,10 @@ extension ConfirmReservationViewController {
     
     @IBAction func confirmReservationButtonPressed(sender: AnyObject) {
         
-        var numberOfReservations = Int()
-        var resIDsArray = [String]()
+        //var numberOfReservations = Int()
+        //var resIDsArray = [String]()
         let uuid = NSUUID().UUIDString
-        
+        /*
         self.userReservationsRef.observeEventType(FIRDataEventType.Value) {
             (snapshot: FIRDataSnapshot) in
             
@@ -144,11 +144,15 @@ extension ConfirmReservationViewController {
             }
             
             resIDsArray.append(uuid)
-        }
+        }*/
         
         self.userReservationsRef.observeEventType(FIRDataEventType.ChildAdded) {
             (snapshot: FIRDataSnapshot) in
-            self.userReservationsRef.updateChildValues(["\((numberOfReservations))": "\(resIDsArray[numberOfReservations] as String)" ])
+            
+            //TODO: Caddie ID must be created as reservation value.
+            self.userReservationsRef.updateChildValues(["\(uuid)": "Yf2wQFbsTnUWXNFHNYcOhLz7oCk1"])
+            
+            //self.userReservationsRef.updateChildValues(["\((numberOfReservations))": "\(resIDsArray[numberOfReservations] as String)" ])
         }
 
         let reservationDict = ["caddie": "Yf2wQFbsTnUWXNFHNYcOhLz7oCk1",
@@ -156,8 +160,7 @@ extension ConfirmReservationViewController {
                                "date": "\(resDate)",
                                "time": "\(resTime)",
                                "user": "\(currentUserID)",
-                               "pending": true,
-                               "declined": false]
+                               "status": "pending"]
 
         reservationsRef.updateChildValues(["\(uuid)": {reservationDict}()])
 

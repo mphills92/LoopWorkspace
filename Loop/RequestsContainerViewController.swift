@@ -20,6 +20,7 @@ class RequestsContainerViewController: UITableViewController {
     private var caddiesRef : FIRDatabaseReference!
     private var coursesRef : FIRDatabaseReference!
     
+    var resIDsCaddieIDs = [[String:String]]()
     var numberOfRequests = Int()
     var requestIDsToStore = [String]()
     
@@ -49,54 +50,64 @@ class RequestsContainerViewController: UITableViewController {
         self.caddiesRef = dbRef.child("caddies")
         self.coursesRef = dbRef.child("courses_basic_info")
         
+        
         usersDB.getUserReservationInformation() {
-            (reservationIDsSentFromDB) -> Void in
+            (resIDsCaddieIDsSentFromDB) -> Void in
             
-            self.reservationsDB.getRequestsIDs(reservationIDsSentFromDB) {
+            self.resIDsCaddieIDs = resIDsCaddieIDsSentFromDB
+            var resIDs = [String]()
+            var caddieIDs = [String]()
+            
+            for var i=0; i < self.resIDsCaddieIDs.count; i++ {
+                var resIDCaddieIDDict = self.resIDsCaddieIDs[i]
+                resIDs.append(resIDCaddieIDDict["resID"]!)
+                caddieIDs.append(resIDCaddieIDDict["caddieID"]!)
+            }
+            
+            self.reservationsDB.getRequestsIDs(resIDs) {
                 (requestsIDs) -> Void in
                 
                 self.numberOfRequests = requestsIDs.count
                 self.requestIDsToStore = requestsIDs
                 
-                self.reservationsRef.observeEventType(FIRDataEventType.Value) {
+                self.caddiesRef.observeEventType(FIRDataEventType.Value) {
                     (snapshot: FIRDataSnapshot) in
                     
                     var caddieNamesArray = [String]()
                     var caddiesMemHistArray = [String]()
+                    
+                    for var i = 0; i < self.numberOfRequests; i++ {
+                        
+                        // Receive names of reserved caddies. Create array of names.
+                        var caddieName = String()
+                        if let first_name = snapshot.childSnapshotForPath("\(caddieIDs[i])").value?.objectForKey("first_name") as? String {
+                            if let last_name = snapshot.childSnapshotForPath("\(caddieIDs[i])").value?.objectForKey("last_name") as? String {
+                                caddieName = "\(first_name) \(last_name)"
+                            }
+                            caddieNamesArray.append(caddieName)
+                        }
+                        
+                        // Receive membership history of reserved caddies. Create an array of membership histories.
+                        if let membership_history = snapshot.childSnapshotForPath("\(caddieIDs[i])").value?.objectForKey("membership_history") as? String {
+                            caddiesMemHistArray.append(membership_history)
+                        }
+                        
+                        self.caddieNamesToDisplay = caddieNamesArray
+                        self.caddieMemHistToStore = caddiesMemHistArray
+                    }
+                }
+                
+                self.reservationsRef.observeEventType(FIRDataEventType.Value) {
+                    (snapshot: FIRDataSnapshot) in
+                    
                     var courseNamesArray = [String]()
                     var courseLocationsArray = [String]()
                     var datesArray = [String]()
                     var timesArray = [String]()
                     var requestStatusesArray = [String]()
                     
-                    for var i = 0; i < self.numberOfRequests; i++ {
-                        if let caddieID = snapshot.childSnapshotForPath("\(reservationIDsSentFromDB[i])").value?.objectForKey("caddie") as? String {
-                            
-                            self.caddiesRef.observeEventType(FIRDataEventType.Value) {
-                                (snapshot: FIRDataSnapshot) in
-                                
-                                // Receive names of reserved caddies. Create array of names.
-                                var caddieName = String()
-                                if let first_name = snapshot.childSnapshotForPath("\(caddieID)").value?.objectForKey("first_name") as? String {
-                                    if let last_name = snapshot.childSnapshotForPath("\(caddieID)").value?.objectForKey("last_name") as? String {
-                                        caddieName = "\(first_name) \(last_name)"
-                                    }
-                                    caddieNamesArray.append(caddieName)
-                                }
-                                
-                                // Receive membership history of reserved caddies. Create an array of membership histories.
-                                if let membership_history = snapshot.childSnapshotForPath("\(caddieID)").value?.objectForKey("membership_history") as? String {
-                                    caddiesMemHistArray.append(membership_history)
-                                }
-                                
-                                self.caddieNamesToDisplay = caddieNamesArray
-                                self.caddieMemHistToStore = caddiesMemHistArray
-                            }
-                        }
-                    }
-                    
                     for var g = 0; g < self.numberOfRequests; g++ {
-                        if let courseID = snapshot.childSnapshotForPath("\(reservationIDsSentFromDB[g])").value?.objectForKey("course") as? String {
+                        if let courseID = snapshot.childSnapshotForPath("\(resIDs[g])").value?.objectForKey("course") as? String {
                             
                             self.coursesRef.observeEventType(FIRDataEventType.Value) {
                                 (snapshot: FIRDataSnapshot) in
@@ -118,7 +129,7 @@ class RequestsContainerViewController: UITableViewController {
                     }
                     
                     for var d = 0; d < self.numberOfRequests; d++ {
-                        if let date = snapshot.childSnapshotForPath("\(reservationIDsSentFromDB[d])").value?.objectForKey("date") as? String {
+                        if let date = snapshot.childSnapshotForPath("\(resIDs[d])").value?.objectForKey("date") as? String {
                             
                             let dateFormatter = NSDateFormatter()
                             dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -137,9 +148,9 @@ class RequestsContainerViewController: UITableViewController {
                         }
                         self.datesToDisplay = datesArray
                     }
-                    
+
                     for var t = 0; t < self.numberOfRequests; t++ {
-                        if let time = snapshot.childSnapshotForPath("\(reservationIDsSentFromDB[t])").value?.objectForKey("time") as? String {
+                        if let time = snapshot.childSnapshotForPath("\(resIDs[t])").value?.objectForKey("time") as? String {
                             
                             let timeFormatter = NSDateFormatter()
                             timeFormatter.dateFormat = "HH:mm"
@@ -160,13 +171,12 @@ class RequestsContainerViewController: UITableViewController {
                     }
                     
                     for var x = 0; x < self.numberOfRequests; x++ {
-                        
-                        if let declinedStatus = snapshot.childSnapshotForPath("\(reservationIDsSentFromDB[x])").value?.objectForKey("declined") as? Bool {
+                        if let status = snapshot.childSnapshotForPath("\(resIDs[x])").value?.objectForKey("status") as? String {
                             
-                            if (declinedStatus == true) {
-                                requestStatusesArray.append("d")
-                            } else {
+                            if (status == "pending") {
                                 requestStatusesArray.append("p")
+                            } else if (status == "declined") {
+                                requestStatusesArray.append("d")
                             }
                             self.requestStatusesToDisplay = requestStatusesArray
                         }
@@ -216,35 +226,34 @@ extension RequestsContainerViewController {
         
         if (requestStatusesToDisplay.count != 0) {
             if (requestStatusesToDisplay[indexPath.row] == "p") {
-                cell.requestStatusBadge.text = "Pending"
+                cell.requestStatusBadge.text = "PENDING"
                 cell.requestStatusBadge.textColor = UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1.0)
                 cell.requestStatusBadge.layer.borderColor = UIColor(red: 255/255, green: 200/255, blue: 0/255, alpha: 1.0).CGColor
                 cell.requestStatusBadge.layer.borderWidth = 1
                 cell.requestStatusBadge.layer.cornerRadius = 8
             } else if (requestStatusesToDisplay[indexPath.row] == "d") {
-                cell.requestStatusBadge.text = "Declined"
+                cell.requestStatusBadge.text = "DECLINED"
                 cell.requestStatusBadge.textColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0)
                 cell.requestStatusBadge.layer.borderColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1.0).CGColor
                 cell.requestStatusBadge.layer.borderWidth = 1
                 cell.requestStatusBadge.layer.cornerRadius = 8
             }
         }
+        
+        if (courseNamesToDisplay.count != 0) {
+            cell.golfCourseNameLabel.text = courseNamesToDisplay[indexPath.row]
+        }
 
-                
         if (caddieNamesToDisplay.count != 0) {
             cell.caddieNameLabel.text = caddieNamesToDisplay[indexPath.row]
-            
-            if (courseNamesToDisplay.count != 0) {
-                cell.golfCourseNameLabel.text = courseNamesToDisplay[indexPath.row]
-            }
-            
-            if (datesToDisplay.count != 0) {
-                cell.reservationDateLabel.text = datesToDisplay[indexPath.row]
-            }
-            
-            if (timesToDisplay.count != 0) {
-                cell.reservationTimeLabel.text = timesToDisplay[indexPath.row]
-            }
+        }
+        
+        if (datesToDisplay.count != 0) {
+            cell.reservationDateLabel.text = datesToDisplay[indexPath.row]
+        }
+        
+        if (timesToDisplay.count != 0) {
+            cell.reservationTimeLabel.text = timesToDisplay[indexPath.row]
         }
         
         return cell
