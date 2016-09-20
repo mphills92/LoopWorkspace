@@ -24,7 +24,6 @@ class ReservationsContainerViewController: UITableViewController {
     var userID = String()
     
     var resIDsCaddieIDs = [[String:String]]()
-    var numberOfReservations = Int()
     var reservationIDsToStore = [String]()
     
     var caddieNamesToDisplay = [String]()
@@ -47,6 +46,7 @@ class ReservationsContainerViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, -36, 0)
         
+        
         self.dbRef = FIRDatabase.database().reference()
         self.reservationsRef = dbRef.child("requests_reservations")
         self.caddiesRef = dbRef.child("caddies")
@@ -64,8 +64,8 @@ class ReservationsContainerViewController: UITableViewController {
             var resIDs = [String]()
             var caddieIDs = [String]()
             
-            for var i=0; i < self.resIDsCaddieIDs.count; i++ {
-                var resIDCaddieIDDict = self.resIDsCaddieIDs[i]
+            for var y=0; y < self.resIDsCaddieIDs.count; y++ {
+                var resIDCaddieIDDict = self.resIDsCaddieIDs[y]
                 resIDs.append(resIDCaddieIDDict["resID"]!)
                 caddieIDs.append(resIDCaddieIDDict["caddieID"]!)
             }
@@ -73,7 +73,6 @@ class ReservationsContainerViewController: UITableViewController {
             self.reservationsDB.getConfirmedReservationsIDs(resIDs) {
                 (reservationIDs) -> Void in
                 
-                self.numberOfReservations = reservationIDs.count
                 self.reservationIDsToStore = reservationIDs
                 
                 self.userRef.child("resID_caddieID").observeEventType(FIRDataEventType.Value) {
@@ -81,7 +80,7 @@ class ReservationsContainerViewController: UITableViewController {
                     
                     var caddieIDsArray = [String]()
                     
-                    for var r=0; r < self.numberOfReservations; r++ {
+                    for var r=0; r < reservationIDs.count; r++ {
                         if let caddieID = snapshot.childSnapshotForPath("\(reservationIDs[r])").value as? String {
                             caddieIDsArray.append(caddieID)
                         }
@@ -93,7 +92,7 @@ class ReservationsContainerViewController: UITableViewController {
                         var caddieNamesArray = [String]()
                         var caddiesMemHistArray = [String]()
                         
-                        for var i = 0; i < self.numberOfReservations; i++ {
+                        for var i = 0; i < reservationIDs.count; i++ {
                             
                             // Receive names of reserved caddies. Create array of names.
                             var caddieName = String()
@@ -124,7 +123,7 @@ class ReservationsContainerViewController: UITableViewController {
                     var datesArray = [String]()
                     var timesArray = [String]()
                     
-                    for var g = 0; g < self.numberOfReservations; g++ {
+                    for var g = 0; g < reservationIDs.count; g++ {
                         if let courseID = snapshot.childSnapshotForPath("\(reservationIDs[g])").value?.objectForKey("course") as? String {
                             
                             self.coursesRef.observeEventType(FIRDataEventType.Value) {
@@ -146,7 +145,7 @@ class ReservationsContainerViewController: UITableViewController {
                         }
                     }
                     
-                    for var d = 0; d < self.numberOfReservations; d++ {
+                    for var d = 0; d < reservationIDs.count; d++ {
                         if let date = snapshot.childSnapshotForPath("\(reservationIDs[d])").value?.objectForKey("date") as? String {
                             
                             let dateFormatter = NSDateFormatter()
@@ -167,7 +166,7 @@ class ReservationsContainerViewController: UITableViewController {
                         self.datesToDisplay = datesArray
                     }
                     
-                    for var t = 0; t < self.numberOfReservations; t++ {
+                    for var t = 0; t < reservationIDs.count; t++ {
                         if let time = snapshot.childSnapshotForPath("\(reservationIDs[t])").value?.objectForKey("time") as? String {
                             
                             let timeFormatter = NSDateFormatter()
@@ -202,7 +201,7 @@ extension ReservationsContainerViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numOfSections: Int = 0
-        if (numberOfReservations > 0) {
+        if (reservationIDsToStore.count > 0) {
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
             numOfSections = 1
             tableView.backgroundView = nil
@@ -220,7 +219,7 @@ extension ReservationsContainerViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfReservations
+        return reservationIDsToStore.count
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -262,4 +261,20 @@ extension ReservationsContainerViewController {
         self.performSegueWithIdentifier("toReservationDetailsSegue", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "toReservationDetailsSegue") {
+            let destinationVC = segue.destinationViewController as! ReservationDetailsViewController
+            
+            destinationVC.resIDHasBeenSent = resIDToSend
+            destinationVC.caddieNameHasBeenSent = caddieNameToSend
+            destinationVC.caddieMemHistHasBeenSent = caddieMemHistToSend
+            destinationVC.courseNameHasBeenSent = courseNameToSend
+            destinationVC.courseLocationHasBeenSent = courseLocationToSend
+            destinationVC.dateHasBeenSent = dateToSend
+            destinationVC.timeHasBeenSent = timeToSend
+        }
+    }
+
 }

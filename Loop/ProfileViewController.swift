@@ -74,6 +74,12 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
             self.currentCreditLabel.text = "$\(self.usersDB.credit)"
         }
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "selectedIndexNotification", object: self.view.window)
+    }
 }
 
 extension ProfileViewController {

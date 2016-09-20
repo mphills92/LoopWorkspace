@@ -37,7 +37,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        usersDB.getUserReservationInformation() {
+        /*usersDB.getUserReservationInformation() {
             (resIDsCaddieIDsSentFromDB) -> Void in
             
             self.resIDsCaddieIDs = resIDsCaddieIDsSentFromDB
@@ -50,7 +50,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
                 resIDsArray.append(resIDCaddieIDDict["resID"]!)
                 caddieIDsArray.append(resIDCaddieIDDict["caddieID"]!)
             }
-        }
+        }*/
         
     }
     
