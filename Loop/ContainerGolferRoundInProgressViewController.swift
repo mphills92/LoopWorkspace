@@ -12,6 +12,12 @@ import MessageUI
 class ContainerGolferRoundInProgressViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
     
     @IBOutlet weak var caddieProfileImageView: UIImageView!
+    @IBOutlet weak var caddieNameLabel: UILabel!
+    @IBOutlet weak var caddieMembershipHistoryLabel: UILabel!
+    @IBOutlet weak var golfCourseNameLabel: UILabel!
+    @IBOutlet weak var golfCourseLocationLabel: UILabel!
+    
+    
     @IBOutlet weak var lateCaddieCell: UITableViewCell!
     @IBOutlet weak var caddieProfessionalComplaintCell: UITableViewCell!
     @IBOutlet weak var loopContactRequestCell: UITableViewCell!

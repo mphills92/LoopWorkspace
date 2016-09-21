@@ -46,9 +46,10 @@ class ReservationDetailsViewController: UITableViewController, MFMessageComposeV
     var courseLocationHasBeenSent: String?
     var dateHasBeenSent: String?
     var timeHasBeenSent: String?
-
-    
-    var previousReservation = PreviousReservation()
+    var timestampNSTimeHasBeenSent: NSDate?
+    var timeNSTimeHasBeenSent: NSDate?
+    var timestampNSDateHasBeenSent: NSDate?
+    var dateNSDateHasBeenSent: NSDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,9 @@ class ReservationDetailsViewController: UITableViewController, MFMessageComposeV
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        activeReservationBannerCell.hidden = true
+        tableView.contentInset = UIEdgeInsetsMake(-185, 0, 0, 0)
         
         caddieProfileImageView.layer.cornerRadius = 50
         caddieNameLabel.text = caddieNameHasBeenSent
@@ -106,20 +110,22 @@ class ReservationDetailsViewController: UITableViewController, MFMessageComposeV
             self.userLastName = self.usersDB.lastName
         }
     }
-    
 }
 
 extension ReservationDetailsViewController {
     
     func evaluateForActiveReservation() {
-        // If time of reservation is within 1 hour of current time...
-        if (previousReservation.reviewHasBeenSubmitted == false) {
-            activeReservationBannerCell.hidden = false
-            tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        } else {
-            // else
-            activeReservationBannerCell.hidden = true
-            tableView.contentInset = UIEdgeInsetsMake(-212, 0, 0, 0)
+        let hourRemovedFromResTime = timeNSTimeHasBeenSent?.dateByAddingTimeInterval((-3600))
+        
+        if (timestampNSDateHasBeenSent!.compare(dateNSDateHasBeenSent!) == NSComparisonResult.OrderedSame) {
+            print("reservation is today")
+            
+            if (hourRemovedFromResTime!.compare(timestampNSTimeHasBeenSent!) == NSComparisonResult.OrderedAscending) {
+                if (timeNSTimeHasBeenSent!.compare(timestampNSTimeHasBeenSent!) == NSComparisonResult.OrderedDescending) {
+                    activeReservationBannerCell.hidden = false
+                    tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+                }
+            }
         }
     }
     

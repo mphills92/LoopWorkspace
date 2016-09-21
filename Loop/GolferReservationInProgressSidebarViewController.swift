@@ -14,6 +14,11 @@ class GolferReservationInProgressSidebarViewController: UIViewController {
     @IBOutlet weak var reservationCompleteButton: UIButton!
     @IBOutlet weak var bottomButtonHolderView: UIView!
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("golferReservationViewController viewWillAppear")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = UIRectEdge.None

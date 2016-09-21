@@ -100,13 +100,13 @@ extension RequestDetailsViewController {
             requestStatusBannerTitle.text = "Your reservation request is still pending."
             requestStatusBannerTitle.textColor = UIColor.blackColor()
             requestStatusBannerDescription.text = "Your requested caddie has 12 hours to confirm or decline your reservation. You'll be updated as any status changes occur."
-            requestStatusBannerButton.setTitle("  Send a reminder to this caddie  ", forState: .Normal)
+            requestStatusBannerButton.setTitle("    Send a reminder to this caddie    ", forState: .Normal)
         } else if (resStatus == "d") {
             navigationItem.title = "Declined Request"
             requestStatusBannerTitle.text = "Your reservation request has been declined."
             requestStatusBannerTitle.textColor = UIColor(red: 204/255, green: 0/255, blue: 0/255, alpha: 1.0)
             requestStatusBannerDescription.text = "Unfortunately, your requested caddie has indicated that he or she is unable to complete your requested reservation."
-            requestStatusBannerButton.setTitle("  Find a new caddie  ", forState: .Normal)
+            requestStatusBannerButton.setTitle("    Find a new caddie    ", forState: .Normal)
         }
     }
     

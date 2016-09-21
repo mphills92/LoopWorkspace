@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import CoreLocation
+import Firebase
 
 class LandingPageViewController: UIViewController, SWRevealViewControllerDelegate, CLLocationManagerDelegate {
     
@@ -19,7 +20,14 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
+    let reservationsDB = ReservationsDatabase()
     let golfCoursesDB = CoursesBasicInfoDatabase()
+    
+    private var dbRef : FIRDatabaseReference!
+    private var reservationsRef : FIRDatabaseReference!
+    private var userRef : FIRDatabaseReference!
+    private var caddiesRef : FIRDatabaseReference!
+    private var coursesRef : FIRDatabaseReference!
     
     // Variables for location services.
     var locationManager: CLLocationManager!
@@ -27,43 +35,79 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     var screenSize = UIScreen.mainScreen().bounds
     var nextReservation = NextReservation()
     
+    var userID = String()
+    
     // Reservation information loaded everytime the view appears.
     var resIDsCaddieIDs = [[String:String]]()
+    var resInProgressID = String()
+    var resInProgressCaddieID = String()
     
-    // Passed data via segue.
+    // Send data via segue.
     var userLatitudeToSend = Double()
     var userLongitudeToSend = Double()
+    var resIDToSend = String()
+    
+    // Data for Loop In Progress
+    var caddieName = String()
+    var caddieMemHist = String()
+    var reservationStartTime = String()
+    var courseName = String()
+    var courseLocation = String()
+    
+    
+    var dateToSend = String()
+    var timeToSend = String()
+    var timeNSTimeToSend = NSDate()
+    
+    var dateNSDateToSend = NSDate()
+    
+    
+    ////////////
+    var timestampNSDate = NSDate()
+    var timestampNSTime = NSDate()
+//////////
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        //timestampOnAppearance()
         
-        /*usersDB.getUserReservationInformation() {
-            (resIDsCaddieIDsSentFromDB) -> Void in
+        self.dbRef = FIRDatabase.database().reference()
+        self.reservationsRef = dbRef.child("requests_reservations")
+        self.caddiesRef = dbRef.child("caddies")
+        self.coursesRef = dbRef.child("courses_basic_info")
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            userID = user.uid
+            self.userRef = dbRef.child("users").child("\(userID)")
+        }
+        
+        evaluateAllReservationsForLoopInProgress() {
+            (reservationInProgressID) -> Void in
             
-            self.resIDsCaddieIDs = resIDsCaddieIDsSentFromDB
-            
-            var resIDsArray = [String]()
-            var caddieIDsArray = [String]()
-            
-            for var i=0; i < self.resIDsCaddieIDs.count; i++ {
-                var resIDCaddieIDDict = self.resIDsCaddieIDs[i]
-                resIDsArray.append(resIDCaddieIDDict["resID"]!)
-                caddieIDsArray.append(resIDCaddieIDDict["caddieID"]!)
+            if (reservationInProgressID != "" && self.resInProgressCaddieID != "") {
+                self.retrieveCaddieInformationForLoopInProgress(self.resInProgressCaddieID) {
+                    (true) -> Void in
+                    print(self.caddieName)
+                    print(self.caddieMemHist)
+                    
+                    self.retrieveReservationInformationForLoopInProgress(reservationInProgressID) {
+                         (true) -> Void in
+                        print(self.courseName)
+                        print(self.courseLocation)
+                    }
+                }
+                
             }
-        }*/
-        
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         revealViewController().delegate = self
         definesPresentationContext = true
-        
-        positionAndDisplayViewButtons()
-        
         self.view.updateConstraints()
         self.view.layoutIfNeeded()
-        
+
         let navBarLogo = UIImage(named: "LoopLogoNavBarWhite")! as UIImage
         let imageView = UIImageView(image: navBarLogo)
         imageView.frame.size.width = 35.0
@@ -98,10 +142,11 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reservationHasCompleted:", name: "reservationHasCompletedNotification", object: nil)
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+
         // Register the user's current location upon appearance of the landing page.
         if (CLLocationManager.locationServicesEnabled()) {
             locationManager = CLLocationManager()
@@ -111,10 +156,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
             locationManager.startUpdatingLocation()
         }
         
-        
-        
-        positionAndDisplayViewButtons()
-        
+        // Determine if reservation is within 1 hour or ongoing and display Loop In Progress bar button item appropriately.
         if (nextReservation.reservationIsWithinOneHour == true) {
             self.revealViewController().rightViewRevealWidth = 280
         } else {
@@ -124,6 +166,145 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
 }
 
 extension LandingPageViewController {
+    
+    func timestamp() {
+        let formatterToEvaluateDate = NSDateFormatter()
+        formatterToEvaluateDate.dateFormat = "yyyy-MM-dd"
+        let dateStampString = formatterToEvaluateDate.stringFromDate(NSDate())
+        let formatterToNSDate = NSDateFormatter()
+        formatterToNSDate.dateFormat = "yyyy-MM-dd"
+        formatterToNSDate.timeZone = NSTimeZone(name: "UTC")
+        
+        timestampNSDate = formatterToNSDate.dateFromString(dateStampString)!
+        
+        let formatterToEvaluateTime = NSDateFormatter()
+        formatterToEvaluateTime.dateFormat = "HH:mm"
+        let timestampString = formatterToEvaluateTime.stringFromDate(NSDate())
+        let formatterToNSTime = NSDateFormatter()
+        formatterToNSTime.dateFormat = "HH:mm"
+        formatterToNSTime.timeZone = NSTimeZone(name: "UTC")
+        
+        timestampNSTime = formatterToNSTime.dateFromString(timestampString)!
+    }
+    
+    func evaluateAllReservationsForLoopInProgress(completion: ((String -> Void))) {
+        usersDB.getUserReservationInformation() {
+            (resIDsCaddieIDsSentFromDB) -> Void in
+            
+            self.timestamp()
+            self.resInProgressID = ""
+            self.resIDsCaddieIDs = resIDsCaddieIDsSentFromDB
+            var resIDs = [String]()
+            var caddieIDs = [String]()
+            var completionCounter = 0
+            
+            for var y=0; y < self.resIDsCaddieIDs.count; y++ {
+                var resIDCaddieIDDict = self.resIDsCaddieIDs[y]
+                resIDs.append(resIDCaddieIDDict["resID"]!)
+                caddieIDs.append(resIDCaddieIDDict["caddieID"]!)
+            }
+            
+            self.reservationsDB.getConfirmedReservationsIDs(resIDs) {
+                (reservationIDs) -> Void in
+            
+                self.reservationsRef.observeEventType(FIRDataEventType.Value) {
+                    (snapshot: FIRDataSnapshot) in
+                    var datesNSDatesArray = [NSDate]()
+
+                    for var d = 0; d < reservationIDs.count; d++ {
+                        if let date = snapshot.childSnapshotForPath("\(reservationIDs[d])").value?.objectForKey("date") as? String {
+                            let dateFormatter = NSDateFormatter()
+                            dateFormatter.dateFormat = "yyyy-MM-dd"
+                            dateFormatter.timeZone = NSTimeZone(name: "UTC")
+                            let formattedNSDate = dateFormatter.dateFromString(date)
+                            
+                            if (formattedNSDate!.compare(self.timestampNSDate) == NSComparisonResult.OrderedSame) {
+                                if let time = snapshot.childSnapshotForPath("\(reservationIDs[d])").value?.objectForKey("time") as? String {
+                                    let timeFormatter = NSDateFormatter()
+                                    timeFormatter.dateFormat = "HH:mm"
+                                    timeFormatter.timeZone = NSTimeZone(name: "UTC")
+                                    let formattedNSTime = timeFormatter.dateFromString(time)
+                                    
+                                    let hourRemovedFromResTime = formattedNSTime?.dateByAddingTimeInterval(-3600)
+                                    let fiveHoursAheadOfResTime = formattedNSTime?.dateByAddingTimeInterval(60*60*5)
+                                    
+                                    if (hourRemovedFromResTime!.compare(self.timestampNSTime) == NSComparisonResult.OrderedAscending) {
+                                        if (fiveHoursAheadOfResTime!.compare(self.timestampNSTime) == NSComparisonResult.OrderedDescending) {
+                                            self.resInProgressID = reservationIDs[d]
+                                            self.resInProgressCaddieID = caddieIDs[d]
+                                        }
+                                    }
+                                }
+                            }
+                            completionCounter++
+                        }
+                    }
+                    if (completionCounter == reservationIDs.count) {
+                        completion(self.resInProgressID)
+                    }
+                }
+            }
+        }
+    }
+    
+    func retrieveCaddieInformationForLoopInProgress(resInProgressCaddieID: String, completion: ((Bool -> Void))) {
+        var completionCounter = 0
+        self.caddiesRef.child("\(resInProgressCaddieID)").observeEventType(FIRDataEventType.Value) {
+            (snapshot: FIRDataSnapshot) in
+             if let first_name = snapshot.value?.objectForKey("first_name") as? String {
+                if let last_name = snapshot.value?.objectForKey("last_name") as? String {
+                    self.caddieName = "\(first_name) \(last_name)"
+                    completionCounter++
+                }
+             }
+            if let membership_history = snapshot.value?.objectForKey("membership_history") as? String {
+                self.caddieMemHist = membership_history
+                completionCounter++
+            }
+            if (completionCounter == 2) {
+                completion(true)
+            }
+        }
+    }
+    
+    func retrieveReservationInformationForLoopInProgress(reservationInProgressID: String, completion: ((Bool -> Void))) {
+        var completionCounter = 0
+        self.reservationsRef.child("\(reservationInProgressID)").observeEventType(FIRDataEventType.Value) {
+            (snapshot: FIRDataSnapshot) in
+            if let courseID = snapshot.value?.objectForKey("course") as? String {
+                self.coursesRef.child("\(courseID)").observeEventType(FIRDataEventType.Value) {
+                    (snapshot: FIRDataSnapshot) in
+                    
+                    if let course_name = snapshot.value?.objectForKey("name") as? String {
+                        self.courseName = course_name
+                        completionCounter++
+                    }
+                    
+                    if let course_location = snapshot.value?.objectForKey("city_state") as? String {
+                        self.courseLocation = course_location
+                        completionCounter++
+                    }
+                    if (completionCounter == 2) {
+                        completion(true)
+                    }
+                }
+            }
+        }
+    }
+    
+    /*
+    func evaluateActiveReservation() {
+        if (nextReservation.reservationIsWithinOneHour == false) {
+            // Hide In Progress Buttons
+            reservationInProgressBarButtonItem.enabled = false
+            reservationInProgressBarButtonItem.tintColor = UIColor.clearColor()
+            
+        } else if (nextReservation.reservationIsWithinOneHour == true) {
+            // Display In Progress button
+            reservationInProgressBarButtonItem.enabled = true
+            reservationInProgressBarButtonItem.tintColor = UIColor.whiteColor()
+        }
+    }*/
     
     func revealController(revealController: SWRevealViewController, animateToPosition position: FrontViewPosition) {
         if position == FrontViewPosition.Left {
@@ -158,26 +339,11 @@ extension LandingPageViewController {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last! as CLLocation
-    
-        /*let geoCoder = CLGeocoder()
-        
-         geoCoder.reverseGeocodeLocation(location) {
-         (placemarks, error) -> Void in
-         let placeArray = placemarks as [CLPlacemark]!
-         var placeMark: CLPlacemark!
-         placeMark = placeArray?[0]
-         
-         if let city = placeMark.addressDictionary?["City"] as? NSString {
-         print(city)
-         }
-         }*/
         
         var userLat = location.coordinate.latitude
         userLatitudeToSend = userLat
-        
         var userLon = location.coordinate.longitude
         userLongitudeToSend = userLon
-        
         
         usersDB.setUserLocation(userLat, userLon: userLon)
 
@@ -189,18 +355,7 @@ extension LandingPageViewController {
         performSegueWithIdentifier("toChooseCourseSegue", sender: self)
     }
 
-    func positionAndDisplayViewButtons() {
-        if (nextReservation.reservationIsWithinOneHour == false) {
-            // Hide Check In and In Progress Buttons
-            reservationInProgressBarButtonItem.enabled = false
-            reservationInProgressBarButtonItem.tintColor = UIColor.clearColor()
 
-        } else if (nextReservation.reservationIsWithinOneHour == true) {
-            // Display In Progress button
-            reservationInProgressBarButtonItem.enabled = true
-            reservationInProgressBarButtonItem.tintColor = UIColor.whiteColor()
-        }
-    }
     
     func reservationHasCompleted(notification: NSNotification) {
             self.revealViewController().rightRevealToggleAnimated(true)

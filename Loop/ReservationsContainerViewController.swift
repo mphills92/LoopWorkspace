@@ -23,6 +23,7 @@ class ReservationsContainerViewController: UITableViewController {
     
     var userID = String()
     
+    
     var resIDsCaddieIDs = [[String:String]]()
     var reservationIDsToStore = [String]()
     
@@ -32,6 +33,8 @@ class ReservationsContainerViewController: UITableViewController {
     var courseLocationsToStore = [String]()
     var datesToDisplay = [String]()
     var timesToDisplay = [String]()
+    var timesNSDatesToStore = [NSDate]()
+    var datesNSDatesToStore = [NSDate]()
     
     // Send data via segue.
     var resIDToSend = String()
@@ -41,6 +44,10 @@ class ReservationsContainerViewController: UITableViewController {
     var courseLocationToSend = String()
     var dateToSend = String()
     var timeToSend = String()
+    var timeNSTimeToSend = NSDate()
+    var timestampNSTimeToSend = NSDate()
+    var dateNSDateToSend = NSDate()
+    var timestampNSDateToSend = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +129,8 @@ class ReservationsContainerViewController: UITableViewController {
                     var courseLocationsArray = [String]()
                     var datesArray = [String]()
                     var timesArray = [String]()
+                    var timesNSDatesArray = [NSDate]()
+                    var datesNSDatesArray = [NSDate]()
                     
                     for var g = 0; g < reservationIDs.count; g++ {
                         if let courseID = snapshot.childSnapshotForPath("\(reservationIDs[g])").value?.objectForKey("course") as? String {
@@ -162,8 +171,12 @@ class ReservationsContainerViewController: UITableViewController {
                             let formattedDateToDisplay = dateStringFormatter.stringFromDate(formattedNSDate!)
                             
                             datesArray.append(formattedDateToDisplay)
+                            if (formattedNSDate != nil) {
+                                datesNSDatesArray.append(formattedNSDate!)
+                            }
                         }
                         self.datesToDisplay = datesArray
+                        self.datesNSDatesToStore = datesNSDatesArray
                     }
                     
                     for var t = 0; t < reservationIDs.count; t++ {
@@ -183,12 +196,18 @@ class ReservationsContainerViewController: UITableViewController {
                             let formattedTimeToDisplay = timeStringFormatter.stringFromDate(formattedNSDateTime!)
                             
                             timesArray.append(formattedTimeToDisplay)
+                            if (formattedNSDateTime != nil) {
+                                timesNSDatesArray.append(formattedNSDateTime!)
+                            }
                         }
                         self.timesToDisplay = timesArray
+                        self.timesNSDatesToStore = timesNSDatesArray
                     }
                 }
             }
         }
+        
+        timestampOnLoad()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -198,6 +217,27 @@ class ReservationsContainerViewController: UITableViewController {
 }
 
 extension ReservationsContainerViewController {
+    
+    // Method called upon initial load in order to collect current time.
+    func timestampOnLoad() {
+        let formatterToEvaluateDate = NSDateFormatter()
+        formatterToEvaluateDate.dateFormat = "yyyy-MM-dd"
+        let dateStampString = formatterToEvaluateDate.stringFromDate(NSDate())
+        let formatterToNSDate = NSDateFormatter()
+        formatterToNSDate.dateFormat = "yyyy-MM-dd"
+        formatterToNSDate.timeZone = NSTimeZone(name: "UTC")
+        
+        timestampNSDateToSend = formatterToNSDate.dateFromString(dateStampString)!
+        
+        let formatterToEvaluateTime = NSDateFormatter()
+        formatterToEvaluateTime.dateFormat = "HH:mm"
+        let timestampString = formatterToEvaluateTime.stringFromDate(NSDate())
+        let formatterToNSTime = NSDateFormatter()
+        formatterToNSTime.dateFormat = "HH:mm"
+        formatterToNSTime.timeZone = NSTimeZone(name: "UTC")
+        
+        timestampNSTimeToSend = formatterToNSTime.dateFromString(timestampString)!
+    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var numOfSections: Int = 0
@@ -257,6 +297,8 @@ extension ReservationsContainerViewController {
         courseLocationToSend = courseLocationsToStore[indexPath.row]
         dateToSend = datesToDisplay[indexPath.row]
         timeToSend = timesToDisplay[indexPath.row]
+        timeNSTimeToSend = timesNSDatesToStore[indexPath.row]
+        dateNSDateToSend = datesNSDatesToStore[indexPath.row]
         
         self.performSegueWithIdentifier("toReservationDetailsSegue", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -274,6 +316,10 @@ extension ReservationsContainerViewController {
             destinationVC.courseLocationHasBeenSent = courseLocationToSend
             destinationVC.dateHasBeenSent = dateToSend
             destinationVC.timeHasBeenSent = timeToSend
+            destinationVC.timestampNSTimeHasBeenSent = timestampNSTimeToSend
+            destinationVC.timeNSTimeHasBeenSent = timeNSTimeToSend
+            destinationVC.timestampNSDateHasBeenSent = timestampNSDateToSend
+            destinationVC.dateNSDateHasBeenSent = dateNSDateToSend
         }
     }
 
