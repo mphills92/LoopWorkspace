@@ -63,6 +63,7 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
     var selectedTimeToSend = String()
     
     // Receive data from segue.
+    var reservationTypeHasBeenSent: Int?
     var selectedCourseNameHasBeenSent: String?
     var selectedLocationHasBeenSent: String?
     var selectedCourseIDHasBeenSent: String?
@@ -141,6 +142,8 @@ class ChooseDateViewController: UIViewController, UIPickerViewDelegate {
             
             self.priceLabel.text = "$\(self.coursePrice)"
          }
+        
+        print(reservationTypeHasBeenSent!)
 
     }
     
@@ -300,13 +303,23 @@ extension ChooseDateViewController {
             if (selectedTimeConvertedToNSDate!.compare(validEndTimeAsNSDate) == NSComparisonResult.OrderedAscending) {
                 selectedTime = selectedTimeToEvaluate
                 createSelectedDateString(selectedDay, selectedMonth: selectedMonth, selectedTime: selectedTime)
-                performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
+                
+                if (reservationTypeHasBeenSent == 1) {
+                    performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
+                } else if (reservationTypeHasBeenSent == 2) {
+                    print("toChooseNumberOfCaddiesSegue")
+                }
                 return true
             }
         } else if (selectedTimeConvertedToNSDate!.compare(validStartTimeAsNSDate) == NSComparisonResult.OrderedSame) || (selectedTimeConvertedToNSDate!.compare(validEndTimeAsNSDate) == NSComparisonResult.OrderedSame) {
             selectedTime = selectedTimeToEvaluate
             createSelectedDateString(selectedDay, selectedMonth: selectedMonth, selectedTime: selectedTime)
-            performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
+            
+            if (reservationTypeHasBeenSent == 1) {
+                performSegueWithIdentifier("toChooseCaddieSegue", sender: self)
+            } else if (reservationTypeHasBeenSent == 2) {
+                print("toChooseNumberOfCaddiesSegue")
+            }
             return true
         }
         let alertController = UIAlertController(title: "Please choose a valid time.", message:  "\n The start time for your caddie reservation must be within the operating hours of your selected course.", preferredStyle: .Alert)

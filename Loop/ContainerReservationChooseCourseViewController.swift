@@ -25,6 +25,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
     var setPointLat = Double()
     var setPointLon = Double()
     var currentSearchRadius = Double()
+    var reservationTypeToSend: Int?
     
     // Variables to be populated upon retrieving nearby courses.
     var nearbyCourseNamesToDisplay = [String]()
@@ -68,6 +69,7 @@ class ContainerReservationChooseCourseViewController: UICollectionViewController
         
         currentSearchRadius = 20000.0
         collectionViewHasBeenCached = false
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -192,6 +194,7 @@ extension ContainerReservationChooseCourseViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "courseHasBeenSelectedSegue") {
             let destinationVC = segue.destinationViewController as! ChooseDateViewController
+            destinationVC.reservationTypeHasBeenSent = reservationTypeToSend
             destinationVC.selectedCourseNameHasBeenSent = selectedCourseNameToSend
             destinationVC.selectedLocationHasBeenSent = selectedLocationToSend
             destinationVC.selectedCourseIDHasBeenSent = selectedCourseIDToSend

@@ -17,6 +17,12 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     @IBOutlet weak var reservationInProgressBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var startReservationButton: UIButton!
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var navigationBarDismissButton: UIBarButtonItem!
+    @IBOutlet weak var chooseResTypePopoverView: UIView!
+    @IBOutlet weak var bottomConstraintChooseResTypePopoverView: NSLayoutConstraint!
+    @IBOutlet weak var individualResButton: UIButton!
+    @IBOutlet weak var eventResButton: UIButton!
     
     // Reference to database class which communicates with Firebase.
     let usersDB = UsersDatabase()
@@ -43,6 +49,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
     var resInProgressCaddieID = String()
     
     // Send data via segue.
+    var senderTag = Int()
     var userLatitudeToSend = Double()
     var userLongitudeToSend = Double()
     var resIDToSend = String()
@@ -80,7 +87,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
             userID = user.uid
             self.userRef = dbRef.child("users").child("\(userID)")
         }
-        
+        /*
         evaluateAllReservationsForLoopInProgress() {
             (reservationInProgressID) -> Void in
             
@@ -98,7 +105,7 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
                 }
                 
             }
-        }
+        }*/
     }
     
     override func viewDidLoad() {
@@ -139,6 +146,26 @@ class LandingPageViewController: UIViewController, SWRevealViewControllerDelegat
         startReservationButton.layer.borderColor = UIColor.whiteColor().CGColor
         startReservationButton.layer.borderWidth = 1
         startReservationButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        
+        chooseResTypePopoverView.layer.shadowColor = UIColor.blackColor().CGColor
+        chooseResTypePopoverView.layer.shadowOpacity = 0.25
+        chooseResTypePopoverView.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        navigationBar.barTintColor = UIColor.clearColor()
+        navigationBar.barStyle = UIBarStyle.Default
+        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationBar.shadowImage = UIImage()
+        bottomConstraintChooseResTypePopoverView.constant = -300
+        individualResButton.layer.cornerRadius = 20
+        individualResButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
+        individualResButton.layer.borderColor = UIColor.whiteColor().CGColor
+        individualResButton.layer.borderWidth = 1
+        eventResButton.layer.cornerRadius = 20
+        eventResButton.layer.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4).CGColor
+        eventResButton.layer.borderColor = UIColor.whiteColor().CGColor
+        eventResButton.layer.borderWidth = 1
+        
+        individualResButton.tag = 1
+        eventResButton.tag = 2
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reservationHasCompleted:", name: "reservationHasCompletedNotification", object: nil)
     }
@@ -331,8 +358,15 @@ extension LandingPageViewController {
     func revealController(revealController: SWRevealViewController!, didMoveToPosition position: FrontViewPosition) {
         if (position == FrontViewPosition.Left || position == FrontViewPosition.RightMost) {
             self.startReservationButton.enabled = true
+            self.navigationBarDismissButton.enabled = true
+            self.individualResButton.enabled = true
+            self.eventResButton.enabled = true
+            
         } else {
             self.startReservationButton.enabled = false
+            self.navigationBarDismissButton.enabled = false
+            self.individualResButton.enabled = false
+            self.eventResButton.enabled = false
         }
     }
     
@@ -350,12 +384,43 @@ extension LandingPageViewController {
         self.locationManager.stopUpdatingLocation()
     }
     
+    func displaySlideUpView() {
+        UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.8, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.bottomConstraintChooseResTypePopoverView.constant = -60
+            self.startReservationButton.alpha = 0
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
+    
+    func closeChooseTimeSlideUpView() {
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.bottomConstraintChooseResTypePopoverView.constant = -300
+            self.startReservationButton.alpha = 1.0
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
     
     @IBAction func startReservationButtonPressed(sender: AnyObject) {
+        displaySlideUpView()
+        
+        //performSegueWithIdentifier("toChooseCourseSegue", sender: self)
+    }
+    
+    @IBAction func dismissChooseResTypePopoverView(sender: UIBarButtonItem) {
+        closeChooseTimeSlideUpView()
+    }
+    
+    @IBAction func individualResButtonPressed(sender: AnyObject) {
+        senderTag = sender.tag
         performSegueWithIdentifier("toChooseCourseSegue", sender: self)
     }
-
-
+    
+    
+    @IBAction func eventResButtonPressed(sender: AnyObject) {
+        senderTag = sender.tag
+        performSegueWithIdentifier("toChooseCourseSegue", sender: self)
+    }
+    
     
     func reservationHasCompleted(notification: NSNotification) {
             self.revealViewController().rightRevealToggleAnimated(true)
@@ -366,6 +431,7 @@ extension LandingPageViewController {
             let navigationController = segue.destinationViewController as? UINavigationController
             let destinationVC = navigationController!.topViewController as! ReservationChooseCourseViewController   
             
+            destinationVC.senderTag = senderTag
             destinationVC.userLatitudeHasBeenSent = userLatitudeToSend
             destinationVC.userLongitudeHasBeenSent = userLongitudeToSend
         }

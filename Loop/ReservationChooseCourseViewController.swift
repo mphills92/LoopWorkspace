@@ -13,6 +13,8 @@ class ReservationChooseCourseViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var resultsFilterButton: UIButton!
     @IBOutlet weak var segmentedControlBackgroundView: UIView!
+    @IBOutlet weak var segmentedControlView: ChooseCourseSegmentedControl!
+    @IBOutlet weak var eventBannerView: UIView!
     @IBOutlet weak var resultsFilterButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var sliderBackgroundView: UIView!
     @IBOutlet weak var distanceSlider: UISlider!
@@ -20,6 +22,7 @@ class ReservationChooseCourseViewController: UIViewController {
     @IBOutlet weak var sliderDisplayBlackButton: UIButton!
     
     // Receive data from segue.
+    var senderTag: Int?
     var userLatitudeHasBeenSent: Double?
     var userLongitudeHasBeenSent: Double?
     
@@ -40,7 +43,6 @@ class ReservationChooseCourseViewController: UIViewController {
     var currentSearchRadius = Double()
     var newSearchRadius = Double()
     var previouslySelectedDistance = Int()
-    
     
     /*
     @IBAction func cancelReservationButtonPressed(sender: AnyObject) {
@@ -68,7 +70,6 @@ class ReservationChooseCourseViewController: UIViewController {
         self.containerView!.addSubview(activityIndicatorBackground)
         self.containerView!.addSubview(activityIndicator)
         
-        //updateResultsFilterButtonTitle()
         let dismissViewButton = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "dismissView")
         self.navigationItem.leftBarButtonItem = dismissViewButton
         self.navigationItem.leftBarButtonItem?.enabled = true
@@ -89,17 +90,21 @@ class ReservationChooseCourseViewController: UIViewController {
         sliderBackgroundView.hidden = true
         sliderDisplayBlackButton.hidden = true
         navigationItem.rightBarButtonItem?.image = UIImage(named: "IconRadiusUnfilled")
-        
-        resultsFilterButton.layer.cornerRadius = 15
-        resultsFilterButton.layer.shadowColor = UIColor.blackColor().CGColor
-        resultsFilterButton.layer.shadowOpacity = 0.5
-        resultsFilterButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.clearColor()
         
         setPointLat = userLatitudeHasBeenSent!
         setPointLon = userLongitudeHasBeenSent!
         
         currentSearchRadius = 20.0
         formatSearchRadius()
+        
+        if (senderTag == 1) {
+            segmentedControlView.hidden = false
+            eventBannerView.hidden = true
+        } else if (senderTag == 2) {
+            segmentedControlView.hidden = true
+            eventBannerView.hidden = false
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -233,24 +238,6 @@ extension ReservationChooseCourseViewController {
         }
     }
     
-    /*
-    func selectedCityHasChangedFromFilter(notification: NSNotification) {
-        selectedCity = notification.object! as! String
-    }
-    
-    func selectedDistanceHasChangedFromFilter(notification: NSNotification) {
-        selectedDistance = notification.object! as! Int
-    }
-    
-    
-    func updateResultsFilterButtonTitle() {
-        if (selectedCity != "") {
-            resultsFilterButton.setTitle("   Filter by: \(selectedCity) (\(selectedDistance) mi)  ", forState: UIControlState.Normal)
-        } else {
-            resultsFilterButton.setTitle("   Filter by: \(previouslySelectedCity) (\(selectedDistance) mi)   ", forState: UIControlState.Normal)
-        }
-    }*/
-    
     func startActivityIndicator(notification: NSNotification) {
         activityIndicator.startAnimating()
         activityIndicatorBackground.hidden = false
@@ -259,6 +246,13 @@ extension ReservationChooseCourseViewController {
     func stopActivityIndicator(notification: NSNotification) {
         self.activityIndicator.stopAnimating()
         self.activityIndicatorBackground.hidden = true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "containerCoursesAvailable") {
+            let destinationVC = segue.destinationViewController as! ContainerReservationChooseCourseViewController
+            destinationVC.reservationTypeToSend = senderTag
+        }
     }
 }
 

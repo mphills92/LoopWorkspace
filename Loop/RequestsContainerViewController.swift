@@ -251,7 +251,7 @@ extension RequestsContainerViewController {
                 cell.requestStatusBadge.layer.borderWidth = 1
                 cell.requestStatusBadge.layer.cornerRadius = 8
             } else if (requestStatusesToDisplay[indexPath.row] == "d") {
-                cell.requestStatusBadge.text = "DECLINED"
+                cell.requestStatusBadge.text = "UNAVAILABLE"
                 cell.requestStatusBadge.textColor = UIColor(red: 204/255, green: 0/255, blue: 0/255, alpha: 1.0)
                 cell.requestStatusBadge.layer.borderColor = UIColor(red: 204/255, green: 0/255, blue: 0/255, alpha: 1.0).CGColor
                 cell.requestStatusBadge.layer.borderWidth = 1

@@ -90,21 +90,24 @@ class UsersDatabase {
             
             let resIDCaddieIDSnapshot = snapshot.childSnapshotForPath("resID_caddieID")
             
-            for child in resIDCaddieIDSnapshot.children {
-                let reservationIDSnapshot = resIDCaddieIDSnapshot.childSnapshotForPath(child.key)
-                let reservationID = reservationIDSnapshot.key
-                
-                let caddieID = resIDCaddieIDSnapshot.value?.objectForKey("\(reservationID)")
-                
-                if (reservationID != "0") {
-                    reservationAndCaddieDict.append(["resID": "\(reservationID)", "caddieID": "\(caddieID!)"])
-                    completionCounter++
-                }
-            }
+            if (resIDCaddieIDSnapshot.childrenCount > 1) {
             
-            if (reservationAndCaddieDict.count == completionCounter) {
-                self.reservationsAndCaddies = reservationAndCaddieDict
-                completion(self.reservationsAndCaddies)
+                for child in resIDCaddieIDSnapshot.children {
+                    let reservationIDSnapshot = resIDCaddieIDSnapshot.childSnapshotForPath(child.key)
+                    let reservationID = reservationIDSnapshot.key
+                
+                    let caddieID = resIDCaddieIDSnapshot.value?.objectForKey("\(reservationID)")
+                
+                    if (reservationID != "0") {
+                        reservationAndCaddieDict.append(["resID": "\(reservationID)", "caddieID": "\(caddieID!)"])
+                        completionCounter++
+                    }
+                }
+            
+                if (reservationAndCaddieDict.count == completionCounter) {
+                    self.reservationsAndCaddies = reservationAndCaddieDict
+                    completion(self.reservationsAndCaddies)
+                }
             }
         }
     }

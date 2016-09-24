@@ -39,7 +39,7 @@ class CaddiesAvailableViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Available Caddies"
+        navigationItem.title = "Nearby Caddies"
         navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         navigationController?.navigationBar.barStyle = UIBarStyle.Default
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name:"AvenirNext-Regular", size: 26)!, NSForegroundColorAttributeName: UIColor(red: 0/255, green: 51/255, blue: 0/255, alpha: 1.0)]
